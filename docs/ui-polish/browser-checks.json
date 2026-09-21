@@ -1,0 +1,121 @@
+{
+  "results": [
+    {
+      "name": "overview",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detections",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "detail",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "flows",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "sensor",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "intelligence",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "name": "overview",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "detections",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "detail",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "flows",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "sensor",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "intelligence",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 820,
+      "overflow": false
+    },
+    {
+      "name": "overview",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detections",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "detail",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "flows",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "sensor",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "intelligence",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "name": "settings",
+      "width": 390,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "checks": [
+    "pagination",
+    "threat filter empty",
+    "severity filter",
+    "keyboard detail opening",
+    "evidence rendering",
+    "mobile navigation",
+    "recorded replay label",
+    "API failure",
+    "WebSocket disconnected"
+  ]
+}

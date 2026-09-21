@@ -1,0 +1,65 @@
+{
+  "total_false_negatives": 48120,
+  "by_class": {
+    "ddos": [
+      {
+        "index": 18245,
+        "confidence_score": 0.9997102618217468
+      },
+      {
+        "index": 18247,
+        "confidence_score": 0.9986951947212219
+      },
+      {
+        "index": 18249,
+        "confidence_score": 0.9998192191123962
+      },
+      {
+        "index": 18251,
+        "confidence_score": 0.9983115196228027
+      },
+      {
+        "index": 18253,
+        "confidence_score": 0.9999415874481201
+      },
+      {
+        "index": 18255,
+        "confidence_score": 0.9999866485595703
+      },
+      {
+        "index": 18257,
+        "confidence_score": 0.9999520778656006
+      },
+      {
+        "index": 18259,
+        "confidence_score": 0.9999794960021973
+      },
+      {
+        "index": 18261,
+        "confidence_score": 0.9997087121009827
+      },
+      {
+        "index": 18263,
+        "confidence_score": 0.9998410940170288
+      }
+    ]
+  },
+  "class_summary": {
+    "c2": {
+      "total_samples": 1437,
+      "false_negatives": 1437,
+      "miss_rate": 1.0,
+      "total_misclassified": 1437,
+      "misclassification_rate": 1.0
+    },
+    "ddos": {
+      "total_samples": 128014,
+      "false_negatives": 46683,
+      "miss_rate": 0.36467105160373087,
+      "total_misclassified": 93862,
+      "misclassification_rate": 0.7332166794256878
+    }
+  },
+  "notes": "False negatives are threat samples classified as benign. Counts verified against confusion matrix. total_misclassified includes predictions to any wrong class.",
+  "audit_note": "Corrected from max_samples=100 truncation bug in FalseNegativeCollector.collect()."
+}

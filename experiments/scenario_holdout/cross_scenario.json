@@ -1,0 +1,74 @@
+{
+  "per_scenario": {
+    "Benign-Monday": {
+      "n_train": 400581,
+      "n_test": 99419,
+      "macro_f1": 0.24944050727340544,
+      "weighted_f1": 0.9977620290936219,
+      "precision_macro": 0.25,
+      "recall_macro": 0.24888351321176033
+    },
+    "Botnet-Friday": {
+      "n_train": 462003,
+      "n_test": 37997,
+      "macro_f1": 0.2487436189065517,
+      "weighted_f1": 0.9863070400014924,
+      "precision_macro": 0.24781938442078633,
+      "recall_macro": 0.24967477300483196
+    },
+    "Bruteforce-Tuesday": {
+      "n_train": 415775,
+      "n_test": 84225,
+      "macro_f1": 0.1974787642698696,
+      "weighted_f1": 0.9643223931461363,
+      "precision_macro": 0.19532643596146987,
+      "recall_macro": 0.19967905467011926
+    },
+    "DDoS-Friday": {
+      "n_train": 452231,
+      "n_test": 47769,
+      "macro_f1": 0.18842952639155006,
+      "weighted_f1": 0.5295090581835927,
+      "precision_macro": 0.2778617270439112,
+      "recall_macro": 0.19929086745759525
+    },
+    "DoS-Wednesday": {
+      "n_train": 373434,
+      "n_test": 126566,
+      "macro_f1": 0.16040828350780928,
+      "weighted_f1": 0.5359237761504783,
+      "precision_macro": 0.18147206840126956,
+      "recall_macro": 0.19998362300475275
+    },
+    "Infiltration-Thursday": {
+      "n_train": 455346,
+      "n_test": 44654,
+      "macro_f1": 0.16443506414911643,
+      "weighted_f1": 0.9864557229899586,
+      "precision_macro": 0.16663983502372684,
+      "recall_macro": 0.1622878730187172
+    },
+    "Portscan-Friday": {
+      "n_train": 474063,
+      "n_test": 25937,
+      "macro_f1": 0.16496137930138435,
+      "weighted_f1": 0.9745040852572276,
+      "precision_macro": 0.16420294353482837,
+      "recall_macro": 0.16572685384605343
+    },
+    "WebAttacks-Thursday": {
+      "n_train": 466567,
+      "n_test": 33433,
+      "macro_f1": 0.1986080144621874,
+      "weighted_f1": 0.9799116150393361,
+      "precision_macro": 0.19742430141663422,
+      "recall_macro": 0.19980600769906945
+    }
+  },
+  "f1_mean": 0.1965631447827343,
+  "f1_std": 0.0334066836192407,
+  "f1_min": 0.16040828350780928,
+  "f1_max": 0.24944050727340544,
+  "n_scenarios": 8,
+  "notes": "Cross-scenario holdout: train on N-1 scenarios, test on held-out. High variance indicates scenario-dependent performance."
+}

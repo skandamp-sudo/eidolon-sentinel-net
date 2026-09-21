@@ -1,0 +1,90 @@
+{
+  "result_category": "REAL_DATA",
+  "families": {
+    "brute_force": {
+      "attack_prevalence": 0.023479,
+      "supervised": {
+        "f1_macro": 0.1644460970151453,
+        "recall_macro": 0.16618404963860656,
+        "precision_macro": 0.16274411918093984
+      },
+      "anomaly": {
+        "f1": 0.0458803000521481,
+        "recall": 1.0,
+        "precision": 0.023478756216096932,
+        "roc_auc": 0.7269753103863159,
+        "pr_auc": 0.039037170194922574,
+        "fpr": 1.0
+      },
+      "threshold": 0.1
+    },
+    "c2": {
+      "attack_prevalence": 0.008163,
+      "supervised": {
+        "f1_macro": 0.1990313346404893,
+        "recall_macro": 0.19970217810894555,
+        "precision_macro": 0.1983649831036876
+      },
+      "anomaly": {
+        "f1": 0.016193830116917874,
+        "recall": 1.0,
+        "precision": 0.008163010259148593,
+        "roc_auc": 0.7169831857254881,
+        "pr_auc": 0.013103967173087374,
+        "fpr": 1.0
+      },
+      "threshold": 0.1
+    },
+    "ddos": {
+      "attack_prevalence": 0.399092,
+      "supervised": {
+        "f1_macro": 0.13163349004375172,
+        "recall_macro": 0.16661403345820822,
+        "precision_macro": 0.10879254320528424
+      },
+      "anomaly": {
+        "f1": 0.5705015403027415,
+        "recall": 1.0,
+        "precision": 0.39909209865365175,
+        "roc_auc": 0.8872344583764029,
+        "pr_auc": 0.7754070371409079,
+        "fpr": 1.0
+      },
+      "threshold": 0.1
+    },
+    "other": {
+      "attack_prevalence": 0.013753,
+      "supervised": {
+        "f1_macro": 0.16546014379123006,
+        "recall_macro": 0.16650290327548473,
+        "precision_macro": 0.1644303640203752
+      },
+      "anomaly": {
+        "f1": 0.02713293619391883,
+        "recall": 1.0,
+        "precision": 0.013753048389166987,
+        "roc_auc": 0.7565515455264996,
+        "pr_auc": 0.02687350190814082,
+        "fpr": 1.0
+      },
+      "threshold": 0.1
+    },
+    "reconnaissance": {
+      "attack_prevalence": 0.016365,
+      "supervised": {
+        "f1_macro": 0.16490123305275423,
+        "recall_macro": 0.16571826321668962,
+        "precision_macro": 0.16409221966742749
+      },
+      "anomaly": {
+        "f1": 0.03220336192561616,
+        "recall": 1.0,
+        "precision": 0.016365187998862135,
+        "roc_auc": 0.7799962237632034,
+        "pr_auc": 0.03808656798666665,
+        "fpr": 1.0
+      },
+      "threshold": 0.1
+    }
+  }
+}

@@ -93,8 +93,9 @@ def test_observed_flow_creation():
     assert f.direction == "forward"
     assert f.packets == []
     assert f.is_complete is False
-    # Verify docstring mentions unidirectional
-    assert "SINGLE OBSERVED DIRECTION" in ObservedFlow.__doc__
+    # Verify docstring mentions passive observation
+    assert "ACTUALLY OBSERVED" in ObservedFlow.__doc__
+    assert "NOT fabricate" in ObservedFlow.__doc__
 
 
 def test_detection_event_creation():

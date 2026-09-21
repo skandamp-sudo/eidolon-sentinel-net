@@ -1,0 +1,47 @@
+{
+  "timing_jitter": {
+    "perturbation_type": "timing_jitter",
+    "n_samples": 397302,
+    "classification_changed_count": 35448,
+    "classification_changed_pct": 8.922180104806923,
+    "mean_score_change": 0.0227985642850399,
+    "max_score_change": 0.543309211730957,
+    "n_details_recorded": 50
+  },
+  "packet_size_noise": {
+    "perturbation_type": "packet_size_noise",
+    "n_samples": 397302,
+    "classification_changed_count": 13,
+    "classification_changed_pct": 0.0032720701129115883,
+    "mean_score_change": 0.00035307201324030757,
+    "max_score_change": 0.3816782236099243,
+    "n_details_recorded": 13
+  },
+  "flow_duration_perturbation": {
+    "perturbation_type": "flow_duration_perturbation",
+    "n_samples": 397302,
+    "classification_changed_count": 62,
+    "classification_changed_pct": 0.015605257461578346,
+    "mean_score_change": 0.00021934500546194613,
+    "max_score_change": 0.41687750816345215,
+    "n_details_recorded": 50
+  },
+  "directional_imbalance": {
+    "perturbation_type": "directional_imbalance",
+    "n_samples": 397302,
+    "classification_changed_count": 76449,
+    "classification_changed_pct": 19.242037543229078,
+    "mean_score_change": 0.021470781415700912,
+    "max_score_change": 0.4946761727333069,
+    "n_details_recorded": 50
+  },
+  "missing_metadata_20pct": {
+    "perturbation_type": "missing_metadata_20pct",
+    "n_samples": 397302,
+    "classification_changed_count": 45185,
+    "classification_changed_pct": 11.372960619377702,
+    "mean_score_change": 0.03512153401970863,
+    "max_score_change": 0.6244938373565674,
+    "n_details_recorded": 50
+  }
+}

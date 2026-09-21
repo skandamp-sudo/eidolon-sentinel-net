@@ -1,0 +1,52 @@
+{
+  "result_category": "SMOKE_TEST",
+  "timestamp": "2026-09-01T18:05:04.366440+00:00",
+  "n_samples": 1746,
+  "n_features": 52,
+  "n_missing_features": 11,
+  "missing_features": [
+    "pkt_size_median",
+    "pkt_size_p25",
+    "pkt_size_p75",
+    "pkt_size_p90",
+    "iat_median",
+    "syn_ack_count",
+    "ip_version",
+    "payload_bytes_total",
+    "forward_payload_bytes",
+    "reverse_payload_bytes",
+    "payload_ratio"
+  ],
+  "labels": [
+    "benign",
+    "brute_force",
+    "c2",
+    "ddos",
+    "exfiltration",
+    "other",
+    "reconnaissance"
+  ],
+  "scenarios": [
+    "Benign-Monday",
+    "Botnet-Friday",
+    "Bruteforce-Tuesday",
+    "DDoS-Friday",
+    "DoS-Wednesday",
+    "Infiltration-Thursday",
+    "Portscan-Friday",
+    "WebAttacks-Thursday"
+  ],
+  "preprocessing": {
+    "imputer": "median",
+    "scaler": "standard",
+    "constant_features": [
+      "rev_iat_min",
+      "fin_count",
+      "fin_ratio"
+    ]
+  },
+  "model": "xgboost_smoke",
+  "f1_macro": 0.9336427211270814,
+  "status": "PASS",
+  "notes": "Smoke test only \u2014 NOT for model selection or threshold tuning."
+}

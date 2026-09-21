@@ -1,0 +1,39 @@
+{
+  "experiment_id": "phase7-cicids2017-evaluation",
+  "experiment_type": "real_data_evaluation",
+  "dataset_id": "CICIDS2017",
+  "dataset_source": "Kaggle dhoogla/cicids2017 (UNB CIC origin)",
+  "feature_schema_version": "2.0.0",
+  "feature_count": 52,
+  "features_available": 41,
+  "features_missing": 11,
+  "random_seed": 42,
+  "timestamp": "2026-09-01T18:05:04.366440+00:00",
+  "code_version": "phase7-evaluation",
+  "models": [
+    "XGBoost",
+    "RandomForest",
+    "LogisticRegression",
+    "IsolationForest"
+  ],
+  "preprocessing": {
+    "tree_imputer": "SimpleImputer(median)",
+    "tree_scaler": "StandardScaler",
+    "tree_features": 52,
+    "linear_features": 50
+  },
+  "experiments_run": [
+    "A_baseline",
+    "B_threshold",
+    "C_missing_ablation",
+    "D_feature_group_ablation",
+    "E_false_positives",
+    "F_false_negatives",
+    "G_unidirectional",
+    "H_robustness",
+    "I_cross_scenario",
+    "J_stability",
+    "calibration",
+    "class_imbalance"
+  ]
+}

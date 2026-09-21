@@ -1,0 +1,22 @@
+{
+  "result_category": "ABLATION",
+  "experiment": "missing_feature_impact",
+  "description": "Impact of 11 CICIDS2017-unavailable features being NaN vs explicitly zeroed",
+  "missing_features": [
+    "pkt_size_median",
+    "pkt_size_p25",
+    "pkt_size_p75",
+    "pkt_size_p90",
+    "iat_median",
+    "syn_ack_count",
+    "ip_version",
+    "payload_bytes_total",
+    "forward_payload_bytes",
+    "reverse_payload_bytes",
+    "payload_ratio"
+  ],
+  "full_model_f1_macro": 0.2675121989116243,
+  "ablated_model_f1_macro": 0.2913152760009604,
+  "delta_f1": 0.0238030770893361,
+  "notes": "Both models receive imputed values; ablated model has zeros instead of NaN for missing features."
+}

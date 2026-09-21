@@ -1,0 +1,40 @@
+{
+  "experiment_id": "phase8_complete",
+  "result_category": "DOCUMENTATION_ONLY",
+  "timestamp": "2026-09-01T19:30:09.431263+00:00",
+  "random_seed": 42,
+  "dataset_id": "CICIDS2017",
+  "schema_version": "2.0.0",
+  "feature_count": 52,
+  "post_preprocessing_features": 41,
+  "experiments_completed": [
+    "experiment_a",
+    "experiment_b",
+    "experiment_c",
+    "experiment_d",
+    "experiment_e",
+    "experiment_f",
+    "experiment_g",
+    "experiment_h",
+    "experiment_i",
+    "runtime_seconds",
+    "smoke_test"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "macOS-26.6.2-x86_64-i386-64bit",
+    "machine": "x86_64"
+  },
+  "model_configs": {
+    "xgboost": {
+      "n_estimators": 100,
+      "max_depth": 6
+    },
+    "isolation_forest": {
+      "n_estimators": 100,
+      "contamination": "auto"
+    }
+  },
+  "threshold_protocol": "validation_optimized",
+  "notes": "Phase 8 - Novel Threat & Generalization Hardening"
+}

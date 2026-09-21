@@ -1,0 +1,426 @@
+{
+  "brute_force": {
+    "held_out_family": "brute_force",
+    "held_out_scenarios": [
+      "Bruteforce-Tuesday"
+    ],
+    "train_scenarios": [
+      "Botnet-Friday",
+      "DDoS-Friday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday",
+      "WebAttacks-Thursday"
+    ],
+    "val_scenarios": [
+      "Benign-Monday"
+    ],
+    "test_scenarios": [
+      "Bruteforce-Tuesday"
+    ],
+    "n_train": 1465265,
+    "n_val": 458831,
+    "n_test": 389714,
+    "train_classes": {
+      "benign": 1137923,
+      "ddos": 321770,
+      "c2": 1437,
+      "exfiltration": 36,
+      "reconnaissance": 1956,
+      "other": 2143
+    },
+    "val_classes": {
+      "benign": 458831
+    },
+    "test_classes": {
+      "benign": 380564,
+      "brute_force": 9150
+    },
+    "attack_prevalence": 0.023479,
+    "feasible": true,
+    "result_category": "REAL_DATA",
+    "threshold": 0.1,
+    "supervised_f1_macro": 0.1644460970151453,
+    "supervised_recall_macro": 0.16618404963860656,
+    "supervised_precision_macro": 0.16274411918093984,
+    "anomaly_f1": 0.0458803000521481,
+    "anomaly_recall": 1.0,
+    "anomaly_precision": 0.023478756216096932,
+    "anomaly_roc_auc": 0.7269753103863159,
+    "anomaly_pr_auc": 0.039037170194922574,
+    "anomaly_fpr": 1.0,
+    "novelty_ranking": {
+      "benign_stats": {
+        "mean": 0.38835617419540536,
+        "std": 0.06338701137502346,
+        "median": 0.3638536173394559,
+        "p25": 0.3447873930990652,
+        "p75": 0.4127465691429857,
+        "p90": 0.453446110424398,
+        "p95": 0.5288575631413552,
+        "min": 0.3320357390134123,
+        "max": 0.7174855230348245
+      },
+      "attack_stats": {
+        "mean": 0.40564438324780117,
+        "std": 0.01313991366597139,
+        "median": 0.4054680974316103,
+        "p25": 0.3974433086248119,
+        "p75": 0.4090876049838624,
+        "p90": 0.4241455249826491,
+        "p95": 0.42491691681264293,
+        "min": 0.3595143520672943,
+        "max": 0.5503889222210198
+      },
+      "roc_auc": 0.7269753103863159,
+      "pr_auc": 0.04188938015373046,
+      "score_separation": 0.041614,
+      "n_benign": 380564,
+      "n_attack": 9150,
+      "result_category": "REAL_DATA"
+    }
+  },
+  "c2": {
+    "held_out_family": "c2",
+    "held_out_scenarios": [
+      "Botnet-Friday"
+    ],
+    "train_scenarios": [
+      "Bruteforce-Tuesday",
+      "DDoS-Friday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday",
+      "WebAttacks-Thursday"
+    ],
+    "val_scenarios": [
+      "Benign-Monday"
+    ],
+    "test_scenarios": [
+      "Botnet-Friday"
+    ],
+    "n_train": 1678941,
+    "n_val": 458831,
+    "n_test": 176038,
+    "train_classes": {
+      "benign": 1343886,
+      "ddos": 321770,
+      "brute_force": 9150,
+      "exfiltration": 36,
+      "reconnaissance": 1956,
+      "other": 2143
+    },
+    "val_classes": {
+      "benign": 458831
+    },
+    "test_classes": {
+      "benign": 174601,
+      "c2": 1437
+    },
+    "attack_prevalence": 0.008163,
+    "feasible": true,
+    "result_category": "REAL_DATA",
+    "threshold": 0.1,
+    "supervised_f1_macro": 0.1990313346404893,
+    "supervised_recall_macro": 0.19970217810894555,
+    "supervised_precision_macro": 0.1983649831036876,
+    "anomaly_f1": 0.016193830116917874,
+    "anomaly_recall": 1.0,
+    "anomaly_precision": 0.008163010259148593,
+    "anomaly_roc_auc": 0.7169831857254881,
+    "anomaly_pr_auc": 0.013103967173087374,
+    "anomaly_fpr": 1.0,
+    "novelty_ranking": {
+      "benign_stats": {
+        "mean": 0.38556430171200334,
+        "std": 0.06645839037875334,
+        "median": 0.36098001237034033,
+        "p25": 0.3419198275633475,
+        "p75": 0.4074566513776223,
+        "p90": 0.46217018216964995,
+        "p95": 0.5357230685748717,
+        "min": 0.3283309274174783,
+        "max": 0.7099170643685803
+      },
+      "attack_stats": {
+        "mean": 0.40139469414807943,
+        "std": 0.033319327168229815,
+        "median": 0.3864236076624601,
+        "p25": 0.38527688722725023,
+        "p75": 0.4258587890991676,
+        "p90": 0.4258587890991676,
+        "p95": 0.4258587890991676,
+        "min": 0.35827686699373484,
+        "max": 0.5682422542973806
+      },
+      "roc_auc": 0.7169831857254881,
+      "pr_auc": 0.014828292848529644,
+      "score_separation": 0.025444,
+      "n_benign": 174601,
+      "n_attack": 1437,
+      "result_category": "REAL_DATA"
+    }
+  },
+  "ddos": {
+    "held_out_family": "ddos",
+    "held_out_scenarios": [
+      "DDoS-Friday",
+      "DoS-Wednesday"
+    ],
+    "train_scenarios": [
+      "Botnet-Friday",
+      "Bruteforce-Tuesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday",
+      "WebAttacks-Thursday"
+    ],
+    "val_scenarios": [
+      "Benign-Monday"
+    ],
+    "test_scenarios": [
+      "DDoS-Friday",
+      "DoS-Wednesday"
+    ],
+    "n_train": 1048724,
+    "n_val": 458831,
+    "n_test": 806255,
+    "train_classes": {
+      "benign": 1034002,
+      "brute_force": 9150,
+      "c2": 1437,
+      "exfiltration": 36,
+      "reconnaissance": 1956,
+      "other": 2143
+    },
+    "val_classes": {
+      "benign": 458831
+    },
+    "test_classes": {
+      "benign": 484485,
+      "ddos": 321770
+    },
+    "attack_prevalence": 0.399092,
+    "feasible": true,
+    "result_category": "REAL_DATA",
+    "threshold": 0.1,
+    "supervised_f1_macro": 0.13163349004375172,
+    "supervised_recall_macro": 0.16661403345820822,
+    "supervised_precision_macro": 0.10879254320528424,
+    "anomaly_f1": 0.5705015403027415,
+    "anomaly_recall": 1.0,
+    "anomaly_precision": 0.39909209865365175,
+    "anomaly_roc_auc": 0.8872344583764029,
+    "anomaly_pr_auc": 0.7754070371409079,
+    "anomaly_fpr": 1.0,
+    "novelty_ranking": {
+      "benign_stats": {
+        "mean": 0.404065707721395,
+        "std": 0.08188511301320127,
+        "median": 0.37592003095445764,
+        "p25": 0.3427198871992779,
+        "p75": 0.4371972776172598,
+        "p90": 0.5138623638640305,
+        "p95": 0.590452753014025,
+        "min": 0.3284702565170278,
+        "max": 0.7312021317781097
+      },
+      "attack_stats": {
+        "mean": 0.5559934636692152,
+        "std": 0.09741883398742468,
+        "median": 0.6242374926792302,
+        "p25": 0.46642737408562257,
+        "p75": 0.6364601621340384,
+        "p90": 0.6714190847711595,
+        "p95": 0.6761267983122593,
+        "min": 0.35848116535938757,
+        "max": 0.7319615555745415
+      },
+      "roc_auc": 0.8872344583764029,
+      "pr_auc": 0.7762250080175975,
+      "score_separation": 0.248317,
+      "n_benign": 484485,
+      "n_attack": 321770,
+      "result_category": "REAL_DATA"
+    }
+  },
+  "other": {
+    "held_out_family": "other",
+    "held_out_scenarios": [
+      "WebAttacks-Thursday"
+    ],
+    "train_scenarios": [
+      "Botnet-Friday",
+      "Bruteforce-Tuesday",
+      "DDoS-Friday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday"
+    ],
+    "val_scenarios": [
+      "Benign-Monday"
+    ],
+    "test_scenarios": [
+      "WebAttacks-Thursday"
+    ],
+    "n_train": 1699159,
+    "n_val": 458831,
+    "n_test": 155820,
+    "train_classes": {
+      "benign": 1364810,
+      "ddos": 321770,
+      "brute_force": 9150,
+      "c2": 1437,
+      "exfiltration": 36,
+      "reconnaissance": 1956
+    },
+    "val_classes": {
+      "benign": 458831
+    },
+    "test_classes": {
+      "benign": 153677,
+      "other": 2143
+    },
+    "attack_prevalence": 0.013753,
+    "feasible": true,
+    "result_category": "REAL_DATA",
+    "threshold": 0.1,
+    "supervised_f1_macro": 0.16546014379123006,
+    "supervised_recall_macro": 0.16650290327548473,
+    "supervised_precision_macro": 0.1644303640203752,
+    "anomaly_f1": 0.02713293619391883,
+    "anomaly_recall": 1.0,
+    "anomaly_precision": 0.013753048389166987,
+    "anomaly_roc_auc": 0.7565515455264996,
+    "anomaly_pr_auc": 0.02687350190814082,
+    "anomaly_fpr": 1.0,
+    "novelty_ranking": {
+      "benign_stats": {
+        "mean": 0.3839094698172142,
+        "std": 0.06482397287956104,
+        "median": 0.3618782403479922,
+        "p25": 0.33997714260608103,
+        "p75": 0.402263323270768,
+        "p90": 0.45097744079868085,
+        "p95": 0.53104650139388,
+        "min": 0.32677770060806705,
+        "max": 0.7186640175703631
+      },
+      "attack_stats": {
+        "mean": 0.41139797044728443,
+        "std": 0.03416022546455623,
+        "median": 0.40775262894242137,
+        "p25": 0.40700660467079464,
+        "p75": 0.4090149686977481,
+        "p90": 0.4124690937105309,
+        "p95": 0.4134661946927543,
+        "min": 0.3556737770512033,
+        "max": 0.5938530356467847
+      },
+      "roc_auc": 0.7565515455264996,
+      "pr_auc": 0.027870125192680742,
+      "score_separation": 0.045874,
+      "n_benign": 153677,
+      "n_attack": 2143,
+      "result_category": "REAL_DATA"
+    }
+  },
+  "reconnaissance": {
+    "held_out_family": "reconnaissance",
+    "held_out_scenarios": [
+      "Portscan-Friday"
+    ],
+    "train_scenarios": [
+      "Botnet-Friday",
+      "Bruteforce-Tuesday",
+      "DDoS-Friday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "WebAttacks-Thursday"
+    ],
+    "val_scenarios": [
+      "Benign-Monday"
+    ],
+    "test_scenarios": [
+      "Portscan-Friday"
+    ],
+    "n_train": 1735457,
+    "n_val": 458831,
+    "n_test": 119522,
+    "train_classes": {
+      "benign": 1400921,
+      "ddos": 321770,
+      "brute_force": 9150,
+      "c2": 1437,
+      "exfiltration": 36,
+      "other": 2143
+    },
+    "val_classes": {
+      "benign": 458831
+    },
+    "test_classes": {
+      "benign": 117566,
+      "reconnaissance": 1956
+    },
+    "attack_prevalence": 0.016365,
+    "feasible": true,
+    "result_category": "REAL_DATA",
+    "threshold": 0.1,
+    "supervised_f1_macro": 0.16490123305275423,
+    "supervised_recall_macro": 0.16571826321668962,
+    "supervised_precision_macro": 0.16409221966742749,
+    "anomaly_f1": 0.03220336192561616,
+    "anomaly_recall": 1.0,
+    "anomaly_precision": 0.016365187998862135,
+    "anomaly_roc_auc": 0.7799962237632034,
+    "anomaly_pr_auc": 0.03808656798666665,
+    "anomaly_fpr": 1.0,
+    "novelty_ranking": {
+      "benign_stats": {
+        "mean": 0.3836958890856445,
+        "std": 0.06326000838335996,
+        "median": 0.3636188936897001,
+        "p25": 0.33880923952660447,
+        "p75": 0.40604838619015515,
+        "p90": 0.4496939133800357,
+        "p95": 0.5263360753636382,
+        "min": 0.32598213124187436,
+        "max": 0.7109724425324377
+      },
+      "attack_stats": {
+        "mean": 0.43253048450877274,
+        "std": 0.07258583585668657,
+        "median": 0.4058122647212546,
+        "p25": 0.3954142056764587,
+        "p75": 0.41324769546391704,
+        "p90": 0.5515239148116989,
+        "p95": 0.6370628550503528,
+        "min": 0.35408486582741244,
+        "max": 0.6869666984524726
+      },
+      "roc_auc": 0.7799962237632034,
+      "pr_auc": 0.04104171195584947,
+      "score_separation": 0.042193,
+      "n_benign": 117566,
+      "n_attack": 1956,
+      "result_category": "REAL_DATA"
+    }
+  },
+  "exfiltration": {
+    "held_out_family": "exfiltration",
+    "held_out_scenarios": [
+      "Infiltration-Thursday"
+    ],
+    "train_scenarios": [],
+    "val_scenarios": [],
+    "test_scenarios": [],
+    "n_train": 0,
+    "n_val": 0,
+    "n_test": 36,
+    "train_classes": {},
+    "val_classes": {},
+    "test_classes": {},
+    "attack_prevalence": 0.0,
+    "feasible": false,
+    "result_category": "NOT_APPLICABLE"
+  }
+}

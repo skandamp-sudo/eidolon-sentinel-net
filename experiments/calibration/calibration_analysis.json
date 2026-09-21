@@ -1,0 +1,225 @@
+{
+  "XGBoost": {
+    "model_name": "xgboost",
+    "score_type": "classification_score",
+    "calibration_applicable": true,
+    "inapplicable_reason": "",
+    "brier_score": 0.14134618169043206,
+    "expected_calibration_error": 0.17232377713576724,
+    "n_bins": 10,
+    "reliability_diagram": [
+      {
+        "bin_center": 0.05,
+        "observed_frequency": 0.1526798531448099,
+        "predicted_mean": 0.0008568428418984158,
+        "count": 314868
+      },
+      {
+        "bin_center": 0.15000000000000002,
+        "observed_frequency": 0.02586206896551724,
+        "predicted_mean": 0.1434005756830347,
+        "count": 580
+      },
+      {
+        "bin_center": 0.25,
+        "observed_frequency": 0.10144927536231885,
+        "predicted_mean": 0.24107339254755905,
+        "count": 138
+      },
+      {
+        "bin_center": 0.35000000000000003,
+        "observed_frequency": 0.15,
+        "predicted_mean": 0.3392775063713392,
+        "count": 60
+      },
+      {
+        "bin_center": 0.45,
+        "observed_frequency": 0.9673306772908367,
+        "predicted_mean": 0.4957313370894626,
+        "count": 1255
+      },
+      {
+        "bin_center": 0.55,
+        "observed_frequency": 0.9981403365537261,
+        "predicted_mean": 0.5510060202320044,
+        "count": 22047
+      },
+      {
+        "bin_center": 0.6500000000000001,
+        "observed_frequency": 0.9979242345614946,
+        "predicted_mean": 0.6440078982815833,
+        "count": 17343
+      },
+      {
+        "bin_center": 0.75,
+        "observed_frequency": 0.9989206243772832,
+        "predicted_mean": 0.7437547637562307,
+        "count": 12044
+      },
+      {
+        "bin_center": 0.8500000000000001,
+        "observed_frequency": 0.9710050141704818,
+        "predicted_mean": 0.8355255375923039,
+        "count": 4587
+      },
+      {
+        "bin_center": 0.95,
+        "observed_frequency": 0.9978260869565218,
+        "predicted_mean": 0.9863775170343249,
+        "count": 24380
+      }
+    ],
+    "n_samples": 397302,
+    "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+  },
+  "RandomForest": {
+    "model_name": "randomforest",
+    "score_type": "classification_score",
+    "calibration_applicable": true,
+    "inapplicable_reason": "",
+    "brier_score": 0.13967222611238156,
+    "expected_calibration_error": 0.17335327446792653,
+    "n_bins": 10,
+    "reliability_diagram": [
+      {
+        "bin_center": 0.05,
+        "observed_frequency": 0.1523825538489849,
+        "predicted_mean": 0.0037855072656002627,
+        "count": 315187
+      },
+      {
+        "bin_center": 0.15000000000000002,
+        "observed_frequency": 0.16104868913857678,
+        "predicted_mean": 0.13111733157278657,
+        "count": 267
+      },
+      {
+        "bin_center": 0.25,
+        "observed_frequency": 0.16666666666666666,
+        "predicted_mean": 0.24605974750136306,
+        "count": 132
+      },
+      {
+        "bin_center": 0.35000000000000003,
+        "observed_frequency": 0.839622641509434,
+        "predicted_mean": 0.37467237431063466,
+        "count": 424
+      },
+      {
+        "bin_center": 0.45,
+        "observed_frequency": 0.9939475453934096,
+        "predicted_mean": 0.45224951831233823,
+        "count": 11896
+      },
+      {
+        "bin_center": 0.55,
+        "observed_frequency": 0.99584622182943,
+        "predicted_mean": 0.5326165845312809,
+        "count": 11315
+      },
+      {
+        "bin_center": 0.6500000000000001,
+        "observed_frequency": 0.969439728353141,
+        "predicted_mean": 0.6663458736636939,
+        "count": 589
+      },
+      {
+        "bin_center": 0.75,
+        "observed_frequency": 0.9985695485495222,
+        "predicted_mean": 0.7662631245993741,
+        "count": 17477
+      },
+      {
+        "bin_center": 0.8500000000000001,
+        "observed_frequency": 0.9991561918063314,
+        "predicted_mean": 0.8380388044516796,
+        "count": 34368
+      },
+      {
+        "bin_center": 0.95,
+        "observed_frequency": 0.9822914822029396,
+        "predicted_mean": 0.9183942337227038,
+        "count": 5647
+      }
+    ],
+    "n_samples": 397302,
+    "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+  },
+  "LogisticRegression": {
+    "model_name": "logisticregression",
+    "score_type": "classification_score",
+    "calibration_applicable": true,
+    "inapplicable_reason": "",
+    "brier_score": 0.07269288411917471,
+    "expected_calibration_error": 0.08787286251007413,
+    "n_bins": 10,
+    "reliability_diagram": [
+      {
+        "bin_center": 0.05,
+        "observed_frequency": 0.006198394104133021,
+        "predicted_mean": 0.0067961695585686075,
+        "count": 263778
+      },
+      {
+        "bin_center": 0.15000000000000002,
+        "observed_frequency": 0.8829539274337659,
+        "predicted_mean": 0.16789260343125686,
+        "count": 25742
+      },
+      {
+        "bin_center": 0.25,
+        "observed_frequency": 0.36946564885496186,
+        "predicted_mean": 0.2341338014310906,
+        "count": 655
+      },
+      {
+        "bin_center": 0.35000000000000003,
+        "observed_frequency": 0.9733770491803279,
+        "predicted_mean": 0.32415641506228726,
+        "count": 22875
+      },
+      {
+        "bin_center": 0.45,
+        "observed_frequency": 0.6111111111111112,
+        "predicted_mean": 0.4684175574403409,
+        "count": 576
+      },
+      {
+        "bin_center": 0.55,
+        "observed_frequency": 0.8604878048780488,
+        "predicted_mean": 0.5253731038344407,
+        "count": 1025
+      },
+      {
+        "bin_center": 0.6500000000000001,
+        "observed_frequency": 0.028376844494892167,
+        "predicted_mean": 0.6591529900332123,
+        "count": 881
+      },
+      {
+        "bin_center": 0.75,
+        "observed_frequency": 0.5283842794759825,
+        "predicted_mean": 0.7551519458757202,
+        "count": 687
+      },
+      {
+        "bin_center": 0.8500000000000001,
+        "observed_frequency": 0.9424836601307189,
+        "predicted_mean": 0.8641374949990187,
+        "count": 765
+      },
+      {
+        "bin_center": 0.95,
+        "observed_frequency": 0.9989790582434822,
+        "predicted_mean": 0.9963571180018643,
+        "count": 80318
+      }
+    ],
+    "n_samples": 397302,
+    "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+  },
+  "IsolationForest": {
+    "applicable": false,
+    "reason": "Model 'isolation_forest' produces ANOMALY SCORES, not probabilities. Calibration analysis (Brier score, ECE, reliability diagrams) is mathematically inapplicable to anomaly scores."
+  }
+}

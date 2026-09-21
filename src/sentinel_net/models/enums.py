@@ -13,10 +13,14 @@ class ThreatType(str, Enum):
     BENIGN = "benign"
     DDOS = "ddos"
     SCAN = "scan"
+    RECONNAISSANCE = "reconnaissance"
     EXFILTRATION = "exfiltration"
     C2 = "c2"
+    DNS_TUNNELING = "dns_tunneling"
     BRUTE_FORCE = "brute_force"
+    OTHER = "other"
     UNKNOWN = "unknown"
+    UNSUPPORTED = "unsupported"
 
 class Direction(str, Enum):
     """Direction of traffic flow."""

@@ -1,0 +1,74 @@
+{
+  "train_distribution": {
+    "benign": {
+      "count": 1555790,
+      "proportion": 0.8836261734049417
+    },
+    "brute_force": {
+      "count": 9150,
+      "proportion": 0.005196832147433276
+    },
+    "ddos": {
+      "count": 193756,
+      "proportion": 0.1100456185309379
+    },
+    "exfiltration": {
+      "count": 36,
+      "proportion": 2.0446552711212888e-05
+    },
+    "reconnaissance": {
+      "count": 1956,
+      "proportion": 0.0011109293639759003
+    }
+  },
+  "test_distribution": {
+    "benign": {
+      "count": 267851,
+      "proportion": 0.6741748090872938
+    },
+    "c2": {
+      "count": 1437,
+      "proportion": 0.0036168959632722716
+    },
+    "ddos": {
+      "count": 128014,
+      "proportion": 0.3222082949494339
+    }
+  },
+  "imbalance_ratio": 43216.38888888889,
+  "per_class_metrics": {
+    "benign": {
+      "support": 267851,
+      "precision": 0.8475743993411362,
+      "recall": 0.9989695763689513,
+      "f1": 0.9170656640607596
+    },
+    "brute_force": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "c2": {
+      "support": 1437,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "ddos": {
+      "support": 128014,
+      "precision": 0.992127356709177,
+      "recall": 0.2667833205743122,
+      "f1": 0.42049533049736215
+    },
+    "reconnaissance": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "macro_f1": 0.2675121989116243,
+  "weighted_f1": 0.7537496524624285,
+  "notes": "Class imbalance analysis. Accuracy alone is misleading on imbalanced datasets. Per-class recall identifies which threat classes are under-detected."
+}

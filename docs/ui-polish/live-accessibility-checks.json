@@ -1,0 +1,19 @@
+{
+  "source": "Synthetic raw packets via FakeCapture; actual SensorService, approved bundle, inference, SQLite, REST and authenticated WebSocket. No real-interface capture.",
+  "websocketEventReceived": true,
+  "liveStateRendered": true,
+  "flowOpened": true,
+  "focus": {
+    "outline": "solid",
+    "width": "2px",
+    "visible": true
+  },
+  "motion": "none",
+  "contrast": {
+    "--text-primary": 13.92,
+    "--text-secondary": 9.48,
+    "--text-muted": 7.66,
+    "--accent-primary": 8.31
+  },
+  "skipLink": "Skip to content"
+}

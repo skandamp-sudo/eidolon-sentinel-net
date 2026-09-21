@@ -1,0 +1,25 @@
+{
+  "result_category": "REAL_DATA",
+  "dataset": "UNSW-NB15",
+  "total_rows": 257673,
+  "features_available": 17,
+  "features_missing": 35,
+  "missing_percentage": 67.3076923076923,
+  "availability_summary": {
+    "DIRECT": 6,
+    "DERIVED": 8,
+    "PROXY": 3,
+    "MISSING": 35
+  },
+  "class_distribution": {
+    "benign": 93000,
+    "c2": 3840,
+    "ddos": 16353,
+    "other": 127816,
+    "reconnaissance": 16664
+  },
+  "scientific_decision": "C",
+  "decision_rationale": "UNSW-NB15 has only 17/52 features (33%) mappable to the Sentinel-NET schema. 35 features (67%) are missing due to fundamentally different feature extraction tools (Argus/Bro vs CICFlowMeter). After imputation, 35 features become constant values, providing zero discriminative signal. Direct evaluation with CICIDS-trained models would produce misleading metrics. This is classified as a DOCUMENTATION-ONLY LIMITATION. Future work: train UNSW-specific model on the 17-feature subset or identify a scientifically defensible common feature set.",
+  "cross_dataset_valid": false,
+  "notes": "Decision based on methodological validity, NOT performance optimization. A model evaluated on 67% constant features cannot produce meaningful metrics."
+}

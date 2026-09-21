@@ -1,0 +1,128 @@
+[
+  {
+    "group_name": "basic",
+    "features_removed": [
+      "duration_sec",
+      "total_packets",
+      "total_bytes",
+      "packets_per_sec",
+      "bytes_per_sec"
+    ],
+    "n_features_remaining": 36,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.24554813301664247,
+    "delta_f1": -0.021964065894981843,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3671936859283376,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.23665252180186463
+  },
+  {
+    "group_name": "directional",
+    "features_removed": [
+      "forward_packets",
+      "reverse_packets",
+      "forward_bytes",
+      "reverse_bytes",
+      "fwd_rev_packet_ratio",
+      "fwd_rev_byte_ratio"
+    ],
+    "n_features_remaining": 35,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.33744732561533375,
+    "delta_f1": 0.06993512670370944,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3671644509522783,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.3258491301654448
+  },
+  {
+    "group_name": "packet_size_stats",
+    "features_removed": [
+      "pkt_size_mean",
+      "pkt_size_std",
+      "pkt_size_min",
+      "pkt_size_max",
+      "pkt_size_median",
+      "pkt_size_p25",
+      "pkt_size_p75",
+      "pkt_size_p90"
+    ],
+    "n_features_remaining": 37,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.275415241811787,
+    "delta_f1": 0.007903042900162693,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3681481340933145,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.2596590356190075
+  },
+  {
+    "group_name": "inter_arrival_time",
+    "features_removed": [
+      "iat_mean",
+      "iat_std",
+      "iat_min",
+      "iat_max",
+      "iat_median",
+      "fwd_iat_mean",
+      "fwd_iat_std",
+      "fwd_iat_min",
+      "fwd_iat_max",
+      "rev_iat_mean",
+      "rev_iat_std",
+      "rev_iat_min",
+      "rev_iat_max"
+    ],
+    "n_features_remaining": 29,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.24495345080671305,
+    "delta_f1": -0.022558748104911264,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3670843423587013,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.23623409344379306
+  },
+  {
+    "group_name": "tcp_flags",
+    "features_removed": [
+      "syn_count",
+      "syn_ack_count",
+      "ack_count",
+      "fin_count",
+      "rst_count",
+      "psh_count",
+      "syn_ratio",
+      "ack_ratio",
+      "fin_ratio",
+      "rst_ratio",
+      "psh_ratio"
+    ],
+    "n_features_remaining": 31,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.32209518184501384,
+    "delta_f1": 0.054582982933389534,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3686249626128736,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.30617951108909586
+  },
+  {
+    "group_name": "protocol",
+    "features_removed": [
+      "protocol",
+      "ip_version",
+      "is_tcp",
+      "is_udp",
+      "is_icmp"
+    ],
+    "n_features_remaining": 37,
+    "full_f1": 0.2675121989116243,
+    "ablated_f1": 0.325171345915462,
+    "delta_f1": 0.057659147003837674,
+    "full_precision": 0.36794035121006263,
+    "ablated_precision": 0.3687389142365571,
+    "full_recall": 0.2531505793886527,
+    "ablated_recall": 0.3098155788579583
+  }
+]

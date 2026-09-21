@@ -1,0 +1,26 @@
+{
+  "category_counts": {
+    "NOVEL_ANOMALY": 12915,
+    "UNCERTAIN": 113092,
+    "BENIGN": 49772,
+    "KNOWN_ATTACK": 259
+  },
+  "tp_known_attack": 0,
+  "tp_novel_anomaly": 43,
+  "tn_benign": 49772,
+  "fp_known": 259,
+  "fp_novel": 12872,
+  "fn_missed_as_benign": 0,
+  "n_uncertain": 113092,
+  "binary_precision": 0.0032640048580537422,
+  "binary_recall": 0.029923451635351428,
+  "binary_f1": 0.005885976319211553,
+  "n_total": 176038,
+  "thresholds": {
+    "tau_known": 0.5,
+    "tau_anomaly": 0.5,
+    "tau_benign": 0.3438339092814829
+  },
+  "result_category": "REAL_DATA",
+  "attack_prevalence": 0.008163010259148593
+}

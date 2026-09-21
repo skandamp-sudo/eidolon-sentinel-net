@@ -1,0 +1,22 @@
+{
+  "total_false_positives": 174601,
+  "total_benign": 174601,
+  "fpr": 1.0,
+  "threshold": 0.1,
+  "by_scenario": {
+    "Botnet-Friday": {
+      "false_positives": 174601,
+      "total_benign": 174601,
+      "fp_rate": 1.0
+    }
+  },
+  "by_score_range": {
+    "0.0-0.4": 127782,
+    "0.4-0.5": 33792,
+    "0.5-0.6": 8644,
+    "0.6-0.7": 4284,
+    "0.7-1.0": 99
+  },
+  "result_category": "REAL_DATA",
+  "attack_prevalence": 0.008163010259148593
+}

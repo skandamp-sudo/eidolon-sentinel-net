@@ -1,0 +1,32 @@
+{
+  "n_seeds": 5,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "f1_macro": {
+    "mean": 0.2675121989116243,
+    "std": 0.0,
+    "min": 0.2675121989116243,
+    "max": 0.2675121989116243,
+    "values": [
+      0.2675121989116243,
+      0.2675121989116243,
+      0.2675121989116243,
+      0.2675121989116243,
+      0.2675121989116243
+    ]
+  },
+  "precision_macro": {
+    "mean": 0.36794035121006263,
+    "std": 0.0
+  },
+  "recall_macro": {
+    "mean": 0.2531505793886527,
+    "std": 0.0
+  },
+  "notes": "Model stability across random seeds. High std indicates model instability \u2014 predictions depend on initialization."
+}

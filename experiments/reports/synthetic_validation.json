@@ -1,0 +1,602 @@
+{
+  "data_source": "synthetic_fixture",
+  "dataset_id": "synthetic_validation",
+  "model_comparison": {
+    "result_category": "software_test",
+    "xgboost": {
+      "f1_macro": 0.4897959183673469,
+      "f1_weighted": 0.9795918367346939,
+      "precision_macro": 0.5,
+      "recall_macro": 0.48,
+      "accuracy": 0.96,
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.03,
+          "fnr": 0.0
+        },
+        "c2": {
+          "precision": 1.0,
+          "recall": 0.96,
+          "f1-score": 0.9795918367346939,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.04
+        },
+        "ddos": {
+          "precision": 1.0,
+          "recall": 0.96,
+          "f1-score": 0.9795918367346939,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.04
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.01,
+          "fnr": 0.0
+        }
+      }
+    },
+    "random_forest": {
+      "f1_macro": 0.4897427887118609,
+      "f1_weighted": 0.9794855774237218,
+      "precision_macro": 0.5,
+      "recall_macro": 0.48,
+      "accuracy": 0.96,
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.01,
+          "fnr": 0.0
+        },
+        "c2": {
+          "precision": 1.0,
+          "recall": 0.98,
+          "f1-score": 0.98989898989899,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.02
+        },
+        "ddos": {
+          "precision": 1.0,
+          "recall": 0.94,
+          "f1-score": 0.9690721649484536,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.06
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.03,
+          "fnr": 0.0
+        }
+      }
+    },
+    "logistic_regression": {
+      "f1_macro": 0.4897427887118609,
+      "f1_weighted": 0.9794855774237218,
+      "precision_macro": 0.5,
+      "recall_macro": 0.48,
+      "accuracy": 0.96,
+      "per_class": {
+        "benign": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.02,
+          "fnr": 0.0
+        },
+        "c2": {
+          "precision": 1.0,
+          "recall": 0.98,
+          "f1-score": 0.98989898989899,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.02
+        },
+        "ddos": {
+          "precision": 1.0,
+          "recall": 0.94,
+          "f1-score": 0.9690721649484536,
+          "support": 50.0,
+          "fpr": 0.0,
+          "fnr": 0.06
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.02,
+          "fnr": 0.0
+        }
+      }
+    }
+  },
+  "class_imbalance": {},
+  "false_positives": {},
+  "false_negatives": {},
+  "threshold_sensitivity": {
+    "result_category": "software_test",
+    "default_threshold": {
+      "threshold": 0.5,
+      "precision": 1.0,
+      "recall": 0.19,
+      "f1": 0.31932773109243695,
+      "roc_auc": null
+    }
+  },
+  "feature_ablation": {},
+  "robustness": {},
+  "calibration": {
+    "result_category": "software_test",
+    "isolation_forest": {
+      "model_name": "isolation_forest",
+      "score_type": "anomaly_score",
+      "calibration_applicable": false,
+      "inapplicable_reason": "Model 'isolation_forest' produces ANOMALY SCORES, not probabilities. Calibration analysis (Brier score, ECE, reliability diagrams) is mathematically inapplicable to anomaly scores.",
+      "brier_score": null,
+      "expected_calibration_error": null,
+      "n_bins": 10,
+      "reliability_diagram": [],
+      "n_samples": 0,
+      "notes": "Calibration analysis skipped \u2014 anomaly scores are not probabilities."
+    },
+    "xgboost": {
+      "model_name": "xgboost",
+      "score_type": "classification_score",
+      "calibration_applicable": true,
+      "inapplicable_reason": "",
+      "brier_score": 0.011895634506871281,
+      "expected_calibration_error": 0.02638034462928772,
+      "n_bins": 10,
+      "reliability_diagram": [
+        {
+          "bin_center": 0.05,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.15000000000000002,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.25,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.2916901111602783,
+          "count": 1
+        },
+        {
+          "bin_center": 0.35000000000000003,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.45,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.4712270200252533,
+          "count": 2
+        },
+        {
+          "bin_center": 0.55,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.6500000000000001,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.6558689475059509,
+          "count": 1
+        },
+        {
+          "bin_center": 0.75,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.8500000000000001,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.95,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.9944995045661926,
+          "count": 96
+        }
+      ],
+      "n_samples": 100,
+      "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+    },
+    "random_forest": {
+      "model_name": "random_forest",
+      "score_type": "classification_score",
+      "calibration_applicable": true,
+      "inapplicable_reason": "",
+      "brier_score": 0.017405,
+      "expected_calibration_error": 0.1077,
+      "n_bins": 10,
+      "reliability_diagram": [
+        {
+          "bin_center": 0.05,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.15000000000000002,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.25,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.35000000000000003,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.45,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.55,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.6500000000000001,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.665,
+          "count": 4
+        },
+        {
+          "bin_center": 0.75,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.76,
+          "count": 7
+        },
+        {
+          "bin_center": 0.8500000000000001,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.8503999999999999,
+          "count": 25
+        },
+        {
+          "bin_center": 0.95,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.93734375,
+          "count": 64
+        }
+      ],
+      "n_samples": 100,
+      "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+    },
+    "logistic_regression": {
+      "model_name": "logistic_regression",
+      "score_type": "classification_score",
+      "calibration_applicable": true,
+      "inapplicable_reason": "",
+      "brier_score": 0.009256002154429888,
+      "expected_calibration_error": 0.02835896571212557,
+      "n_bins": 10,
+      "reliability_diagram": [
+        {
+          "bin_center": 0.05,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.15000000000000002,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.25,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.35000000000000003,
+          "observed_frequency": 0.0,
+          "predicted_mean": 0.0,
+          "count": 0
+        },
+        {
+          "bin_center": 0.45,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.4666423452199364,
+          "count": 1
+        },
+        {
+          "bin_center": 0.55,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.5541994264365162,
+          "count": 2
+        },
+        {
+          "bin_center": 0.6500000000000001,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.6566801203404131,
+          "count": 1
+        },
+        {
+          "bin_center": 0.75,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.727479424580399,
+          "count": 1
+        },
+        {
+          "bin_center": 0.8500000000000001,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.8690591449677824,
+          "count": 1
+        },
+        {
+          "bin_center": 0.95,
+          "observed_frequency": 1.0,
+          "predicted_mean": 0.992934505753254,
+          "count": 94
+        }
+      ],
+      "n_samples": 100,
+      "notes": "Calibration metrics computed on classification scores. These scores may or may not be well-calibrated depending on the model. Logistic Regression typically produces better-calibrated outputs than tree ensembles."
+    }
+  },
+  "unidirectional": {},
+  "ood": {
+    "result_category": "synthetic_robustness_test",
+    "n_total": 25,
+    "n_flagged_anomalous": 0,
+    "mean_anomaly_score": 0.38954648357241595,
+    "anomaly_score_std": 0.028816719475066102,
+    "notes": "SYNTHETIC ROBUSTNESS TEST. These samples are crafted inputs, not real traffic. Results indicate detector behaviour on out-of-distribution patterns, not real-world OOD performance.",
+    "samples": [
+      {
+        "description": "extreme_packet_sizes",
+        "anomaly_score": 0.4442658067740826,
+        "predicted_class": "c2",
+        "confidence_score": 0.7140762805938721,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_packet_sizes",
+        "anomaly_score": 0.44757504696775063,
+        "predicted_class": "c2",
+        "confidence_score": 0.7140762805938721,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_packet_sizes",
+        "anomaly_score": 0.44757504696775063,
+        "predicted_class": "c2",
+        "confidence_score": 0.7140762805938721,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_packet_sizes",
+        "anomaly_score": 0.4476281268885403,
+        "predicted_class": "c2",
+        "confidence_score": 0.7140762805938721,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_packet_sizes",
+        "anomaly_score": 0.44757504696775063,
+        "predicted_class": "c2",
+        "confidence_score": 0.7140762805938721,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_duration",
+        "anomaly_score": 0.3745407901335871,
+        "predicted_class": "benign",
+        "confidence_score": 0.8940466046333313,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_duration",
+        "anomaly_score": 0.3745407901335871,
+        "predicted_class": "benign",
+        "confidence_score": 0.8940466046333313,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_duration",
+        "anomaly_score": 0.3768217739226546,
+        "predicted_class": "benign",
+        "confidence_score": 0.8940466046333313,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_duration",
+        "anomaly_score": 0.37446653129545854,
+        "predicted_class": "benign",
+        "confidence_score": 0.8940466046333313,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "extreme_duration",
+        "anomaly_score": 0.3765895052074785,
+        "predicted_class": "benign",
+        "confidence_score": 0.8940466046333313,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "all_zero_features",
+        "anomaly_score": 0.3726884412968203,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "all_zero_features",
+        "anomaly_score": 0.3726884412968203,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "all_zero_features",
+        "anomaly_score": 0.3726884412968203,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "all_zero_features",
+        "anomaly_score": 0.3726884412968203,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "all_zero_features",
+        "anomaly_score": 0.3726884412968203,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "unusual_protocol",
+        "anomaly_score": 0.3793972592290189,
+        "predicted_class": "benign",
+        "confidence_score": 0.26601243019104004,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "unusual_protocol",
+        "anomaly_score": 0.3812306579447269,
+        "predicted_class": "benign",
+        "confidence_score": 0.26601243019104004,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "unusual_protocol",
+        "anomaly_score": 0.3793220375164534,
+        "predicted_class": "benign",
+        "confidence_score": 0.26601243019104004,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "unusual_protocol",
+        "anomaly_score": 0.3795559915727231,
+        "predicted_class": "benign",
+        "confidence_score": 0.26601243019104004,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "unusual_protocol",
+        "anomaly_score": 0.379480738388874,
+        "predicted_class": "benign",
+        "confidence_score": 0.26601243019104004,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "fully_asymmetric",
+        "anomaly_score": 0.37448942033135874,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "fully_asymmetric",
+        "anomaly_score": 0.37181956234592345,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "fully_asymmetric",
+        "anomaly_score": 0.3727326400810852,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "fully_asymmetric",
+        "anomaly_score": 0.37280655507874666,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      },
+      {
+        "description": "fully_asymmetric",
+        "anomaly_score": 0.37280655507874666,
+        "predicted_class": "benign",
+        "confidence_score": 0.2743382751941681,
+        "notes": "Flagged as anomalous: False. High anomaly score indicates novelty (unlike training data), not confirmed malice."
+      }
+    ]
+  },
+  "cross_scenario": {},
+  "model_stability": {},
+  "failure_taxonomy": {
+    "total_failures": 4,
+    "false_positives": 0,
+    "false_negatives": 4,
+    "failures_by_code": {
+      "F1": 0,
+      "F2": 0,
+      "F3": 4,
+      "F4": 0,
+      "F5": 0,
+      "F6": 0,
+      "F7": 0,
+      "F8": 0,
+      "F9": 4,
+      "F10": 0
+    },
+    "code_definitions": {
+      "F1": "Feature representation limitation",
+      "F2": "Insufficient directional visibility",
+      "F3": "Threshold limitation",
+      "F4": "Dataset bias",
+      "F5": "Model instability",
+      "F6": "Class imbalance",
+      "F7": "Out-of-distribution behaviour",
+      "F8": "Label ambiguity",
+      "F9": "Flow reconstruction limitation",
+      "F10": "Explanation limitation"
+    },
+    "n_instances_recorded": 4,
+    "notes": "Failure codes are assigned based on observable properties of misclassified samples. Multiple codes may apply to a single failure. F1 (feature representation limitation) is a fallback when no specific structural cause is identified.",
+    "result_category": "software_test"
+  },
+  "explainability_validation": {},
+  "attack_mapping_validation": {},
+  "timestamp": "2026-09-01T16:23:27.917073+00:00"
+}

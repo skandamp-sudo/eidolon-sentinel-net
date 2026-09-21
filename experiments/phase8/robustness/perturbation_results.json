@@ -1,0 +1,57 @@
+{
+  "timing_jitter": {
+    "perturbation_type": "timing_jitter",
+    "n_samples": 176038,
+    "classification_changed_count": 1139,
+    "classification_changed_pct": 0.6470193935400311,
+    "mean_score_change": 0.003990188706666231,
+    "max_score_change": 0.6041538715362549,
+    "n_details_recorded": 50,
+    "result_category": "ROBUSTNESS",
+    "attack_prevalence": 0.008163010259148593
+  },
+  "packet_size_noise": {
+    "perturbation_type": "packet_size_noise",
+    "n_samples": 176038,
+    "classification_changed_count": 8,
+    "classification_changed_pct": 0.0045444733523443805,
+    "mean_score_change": 0.0003821014834102243,
+    "max_score_change": 0.420369029045105,
+    "n_details_recorded": 8,
+    "result_category": "ROBUSTNESS",
+    "attack_prevalence": 0.008163010259148593
+  },
+  "flow_duration_perturbation": {
+    "perturbation_type": "flow_duration_perturbation",
+    "n_samples": 176038,
+    "classification_changed_count": 36,
+    "classification_changed_pct": 0.02045013008554971,
+    "mean_score_change": 6.507091893581674e-05,
+    "max_score_change": 0.4454917907714844,
+    "n_details_recorded": 36,
+    "result_category": "ROBUSTNESS",
+    "attack_prevalence": 0.008163010259148593
+  },
+  "directional_imbalance": {
+    "perturbation_type": "directional_imbalance",
+    "n_samples": 176038,
+    "classification_changed_count": 76,
+    "classification_changed_pct": 0.04317249684727161,
+    "mean_score_change": 0.0026702783070504665,
+    "max_score_change": 0.4977647662162781,
+    "n_details_recorded": 50,
+    "result_category": "ROBUSTNESS",
+    "attack_prevalence": 0.008163010259148593
+  },
+  "missing_metadata_20pct": {
+    "perturbation_type": "missing_metadata_20pct",
+    "n_samples": 176038,
+    "classification_changed_count": 1351,
+    "classification_changed_pct": 0.7674479373771572,
+    "mean_score_change": 0.007626382168382406,
+    "max_score_change": 0.5450411438941956,
+    "n_details_recorded": 50,
+    "result_category": "ROBUSTNESS",
+    "attack_prevalence": 0.008163010259148593
+  }
+}

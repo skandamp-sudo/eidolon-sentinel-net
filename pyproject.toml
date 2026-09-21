@@ -17,6 +17,14 @@ dependencies = [
     "pydantic>=2.10",
     "pydantic-settings>=2.7",
     "httpx>=0.28",
+    "scikit-learn>=1.5",
+    "xgboost>=2.1",
+    "joblib>=1.4",
+]
+
+[project.optional-dependencies]
+explainability = [
+    "shap>=0.43",
 ]
 
 [project.scripts]

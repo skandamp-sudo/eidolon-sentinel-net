@@ -1,0 +1,8 @@
+{
+  "result_category": "REAL_DATA",
+  "attack_prevalence": 0.008163010259148593,
+  "supervised_f1_macro": 0.1990313346404893,
+  "anomaly_f1": 0.016193830116917874,
+  "anomaly_precision": 0.008163010259148593,
+  "anomaly_recall": 1.0
+}

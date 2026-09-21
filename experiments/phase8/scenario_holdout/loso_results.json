@@ -1,0 +1,50 @@
+{
+  "Benign-Monday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.0,
+    "xgb_f1_macro": 0.2496887687243391,
+    "iforest_f1": 0.0
+  },
+  "Botnet-Friday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.008163010259148593,
+    "xgb_f1_macro": 0.1658723499787865,
+    "iforest_f1": 0.006362979031091829
+  },
+  "Bruteforce-Tuesday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.023478756216096932,
+    "xgb_f1_macro": 0.16451018157275257,
+    "iforest_f1": 0.000214190093708166
+  },
+  "DDoS-Friday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.5785577409791018,
+    "xgb_f1_macro": 0.2894863092673894,
+    "iforest_f1": 0.2743877175214069
+  },
+  "DoS-Wednesday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.3312119331750403,
+    "xgb_f1_macro": 0.1340134684473806,
+    "iforest_f1": 0.8062192286018905
+  },
+  "Infiltration-Thursday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.00017338534893801473,
+    "xgb_f1_macro": 0.16647137959467082,
+    "iforest_f1": 0.0046900648792308295
+  },
+  "Portscan-Friday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.016365187998862135,
+    "xgb_f1_macro": 0.1979220713267003,
+    "iforest_f1": 0.04981920449979912
+  },
+  "WebAttacks-Thursday": {
+    "result_category": "REAL_DATA",
+    "attack_prevalence": 0.013753048389166987,
+    "xgb_f1_macro": 0.16552149315536527,
+    "iforest_f1": 0.01383756584637157
+  }
+}

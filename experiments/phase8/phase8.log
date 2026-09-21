@@ -1,0 +1,39 @@
+2026-09-02 00:59:22,278 [INFO] ======================================================================
+2026-09-02 00:59:22,278 [INFO] PHASE 1: PRE-FLIGHT SMOKE TEST
+2026-09-02 00:59:22,279 [INFO] ======================================================================
+2026-09-02 00:59:28,870 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/smoke_test.json (128 bytes)
+2026-09-02 01:00:09,432 [INFO] ======================================================================
+2026-09-02 01:00:09,432 [INFO] EIDOLON // SENTINEL-NET — Phase 8 Execution
+2026-09-02 01:00:09,432 [INFO] Timestamp: 2026-09-01T19:30:09.431263+00:00
+2026-09-02 01:00:09,432 [INFO] Seed: 42
+2026-09-02 01:00:09,432 [INFO] ======================================================================
+2026-09-02 01:00:09,432 [INFO] ======================================================================
+2026-09-02 01:00:09,432 [INFO] PHASE 1: PRE-FLIGHT SMOKE TEST
+2026-09-02 01:00:09,432 [INFO] ======================================================================
+2026-09-02 01:00:16,052 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/smoke_test.json (128 bytes)
+2026-09-02 01:00:16,053 [INFO] ─── EXPERIMENT A: KNOWN VS UNSEEN (C2 HELD OUT) ───
+2026-09-02 01:01:44,173 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/known_vs_unseen.json (234 bytes)
+2026-09-02 01:01:44,286 [INFO] ─── EXPERIMENT B: LOAO ───
+2026-09-02 01:03:08,618 [INFO]   brute_force: sup_F1=0.1644 anomaly_F1=0.0459 ROC-AUC=0.7270
+2026-09-02 01:04:31,983 [INFO]   c2: sup_F1=0.1990 anomaly_F1=0.0162 ROC-AUC=0.7170
+2026-09-02 01:05:36,964 [INFO]   ddos: sup_F1=0.1316 anomaly_F1=0.5705 ROC-AUC=0.8872
+2026-09-02 01:06:58,732 [INFO]   other: sup_F1=0.1655 anomaly_F1=0.0271 ROC-AUC=0.7566
+2026-09-02 01:08:20,730 [INFO]   reconnaissance: sup_F1=0.1649 anomaly_F1=0.0322 ROC-AUC=0.7800
+2026-09-02 01:08:20,732 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/loao_results.json (11,464 bytes)
+2026-09-02 01:08:20,844 [INFO] ─── EXPERIMENT C: LOSO ───
+2026-09-02 01:21:15,687 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/scenario_holdout/loso_results.json (1,487 bytes)
+2026-09-02 01:21:15,788 [INFO] ─── EXPERIMENT D: SUPERVISED VS ANOMALY ───
+2026-09-02 01:21:15,790 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/supervised_vs_anomaly.json (2,422 bytes)
+2026-09-02 01:21:15,790 [INFO] ─── EXPERIMENT E: THRESHOLD ANALYSIS ───
+2026-09-02 01:21:53,410 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/threshold_analysis.json (6,717 bytes)
+2026-09-02 01:21:53,519 [INFO] ─── EXPERIMENT F: NOVELTY RANKING ───
+2026-09-02 01:21:53,520 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/novelty_ranking.json (4,559 bytes)
+2026-09-02 01:21:53,520 [INFO] ─── EXPERIMENT G: FUSION ───
+2026-09-02 01:23:12,923 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/fusion/fusion_results.json (622 bytes)
+2026-09-02 01:23:13,030 [INFO] ─── EXPERIMENT H: FP ANALYSIS ───
+2026-09-02 01:23:50,757 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/metrics/fp_analysis.json (445 bytes)
+2026-09-02 01:23:50,854 [INFO] ─── EXPERIMENT I: ROBUSTNESS ───
+2026-09-02 01:25:12,327 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/robustness/perturbation_results.json (2,034 bytes)
+2026-09-02 01:25:12,471 [INFO] ─── EXPERIMENT J: REPRODUCIBILITY MANIFESTS ───
+2026-09-02 01:25:12,549 [INFO]   Saved: /Users/skandamp/Desktop/Eidolon Sentinel-NET/experiments/phase8/manifests/phase8_manifest.json (950 bytes)
+2026-09-02 01:25:12,549 [INFO] Phase 8 complete in 1503.0s

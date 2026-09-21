@@ -1,0 +1,7 @@
+{
+  "result_category": "SMOKE_TEST",
+  "n_samples": 1746,
+  "n_folds": 6,
+  "status": "PASS",
+  "f1_macro": 0.9336427211270814
+}

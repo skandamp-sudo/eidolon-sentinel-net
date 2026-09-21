@@ -1,0 +1,425 @@
+{
+  "result_category": "REAL_DATA",
+  "total_false_positives": 276,
+  "total_benign_samples": 267851,
+  "fpr": 0.0010304236310486054,
+  "examples": [
+    {
+      "index": 164263,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "pkt_size_std",
+          "z_score": 5.8673847506716585,
+          "value": 5.867384750671658
+        },
+        {
+          "feature": "pkt_size_mean",
+          "z_score": 5.788618033942305,
+          "value": 5.788618033942305
+        },
+        {
+          "feature": "pkt_size_max",
+          "z_score": 4.151604620932177,
+          "value": 4.151604620932177
+        },
+        {
+          "feature": "rst_count",
+          "z_score": 1.760411177494635,
+          "value": 1.760411177494635
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        }
+      ],
+      "confidence_score": 0.5345202088356018
+    },
+    {
+      "index": 183453,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "pkt_size_std",
+          "z_score": 5.8673847506716585,
+          "value": 5.867384750671658
+        },
+        {
+          "feature": "pkt_size_mean",
+          "z_score": 5.788618033942305,
+          "value": 5.788618033942305
+        },
+        {
+          "feature": "pkt_size_max",
+          "z_score": 4.151604620932177,
+          "value": 4.151604620932177
+        },
+        {
+          "feature": "rst_count",
+          "z_score": 1.760411177494635,
+          "value": 1.760411177494635
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        }
+      ],
+      "confidence_score": 0.5720056891441345
+    },
+    {
+      "index": 191682,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "pkt_size_std",
+          "z_score": 5.8673847506716585,
+          "value": 5.867384750671658
+        },
+        {
+          "feature": "pkt_size_mean",
+          "z_score": 5.788618033942305,
+          "value": 5.788618033942305
+        },
+        {
+          "feature": "pkt_size_max",
+          "z_score": 4.151604620932177,
+          "value": 4.151604620932177
+        },
+        {
+          "feature": "rst_count",
+          "z_score": 1.760411177494635,
+          "value": 1.760411177494635
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        }
+      ],
+      "confidence_score": 0.5042011737823486
+    },
+    {
+      "index": 196933,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "rst_count",
+          "z_score": 4.463511710256777,
+          "value": 4.463511710256777
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        },
+        {
+          "feature": "ack_ratio",
+          "z_score": 0.9556067975908645,
+          "value": -0.9556067975908644
+        }
+      ],
+      "confidence_score": 0.9984527826309204
+    },
+    {
+      "index": 226010,
+      "predicted_class": "brute_force",
+      "most_deviated_features": [
+        {
+          "feature": "syn_count",
+          "z_score": 7.841209997081331,
+          "value": 7.841209997081331
+        },
+        {
+          "feature": "fwd_iat_max",
+          "z_score": 4.854371371044264,
+          "value": 4.854371371044265
+        },
+        {
+          "feature": "syn_ack_count",
+          "z_score": 2.18494703125485,
+          "value": 2.1849470312548505
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        }
+      ],
+      "confidence_score": 0.6957870125770569
+    },
+    {
+      "index": 246308,
+      "predicted_class": "brute_force",
+      "most_deviated_features": [
+        {
+          "feature": "syn_count",
+          "z_score": 7.841209997081331,
+          "value": 7.841209997081331
+        },
+        {
+          "feature": "fwd_iat_max",
+          "z_score": 4.854371371044264,
+          "value": 4.854371371044265
+        },
+        {
+          "feature": "syn_ack_count",
+          "z_score": 2.18494703125485,
+          "value": 2.1849470312548505
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        }
+      ],
+      "confidence_score": 0.6497159600257874
+    },
+    {
+      "index": 416027,
+      "predicted_class": "brute_force",
+      "most_deviated_features": [
+        {
+          "feature": "fwd_iat_max",
+          "z_score": 4.854371371044264,
+          "value": 4.854371371044265
+        },
+        {
+          "feature": "syn_count",
+          "z_score": 3.831808538693581,
+          "value": 3.831808538693581
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        },
+        {
+          "feature": "ack_ratio",
+          "z_score": 0.9556067975908645,
+          "value": -0.9556067975908644
+        }
+      ],
+      "confidence_score": 0.7064416408538818
+    },
+    {
+      "index": 468864,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "rst_count",
+          "z_score": 6.085372029914062,
+          "value": 6.085372029914062
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        },
+        {
+          "feature": "syn_ack_count",
+          "z_score": 1.2839647578246316,
+          "value": 1.2839647578246318
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        }
+      ],
+      "confidence_score": 0.9998413324356079
+    },
+    {
+      "index": 530214,
+      "predicted_class": "brute_force",
+      "most_deviated_features": [
+        {
+          "feature": "packets_per_sec",
+          "z_score": 22.26323028014017,
+          "value": 22.263230280140167
+        },
+        {
+          "feature": "syn_count",
+          "z_score": 5.168275691489498,
+          "value": 5.168275691489498
+        },
+        {
+          "feature": "fwd_iat_max",
+          "z_score": 4.854371371044264,
+          "value": 4.854371371044265
+        },
+        {
+          "feature": "rev_iat_mean",
+          "z_score": 1.8026745026883317,
+          "value": 1.8026745026883313
+        },
+        {
+          "feature": "bytes_per_sec",
+          "z_score": 1.6438930033694878,
+          "value": 1.6438930033694878
+        }
+      ],
+      "confidence_score": 0.7254689931869507
+    },
+    {
+      "index": 659276,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "rst_count",
+          "z_score": 4.463511710256777,
+          "value": 4.463511710256777
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        },
+        {
+          "feature": "ack_ratio",
+          "z_score": 0.9556067975908645,
+          "value": -0.9556067975908644
+        },
+        {
+          "feature": "psh_count",
+          "z_score": 0.9534580779577774,
+          "value": -0.9534580779577777
+        }
+      ],
+      "confidence_score": 0.7982987761497498
+    },
+    {
+      "index": 664794,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "iat_std",
+          "z_score": 2.9290946025056654,
+          "value": 2.9290946025056654
+        },
+        {
+          "feature": "psh_count",
+          "z_score": 2.044045579178847,
+          "value": -2.0440455791788477
+        },
+        {
+          "feature": "pkt_size_p25",
+          "z_score": 1.8482840238161544,
+          "value": 1.8482840238161542
+        },
+        {
+          "feature": "iat_max",
+          "z_score": 1.8074587278134493,
+          "value": 1.8074587278134489
+        },
+        {
+          "feature": "pkt_size_p90",
+          "z_score": 1.793610917780105,
+          "value": 1.7936109177801045
+        }
+      ],
+      "confidence_score": 0.8674437403678894
+    },
+    {
+      "index": 727035,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "rst_count",
+          "z_score": 9.329092669228633,
+          "value": 9.329092669228633
+        },
+        {
+          "feature": "rev_iat_max",
+          "z_score": 1.605755946946254,
+          "value": 1.605755946946254
+        },
+        {
+          "feature": "syn_ratio",
+          "z_score": 0.957158459929081,
+          "value": 0.957158459929081
+        },
+        {
+          "feature": "ack_ratio",
+          "z_score": 0.9556067975908645,
+          "value": -0.9556067975908644
+        },
+        {
+          "feature": "psh_count",
+          "z_score": 0.9534580779577774,
+          "value": -0.9534580779577777
+        }
+      ],
+      "confidence_score": 0.986388623714447
+    },
+    {
+      "index": 768985,
+      "predicted_class": "reconnaissance",
+      "most_deviated_features": [
+        {
+          "feature": "fwd_rev_packet_ratio",
+          "z_score": 3.2696145511417,
+          "value": 3.2696145511417
+        },
+        {
+          "feature": "psh_count",
+          "z_score": 2.044045579178847,
+          "value": -2.0440455791788477
+        },
+        {
+          "feature": "iat_max",
+          "z_score": 1.5331476286536578,
+          "value": 1.5331476286536574
+        },
+        {
+          "feature": "pkt_size_p90",
+          "z_score": 1.5198859257919082,
+          "value": 1.5198859257919077
+        },
+        {
+          "feature": "iat_std",
+          "z_score": 1.2688394310017217,
+          "value": 1.2688394310017217
+        }
+      ],
+      "confidence_score": 0.6229059100151062
+    }
+  ],
+  "audit_note": "Corrected from max_samples=100 truncation. FP count verified against confusion matrix."
+}

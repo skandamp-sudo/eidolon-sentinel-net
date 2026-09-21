@@ -1,16 +1,26 @@
-"""FastAPI application factory for EIDOLON // SENTINEL-NET."""
+"""FastAPI application factory for EIDOLON // SENTINEL-NET.
+
+SECURITY:
+- APIKeyMiddleware enforces authentication on all protected endpoints
+- Exception handler never exposes stack traces or secrets
+- CORS origins are configuration-driven
+"""
+
+from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
-from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
+from sentinel_net.api.auth import APIKeyMiddleware
+from sentinel_net.api.routes import events, flows, health, stats, status, websocket
 from sentinel_net.config import get_config, setup_logging
+from sentinel_net.sensor.event_bus import EventBus
+from sentinel_net.sensor.metrics import SensorMetrics
 from sentinel_net.storage.database import Database
-from sentinel_net.api.routes import health
-
 
 logger = logging.getLogger(__name__)
 
@@ -20,42 +30,79 @@ async def lifespan(app: FastAPI):
     """Manage the lifecycle of the FastAPI application."""
     config = get_config()
     setup_logging(config.log_level)
-    
+
+    service = getattr(app.state, 'sensor_service', None)
+    if service is not None:
+        try:
+            await service.start()
+            app.state.db = service.db
+            app.state.event_bus = service.event_bus
+            app.state.sensor_metrics = service.metrics
+            app.state.sensor_lifecycle = service.lifecycle
+            yield
+        finally:
+            await service.stop()
+        return
+
     db = Database(config.database_path)
     await db.initialize()
     app.state.db = db
-    
-    logger.info("Database initialized.")
+
+    # Initialize sensor components
+    app.state.event_bus = EventBus(max_queue_size=config.event_queue_size)
+    app.state.sensor_metrics = SensorMetrics()
+    app.state.sensor_lifecycle = None  # Set when sensor starts
+
+    logger.info("Application initialized.")
     yield
-    
-    logger.info("Closing database connection.")
+
+    # Shutdown
+    dropped = app.state.event_bus.shutdown()
+    app.state.sensor_metrics.increment("events_dropped", dropped)
     await db.close()
+    logger.info("Application shutdown complete.")
 
 
-def create_app() -> FastAPI:
-    """Create and configure the FastAPI application.
-    
-    Returns:
-        The configured FastAPI instance.
-    """
+def create_app(*, sensor_service=None) -> FastAPI:
+    """Create and configure the FastAPI application."""
     app = FastAPI(
         title="EIDOLON // SENTINEL-NET API",
-        version="0.1.0",
-        lifespan=lifespan
+        version="0.5.0",
+        lifespan=lifespan,
     )
-    
-    # Add CORS middleware for dev
+
+    config = get_config()
+    app.state.sensor_service = sensor_service
+
+    # CORS — configurable origins
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
+        allow_origins=config.cors_origin_list,
         allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
+        allow_methods=["GET", "POST", "OPTIONS"],
+        allow_headers=["X-API-Key", "Content-Type"],
     )
-    
-    # Include routers
+
+    # API key authentication
+    app.add_middleware(APIKeyMiddleware)
+
+    # Routes
     app.include_router(health.router)
-    
+    app.include_router(events.router)
+    app.include_router(flows.router)
+    app.include_router(status.router)
+    app.include_router(stats.router)
+    app.include_router(websocket.router)
+
+    # Global exception handler — never leak internals
+    @app.exception_handler(Exception)
+    async def global_exception_handler(request: Request, exc: Exception):
+        logger.error("Unhandled exception on %s: %s", request.url.path, type(exc).__name__)
+        return JSONResponse(
+            status_code=500,
+            content={"detail": "Internal server error"},
+        )
+
     return app
 
 

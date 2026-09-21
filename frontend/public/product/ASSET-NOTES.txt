@@ -1,0 +1,14 @@
+Sentinel-NET product screenshots
+
+Source: actual React SOC console, connected to an isolated local API.
+Data: synthetic PCAP processed by the real parser, feature extractor, XGBoost,
+Isolation Forest, evidence enrichment and persistence in
+ tests/integration/test_rw1_delivery.py.
+The test produced three benign-classified events. No detections were inserted
+manually, no WebSocket messages were fabricated, and no live customer traffic
+was used. The screenshots show stored test records after replay, with the
+sensor stopped. They do not document production performance.
+
+console-overview.png: Overview page at 1440 x 1000.
+console-investigation.png: Detection investigation at 1440 x 1000.
+Screenshots captured September 21, 2026.

@@ -1,0 +1,30 @@
+{
+  "result_category": "ROBUSTNESS",
+  "dataset_size": 397302,
+  "full_macro_f1": 0.2675121989116243,
+  "full_precision": 0.36794035121006263,
+  "full_recall": 0.2531505793886527,
+  "unidirectional_macro_f1": 0.2034526368814348,
+  "unidirectional_precision": 0.18717114208457758,
+  "unidirectional_recall": 0.24969508133920407,
+  "f1_degradation": -0.0640595620301895,
+  "per_class_degradation": {
+    "benign": -0.0003845421521666559,
+    "c2": 0.0,
+    "ddos": -0.2665880294342806
+  },
+  "features_zeroed": [
+    "reverse_packets",
+    "reverse_bytes",
+    "fwd_rev_packet_ratio",
+    "fwd_rev_byte_ratio",
+    "rev_iat_mean",
+    "rev_iat_std",
+    "rev_iat_min",
+    "rev_iat_max",
+    "reverse_payload_bytes",
+    "payload_ratio"
+  ],
+  "notes": "SIMULATED UNIDIRECTIONAL FEATURE ABLATION. This experiment simulates loss of reverse-direction telemetry. It is NOT equivalent to collecting naturally unidirectional traffic. Real unidirectional observation would produce fundamentally different flow aggregation behaviour.",
+  "label": "SIMULATED_UNIDIRECTIONAL_FEATURE_ABLATION"
+}

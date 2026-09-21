@@ -39,7 +39,7 @@ async def test_health_has_version(health_client: AsyncClient):
     response = await health_client.get("/health")
     data = response.json()
     assert "version" in data
-    assert data["version"] == "0.1.0"
+    assert data["version"] == "0.6.0"
 
 
 @pytest.mark.asyncio
