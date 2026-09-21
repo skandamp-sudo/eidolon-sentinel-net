@@ -1,0 +1,75 @@
+{
+  "phase": "RW-5",
+  "status": "NOT_RUN_SEMANTIC_STOP",
+  "reason": "Exact canonical packet-size quantiles and pooled directional-IAT median depend on unbounded histories; no semantic change authorized.",
+  "environment_manifest": "rw5-environment-manifest.json",
+  "scientific_integrity": "rw5-scientific-integrity.json",
+  "harness_implemented": false,
+  "real_interface_validation": {
+    "status": "NOT_VERIFIED",
+    "attempted": false,
+    "reason": "Stopped at mandatory scientific review gate; not a newly observed privilege failure.",
+    "interface": null,
+    "capture_backend_actual": null,
+    "duration_sec": null,
+    "observed_packets": null
+  },
+  "packets_processed": null,
+  "flows_completed": null,
+  "events_generated": null,
+  "bytes_processed": null,
+  "wall_clock_sec": null,
+  "packets_per_sec": null,
+  "flows_per_sec": null,
+  "processing_mbps": null,
+  "latency_ms": {
+    "packet_processing": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "flow_finalization_to_event": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "inference": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "persistence": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "publication": {
+      "p50": null,
+      "p95": null,
+      "p99": null
+    }
+  },
+  "memory_bytes": {
+    "initial_rss": null,
+    "peak_rss": null,
+    "final_rss": null
+  },
+  "sustained_workloads": [],
+  "kernel_capture_drops": {
+    "status": "NOT_AVAILABLE",
+    "value": null,
+    "reason": "Current capture adapter exposes no kernel-drop measurement."
+  },
+  "current_turn_tests_run": false,
+  "last_verified_baseline": {
+    "phase": "RW-4/UI-POLISH",
+    "backend_passed": 631,
+    "backend_warnings": 14,
+    "frontend_passed": 61,
+    "frontend_files": 5,
+    "typescript": "PASS",
+    "production_build": "PASS",
+    "frozen_model_parity_scenarios_passed": 7
+  },
+  "decision": "NO-GO FOR SIH INTELLIGENCE HARDENING"
+}

@@ -1,0 +1,47 @@
+{
+  "phase": "RW-5",
+  "recorded_at": "2026-09-21T17:50:57.209358+00:00",
+  "measurement_kind": "environment_inventory_only",
+  "benchmark_executed": false,
+  "os": "macOS-26.7-x86_64-i386-64bit",
+  "architecture": "x86_64",
+  "cpu": null,
+  "logical_cores": 16,
+  "physical_cores": null,
+  "ram_bytes": null,
+  "python_version": "3.12.14",
+  "libraries": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "xgboost": "3.4.1",
+    "joblib": "1.6.0",
+    "scapy": "2.7.0"
+  },
+  "model_identity": null,
+  "model_manifest_sha256": null,
+  "feature_schema_version": "2.0.0",
+  "feature_count": 52,
+  "input_workload": null,
+  "input_file_sha256": null,
+  "benchmark_configuration": null,
+  "test_duration_sec": null,
+  "missing_values_reason": "No model/input selected or benchmark executed: mandatory semantic stop during audit.",
+  "hardware_query_status": {
+    "cpu": {
+      "status": "UNAVAILABLE",
+      "query": "machdep.cpu.brand_string",
+      "error": "sysctl: sysctl fmt -1 1024 1: Operation not permitted"
+    },
+    "physical_cores": {
+      "status": "UNAVAILABLE",
+      "query": "hw.physicalcpu",
+      "error": "sysctl: sysctl fmt -1 1024 1: Operation not permitted"
+    },
+    "ram_bytes": {
+      "status": "UNAVAILABLE",
+      "query": "hw.memsize",
+      "error": "sysctl: sysctl fmt -1 1024 1: Operation not permitted"
+    }
+  }
+}
