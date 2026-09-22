@@ -1,0 +1,73 @@
+{
+  "preprocessing": {
+    "rows": 8,
+    "input_columns": 52,
+    "dropped": "pkt_size_median",
+    "actual_constant": "iat_mean",
+    "reported_constants": [
+      "pkt_size_p90"
+    ],
+    "reported_width": 52,
+    "actual_width": 51,
+    "actual_names_width": 51
+  },
+  "split_by_pythonhashseed": {
+    "0": {
+      "source": "scenario_split",
+      "n_scenarios": 8,
+      "train_scenarios": [
+        "Botnet-Friday",
+        "DDoS-Friday",
+        "DoS-Wednesday",
+        "Portscan-Friday",
+        "WebAttacks-Thursday"
+      ],
+      "val_scenarios": [
+        "Bruteforce-Tuesday"
+      ],
+      "test_scenarios": [
+        "Benign-Monday",
+        "Infiltration-Thursday"
+      ],
+      "random_state": 42
+    },
+    "1": {
+      "source": "scenario_split",
+      "n_scenarios": 8,
+      "train_scenarios": [
+        "Benign-Monday",
+        "DDoS-Friday",
+        "DoS-Wednesday",
+        "Portscan-Friday",
+        "WebAttacks-Thursday"
+      ],
+      "val_scenarios": [
+        "Botnet-Friday"
+      ],
+      "test_scenarios": [
+        "Bruteforce-Tuesday",
+        "Infiltration-Thursday"
+      ],
+      "random_state": 42
+    },
+    "2": {
+      "source": "scenario_split",
+      "n_scenarios": 8,
+      "train_scenarios": [
+        "Benign-Monday",
+        "Bruteforce-Tuesday",
+        "DoS-Wednesday",
+        "Infiltration-Thursday",
+        "WebAttacks-Thursday"
+      ],
+      "val_scenarios": [
+        "DDoS-Friday"
+      ],
+      "test_scenarios": [
+        "Botnet-Friday",
+        "Portscan-Friday"
+      ],
+      "random_state": 42
+    }
+  }
+}
