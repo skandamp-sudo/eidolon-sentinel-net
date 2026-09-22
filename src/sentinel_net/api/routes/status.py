@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Request
 
+from sentinel_net.sensor.operational_health import resource_reasons
 from sentinel_net.features.schema import FEATURE_COUNT, FEATURE_SCHEMA_VERSION
 
 router = APIRouter(tags=["Status"])
@@ -22,9 +23,17 @@ async def get_status(request: Request):
     lifecycle = getattr(request.app.state, "sensor_lifecycle", None)
     event_bus = getattr(request.app.state, "event_bus", None)
     service = getattr(request.app.state, 'sensor_service', None)
-    health = service.health() if service else {}
+    reasons = resource_reasons(metrics, event_bus)
+    health = service.health() if service else {'state': 'degraded' if reasons else 'healthy', 'reasons': reasons}
     snapshot = metrics.snapshot() if metrics else {}
     snapshot['subscriber_count'] = event_bus.subscriber_count if event_bus else 0
+    snapshot['subscriber_queue_peak'] = event_bus.queue_peak if event_bus else 0
+    snapshot['subscriber_peak'] = event_bus.subscriber_peak if event_bus else 0
+    snapshot['subscriber_rejections'] = event_bus.rejected_subscribers if event_bus else 0
+    snapshot['latency_ms'] = metrics.latency_snapshot() if metrics else {}
+    db = getattr(request.app.state, 'db', None)
+    if db:
+        snapshot.update(db.storage_sizes())
 
     return {
         'model_identity': service.model_identity if service else getattr(request.app.state, 'model_identity', None),

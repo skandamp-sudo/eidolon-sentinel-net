@@ -1,0 +1,18 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "signal": "PORT_FANOUT",
+      "threshold": 4
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "signal": "PORT_FANOUT",
+      "threshold": 4
+    }
+  ],
+  "errors": [],
+  "note": "Actual frozen-runtime synthetic QA event; test policy port fanout threshold 4. Not production traffic."
+}

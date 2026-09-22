@@ -54,3 +54,23 @@ it.each([
   renderEvent({ ...replayEvent, source_mode: mode });
   expect(await screen.findByText(label as string)).toBeInTheDocument();
 });
+
+it('renders streaming evidence from the shared frozen runtime without calling it confidence', async () => {
+  const { default: record } = await import('./fixtures/f3-event.json');
+  renderEvent(record);
+  expect(await screen.findByRole('region', { name: 'Behavioral evidence table' })).toBeInTheDocument();
+  expect(screen.getByText('PORT_FANOUT')).toBeInTheDocument();
+  expect(screen.getByText('stream_recon')).toBeInTheDocument();
+  expect(screen.getByText(/Passive streaming heuristics are contextual observations/)).toBeInTheDocument();
+  expect(screen.getByText('Classification Score')).toBeInTheDocument();
+});
+
+it.each([
+  ['not_recorded', 'Behavioral evidence was not recorded for this event.'],
+  ['available', 'No streaming signals were emitted for the retained observations.'],
+  ['disabled', 'Streaming intelligence was disabled for this event.'],
+  ['unavailable_processing_error', 'Streaming evidence unavailable due to an operational processing error.'],
+])('distinguishes streaming evidence status %s', async (status, message) => {
+  renderEvent({ ...replayEvent, behavioral_evidence: [], behavioral_evidence_status: status });
+  expect(await screen.findByText(message)).toBeInTheDocument();
+});

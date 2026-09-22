@@ -11,7 +11,9 @@ import logging
 from functools import lru_cache
 from pathlib import Path
 
+from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from sentinel_net.intelligence.config import IntelligenceConfig
 
 
 class SentinelConfig(BaseSettings):
@@ -49,10 +51,18 @@ class SentinelConfig(BaseSettings):
     flow_idle_timeout_sec: float = 120.0
     max_active_flows: int = 100_000
 
+    max_subscribers: int = Field(default=32, gt=0)
+    ws_send_timeout_sec: float = Field(default=5.0, gt=0, allow_inf_nan=False)
+
+    intelligence: IntelligenceConfig = Field(default_factory=IntelligenceConfig)
+
     # ── Retention ──
-    max_events: int = 100_000
-    retention_hours: float = 168.0  # 7 days
-    cleanup_interval_sec: float = 300.0  # 5 minutes
+    max_events: int = Field(default=100_000, ge=0)
+    retention_hours: float = Field(default=168.0, gt=0, allow_inf_nan=False)  # 7 days
+    cleanup_interval_sec: float = Field(default=300.0, gt=0, allow_inf_nan=False)  # 5 minutes
+
+    cleanup_batch_rows: int = Field(default=500, gt=0, le=10000)
+    cleanup_cycle_rows: int = Field(default=5000, gt=0, le=100000)
 
     # ── WebSocket ──
     ws_queue_size: int = 100
@@ -62,6 +72,7 @@ class SentinelConfig(BaseSettings):
 
     model_config = SettingsConfigDict(
         env_prefix="SENTINEL_",
+        env_nested_delimiter="__",
         env_file=".env",
         env_file_encoding="utf-8",
         extra="ignore",

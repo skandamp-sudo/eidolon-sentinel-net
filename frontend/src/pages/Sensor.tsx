@@ -221,6 +221,30 @@ export function Sensor() {
         <MetricCard title="Capture Errors" value={m?.capture_errors} warn />
       </div>
 
+      <div className="section-header">Storage &amp; delivery health</div>
+      <div className="card-grid">
+        <MetricCard title="Retention Errors" value={m?.retention_failures} warn />
+        <MetricCard title="Events Removed" value={m?.retention_events_removed} />
+        <MetricCard title="Orphan Flows Removed" value={m?.retention_flows_removed} />
+        <MetricCard title="Database Bytes" value={m?.database_bytes ?? undefined} />
+        <MetricCard title="WAL Bytes" value={m?.wal_bytes ?? undefined} />
+        <MetricCard title="Subscriber Queue Peak" value={m?.subscriber_queue_peak} />
+        <MetricCard title="Subscriber Rejections" value={m?.subscriber_rejections} warn />
+      </div>
+      <p className="page-description">Last successful cleanup: {m?.retention_last_success ? new Date(m.retention_last_success * 1000).toLocaleString() : 'Unavailable'}. Cleanup duration: {m?.retention_duration_sec == null ? 'Unavailable' : `${m.retention_duration_sec.toFixed(3)} s`}. Deleting rows does not necessarily shrink database or WAL files.</p>
+      <p className="page-description">Kernel capture drops: {m?.kernel_capture_drops == null ? 'Unavailable from capture backend' : formatNumber(m.kernel_capture_drops)}. Packets dropped counts application capture-queue saturation; delivery drops count subscriber copies.</p>
+      <p className="page-description">v2.0.0 limitation: continuously active tuples retain growing exact timestamp and packet-size histories. Per-flow memory is not strictly bounded.</p>
+
+      <div className="section-header">Streaming intelligence</div>
+      <div className="card-grid">
+        <MetricCard title="Intelligence Keys" value={m?.intelligence_keys} />
+        <MetricCard title="Intelligence Key Peak" value={m?.intelligence_keys_peak} />
+        <MetricCard title="Intelligence Evictions" value={m?.intelligence_evictions} warn />
+        <MetricCard title="Behavioral Signals" value={m?.intelligence_evidence_generated} />
+        <MetricCard title="Intelligence Errors" value={m?.intelligence_processing_errors} warn />
+        <MetricCard title="Membership Overflows" value={m?.intelligence_member_overflows} warn />
+        <MetricCard title="Late Observations" value={m?.intelligence_late_observations} />
+      </div>
       {/* System Info */}
       <div className="section-header">System Information</div>
       <div className="card">

@@ -1,0 +1,29 @@
+{
+  "phase": "SIH-F3",
+  "backend": {
+    "passed": 697,
+    "warnings": 14
+  },
+  "frontend": {
+    "passed": 67,
+    "files": 5
+  },
+  "combined": 764,
+  "new_backend_cases": 42,
+  "new_frontend_cases": 5,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "scientific_integrity": "23/23 unchanged",
+  "core_live_replay_parity": "7/7 PASS",
+  "intelligence_live_replay_parity": "7/7 PASS",
+  "frozen_model_regression": "PASS",
+  "rw5b_operational_regressions": "PASS",
+  "benchmark_suites": {
+    "enabled": 6,
+    "disabled": 6,
+    "seconds_per_workload": 30,
+    "intelligence_processing_errors": 0
+  },
+  "real_interface": "NOT VERIFIED; unchanged BPF permission restriction from RW-5B",
+  "decision": "GO FOR SIH-F4"
+}

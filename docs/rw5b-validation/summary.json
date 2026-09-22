@@ -1,0 +1,21 @@
+{
+  "phase": "RW-5B",
+  "backend": {
+    "passed": 655,
+    "warnings": 14,
+    "command": "PYTHONPATH=src .venv/bin/python -m pytest -q"
+  },
+  "frontend": {
+    "passed": 62,
+    "files": 5,
+    "command": "npm test"
+  },
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "protected_sha256": "23/23 PASS",
+  "live_replay_parity": "7/7 PASS",
+  "frozen_model_regressions": "PASS in full backend suite",
+  "real_interface": "NOT VERIFIED: BPF device permission denied",
+  "benchmark_report_validation": "PASS: six distinct complete workloads, matching source hashes, consistent counts/rates/latencies and manifest",
+  "final_decision": "GO FOR SIH INTELLIGENCE HARDENING"
+}

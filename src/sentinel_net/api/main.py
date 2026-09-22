@@ -20,6 +20,7 @@ from sentinel_net.api.routes import events, flows, health, stats, status, websoc
 from sentinel_net.config import get_config, setup_logging
 from sentinel_net.sensor.event_bus import EventBus
 from sentinel_net.sensor.metrics import SensorMetrics
+from sentinel_net.sensor.retention import RetentionWorker
 from sentinel_net.storage.database import Database
 
 logger = logging.getLogger(__name__)
@@ -49,18 +50,22 @@ async def lifespan(app: FastAPI):
     app.state.db = db
 
     # Initialize sensor components
-    app.state.event_bus = EventBus(max_queue_size=config.event_queue_size)
+    app.state.event_bus = EventBus(max_queue_size=config.event_queue_size, max_subscribers=config.max_subscribers)
     app.state.sensor_metrics = SensorMetrics()
     app.state.sensor_lifecycle = None  # Set when sensor starts
 
+    retention = RetentionWorker(db, config, app.state.sensor_metrics)
+    app.state.retention = retention
+    retention.start()
     logger.info("Application initialized.")
-    yield
-
-    # Shutdown
-    dropped = app.state.event_bus.shutdown()
-    app.state.sensor_metrics.increment("events_dropped", dropped)
-    await db.close()
-    logger.info("Application shutdown complete.")
+    try:
+        yield
+    finally:
+        await retention.stop()
+        dropped = app.state.event_bus.shutdown()
+        app.state.sensor_metrics.increment("events_dropped", dropped)
+        await db.close()
+        logger.info("Application shutdown complete.")
 
 
 def create_app(*, sensor_service=None) -> FastAPI:

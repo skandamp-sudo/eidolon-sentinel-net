@@ -6,12 +6,14 @@ from fastapi import APIRouter, Request, HTTPException
 router = APIRouter(tags=["Health"])
 
 from sentinel_net.api.schemas import HealthResponse
+from sentinel_net.sensor.operational_health import resource_reasons
 
 @router.get("/health", response_model=HealthResponse)
 async def get_health(request: Request):
     """Return basic health status."""
     service = getattr(request.app.state, 'sensor_service', None)
-    sensor = service.health() if service else None
+    reasons = resource_reasons(getattr(request.app.state, 'sensor_metrics', None), getattr(request.app.state, 'event_bus', None))
+    sensor = service.health() if service else ({'state': 'degraded', 'reasons': reasons} if reasons else None)
     return {
         "status": ('healthy' if sensor['state'] == 'running' else sensor['state']) if sensor else 'healthy',
         "sensor": sensor,
@@ -38,4 +40,8 @@ async def get_readiness(request: Request):
             return JSONResponse(status_code=503, content={'status': 'not_ready', 'sensor': health})
         return {'status': 'ready', 'sensor': health}
         
+    reasons = resource_reasons(getattr(request.app.state, 'sensor_metrics', None), getattr(request.app.state, 'event_bus', None))
+    if reasons:
+        from fastapi.responses import JSONResponse
+        return JSONResponse(status_code=503, content={'status': 'not_ready', 'reasons': reasons})
     return {"status": "ready"}

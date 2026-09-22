@@ -14,7 +14,13 @@ class EventBus:
     SECURITY: No external connections required (No Redis/Kafka).
     Bounded queues prevent memory exhaustion.
     """
-    def __init__(self, max_queue_size: int = 1000):
+    def __init__(self, max_queue_size: int = 1000, max_subscribers: int = 32):
+        if max_queue_size <= 0 or max_subscribers <= 0:
+            raise ValueError('Event bus limits must be positive')
+        self.max_subscribers = max_subscribers
+        self.subscriber_peak = 0
+        self.queue_peak = 0
+        self.rejected_subscribers = 0
         self.max_queue_size = max_queue_size
         self._subscribers: dict[str, queue.Queue] = {}
         self._lock = threading.Lock()
@@ -27,7 +33,11 @@ class EventBus:
             if self._shutdown:
                 raise RuntimeError('Event bus is closed')
             if subscriber_id not in self._subscribers:
+                if len(self._subscribers) >= self.max_subscribers:
+                    self.rejected_subscribers += 1
+                    raise RuntimeError('Subscriber capacity reached')
                 self._subscribers[subscriber_id] = queue.Queue(maxsize=self.max_queue_size)
+                self.subscriber_peak = max(self.subscriber_peak, len(self._subscribers))
             return self._subscribers[subscriber_id]
     
     def unsubscribe(self, subscriber_id: str) -> int:
@@ -57,6 +67,7 @@ class EventBus:
                 try:
                     q.put_nowait(event)
                     delivered += 1
+                    self.queue_peak = max(self.queue_peak, q.qsize())
                 except queue.Full:
                     self._dropped_events += 1
                     dropped += 1

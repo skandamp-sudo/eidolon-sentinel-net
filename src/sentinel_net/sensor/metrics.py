@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import deque
 import threading
 import time
 from dataclasses import dataclass, field
@@ -11,6 +12,7 @@ class SensorMetrics:
     packets_malformed: int = 0
     packets_dropped: int = 0
     packets_processed: int = 0
+    bytes_processed: int = 0
     packet_processing_errors: int = 0
     flows_created: int = 0
     flows_active: int = 0
@@ -27,6 +29,30 @@ class SensorMetrics:
     capture_errors: int = 0
     source_errors: int = 0
     output_errors: int = 0
+    intelligence_keys: int = 0
+    intelligence_buckets_per_key_peak: int = 0
+    intelligence_members_per_dimension_peak: int = 0
+    intelligence_keys_peak: int = 0
+    intelligence_evictions: int = 0
+    intelligence_expirations: int = 0
+    intelligence_member_overflows: int = 0
+    intelligence_session_truncations: int = 0
+    intelligence_session_samples_peak: int = 0
+    intelligence_late_observations: int = 0
+    intelligence_evidence_generated: int = 0
+    intelligence_processing_errors: int = 0
+    kernel_capture_drops: int | None = None
+    retention_failures: int = 0
+    retention_cycles: int = 0
+    retention_events_removed: int = 0
+    retention_flows_removed: int = 0
+    retention_last_success: float | None = None
+    retention_duration_sec: float = 0.0
+    database_bytes: int | None = None
+    wal_bytes: int | None = None
+    flows_active_peak: int = 0
+    capture_queue_peak: int = 0
+    exact_history_samples_peak: int = 0
     last_error_kind: str = ''
     processing_time_sec: float = 0.0
     capture_queue_depth: int = 0
@@ -36,6 +62,8 @@ class SensorMetrics:
 
     def __post_init__(self):
         self._lock = threading.Lock()
+        self._latencies = {}
+        self._latency_counts = {}
         if self.start_time == 0.0:
             self.start_time = time.time()
 
@@ -52,6 +80,30 @@ class SensorMetrics:
         with self._lock:
             if hasattr(self, field):
                 setattr(self, field, value)
+
+    def observe_latency(self, name: str, seconds: float) -> None:
+        with self._lock:
+            self._latencies.setdefault(name, deque(maxlen=4096)).append(seconds * 1000)
+            self._latency_counts[name] = self._latency_counts.get(name, 0) + 1
+
+    def observe_peak(self, name: str, value: int) -> None:
+        with self._lock:
+            setattr(self, name, max(getattr(self, name), value))
+
+    def latency_snapshot(self) -> dict:
+        with self._lock:
+            result = {}
+            for name, samples in self._latencies.items():
+                ordered = sorted(samples)
+                def percentile(q):
+                    pos = (len(ordered)-1) * q
+                    lo = int(pos)
+                    hi = min(lo+1, len(ordered)-1)
+                    return ordered[lo] + (ordered[hi]-ordered[lo])*(pos-lo)
+                result[name] = dict(p50=percentile(.5), p95=percentile(.95), p99=percentile(.99),
+                                    samples=len(ordered), total_observations=self._latency_counts[name],
+                                    unit='ms', scope='last_4096_observations')
+            return result
 
     def snapshot(self) -> dict:
         """Return a snapshot of all metrics."""

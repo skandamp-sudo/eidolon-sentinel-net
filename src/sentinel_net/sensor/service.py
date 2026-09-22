@@ -11,6 +11,8 @@ from sentinel_net.sensor.capture import CaptureConfig, PassiveCaptureSource
 from sentinel_net.sensor.event_bus import EventBus
 from sentinel_net.sensor.lifecycle import SensorLifecycle, SensorState
 from sentinel_net.sensor.metrics import SensorMetrics
+from sentinel_net.sensor.retention import RetentionWorker
+from sentinel_net.sensor.operational_health import resource_reasons
 from sentinel_net.sensor.pipeline import PacketProcessingPipeline
 from sentinel_net.sensor.sources import LiveCaptureSource
 from sentinel_net.sensor.runtime_model import load_runtime_model, ModelLoadError
@@ -44,6 +46,7 @@ class SensorService:
         self._model_loader = model_loader or (lambda identity: load_runtime_model(identity, registry=config.model_registry))
         self._database_factory = database_factory
         self._monitor = None
+        self.retention = None
         self._lock = asyncio.Lock()
         self._quiesced = False
         self._closed = False
@@ -78,7 +81,9 @@ class SensorService:
                 stage = 'database initialization'
                 self.db = self._database_factory(self.config.database_path)
                 await self.db.initialize()
-                self.event_bus = EventBus(self.config.event_queue_size)
+                self.event_bus = EventBus(self.config.event_queue_size, self.config.max_subscribers)
+                self.retention = RetentionWorker(self.db, self.config, self.metrics)
+                self.retention.start()
                 packets = queue.Queue(maxsize=self.config.capture_queue_size)
                 self.capture = self._capture_factory(CaptureConfig(
                     interface=self.config.capture_interface,
@@ -124,10 +129,7 @@ class SensorService:
             self._fail('capture_worker_failed' if capture_failed else 'processing_worker_failed')
             return
         m = self.metrics.snapshot()
-        for field in ('persistence_errors', 'capture_errors', 'processing_errors',
-                      'packets_malformed', 'packets_dropped', 'events_dropped', 'source_errors', 'output_errors'):
-            if m[field]:
-                self._reasons.add(field)
+        self._reasons.update(resource_reasons(self.metrics, self.event_bus))
         if m['capture_queue_depth'] >= self.config.capture_queue_size * .8:
             self._reasons.add('capture_queue_pressure')
         # Degradation is latched for this run so intermittent loss stays visible.
@@ -141,6 +143,8 @@ class SensorService:
 
     async def _watch(self):
         while not self._quiesced:
+            if hasattr(self.capture, 'refresh_statistics'):
+                self.capture.refresh_statistics()
             self.refresh_health()
             if self._failed:
                 return
@@ -191,6 +195,8 @@ class SensorService:
         await self._quiesce()
         if self.event_bus:
             self.metrics.increment('events_dropped', self.event_bus.shutdown())
+        if self.retention:
+            await self.retention.stop()
         if self.db:
             try:
                 await self.db.close()

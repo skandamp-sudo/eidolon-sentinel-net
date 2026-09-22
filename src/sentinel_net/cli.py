@@ -175,6 +175,7 @@ def _run_replay(args: argparse.Namespace) -> None:
     from sentinel_net.storage.database import Database
 
     replay_config = DemoReplayConfig(
+        intelligence=config.intelligence,
         pcap_path=pcap_path,
         model=args.model,
         model_registry=config.model_registry,

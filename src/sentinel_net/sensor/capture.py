@@ -88,6 +88,21 @@ class PassiveCaptureSource:
             self.stop()
             raise RuntimeError(self._error) from None
 
+    def refresh_statistics(self) -> None:
+        """Read actual native BPF drop counters when this backend exposes them."""
+        sock = getattr(self, '_socket', None)
+        if sock is None:
+            return
+        drops = None
+        if type(sock).__module__ == 'scapy.arch.bpf.supersocket' and hasattr(sock, 'get_stats'):
+            try:
+                _, value = sock.get_stats()
+                if isinstance(value, int) and value >= 0:
+                    drops = value
+            except Exception:
+                pass  # unavailable, never a synthetic zero
+        self._metrics.set_gauge('kernel_capture_drops', drops)
+
     def stop(self) -> None:
         """Wake Scapy's control socket even with zero traffic; join before draining."""
         self._running.clear()
@@ -101,6 +116,7 @@ class PassiveCaptureSource:
                     raise TimeoutError('Capture worker did not stop')
         sock = getattr(self, '_socket', None)
         if sock is not None:
+            self.refresh_statistics()
             sock.close()
             self._socket = None
 
@@ -120,6 +136,7 @@ class PassiveCaptureSource:
         try:
             self._queue.put_nowait(rp)
             self._metrics.set_gauge("capture_queue_depth", self._queue.qsize())
+            self._metrics.observe_peak("capture_queue_peak", self._queue.qsize())
         except queue.Full:
             self._metrics.increment("packets_dropped")
     

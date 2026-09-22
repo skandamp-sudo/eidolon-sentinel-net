@@ -7,7 +7,10 @@ import threading
 import time
 
 from sentinel_net.features.extractor import FeatureExtractor
-from sentinel_net.flow.aggregator import FlowAggregator, FlowAggregatorConfig
+from sentinel_net.intelligence.config import IntelligenceConfig
+from sentinel_net.intelligence.engine import StreamingIntelligence
+from sentinel_net.flow.aggregator import FlowAggregatorConfig
+from sentinel_net.sensor.telemetry import TimedFlowAggregator, timed_detector
 from sentinel_net.ingestion.parser import parse_packet
 from sentinel_net.models.types import ParsedPacket
 from sentinel_net.sensor.event_output import persist_and_publish
@@ -36,9 +39,11 @@ class PacketProcessingPipeline:
             agg_config = FlowAggregatorConfig(
                 idle_timeout_sec=config.flow_idle_timeout_sec,
                 max_active_flows=config.max_active_flows)
-        self._aggregator = FlowAggregator(agg_config)
+        self._aggregator = TimedFlowAggregator(agg_config, metrics)
         self._extractor = FeatureExtractor()
-        self._detection = detection_pipeline
+        self.intelligence = StreamingIntelligence(getattr(config, "intelligence", IntelligenceConfig()), metrics)
+        self._intelligence_failed = False
+        self._detection = timed_detector(detection_pipeline, metrics)
         self._db = db
         self._event_loop = event_loop
         self._thread = None
@@ -131,7 +136,23 @@ class PacketProcessingPipeline:
                     self._fatal = True
                     self._metrics.increment('source_errors')
                     self._metrics.set_gauge('last_error_kind', 'SOURCE_ERROR')
+                self.intelligence.close()
                 self._running.clear()
+
+    def _intelligence_call(self, method, *args):
+        if self._intelligence_failed:
+            return
+        started = time.monotonic()
+        try:
+            method(*args)
+        except Exception:
+            self._intelligence_failed = True
+            self.intelligence.close()
+            self._metrics.increment("intelligence_processing_errors")
+            self._metrics.set_gauge("last_error_kind", "INTELLIGENCE_ERROR")
+            logger.exception("Streaming evidence unavailable; canonical processing continues")
+        finally:
+            self._metrics.observe_latency("stream_intelligence", time.monotonic()-started)
 
     def _processing_loop(self):
         watermark = float('-inf')
@@ -168,8 +189,11 @@ class PacketProcessingPipeline:
                             self._metrics.increment('packets_parsed')
                             watermark = max(watermark, parsed.timestamp)
                             self._aggregator.expire_idle(watermark)
+                            previous_flows = self._aggregator.total_flows_created
                             self._aggregator.ingest(parsed)
+                            self._intelligence_call(self.intelligence.observe_packet, parsed, self._aggregator.total_flows_created > previous_flows)
                             self._metrics.increment('packets_processed')
+                            self._metrics.increment('bytes_processed', getattr(packet, 'capture_length', parsed.ip_total_length))
                     except Exception as exc:
                         self._error = exc
                         self._metrics.increment('processing_errors')
@@ -185,11 +209,17 @@ class PacketProcessingPipeline:
                 self._update_gauges()
             finally:
                 # Runtime elapsed time only; never wall time minus historical PCAP time.
-                self._metrics.increment('processing_time_sec', time.monotonic()-started)
+                elapsed = time.monotonic()-started
+                self._metrics.increment('processing_time_sec', elapsed)
+                if item.kind == ReadKind.PACKET:
+                    self._metrics.observe_latency('packet_processing', elapsed)
 
     def _update_gauges(self):
         if self._capture_queue is not None:
-            self._metrics.set_gauge('capture_queue_depth', self._capture_queue.qsize())
+            depth = self._capture_queue.qsize()
+            self._metrics.set_gauge('capture_queue_depth', depth)
+            self._metrics.observe_peak('capture_queue_peak', depth)
+        self._metrics.observe_peak('flows_active_peak', self._aggregator.active_flow_count)
         self._metrics.set_gauge('flows_created', self._aggregator.total_flows_created)
         self._metrics.set_gauge('flows_active', self._aggregator.active_flow_count)
         self._metrics.set_gauge('flows_evicted', self._aggregator.total_flows_evicted)
@@ -207,10 +237,19 @@ class PacketProcessingPipeline:
                 logger.exception('Flow inference failed')
                 continue
             for event in events:
+                self._intelligence_call(self.intelligence.enrich, event, flow)
+                if self._intelligence_failed:
+                    event.metadata["behavioral_evidence_status"] = "unavailable_processing_error"
+                    event.metadata.pop("behavioral_evidence", None)
+                    event.metadata.pop("behavioral_policy", None)
+                    event.metadata.pop("behavioral_attack_context", None)
                 event.metadata['source'] = dict(self.source.provenance)
                 identity = getattr(self._detection, 'deployment_identity', None)
                 if identity:
                     event.metadata['deployment_model'] = dict(identity)
+                finalized = getattr(flow, '_runtime_finalization_started', None)
+                if finalized is not None:
+                    self._metrics.observe_latency('flow_finalization_to_event', time.monotonic()-finalized)
                 try:
                     asyncio.run_coroutine_threadsafe(
                         persist_and_publish(event, self._db, self._event_bus, self._metrics),

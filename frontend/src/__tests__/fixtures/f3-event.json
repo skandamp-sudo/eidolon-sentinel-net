@@ -1,0 +1,821 @@
+{
+  "event_schema_version": "2.0.0",
+  "id": "bf5ff548-54c7-41c9-95bb-4838ca4cd3d1",
+  "event_id": "bf5ff548-54c7-41c9-95bb-4838ca4cd3d1",
+  "timestamp": 1790016241.567234,
+  "created_at": 1790016241.567234,
+  "flow_id": "5ddf0bac-c59e-4436-9ec7-7ab894c2b2ac",
+  "severity": "low",
+  "threat_type": "ddos",
+  "threat_class": "ddos",
+  "classification_score": 0.6617411375045776,
+  "classification_score_type": "uncalibrated_classifier_score",
+  "classification_score_class": "ddos",
+  "anomaly_score": 0.44829242100595385,
+  "anomaly_score_type": "normalized_anomaly_score",
+  "detection_source": [
+    "ml_classifier",
+    "anomaly_detector",
+    "stream_c2",
+    "stream_recon"
+  ],
+  "source_mode": "REPLAY",
+  "capture_interface": null,
+  "replay_file_identifier": "6e3eef1dc02a4a9ba74cc437d4cbd254",
+  "model_name": "runtime",
+  "deployment_model_version": "1.0.0",
+  "model_manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+  "model_version": "1.0.0",
+  "anomaly_model_version": "1.0.0",
+  "feature_schema_version": "2.0.0",
+  "explanation_version": "1.0.0",
+  "evidence": {
+    "items": [
+      {
+        "feature_name": "bytes_per_sec",
+        "observed_value": 14287.549030539782,
+        "reference_value": 0.048948707654247775,
+        "contribution": 13566.381392464533,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "packets_per_sec",
+        "observed_value": 168.09430615387055,
+        "reference_value": -0.13440190415912262,
+        "contribution": 183.24910164566882,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_bytes",
+        "observed_value": 128.17104770286545,
+        "reference_value": 0.11618339759144632,
+        "contribution": 174.82646837466862,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "total_bytes",
+        "observed_value": 108.08284873300617,
+        "reference_value": 0.19909940074149152,
+        "contribution": 110.78846962006565,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p25",
+        "observed_value": 81.06858495742401,
+        "reference_value": 0.13301380144996036,
+        "contribution": 90.48508175761799,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p90",
+        "observed_value": 79.55886805715893,
+        "reference_value": 0.09454877898819113,
+        "contribution": 75.1892118522761,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p75",
+        "observed_value": 64.14394569209858,
+        "reference_value": -0.18190894888669912,
+        "contribution": 71.7288058378611,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_min",
+        "observed_value": 58.36153290361338,
+        "reference_value": -0.4456178729771162,
+        "contribution": 63.194117146796806,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_max",
+        "observed_value": 63.106559584486135,
+        "reference_value": -0.17034143298040835,
+        "contribution": 58.442387673500754,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_median",
+        "observed_value": 66.32899907887507,
+        "reference_value": 0.077609705033625,
+        "contribution": 56.15342466377225,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_mean",
+        "observed_value": 56.97100372433489,
+        "reference_value": 0.11167855262643003,
+        "contribution": 51.62487319321804,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_payload_bytes",
+        "observed_value": 43.58426967034865,
+        "reference_value": -0.29799253964971023,
+        "contribution": 46.08164503131168,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "payload_bytes_total",
+        "observed_value": 36.255118496693576,
+        "reference_value": 0.08959341572900685,
+        "contribution": 38.0914910545532,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "protocol",
+        "observed_value": 5.428569278842724,
+        "reference_value": -0.29213556082717096,
+        "contribution": 6.526002676405168,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "ip_version",
+        "observed_value": 3.9079658433986246,
+        "reference_value": -0.01936343921618368,
+        "contribution": 3.5329552257984096,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      }
+    ],
+    "explanation_available": true,
+    "unavailable_reason": null
+  },
+  "behavioral_evidence_status": "available",
+  "behavioral_evidence": [
+    {
+      "signal_type": "DESTINATION_CONCENTRATION",
+      "observed_value": 1.0,
+      "unit": "fraction of observed sessions",
+      "reference_threshold": 0.8,
+      "comparison": ">=",
+      "threshold_semantics": "operational_policy_threshold",
+      "observation_window": {
+        "start": 941,
+        "end": 1001,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "scope_source": "192.0.2.1",
+        "scope_destination": "198.51.100.1",
+        "key_evictions_total": 0,
+        "membership_overflow_observations": 0,
+        "window_observation_semantics": "Retained event-time observations; key eviction can reduce coverage.",
+        "sessions": 8,
+        "distinct_destinations": 1,
+        "destination_frequencies": {
+          "198.51.100.1": 8
+        },
+        "ratio_is_lower_bound": false
+      },
+      "detector": "stream_c2",
+      "detector_version": "sih-f3/1.0",
+      "confidence_semantics": "No probability or confidence is assigned.",
+      "interpretation": "Passive behavioral evidence; legitimate activity remains possible."
+    },
+    {
+      "signal_type": "PORT_FANOUT",
+      "observed_value": 8,
+      "unit": "distinct observed values",
+      "reference_threshold": 4,
+      "comparison": ">=",
+      "threshold_semantics": "operational_policy_threshold",
+      "observation_window": {
+        "start": 941,
+        "end": 1001,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "scope_source": "192.0.2.1",
+        "scope_destination": "198.51.100.1",
+        "key_evictions_total": 0,
+        "membership_overflow_observations": 0,
+        "window_observation_semantics": "Retained event-time observations; key eviction can reduce coverage.",
+        "sessions": 8,
+        "flow_rate": 0.13333333333333333,
+        "count_is_lower_bound": false,
+        "alternative_explanations": [
+          "monitoring",
+          "service discovery",
+          "proxies",
+          "distributed applications"
+        ]
+      },
+      "detector": "stream_recon",
+      "detector_version": "sih-f3/1.0",
+      "confidence_semantics": "No probability or confidence is assigned.",
+      "interpretation": "Passive behavioral evidence; legitimate activity remains possible."
+    }
+  ],
+  "behavioral_policy": {
+    "version": "sih-f3/1.0",
+    "action": "enrich_ml",
+    "behavioral_alert": false,
+    "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+  },
+  "behavioral_attack_context": [
+    {
+      "technique_id": "T1046",
+      "technique_name": "Network Service Scanning",
+      "tactic": "Discovery",
+      "rationale": "Context only: observed streaming behavior can also be legitimate; no intent or attribution is established.",
+      "applicability": "high",
+      "qualification": "possible",
+      "source": "stream_recon"
+    }
+  ],
+  "rationale": "Anomaly score: 0.45 (threshold: 0.5). Classified as ddos with confidence 0.66.",
+  "metadata": {
+    "classification_score_class": "ddos",
+    "feature_schema_version": "2.0.0",
+    "anomaly_model": "isolation_forest",
+    "classifier_model": "xgboost",
+    "explanation": {
+      "explanation_id": "2e0b7409-30ff-4d21-8a23-390107fc1958",
+      "detection_event_id": "bf5ff548-54c7-41c9-95bb-4838ca4cd3d1",
+      "explanation_version": "1.0.0",
+      "generation_timestamp": 1790016241.567471,
+      "threat_type": "ddos",
+      "anomaly_score": 0.44829242100595385,
+      "confidence": 0.6617411375045776,
+      "severity": "low",
+      "rationale": "THREAT: Possible DDoS Attack\n\nANOMALY SCORE: 0.45\n\nMODEL: xgboost (confidence: 0.66)\n\nEVIDENCE:\n  - byte rate significantly above baseline (observed: 14287.55, baseline: 0.05) (z-score: 13566.4)\n  - packet rate significantly above baseline (observed: 168.09, baseline: -0.13) (z-score: 183.2)\n  - forward_bytes significantly above baseline (observed: 128.17, baseline: 0.12) (z-score: 174.8)\n  - total byte volume significantly above baseline (observed: 108.08, baseline: 0.20) (z-score: 110.8)\n  - pkt_size_p25 significantly above baseline (observed: 81.07, baseline: 0.13) (z-score: 90.5)\n\nPOTENTIAL ATT&CK TECHNIQUES:\n  - T1498 Network Denial of Service (Impact) \u2014 possible\n  - T1499 Endpoint Denial of Service (Impact) \u2014 possible\n\nLIMITATION: Classification is based on observable network metadata only. Encrypted payload contents are not inspected. This is a model classification, not a confirmed attack.",
+      "classifier_evidence": {
+        "items": [],
+        "explanation_available": false,
+        "unavailable_reason": "SHAP is not installed. Install via: pip install sentinel-net[explainability]"
+      },
+      "anomaly_evidence": {
+        "items": [
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 14287.549030539782,
+            "reference_value": 0.048948707654247775,
+            "contribution": 13566.381392464533,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 168.09430615387055,
+            "reference_value": -0.13440190415912262,
+            "contribution": 183.24910164566882,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 128.17104770286545,
+            "reference_value": 0.11618339759144632,
+            "contribution": 174.82646837466862,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 108.08284873300617,
+            "reference_value": 0.19909940074149152,
+            "contribution": 110.78846962006565,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 81.06858495742401,
+            "reference_value": 0.13301380144996036,
+            "contribution": 90.48508175761799,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 79.55886805715893,
+            "reference_value": 0.09454877898819113,
+            "contribution": 75.1892118522761,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 64.14394569209858,
+            "reference_value": -0.18190894888669912,
+            "contribution": 71.7288058378611,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 58.36153290361338,
+            "reference_value": -0.4456178729771162,
+            "contribution": 63.194117146796806,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 63.106559584486135,
+            "reference_value": -0.17034143298040835,
+            "contribution": 58.442387673500754,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 66.32899907887507,
+            "reference_value": 0.077609705033625,
+            "contribution": 56.15342466377225,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 56.97100372433489,
+            "reference_value": 0.11167855262643003,
+            "contribution": 51.62487319321804,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 43.58426967034865,
+            "reference_value": -0.29799253964971023,
+            "contribution": 46.08164503131168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 36.255118496693576,
+            "reference_value": 0.08959341572900685,
+            "contribution": 38.0914910545532,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 5.428569278842724,
+            "reference_value": -0.29213556082717096,
+            "contribution": 6.526002676405168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "attack_mappings": [
+        {
+          "technique_id": "T1498",
+          "technique_name": "Network Denial of Service",
+          "tactic": "Impact",
+          "rationale": "High packet rate or volume directed at target",
+          "applicability": "high",
+          "qualification": "possible"
+        },
+        {
+          "technique_id": "T1499",
+          "technique_name": "Endpoint Denial of Service",
+          "tactic": "Impact",
+          "rationale": "Connection flooding or resource exhaustion patterns",
+          "applicability": "medium",
+          "qualification": "possible"
+        }
+      ],
+      "evidence": {
+        "items": [
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 14287.549030539782,
+            "reference_value": 0.048948707654247775,
+            "contribution": 13566.381392464533,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 168.09430615387055,
+            "reference_value": -0.13440190415912262,
+            "contribution": 183.24910164566882,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 128.17104770286545,
+            "reference_value": 0.11618339759144632,
+            "contribution": 174.82646837466862,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 108.08284873300617,
+            "reference_value": 0.19909940074149152,
+            "contribution": 110.78846962006565,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 81.06858495742401,
+            "reference_value": 0.13301380144996036,
+            "contribution": 90.48508175761799,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 79.55886805715893,
+            "reference_value": 0.09454877898819113,
+            "contribution": 75.1892118522761,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 64.14394569209858,
+            "reference_value": -0.18190894888669912,
+            "contribution": 71.7288058378611,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 58.36153290361338,
+            "reference_value": -0.4456178729771162,
+            "contribution": 63.194117146796806,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 63.106559584486135,
+            "reference_value": -0.17034143298040835,
+            "contribution": 58.442387673500754,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 66.32899907887507,
+            "reference_value": 0.077609705033625,
+            "contribution": 56.15342466377225,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 56.97100372433489,
+            "reference_value": 0.11167855262643003,
+            "contribution": 51.62487319321804,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 43.58426967034865,
+            "reference_value": -0.29799253964971023,
+            "contribution": 46.08164503131168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 36.255118496693576,
+            "reference_value": 0.08959341572900685,
+            "contribution": 38.0914910545532,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 5.428569278842724,
+            "reference_value": -0.29213556082717096,
+            "contribution": 6.526002676405168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "evidence_value_space": "standardized_model_input"
+    },
+    "behavioral_evidence_status": "available",
+    "behavioral_evidence": [
+      {
+        "signal_type": "DESTINATION_CONCENTRATION",
+        "observed_value": 1.0,
+        "unit": "fraction of observed sessions",
+        "reference_threshold": 0.8,
+        "comparison": ">=",
+        "threshold_semantics": "operational_policy_threshold",
+        "observation_window": {
+          "start": 941,
+          "end": 1001,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "scope_source": "192.0.2.1",
+          "scope_destination": "198.51.100.1",
+          "key_evictions_total": 0,
+          "membership_overflow_observations": 0,
+          "window_observation_semantics": "Retained event-time observations; key eviction can reduce coverage.",
+          "sessions": 8,
+          "distinct_destinations": 1,
+          "destination_frequencies": {
+            "198.51.100.1": 8
+          },
+          "ratio_is_lower_bound": false
+        },
+        "detector": "stream_c2",
+        "detector_version": "sih-f3/1.0",
+        "confidence_semantics": "No probability or confidence is assigned.",
+        "interpretation": "Passive behavioral evidence; legitimate activity remains possible."
+      },
+      {
+        "signal_type": "PORT_FANOUT",
+        "observed_value": 8,
+        "unit": "distinct observed values",
+        "reference_threshold": 4,
+        "comparison": ">=",
+        "threshold_semantics": "operational_policy_threshold",
+        "observation_window": {
+          "start": 941,
+          "end": 1001,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "scope_source": "192.0.2.1",
+          "scope_destination": "198.51.100.1",
+          "key_evictions_total": 0,
+          "membership_overflow_observations": 0,
+          "window_observation_semantics": "Retained event-time observations; key eviction can reduce coverage.",
+          "sessions": 8,
+          "flow_rate": 0.13333333333333333,
+          "count_is_lower_bound": false,
+          "alternative_explanations": [
+            "monitoring",
+            "service discovery",
+            "proxies",
+            "distributed applications"
+          ]
+        },
+        "detector": "stream_recon",
+        "detector_version": "sih-f3/1.0",
+        "confidence_semantics": "No probability or confidence is assigned.",
+        "interpretation": "Passive behavioral evidence; legitimate activity remains possible."
+      }
+    ],
+    "behavioral_policy": {
+      "version": "sih-f3/1.0",
+      "action": "enrich_ml",
+      "behavioral_alert": false,
+      "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+    },
+    "behavioral_attack_context": [
+      {
+        "technique_id": "T1046",
+        "technique_name": "Network Service Scanning",
+        "tactic": "Discovery",
+        "rationale": "Context only: observed streaming behavior can also be legitimate; no intent or attribution is established.",
+        "applicability": "high",
+        "qualification": "possible",
+        "source": "stream_recon"
+      }
+    ],
+    "source": {
+      "source_mode": "REPLAY",
+      "replay_file_identifier": "6e3eef1dc02a4a9ba74cc437d4cbd254"
+    },
+    "deployment_model": {
+      "model_name": "runtime",
+      "model_version": "1.0.0",
+      "feature_schema_version": "2.0.0",
+      "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+    }
+  },
+  "src_ip": "192.0.2.1",
+  "dst_ip": "198.51.100.1",
+  "src_port": 10007,
+  "dst_port": 107,
+  "protocol": 6
+}

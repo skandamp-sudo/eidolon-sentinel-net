@@ -79,12 +79,19 @@ async def websocket_events(websocket: WebSocket) -> None:
 
     # Subscribe with unique ID
     sub_id = f"ws-{uuid.uuid4().hex[:8]}"
-    sub_queue = event_bus.subscribe(sub_id)
+    try:
+        sub_queue = event_bus.subscribe(sub_id)
+    except RuntimeError:
+        await websocket.close(code=1013)
+        return
     metrics = getattr(websocket.app.state, 'sensor_metrics', None)
     event = None
 
+    async def send(payload):
+        await asyncio.wait_for(websocket.send_json(payload), config.ws_send_timeout_sec)
+
     try:
-        await websocket.send_json({"type": "auth_ok"})
+        await send({"type": "auth_ok"})
         while True:
             # Check for events non-blockingly, send heartbeat if none
             event = None
@@ -96,7 +103,7 @@ async def websocket_events(websocket: WebSocket) -> None:
                 pass
 
             if event is not None:
-                await websocket.send_json({"type": "event", "data": event})
+                await send({"type": "event", "data": event})
                 if metrics:
                     metrics.increment('events_delivered')
                 event = None
@@ -111,13 +118,15 @@ async def websocket_events(websocket: WebSocket) -> None:
                     # Client sent something — could be a filter update, ignore for now
                 except asyncio.TimeoutError:
                     # No client message — send heartbeat
-                    await websocket.send_json({"type": "ping"})
+                    await send({"type": "ping"})
     except WebSocketDisconnect:
         pass
     except Exception:
         logger.exception('WebSocket delivery failed')
         if metrics:
             metrics.increment('processing_errors')
+            metrics.increment('output_errors')
+            metrics.set_gauge('last_error_kind', 'OUTPUT_ERROR')
     finally:
         dropped = event_bus.unsubscribe(sub_id) + (1 if event is not None else 0)
         if metrics:

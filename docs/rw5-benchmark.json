@@ -71,5 +71,6 @@
     "production_build": "PASS",
     "frozen_model_parity_scenarios_passed": 7
   },
-  "decision": "NO-GO FOR SIH INTELLIGENCE HARDENING"
+  "decision": "NO-GO FOR SIH INTELLIGENCE HARDENING",
+  "superseded_by": "rw5b-benchmark.json"
 }

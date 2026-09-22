@@ -63,7 +63,24 @@ export interface ATTACKMapping {
 
 // ─── Events ──────────────────────────────────────────────────────────
 
+export interface BehavioralEvidence {
+  signal_type: string;
+  observed_value: number;
+  unit: string;
+  reference_threshold: number;
+  comparison: string;
+  observation_window: { start: number; end: number; duration_sec: number; clock: string; alignment: string };
+  supporting_context: Record<string, unknown>;
+  detector: string;
+  confidence_semantics: string;
+  interpretation: string;
+}
+
 export interface DetectionEvent {
+  behavioral_evidence_status?: string;
+  behavioral_evidence?: BehavioralEvidence[];
+  behavioral_policy?: { action?: string; behavioral_alert?: boolean; semantics?: string };
+  behavioral_attack_context?: ATTACKMapping[];
   model_name?: string | null;
   deployment_model_version?: string | null;
   model_manifest_sha256?: string | null;
@@ -160,6 +177,24 @@ export interface StatsResponse {
 // ─── Status ──────────────────────────────────────────────────────────
 
 export interface SensorMetrics {
+  intelligence_keys?: number;
+  intelligence_keys_peak?: number;
+  intelligence_evictions?: number;
+  intelligence_evidence_generated?: number;
+  intelligence_processing_errors?: number;
+  intelligence_member_overflows?: number;
+  intelligence_late_observations?: number;
+  kernel_capture_drops?: number | null;
+  retention_failures?: number;
+  retention_events_removed?: number;
+  retention_flows_removed?: number;
+  retention_duration_sec?: number;
+  retention_last_success?: number | null;
+  database_bytes?: number | null;
+  wal_bytes?: number | null;
+  subscriber_queue_peak?: number;
+  subscriber_rejections?: number;
+
   source_errors?: number;
   output_errors?: number;
   last_error_kind?: string;

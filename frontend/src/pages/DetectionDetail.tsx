@@ -242,6 +242,23 @@ export function DetectionDetail() {
         </div>
       )}
 
+      <div className="card detail-section">
+        <h2 className="detail-section__title">BEHAVIORAL EVIDENCE</h2>
+        <p className="page-description">Passive streaming heuristics are contextual observations, not attack confirmations or probabilities. ML scores and severity remain separate.</p>
+        {event.behavioral_policy?.action && <p>Operational policy: {event.behavioral_policy.action.replaceAll('_', ' ')}{event.behavioral_policy.behavioral_alert ? ' · Behavioral review requested' : ''}</p>}
+        {event.behavioral_evidence?.length ? <div className="data-table-container" role="region" aria-label="Behavioral evidence table" tabIndex={0}>
+          <table className="data-table"><thead><tr><th>Signal / source</th><th>Observed</th><th>Window</th><th>Policy threshold</th><th>Supporting context</th></tr></thead>
+          <tbody>{event.behavioral_evidence.map((signal, index) => <tr key={index}>
+            <td>{signal.signal_type}<br /><small>{signal.detector}</small></td>
+            <td>{signal.observed_value.toLocaleString(undefined, { maximumFractionDigits: 4 })} {signal.unit}</td>
+            <td>{signal.observation_window.duration_sec} s<br /><small>{formatTimestamp(signal.observation_window.start)} — {formatTimestamp(signal.observation_window.end)}<br />Capture event time; latest bucket may be partial</small></td>
+            <td>{signal.comparison} {signal.reference_threshold}</td>
+            <td><details><summary>Context and limitations</summary><dl>{Object.entries(signal.supporting_context).map(([key, value]) => <div key={key}><dt>{key.replaceAll('_', ' ')}</dt><dd>{typeof value === 'object' ? JSON.stringify(value) : String(value)}</dd></div>)}</dl><p>{signal.interpretation}</p><p>{signal.confidence_semantics}</p></details></td>
+          </tr>)}</tbody></table>
+        </div> : <p className="page-description">{event.behavioral_evidence_status === 'unavailable_processing_error' ? 'Streaming evidence unavailable due to an operational processing error.' : event.behavioral_evidence_status === 'available' ? 'No streaming signals were emitted for the retained observations.' : event.behavioral_evidence_status === 'disabled' ? 'Streaming intelligence was disabled for this event.' : 'Behavioral evidence was not recorded for this event.'}</p>}
+        {event.behavioral_attack_context?.map((mapping, index) => <p key={index}>{mapping.technique_id} · {mapping.technique_name} — {mapping.qualification}: {mapping.rationale}</p>)}
+      </div>
+
       {/* ─── RATIONALE ──────────────────────────────── */}
       <div className="card detail-section">
         <h2 className="detail-section__title">RATIONALE</h2>

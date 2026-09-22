@@ -45,3 +45,11 @@ it('renders replay with no operational-health reasons and unavailable counters',
   expect(screen.getAllByText('—').length).toBeGreaterThan(0);
   expect(screen.queryByText('Operational reasons:')).not.toBeInTheDocument();
 });
+
+
+it('keeps unavailable kernel drops and exact-history limits explicit', async () => {
+  show('running', 'live_passive_sensor');
+  expect(await screen.findByText(/Kernel capture drops: Unavailable from capture backend/)).toBeInTheDocument();
+  expect(screen.getByText(/Per-flow memory is not strictly bounded/)).toBeInTheDocument();
+  expect(screen.getByText(/Deleting rows does not necessarily shrink/)).toBeInTheDocument();
+});

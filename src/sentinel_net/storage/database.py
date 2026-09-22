@@ -90,6 +90,12 @@ class Database:
         if 'event_json' not in columns:
             await self._conn.execute("ALTER TABLE events ADD COLUMN event_json TEXT")
 
+        async with self._conn.execute("PRAGMA table_info(flows)") as cursor:
+            flow_columns = {row[1] for row in await cursor.fetchall()}
+        if 'retention_eligible' not in flow_columns:
+            await self._conn.execute("ALTER TABLE flows ADD COLUMN retention_eligible INTEGER NOT NULL DEFAULT 0")
+        await self._conn.execute("CREATE INDEX IF NOT EXISTS idx_flows_retention ON flows(retention_eligible)")
+
         # Add indexes if not exists
         await self._conn.execute("CREATE INDEX IF NOT EXISTS idx_events_timestamp ON events(timestamp)")
         await self._conn.execute("CREATE INDEX IF NOT EXISTS idx_events_threat_type ON events(threat_type)")
@@ -170,6 +176,7 @@ class Database:
             try:
                 if event.observed_flow:
                     await self._insert_flow(event.observed_flow)
+                    await self._conn.execute("UPDATE flows SET retention_eligible=1 WHERE id=?", (event.observed_flow.id,))
                 await self._conn.execute("""
                     INSERT INTO events (
                         id, timestamp, flow_id, severity, threat_type, anomaly_score,
@@ -411,6 +418,57 @@ class Database:
                     
         await self._conn.commit()
         return deleted_count
+
+    def storage_sizes(self) -> dict:
+        """Allocated file sizes; DELETE does not imply filesystem shrink."""
+        result = {}
+        for key, path in [('database_bytes', self.db_path), ('wal_bytes', Path(str(self.db_path) + '-wal'))]:
+            try:
+                result[key] = path.stat().st_size
+            except FileNotFoundError:
+                result[key] = 0
+            except OSError:
+                result[key] = None
+        return result
+
+    async def cleanup_batch(self, *, max_count: int, cutoff: float, row_limit: int) -> dict:
+        """Bound deleted rows across both tables in one transaction.
+
+        Only flows proven complete by a committed event are eligible. Standalone
+        store_flow records and active in-memory flows are never garbage-collected.
+        The writer lock serializes eligibility, references, and cleanup.
+        """
+        if row_limit <= 0 or max_count < 0:
+            raise ValueError('Invalid retention bounds')
+        async with self._write_lock:
+            if not self._conn:
+                raise RuntimeError('Database not initialized')
+            try:
+                # Acquire the SQLite writer reservation before reads, including
+                # against other connections/processes. Busy timeout stays finite.
+                await self._conn.execute('BEGIN IMMEDIATE')
+                async with self._conn.execute('SELECT COUNT(*) FROM events') as cur:
+                    excess = max(0, (await cur.fetchone())[0] - max_count)
+                async with self._conn.execute(
+                    'SELECT id, flow_id, timestamp FROM events ORDER BY timestamp, id LIMIT ?',
+                    (max(1, row_limit // 2),)) as cur:
+                    rows = await cur.fetchall()
+                victims = [(eid, fid) for i, (eid, fid, ts) in enumerate(rows) if i < excess or ts < cutoff]
+                for eid, fid in victims:
+                    # Also safely migrate eligibility for historical referenced flows.
+                    await self._conn.execute('UPDATE flows SET retention_eligible=1 WHERE id=?', (fid,))
+                    await self._conn.execute('DELETE FROM events WHERE id=?', (eid,))
+                remaining = row_limit - len(victims)
+                async with self._conn.execute(
+                    'DELETE FROM flows WHERE id IN (SELECT f.id FROM flows f WHERE retention_eligible=1 '
+                    'AND NOT EXISTS (SELECT 1 FROM events e WHERE e.flow_id=f.id) LIMIT ?)',
+                    (remaining,)) as cur:
+                    flows = cur.rowcount
+                await self._conn.commit()
+                return {'events': len(victims), 'flows': flows}
+            except BaseException:
+                await self._conn.rollback()
+                raise
 
     async def health_check(self) -> bool:
         """Verify the database is accessible.

@@ -1,0 +1,1698 @@
+{
+  "phase": "SIH-F3",
+  "comparison": "One sequential 30-second run per workload and mode; descriptive, not statistically established causality.",
+  "results": [
+    {
+      "workload": "A_mixed",
+      "input_sha256": "b4f92ada49bce60c9d8f382b44db18c8e77231089432ad74e582dbebccfb7f88",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 420.511063154849,
+          "f3_disabled": 398.40145709409325,
+          "f3_enabled": 397.78936937782083,
+          "enabled_vs_disabled_percent": -0.15363591306540858,
+          "enabled_vs_rw5b_percent": -5.403352198765132
+        },
+        "flows_per_sec": {
+          "rw5b": 53.09349380513049,
+          "f3_disabled": 50.317769462536596,
+          "f3_enabled": 50.25370364308413,
+          "enabled_vs_disabled_percent": -0.12732245514214258,
+          "enabled_vs_rw5b_percent": -5.348659427969215
+        },
+        "processing_mbps": {
+          "rw5b": 0.48233995932229196,
+          "f3_disabled": 0.45727861371065465,
+          "f3_enabled": 0.45633145578392387,
+          "enabled_vs_disabled_percent": -0.20712928580781664,
+          "enabled_vs_rw5b_percent": -5.3921519533465805
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 0.5380160000640899,
+            "p95": 11.246585250319185,
+            "p99": 19.598574949850466,
+            "samples": 4096,
+            "total_observations": 12704,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4781890002050204,
+            "p95": 0.7783568504237337,
+            "p99": 0.9369302603954567,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.243771999426826,
+            "p95": 5.6174421988544045,
+            "p99": 21.21166266808359,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.7540465002384735,
+            "p95": 6.160443449516604,
+            "p99": 21.9184404394764,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.812656499983859,
+            "p95": 7.979272449301788,
+            "p99": 28.878364078882484,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.276741000059701,
+            "p95": 5.952651200186648,
+            "p99": 14.71602931880625,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.2811940003084601,
+            "p95": 0.3580489989872149,
+            "p99": 0.45567108036266296,
+            "samples": 1604,
+            "total_observations": 1604,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.001615500877960585,
+            "p95": 0.014533500234392704,
+            "p99": 0.017035150813171657,
+            "samples": 4096,
+            "total_observations": 13546,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6058549997760565,
+            "p95": 12.94811924935857,
+            "p99": 21.173051749156073,
+            "samples": 4096,
+            "total_observations": 12027,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5085609991510864,
+            "p95": 0.7526384992161179,
+            "p99": 0.96642387969041,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.43183700190275,
+            "p95": 5.996623901228302,
+            "p99": 22.884894560629615,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.9632099999143975,
+            "p95": 6.566155300424725,
+            "p99": 23.72265056088508,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.127549999291659,
+            "p95": 8.735856699786382,
+            "p99": 29.170749180520893,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.384452000114834,
+            "p95": 11.159930199028159,
+            "p99": 26.878152559329454,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.31143099840846844,
+            "p95": 0.39133360132836964,
+            "p99": 0.49551754025742384,
+            "samples": 1519,
+            "total_observations": 1519,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.03015750007762108,
+            "p95": 0.30549425036952016,
+            "p99": 0.34768649929901635,
+            "samples": 4096,
+            "total_observations": 13525,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5795624992970261,
+            "p95": 12.045435250911396,
+            "p99": 20.965278350195163,
+            "samples": 4096,
+            "total_observations": 12008,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4902060009044362,
+            "p95": 0.762589000078151,
+            "p99": 0.9696596398134713,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.280793998987065,
+            "p95": 5.595789799190243,
+            "p99": 22.47473807998176,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.805135000424343,
+            "p95": 6.156324401308667,
+            "p99": 23.29442260037467,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.261762999201892,
+            "p95": 8.28938719969301,
+            "p99": 28.897143039212096,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.5372470008733217,
+            "p95": 6.403196601240785,
+            "p99": 16.8884946800244,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.346447999618249,
+            "p95": 0.4438444004335907,
+            "p99": 0.5112078395904971,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 223895552,
+          "sampled_peak": 230477824,
+          "final": 230477824,
+          "process_lifetime_peak": 230494208
+        },
+        "disabled": {
+          "initial": 223952896,
+          "sampled_peak": 231055360,
+          "final": 231055360,
+          "process_lifetime_peak": 231071744
+        },
+        "enabled": {
+          "initial": 224116736,
+          "sampled_peak": 231165952,
+          "final": 231161856,
+          "process_lifetime_peak": 231178240
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 2,
+        "intelligence_members_per_dimension_peak": 2,
+        "intelligence_keys_peak": 4,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 1469,
+        "intelligence_session_samples_peak": 32,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 1751,
+        "intelligence_processing_errors": 0
+      }
+    },
+    {
+      "workload": "B_cardinality",
+      "input_sha256": "4f639df944ff74a7e0917607305c51ea376c8a0e4fe58e4cac198348c1431682",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 103.9895909486554,
+          "f3_disabled": 94.02715566269427,
+          "f3_enabled": 89.87586552380274,
+          "enabled_vs_disabled_percent": -4.414990658425888,
+          "enabled_vs_rw5b_percent": -13.572248237634932
+        },
+        "flows_per_sec": {
+          "rw5b": 99.87313211751164,
+          "f3_disabled": 91.97671924637383,
+          "f3_enabled": 87.82062794558148,
+          "enabled_vs_disabled_percent": -4.518633992216681,
+          "enabled_vs_rw5b_percent": -12.06781435246176
+        },
+        "processing_mbps": {
+          "rw5b": 0.12412495528842143,
+          "f3_disabled": 0.11193377961946956,
+          "f3_enabled": 0.10695821732632901,
+          "enabled_vs_disabled_percent": -4.445094510393089,
+          "enabled_vs_rw5b_percent": -13.830206763984842
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 8.221222000429407,
+            "p95": 18.997789500826908,
+            "p99": 30.83344456135818,
+            "samples": 3183,
+            "total_observations": 3183,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.3891039996233303,
+            "p95": 0.49495539933559474,
+            "p99": 0.7971138792345304,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.031841999676544,
+            "p95": 5.129299200052628,
+            "p99": 20.07854628063798,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.432355000972166,
+            "p95": 5.54093639984785,
+            "p99": 20.759590240340923,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.157351999514503,
+            "p95": 6.906928200260152,
+            "p99": 297.1135158406837,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 1.9321380004839739,
+            "p95": 11.373650599853132,
+            "p99": 14.182290999160623,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.23503400007029995,
+            "p95": 0.3129541993985185,
+            "p99": 0.39579771932039876,
+            "samples": 3057,
+            "total_observations": 3057,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.010862499948416371,
+            "p95": 0.01660350062593352,
+            "p99": 0.03025939886356372,
+            "samples": 4096,
+            "total_observations": 5715,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 9.036419000040041,
+            "p95": 20.454744399830812,
+            "p99": 35.213041639581164,
+            "samples": 2889,
+            "total_observations": 2889,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4225790007694741,
+            "p95": 0.5504760010808241,
+            "p99": 0.862827250330156,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.3816824991154135,
+            "p95": 5.710377250579768,
+            "p99": 19.413687751239195,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.822889000024588,
+            "p95": 6.174967250899499,
+            "p99": 20.517448500413593,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.664898500981508,
+            "p95": 7.8342684996641765,
+            "p99": 406.61525999985315,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.122966000570159,
+            "p95": 12.025591749988962,
+            "p99": 23.083425499407895,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.2749365003182902,
+            "p95": 0.36953349899704335,
+            "p99": 0.46554250047847745,
+            "samples": 2826,
+            "total_observations": 2826,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.24541550010326318,
+            "p95": 0.35864024903276004,
+            "p99": 0.6067974003599389,
+            "samples": 4096,
+            "total_observations": 5447,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 9.375363999424735,
+            "p95": 20.46873630060872,
+            "p99": 33.30192572022497,
+            "samples": 2755,
+            "total_observations": 2755,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.39660049969825195,
+            "p95": 0.4828224011362179,
+            "p99": 0.7550252807050135,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.182613501143351,
+            "p95": 5.330272400442481,
+            "p99": 21.152741939422445,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.582116499477706,
+            "p95": 5.763783749625873,
+            "p99": 21.973725700372597,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.753042500145966,
+            "p95": 7.807781350584262,
+            "p99": 343.8762670684641,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.388404000157607,
+            "p95": 12.093825750434917,
+            "p99": 18.989067360108123,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3338739998071105,
+            "p95": 0.4170442501163051,
+            "p99": 0.5181586800063088,
+            "samples": 2692,
+            "total_observations": 2692,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 223719424,
+          "sampled_peak": 230326272,
+          "final": 230293504,
+          "process_lifetime_peak": 230395904
+        },
+        "disabled": {
+          "initial": 224251904,
+          "sampled_peak": 230965248,
+          "final": 230957056,
+          "process_lifetime_peak": 231002112
+        },
+        "enabled": {
+          "initial": 224083968,
+          "sampled_peak": 231174144,
+          "final": 231174144,
+          "process_lifetime_peak": 231190528
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 2,
+        "intelligence_members_per_dimension_peak": 1,
+        "intelligence_keys_peak": 3,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 2660,
+        "intelligence_session_samples_peak": 32,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 5384,
+        "intelligence_processing_errors": 0
+      }
+    },
+    {
+      "workload": "C_long_tuple",
+      "input_sha256": "ae1ceeae264d06a3b5867647995dc7dceeb3eb6c63d2b1bab941ea940a955cd9",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 1579.4820103295492,
+          "f3_disabled": 1550.2721159897478,
+          "f3_enabled": 1484.4066752996214,
+          "enabled_vs_disabled_percent": -4.248637385061627,
+          "enabled_vs_rw5b_percent": -6.019399677118886
+        },
+        "flows_per_sec": {
+          "rw5b": 0.033269763250754064,
+          "f3_disabled": 0.03328335514598625,
+          "f3_enabled": 0.03328564614090101,
+          "enabled_vs_disabled_percent": 0.006883305197780132,
+          "enabled_vs_rw5b_percent": 0.04773971496951912
+        },
+        "processing_mbps": {
+          "rw5b": 1.8888615311699013,
+          "f3_disabled": 1.8539129697844863,
+          "f3_enabled": 1.7748242041641518,
+          "enabled_vs_disabled_percent": -4.266045219454306,
+          "enabled_vs_rw5b_percent": -6.037357695305401
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 0.30773999878874747,
+            "p95": 0.4749702497974795,
+            "p99": 0.5977229989184708,
+            "samples": 4096,
+            "total_observations": 47475,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 15.192402999673504,
+            "p95": 15.192402999673504,
+            "p99": 15.192402999673504,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.405531999713276,
+            "p95": 5.405531999713276,
+            "p99": 5.405531999713276,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 20.59793499938678,
+            "p95": 20.59793499938678,
+            "p99": 20.59793499938678,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 41.85942199910642,
+            "p95": 41.85942199910642,
+            "p99": 41.85942199910642,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 13.068838001345284,
+            "p95": 13.068838001345284,
+            "p99": 13.068838001345284,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3244259987695841,
+            "p95": 0.3244259987695841,
+            "p99": 0.3244259987695841,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.000865000401972793,
+            "p95": 0.0012012505976599641,
+            "p99": 0.0016535011127416527,
+            "samples": 4096,
+            "total_observations": 46579,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.3177544995196513,
+            "p95": 0.43542299999899114,
+            "p99": 0.5666331997417733,
+            "samples": 4096,
+            "total_observations": 46578,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 2.4690079990250524,
+            "p95": 2.4690079990250524,
+            "p99": 2.4690079990250524,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.929192000621697,
+            "p95": 5.929192000621697,
+            "p99": 5.929192000621697,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 8.39819999964675,
+            "p95": 8.39819999964675,
+            "p99": 8.39819999964675,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 28.32195599876286,
+            "p95": 28.32195599876286,
+            "p99": 28.32195599876286,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 13.937411000370048,
+            "p95": 13.937411000370048,
+            "p99": 13.937411000370048,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.33443000029365066,
+            "p95": 0.33443000029365066,
+            "p99": 0.33443000029365066,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.017898500118462835,
+            "p95": 0.022287249521468766,
+            "p99": 0.02750520079644055,
+            "samples": 4096,
+            "total_observations": 44597,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.3379780000614119,
+            "p95": 0.48733574976722593,
+            "p99": 0.6131642996479061,
+            "samples": 4096,
+            "total_observations": 44596,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 2.321235999261262,
+            "p95": 2.321235999261262,
+            "p99": 2.321235999261262,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.642625999826123,
+            "p95": 5.642625999826123,
+            "p99": 5.642625999826123,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 7.963861999087385,
+            "p95": 7.963861999087385,
+            "p99": 7.963861999087385,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 28.013002000079723,
+            "p95": 28.013002000079723,
+            "p99": 28.013002000079723,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 12.331212001299718,
+            "p95": 12.331212001299718,
+            "p99": 12.331212001299718,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.4003209996881196,
+            "p95": 0.4003209996881196,
+            "p99": 0.4003209996881196,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 223916032,
+          "sampled_peak": 231309312,
+          "final": 231309312,
+          "process_lifetime_peak": 231489536
+        },
+        "disabled": {
+          "initial": 224116736,
+          "sampled_peak": 231927808,
+          "final": 231927808,
+          "process_lifetime_peak": 232017920
+        },
+        "enabled": {
+          "initial": 224038912,
+          "sampled_peak": 231542784,
+          "final": 231542784,
+          "process_lifetime_peak": 231632896
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 2,
+        "intelligence_members_per_dimension_peak": 1,
+        "intelligence_keys_peak": 3,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 0,
+        "intelligence_session_samples_peak": 1,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 0,
+        "intelligence_processing_errors": 0
+      }
+    },
+    {
+      "workload": "D_burst",
+      "input_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 315.42609716478927,
+          "f3_disabled": 312.4759223106293,
+          "f3_enabled": 286.90979037569906,
+          "enabled_vs_disabled_percent": -8.181792614893125,
+          "enabled_vs_rw5b_percent": -9.040566727169796
+        },
+        "flows_per_sec": {
+          "rw5b": 78.85652429119732,
+          "f3_disabled": 78.11898057765733,
+          "f3_enabled": 71.69474013948157,
+          "enabled_vs_disabled_percent": -8.223661382510594,
+          "enabled_vs_rw5b_percent": -9.082043896924851
+        },
+        "processing_mbps": {
+          "rw5b": 0.22793082427721653,
+          "f3_disabled": 0.22561234641004188,
+          "f3_enabled": 0.20701018904441557,
+          "enabled_vs_disabled_percent": -8.245185895907314,
+          "enabled_vs_rw5b_percent": -9.178501985916853
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 0.5814365003971034,
+            "p95": 11.418803250762721,
+            "p99": 22.660915799588135,
+            "samples": 4096,
+            "total_observations": 9640,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4751110000142944,
+            "p95": 0.6783446493500377,
+            "p99": 0.8972382698448196,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.202109500511142,
+            "p95": 6.268607350102684,
+            "p99": 21.681965639199877,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.6927929997764295,
+            "p95": 6.781546799447824,
+            "p99": 22.529237869675818,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.628392499602342,
+            "p95": 8.023114500065274,
+            "p99": 23.534751309798594,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.2790319999330677,
+            "p95": 10.864174549442277,
+            "p99": 22.423925650290926,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.27836299977934686,
+            "p95": 0.35708164987227053,
+            "p99": 0.4222328489049685,
+            "samples": 2410,
+            "total_observations": 2410,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.0013839999155607074,
+            "p95": 0.013431999832391739,
+            "p99": 0.01572170058352641,
+            "samples": 4096,
+            "total_observations": 11890,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5932154999754857,
+            "p95": 11.480216750896943,
+            "p99": 22.195163899959898,
+            "samples": 4096,
+            "total_observations": 9512,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4756085008921218,
+            "p95": 0.6636520991378348,
+            "p99": 0.9353505008584763,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.23980899995513,
+            "p95": 6.298841299394554,
+            "p99": 22.79875547024858,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.730404500151053,
+            "p95": 6.800774149360224,
+            "p99": 23.534983500339877,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.720558499888284,
+            "p95": 8.094191599138867,
+            "p99": 25.172466029034698,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.325200499399216,
+            "p95": 11.45150125084911,
+            "p99": 16.400973470590547,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3012195002156659,
+            "p95": 0.3804177493293537,
+            "p99": 0.4435808087146143,
+            "samples": 2378,
+            "total_observations": 2378,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.028386500162014272,
+            "p95": 0.2755797504505608,
+            "p99": 0.46220225021897937,
+            "samples": 4096,
+            "total_observations": 10964,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6573034997927607,
+            "p95": 13.221121500009758,
+            "p99": 24.30350919912604,
+            "samples": 4096,
+            "total_observations": 8772,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4811869994227891,
+            "p95": 0.5951992502559733,
+            "p99": 0.8383387698813752,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.651442501199199,
+            "p95": 6.518470749870175,
+            "p99": 22.801741188868622,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.150594000951969,
+            "p95": 7.037052000669063,
+            "p99": 23.603107600429233,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.626344500546111,
+            "p95": 8.755158500207472,
+            "p99": 25.902917479543277,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.3654309998164536,
+            "p95": 12.422558999787721,
+            "p99": 17.163286819759406,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3345000004628673,
+            "p95": 0.43110345068271266,
+            "p99": 0.5316932801179065,
+            "samples": 2192,
+            "total_observations": 2192,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 223760384,
+          "sampled_peak": 230047744,
+          "final": 230035456,
+          "process_lifetime_peak": 230051840
+        },
+        "disabled": {
+          "initial": 224096256,
+          "sampled_peak": 230948864,
+          "final": 230948864,
+          "process_lifetime_peak": 230965248
+        },
+        "enabled": {
+          "initial": 224071680,
+          "sampled_peak": 230875136,
+          "final": 230862848,
+          "process_lifetime_peak": 230879232
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 1,
+        "intelligence_members_per_dimension_peak": 1,
+        "intelligence_keys_peak": 3,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 2160,
+        "intelligence_session_samples_peak": 32,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 2214,
+        "intelligence_processing_errors": 0
+      }
+    },
+    {
+      "workload": "E_slow_websocket",
+      "input_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 275.13967873139694,
+          "f3_disabled": 266.87646621061407,
+          "f3_enabled": 263.2195109609538,
+          "enabled_vs_disabled_percent": -1.3702801530556252,
+          "enabled_vs_rw5b_percent": -4.332405934834327
+        },
+        "flows_per_sec": {
+          "rw5b": 68.78491968284924,
+          "f3_disabled": 66.71911655265352,
+          "f3_enabled": 65.80487774023845,
+          "enabled_vs_disabled_percent": -1.3702801530556252,
+          "enabled_vs_rw5b_percent": -4.332405934834327
+        },
+        "processing_mbps": {
+          "rw5b": 0.32853009391151894,
+          "f3_disabled": 0.3186467681174842,
+          "f3_enabled": 0.3143691259850969,
+          "enabled_vs_disabled_percent": -1.3424401438806188,
+          "enabled_vs_rw5b_percent": -4.310402057181372
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 0.5347915002857917,
+            "p95": 12.427123750512692,
+            "p99": 24.42271655063455,
+            "samples": 4096,
+            "total_observations": 8264,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5004015010854346,
+            "p95": 0.6112519999987853,
+            "p99": 0.8120644007249208,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.395127501084062,
+            "p95": 5.678689251453761,
+            "p99": 22.27380705007817,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.900643999462773,
+            "p95": 6.235150500288,
+            "p99": 23.145986549661746,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.853962000401225,
+            "p95": 7.612829500430962,
+            "p99": 24.16975654932682,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.2449440002674237,
+            "p95": 11.63086775022748,
+            "p99": 23.460988198985422,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.29386500045802677,
+            "p95": 0.3692632503771165,
+            "p99": 0.4478459507481602,
+            "samples": 2066,
+            "total_observations": 2066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.0018299997464055195,
+            "p95": 0.015528250060015125,
+            "p99": 0.019299900941405216,
+            "samples": 4096,
+            "total_observations": 10010,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5515180000656983,
+            "p95": 13.233488250079972,
+            "p99": 25.06362644853653,
+            "samples": 4096,
+            "total_observations": 8008,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5003359992770129,
+            "p95": 0.6278463988564904,
+            "p99": 0.8756547487973877,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.4973670001127175,
+            "p95": 5.830935649555611,
+            "p99": 22.82619474994135,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.000554499929422,
+            "p95": 6.424999401133389,
+            "p99": 23.5706010098329,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.027820999406686,
+            "p95": 7.832679350394755,
+            "p99": 24.9151645605707,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.3568160004288075,
+            "p95": 11.567317949175045,
+            "p99": 23.40703333991772,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.32604799980617827,
+            "p95": 0.4089896509867685,
+            "p99": 0.4819898202549666,
+            "samples": 2002,
+            "total_observations": 2002,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.030335500014189165,
+            "p95": 0.3110602501692483,
+            "p99": 0.353865800207132,
+            "samples": 4096,
+            "total_observations": 9875,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5549780007640948,
+            "p95": 12.425289498878556,
+            "p99": 24.794484248650434,
+            "samples": 4096,
+            "total_observations": 7900,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4832129998249002,
+            "p95": 0.587611299852142,
+            "p99": 0.8132467991526937,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.293426001822809,
+            "p95": 5.467331799991371,
+            "p99": 22.62531400025182,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.7714739994262345,
+            "p95": 5.972156600000744,
+            "p99": 23.542823561219848,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.1165600000094855,
+            "p95": 7.668321499477314,
+            "p99": 25.335522180685075,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.4531319995730883,
+            "p95": 12.256242100556845,
+            "p99": 24.624352938844822,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3530260000843555,
+            "p95": 0.4491022998990956,
+            "p99": 0.5221646597783547,
+            "samples": 1975,
+            "total_observations": 1975,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 239493120,
+          "sampled_peak": 249360384,
+          "final": 249339904,
+          "process_lifetime_peak": 249364480
+        },
+        "disabled": {
+          "initial": 239992832,
+          "sampled_peak": 250032128,
+          "final": 250019840,
+          "process_lifetime_peak": 250044416
+        },
+        "enabled": {
+          "initial": 240005120,
+          "sampled_peak": 250785792,
+          "final": 250785792,
+          "process_lifetime_peak": 250806272
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 2,
+        "intelligence_members_per_dimension_peak": 1,
+        "intelligence_keys_peak": 3,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 1943,
+        "intelligence_session_samples_peak": 32,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 2483,
+        "intelligence_processing_errors": 0
+      }
+    },
+    {
+      "workload": "F_slow_storage",
+      "input_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "throughput": {
+        "packets_per_sec": {
+          "rw5b": 112.56452116635613,
+          "f3_disabled": 112.20576495307245,
+          "f3_enabled": 113.1066985143735,
+          "enabled_vs_disabled_percent": 0.8029298331309942,
+          "enabled_vs_rw5b_percent": 0.4816591785755442
+        },
+        "flows_per_sec": {
+          "rw5b": 28.141130291589032,
+          "f3_disabled": 28.05144123826811,
+          "f3_enabled": 28.276674628593376,
+          "enabled_vs_disabled_percent": 0.8029298331309942,
+          "enabled_vs_rw5b_percent": 0.4816591785755442
+        },
+        "processing_mbps": {
+          "rw5b": 0.1341007117082762,
+          "f3_disabled": 0.13372901615152927,
+          "f3_enabled": 0.13473205979782127,
+          "enabled_vs_disabled_percent": 0.7500568501569216,
+          "enabled_vs_rw5b_percent": 0.47080144579583205
+        }
+      },
+      "latency_ms": {
+        "rw5b": {
+          "packet_processing": {
+            "p50": 0.5537024999284768,
+            "p95": 31.229333299506834,
+            "p99": 47.34592760865781,
+            "samples": 3380,
+            "total_observations": 3380,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5266909993224544,
+            "p95": 0.6312981993687571,
+            "p99": 0.7696205193497007,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.7107329992286395,
+            "p95": 6.534861199907026,
+            "p99": 23.532300160804876,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.244556999969063,
+            "p95": 7.104615800562896,
+            "p99": 24.284867080714317,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.258774999878369,
+            "p95": 8.71888399888121,
+            "p99": 25.356944480517996,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 22.736695000276086,
+            "p95": 31.60799059915006,
+            "p99": 43.44507108035025,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3023629997187527,
+            "p95": 0.3819885998382233,
+            "p99": 0.4426409603183856,
+            "samples": 845,
+            "total_observations": 845,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.0017339989426545799,
+            "p95": 0.015375249404314673,
+            "p99": 0.027686100565915712,
+            "samples": 4096,
+            "total_observations": 4210,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5633494993162458,
+            "p95": 31.24170240025705,
+            "p99": 48.785352910344905,
+            "samples": 3368,
+            "total_observations": 3368,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5229239995969692,
+            "p95": 0.6352547498863712,
+            "p99": 0.813574860567315,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.726865500742861,
+            "p95": 6.488516249646636,
+            "p99": 23.832138379111715,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.253999000160547,
+            "p95": 7.120937798754311,
+            "p99": 24.599977939960812,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.318961000033596,
+            "p95": 8.808640651295716,
+            "p99": 25.78680698070457,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 22.78074550031306,
+            "p95": 32.20564100020054,
+            "p99": 45.28439678959331,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3246079995733453,
+            "p95": 0.4085660011696745,
+            "p99": 0.49225171991565736,
+            "samples": 842,
+            "total_observations": 842,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.030940499527787324,
+            "p95": 0.3260120001868927,
+            "p99": 0.4221700484777103,
+            "samples": 4096,
+            "total_observations": 4245,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5696525004168507,
+            "p95": 31.163109249973786,
+            "p99": 46.131552648694246,
+            "samples": 3396,
+            "total_observations": 3396,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4810560003534192,
+            "p95": 0.5803754000226033,
+            "p99": 0.7587403595971404,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.390252999655786,
+            "p95": 6.2115963995893235,
+            "p99": 21.776660800387617,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.869439999310998,
+            "p95": 6.759329199121566,
+            "p99": 22.68250227978569,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.138129998362274,
+            "p95": 8.569316800640074,
+            "p99": 24.372958080421082,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 22.825789999842527,
+            "p95": 32.353764599974966,
+            "p99": 41.99031664022185,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.35516100069798995,
+            "p95": 0.4469254010473377,
+            "p99": 0.5370047990436432,
+            "samples": 849,
+            "total_observations": 849,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "rw5b": {
+          "initial": 223768576,
+          "sampled_peak": 229302272,
+          "final": 229285888,
+          "process_lifetime_peak": 229302272
+        },
+        "disabled": {
+          "initial": 224104448,
+          "sampled_peak": 230182912,
+          "final": 230174720,
+          "process_lifetime_peak": 230199296
+        },
+        "enabled": {
+          "initial": 224120832,
+          "sampled_peak": 230289408,
+          "final": 230281216,
+          "process_lifetime_peak": 230305792
+        }
+      },
+      "intelligence_metrics": {
+        "intelligence_keys": 0,
+        "intelligence_buckets_per_key_peak": 2,
+        "intelligence_members_per_dimension_peak": 1,
+        "intelligence_keys_peak": 3,
+        "intelligence_evictions": 0,
+        "intelligence_expirations": 0,
+        "intelligence_member_overflows": 0,
+        "intelligence_session_truncations": 817,
+        "intelligence_session_samples_peak": 32,
+        "intelligence_late_observations": 0,
+        "intelligence_evidence_generated": 1320,
+        "intelligence_processing_errors": 0
+      }
+    }
+  ]
+}
