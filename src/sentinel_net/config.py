@@ -14,6 +14,7 @@ from pathlib import Path
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from sentinel_net.intelligence.config import IntelligenceConfig
+from sentinel_net.dns.config import DNSConfig
 
 
 class SentinelConfig(BaseSettings):
@@ -55,6 +56,7 @@ class SentinelConfig(BaseSettings):
     ws_send_timeout_sec: float = Field(default=5.0, gt=0, allow_inf_nan=False)
 
     intelligence: IntelligenceConfig = Field(default_factory=IntelligenceConfig)
+    dns: DNSConfig = Field(default_factory=DNSConfig)
 
     # ── Retention ──
     max_events: int = Field(default=100_000, ge=0)

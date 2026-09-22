@@ -1,0 +1,1510 @@
+{
+  "event_schema_version": "2.0.0",
+  "id": "610d6352-a3b9-4871-bac0-eec1c88f9e55",
+  "event_id": "610d6352-a3b9-4871-bac0-eec1c88f9e55",
+  "timestamp": 1790075172.714845,
+  "created_at": 1790075172.714845,
+  "flow_id": "d18e0415-4c14-4a8d-8f5a-d32c08a1f315",
+  "severity": "low",
+  "threat_type": "ddos",
+  "threat_class": "ddos",
+  "classification_score": 0.5806687474250793,
+  "classification_score_type": "uncalibrated_classifier_score",
+  "classification_score_class": "ddos",
+  "anomaly_score": 0.44829242100595385,
+  "anomaly_score_type": "normalized_anomaly_score",
+  "detection_source": [
+    "ml_classifier",
+    "anomaly_detector",
+    "dns_intelligence"
+  ],
+  "source_mode": "REPLAY",
+  "capture_interface": null,
+  "replay_file_identifier": "50967626ad20465fa6c9429e57f8aca9",
+  "model_name": "runtime",
+  "deployment_model_version": "1.0.0",
+  "model_manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+  "model_version": "1.0.0",
+  "anomaly_model_version": "1.0.0",
+  "feature_schema_version": "2.0.0",
+  "explanation_version": "1.0.0",
+  "evidence": {
+    "items": [
+      {
+        "feature_name": "forward_bytes",
+        "observed_value": 2746.3490551292284,
+        "reference_value": 0.11618339759144632,
+        "contribution": 3749.2850966965775,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "total_bytes",
+        "observed_value": 2312.4266533649834,
+        "reference_value": 0.19909940074149152,
+        "contribution": 2374.4832164489317,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_payload_bytes",
+        "observed_value": 2058.30372348354,
+        "reference_value": -0.29799253964971023,
+        "contribution": 2161.7790141415157,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "payload_bytes_total",
+        "observed_value": 1701.6938059914526,
+        "reference_value": 0.08959341572900685,
+        "contribution": 1792.2217774140358,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "bytes_per_sec",
+        "observed_value": 1329.2960173522683,
+        "reference_value": 0.048948707654247775,
+        "contribution": 1262.1573119694349,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p25",
+        "observed_value": 144.29725596063258,
+        "reference_value": 0.13301380144996036,
+        "contribution": 161.17404315538482,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p90",
+        "observed_value": 141.90107735065246,
+        "reference_value": 0.09454877898819113,
+        "contribution": 134.1774675183017,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p75",
+        "observed_value": 114.56727585915819,
+        "reference_value": -0.18190894888669912,
+        "contribution": 127.95511296487022,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_min",
+        "observed_value": 104.07377812296042,
+        "reference_value": -0.4456178729771162,
+        "contribution": 112.31645926483134,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_max",
+        "observed_value": 112.49096587086284,
+        "reference_value": -0.17034143298040835,
+        "contribution": 104.05370192571773,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_median",
+        "observed_value": 118.17661729559694,
+        "reference_value": 0.077609705033625,
+        "contribution": 100.09848530393833,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_mean",
+        "observed_value": 101.62342293865596,
+        "reference_value": 0.11167855262643003,
+        "contribution": 92.16660443516261,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_packets",
+        "observed_value": 23.89843381840655,
+        "reference_value": 0.13180648815432186,
+        "contribution": 22.74846270108836,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "total_packets",
+        "observed_value": 24.8700410860111,
+        "reference_value": 0.12062952223942987,
+        "contribution": 21.039931976695648,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "protocol",
+        "observed_value": 15.618943890289103,
+        "reference_value": -0.29213556082717096,
+        "contribution": 18.150866019592048,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "packets_per_sec",
+        "observed_value": 8.738267421721737,
+        "reference_value": -0.13440190415912262,
+        "contribution": 9.664870532120476,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "ip_version",
+        "observed_value": 3.9079658433986246,
+        "reference_value": -0.01936343921618368,
+        "contribution": 3.5329552257984096,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "duration_sec",
+        "observed_value": 2.3500407125747187,
+        "reference_value": -0.25651187969447464,
+        "contribution": 2.334152668630221,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      }
+    ],
+    "explanation_available": true,
+    "unavailable_reason": null
+  },
+  "dns_status": "PARSED",
+  "dns_observation": {
+    "timestamp": 1002.3,
+    "message": {
+      "status": "PARSED",
+      "reason": null,
+      "transaction_id": 23,
+      "qr": false,
+      "opcode": 0,
+      "rcode": 0,
+      "question_count": 1,
+      "answer_count": 0,
+      "record_count": 0,
+      "questions": [
+        {
+          "name": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+          "qtype": 1,
+          "qtype_name": "A",
+          "qclass": 1
+        }
+      ],
+      "response_record_types": [],
+      "message_length": 79,
+      "truncated": false
+    },
+    "visibility": "QUERY_ONLY",
+    "lexical": [
+      {
+        "qname_length": 61,
+        "label_count": 3,
+        "longest_label": 48,
+        "character_entropy": 4.780616778028725,
+        "max_label_entropy": 4.678508854797678,
+        "digit_ratio": 0.22033898305084745,
+        "alphabetic_ratio": 0.7796610169491526,
+        "hexadecimal_ratio": 0.4576271186440678,
+        "unique_characters": 31,
+        "repeated_labels": 0,
+        "subdomain_depth_proxy": 1,
+        "sample_characters": 59,
+        "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+        "label_statistics": [
+          {
+            "length": 48,
+            "entropy": 4.678508854797678
+          },
+          {
+            "length": 7,
+            "entropy": 2.521640636343318
+          },
+          {
+            "length": 4,
+            "entropy": 1.5
+          }
+        ]
+      }
+    ],
+    "client": "192.0.2.1",
+    "parent": "service.test",
+    "server": "198.51.100.53",
+    "retention": "Latest retained message for this conversation; not a complete DNS history",
+    "parent_semantics": "Last two labels only; not a public-suffix/registrable-domain classification",
+    "disposition": "Contextual evidence",
+    "source_window": {
+      "questions": 24,
+      "query_messages": 24,
+      "query_rate": 0.4,
+      "unique_domains": 24,
+      "unique_parent_proxies": 1,
+      "repeated_questions_lower_bound": 0,
+      "qtype_distribution": {
+        "1": 24
+      },
+      "identity_counts_are_lower_bounds": false,
+      "membership_overflows": 0,
+      "high_entropy_ratio": 1.0,
+      "long_label_ratio": 1.0,
+      "long_query_ratio": 0.0,
+      "mean_query_length": 61.0,
+      "mean_max_label_entropy": 4.555865084580145,
+      "txt_ratio": 0.0,
+      "observed_responses": 0,
+      "nxdomain_count": 0,
+      "nxdomain_ratio": null,
+      "paired_responses": 0,
+      "paired_nxdomain_ratio": null
+    },
+    "server_window": {
+      "questions": 24,
+      "query_messages": 24,
+      "query_rate": 0.4,
+      "unique_domains": 24,
+      "unique_parent_proxies": 1,
+      "repeated_questions_lower_bound": 0,
+      "qtype_distribution": {
+        "1": 24
+      },
+      "identity_counts_are_lower_bounds": false,
+      "membership_overflows": 0,
+      "high_entropy_ratio": 1.0,
+      "long_label_ratio": 1.0,
+      "long_query_ratio": 0.0,
+      "mean_query_length": 61.0,
+      "mean_max_label_entropy": 4.555865084580145,
+      "txt_ratio": 0.0,
+      "observed_responses": 0,
+      "nxdomain_count": 0,
+      "nxdomain_ratio": null,
+      "paired_responses": 0,
+      "paired_nxdomain_ratio": null
+    },
+    "parent_window": {
+      "questions": 24,
+      "query_messages": 24,
+      "query_rate": 0.4,
+      "unique_domains": 24,
+      "unique_parent_proxies": 1,
+      "repeated_questions_lower_bound": 0,
+      "qtype_distribution": {
+        "1": 24
+      },
+      "identity_counts_are_lower_bounds": false,
+      "membership_overflows": 0,
+      "high_entropy_ratio": 1.0,
+      "long_label_ratio": 1.0,
+      "long_query_ratio": 0.0,
+      "mean_query_length": 61.0,
+      "mean_max_label_entropy": 4.555865084580145,
+      "txt_ratio": 0.0,
+      "observed_responses": 0,
+      "nxdomain_count": 0,
+      "nxdomain_ratio": null,
+      "paired_responses": 0,
+      "paired_nxdomain_ratio": null
+    },
+    "observation_window": {
+      "start": 943,
+      "end": 1003,
+      "duration_sec": 60,
+      "clock": "capture_event_time",
+      "alignment": "fixed buckets; latest bucket may be partial"
+    }
+  },
+  "dns_attack_context": [
+    {
+      "technique_id": "T1071.004",
+      "technique_name": "Application Layer Protocol: DNS",
+      "tactic": "Command and Control",
+      "rationale": "Context only: combined passive DNS patterns may also be legitimate. No command-and-control, transfer, intent or attribution is established.",
+      "applicability": "high",
+      "qualification": "possible",
+      "source": "dns_intelligence"
+    }
+  ],
+  "dns_evidence": [
+    {
+      "signal_type": "DNS_LEXICAL_ANOMALY",
+      "detector": "dns_intelligence",
+      "detector_version": "1.0.0",
+      "observed_value": 48,
+      "reference_threshold": 40,
+      "comparison": ">=",
+      "unit": "label characters",
+      "observation_window": {
+        "start": 943,
+        "end": 1003,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "domain": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+        "scope": "latest observed message",
+        "sample_count": 1,
+        "statistics": {
+          "qname_length": 61,
+          "label_count": 3,
+          "longest_label": 48,
+          "character_entropy": 4.780616778028725,
+          "max_label_entropy": 4.678508854797678,
+          "digit_ratio": 0.22033898305084745,
+          "alphabetic_ratio": 0.7796610169491526,
+          "hexadecimal_ratio": 0.4576271186440678,
+          "unique_characters": 31,
+          "repeated_labels": 0,
+          "subdomain_depth_proxy": 1,
+          "sample_characters": 59,
+          "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+          "label_statistics": [
+            {
+              "length": 48,
+              "entropy": 4.678508854797678
+            },
+            {
+              "length": 7,
+              "entropy": 2.521640636343318
+            },
+            {
+              "length": 4,
+              "entropy": 1.5
+            }
+          ]
+        }
+      },
+      "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+      "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+    },
+    {
+      "signal_type": "DNS_HIGH_ENTROPY_LABEL",
+      "detector": "dns_intelligence",
+      "detector_version": "1.0.0",
+      "observed_value": 4.678508854797678,
+      "reference_threshold": 3.5,
+      "comparison": ">=",
+      "unit": "bits/character",
+      "observation_window": {
+        "start": 943,
+        "end": 1003,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "domain": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+        "scope": "latest observed message",
+        "sample_count": 1,
+        "statistics": {
+          "qname_length": 61,
+          "label_count": 3,
+          "longest_label": 48,
+          "character_entropy": 4.780616778028725,
+          "max_label_entropy": 4.678508854797678,
+          "digit_ratio": 0.22033898305084745,
+          "alphabetic_ratio": 0.7796610169491526,
+          "hexadecimal_ratio": 0.4576271186440678,
+          "unique_characters": 31,
+          "repeated_labels": 0,
+          "subdomain_depth_proxy": 1,
+          "sample_characters": 59,
+          "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+          "label_statistics": [
+            {
+              "length": 48,
+              "entropy": 4.678508854797678
+            },
+            {
+              "length": 7,
+              "entropy": 2.521640636343318
+            },
+            {
+              "length": 4,
+              "entropy": 1.5
+            }
+          ]
+        }
+      },
+      "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+      "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+    },
+    {
+      "signal_type": "DNS_UNIQUE_DOMAIN_RATE",
+      "detector": "dns_intelligence",
+      "detector_version": "1.0.0",
+      "observed_value": 0.4,
+      "reference_threshold": 0.26666666666666666,
+      "comparison": ">=",
+      "unit": "distinct queried names/second",
+      "observation_window": {
+        "start": 943,
+        "end": 1003,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "questions": 24,
+        "query_messages": 24,
+        "query_rate": 0.4,
+        "unique_domains": 24,
+        "unique_parent_proxies": 1,
+        "repeated_questions_lower_bound": 0,
+        "qtype_distribution": {
+          "1": 24
+        },
+        "identity_counts_are_lower_bounds": false,
+        "membership_overflows": 0,
+        "high_entropy_ratio": 1.0,
+        "long_label_ratio": 1.0,
+        "long_query_ratio": 0.0,
+        "mean_query_length": 61.0,
+        "mean_max_label_entropy": 4.555865084580145,
+        "txt_ratio": 0.0,
+        "observed_responses": 0,
+        "nxdomain_count": 0,
+        "nxdomain_ratio": null,
+        "paired_responses": 0,
+        "paired_nxdomain_ratio": null
+      },
+      "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+      "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+    },
+    {
+      "signal_type": "DNS_TUNNELLING_LIKE_BEHAVIOR",
+      "detector": "dns_intelligence",
+      "detector_version": "1.0.0",
+      "observed_value": 24,
+      "reference_threshold": 16,
+      "comparison": ">=",
+      "unit": "distinct names under parent proxy",
+      "observation_window": {
+        "start": 943,
+        "end": 1003,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      },
+      "supporting_context": {
+        "questions": 24,
+        "query_messages": 24,
+        "query_rate": 0.4,
+        "unique_domains": 24,
+        "unique_parent_proxies": 1,
+        "repeated_questions_lower_bound": 0,
+        "qtype_distribution": {
+          "1": 24
+        },
+        "identity_counts_are_lower_bounds": false,
+        "membership_overflows": 0,
+        "high_entropy_ratio": 1.0,
+        "long_label_ratio": 1.0,
+        "long_query_ratio": 0.0,
+        "mean_query_length": 61.0,
+        "mean_max_label_entropy": 4.555865084580145,
+        "txt_ratio": 0.0,
+        "observed_responses": 0,
+        "nxdomain_count": 0,
+        "nxdomain_ratio": null,
+        "paired_responses": 0,
+        "paired_nxdomain_ratio": null,
+        "parent_proxy": "service.test",
+        "criteria": "minimum questions AND unique names under repeated parent proxy AND entropy AND long labels AND question rate",
+        "policy_thresholds": {
+          "enabled": true,
+          "window_sec": 60,
+          "bucket_sec": 1,
+          "max_keys": 512,
+          "max_members": 128,
+          "max_transactions": 1024,
+          "transaction_ttl_sec": 10,
+          "max_observations": 1024,
+          "entropy_bits": 3.5,
+          "entropy_min_label": 20,
+          "long_label": 40,
+          "long_query": 100,
+          "min_queries": 20,
+          "unique_domains": 16,
+          "unique_subdomains": 16,
+          "query_rate": 0.3,
+          "high_entropy_ratio": 0.7,
+          "long_label_ratio": 0.7,
+          "nxdomain_ratio": 0.5,
+          "min_responses": 10,
+          "txt_ratio": 0.8
+        }
+      },
+      "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+      "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+    }
+  ],
+  "behavioral_evidence_status": "available",
+  "behavioral_evidence": [],
+  "behavioral_policy": {
+    "version": "sih-f3/1.0",
+    "action": "informational",
+    "behavioral_alert": false,
+    "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+  },
+  "behavioral_attack_context": [],
+  "rationale": "Anomaly score: 0.45 (threshold: 0.5). Classified as ddos with confidence 0.58.",
+  "metadata": {
+    "classification_score_class": "ddos",
+    "feature_schema_version": "2.0.0",
+    "anomaly_model": "isolation_forest",
+    "classifier_model": "xgboost",
+    "explanation": {
+      "explanation_id": "29513b42-9b95-4788-b774-dbd8c455bae6",
+      "detection_event_id": "610d6352-a3b9-4871-bac0-eec1c88f9e55",
+      "explanation_version": "1.0.0",
+      "generation_timestamp": 1790075172.7163572,
+      "threat_type": "ddos",
+      "anomaly_score": 0.44829242100595385,
+      "confidence": 0.5806687474250793,
+      "severity": "low",
+      "rationale": "THREAT: Possible DDoS Attack\n\nANOMALY SCORE: 0.45\n\nMODEL: xgboost (confidence: 0.58)\n\nEVIDENCE:\n  - forward_bytes significantly above baseline (observed: 2746.35, baseline: 0.12) (z-score: 3749.3)\n  - total byte volume significantly above baseline (observed: 2312.43, baseline: 0.20) (z-score: 2374.5)\n  - forward payload bytes significantly above baseline (observed: 2058.30, baseline: -0.30) (z-score: 2161.8)\n  - total payload bytes significantly above baseline (observed: 1701.69, baseline: 0.09) (z-score: 1792.2)\n  - byte rate significantly above baseline (observed: 1329.30, baseline: 0.05) (z-score: 1262.2)\n\nPOTENTIAL ATT&CK TECHNIQUES:\n  - T1498 Network Denial of Service (Impact) \u2014 possible\n  - T1499 Endpoint Denial of Service (Impact) \u2014 possible\n\nLIMITATION: Classification is based on observable network metadata only. Encrypted payload contents are not inspected. This is a model classification, not a confirmed attack.",
+      "classifier_evidence": {
+        "items": [],
+        "explanation_available": false,
+        "unavailable_reason": "SHAP is not installed. Install via: pip install sentinel-net[explainability]"
+      },
+      "anomaly_evidence": {
+        "items": [
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 2746.3490551292284,
+            "reference_value": 0.11618339759144632,
+            "contribution": 3749.2850966965775,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 2312.4266533649834,
+            "reference_value": 0.19909940074149152,
+            "contribution": 2374.4832164489317,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 2058.30372348354,
+            "reference_value": -0.29799253964971023,
+            "contribution": 2161.7790141415157,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 1701.6938059914526,
+            "reference_value": 0.08959341572900685,
+            "contribution": 1792.2217774140358,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 1329.2960173522683,
+            "reference_value": 0.048948707654247775,
+            "contribution": 1262.1573119694349,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 144.29725596063258,
+            "reference_value": 0.13301380144996036,
+            "contribution": 161.17404315538482,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 141.90107735065246,
+            "reference_value": 0.09454877898819113,
+            "contribution": 134.1774675183017,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 114.56727585915819,
+            "reference_value": -0.18190894888669912,
+            "contribution": 127.95511296487022,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 104.07377812296042,
+            "reference_value": -0.4456178729771162,
+            "contribution": 112.31645926483134,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 112.49096587086284,
+            "reference_value": -0.17034143298040835,
+            "contribution": 104.05370192571773,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 118.17661729559694,
+            "reference_value": 0.077609705033625,
+            "contribution": 100.09848530393833,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 101.62342293865596,
+            "reference_value": 0.11167855262643003,
+            "contribution": 92.16660443516261,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_packets",
+            "observed_value": 23.89843381840655,
+            "reference_value": 0.13180648815432186,
+            "contribution": 22.74846270108836,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_packets",
+            "observed_value": 24.8700410860111,
+            "reference_value": 0.12062952223942987,
+            "contribution": 21.039931976695648,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 15.618943890289103,
+            "reference_value": -0.29213556082717096,
+            "contribution": 18.150866019592048,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 8.738267421721737,
+            "reference_value": -0.13440190415912262,
+            "contribution": 9.664870532120476,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "duration_sec",
+            "observed_value": 2.3500407125747187,
+            "reference_value": -0.25651187969447464,
+            "contribution": 2.334152668630221,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "attack_mappings": [
+        {
+          "technique_id": "T1498",
+          "technique_name": "Network Denial of Service",
+          "tactic": "Impact",
+          "rationale": "High packet rate or volume directed at target",
+          "applicability": "high",
+          "qualification": "possible"
+        },
+        {
+          "technique_id": "T1499",
+          "technique_name": "Endpoint Denial of Service",
+          "tactic": "Impact",
+          "rationale": "Connection flooding or resource exhaustion patterns",
+          "applicability": "medium",
+          "qualification": "possible"
+        }
+      ],
+      "evidence": {
+        "items": [
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 2746.3490551292284,
+            "reference_value": 0.11618339759144632,
+            "contribution": 3749.2850966965775,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 2312.4266533649834,
+            "reference_value": 0.19909940074149152,
+            "contribution": 2374.4832164489317,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 2058.30372348354,
+            "reference_value": -0.29799253964971023,
+            "contribution": 2161.7790141415157,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 1701.6938059914526,
+            "reference_value": 0.08959341572900685,
+            "contribution": 1792.2217774140358,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 1329.2960173522683,
+            "reference_value": 0.048948707654247775,
+            "contribution": 1262.1573119694349,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 144.29725596063258,
+            "reference_value": 0.13301380144996036,
+            "contribution": 161.17404315538482,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 141.90107735065246,
+            "reference_value": 0.09454877898819113,
+            "contribution": 134.1774675183017,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 114.56727585915819,
+            "reference_value": -0.18190894888669912,
+            "contribution": 127.95511296487022,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 104.07377812296042,
+            "reference_value": -0.4456178729771162,
+            "contribution": 112.31645926483134,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 112.49096587086284,
+            "reference_value": -0.17034143298040835,
+            "contribution": 104.05370192571773,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 118.17661729559694,
+            "reference_value": 0.077609705033625,
+            "contribution": 100.09848530393833,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 101.62342293865596,
+            "reference_value": 0.11167855262643003,
+            "contribution": 92.16660443516261,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_packets",
+            "observed_value": 23.89843381840655,
+            "reference_value": 0.13180648815432186,
+            "contribution": 22.74846270108836,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_packets",
+            "observed_value": 24.8700410860111,
+            "reference_value": 0.12062952223942987,
+            "contribution": 21.039931976695648,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 15.618943890289103,
+            "reference_value": -0.29213556082717096,
+            "contribution": 18.150866019592048,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 8.738267421721737,
+            "reference_value": -0.13440190415912262,
+            "contribution": 9.664870532120476,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "duration_sec",
+            "observed_value": 2.3500407125747187,
+            "reference_value": -0.25651187969447464,
+            "contribution": 2.334152668630221,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "evidence_value_space": "standardized_model_input"
+    },
+    "behavioral_evidence_status": "available",
+    "behavioral_evidence": [],
+    "behavioral_policy": {
+      "version": "sih-f3/1.0",
+      "action": "informational",
+      "behavioral_alert": false,
+      "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+    },
+    "behavioral_attack_context": [],
+    "dns_evidence": [
+      {
+        "signal_type": "DNS_LEXICAL_ANOMALY",
+        "detector": "dns_intelligence",
+        "detector_version": "1.0.0",
+        "observed_value": 48,
+        "reference_threshold": 40,
+        "comparison": ">=",
+        "unit": "label characters",
+        "observation_window": {
+          "start": 943,
+          "end": 1003,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "domain": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+          "scope": "latest observed message",
+          "sample_count": 1,
+          "statistics": {
+            "qname_length": 61,
+            "label_count": 3,
+            "longest_label": 48,
+            "character_entropy": 4.780616778028725,
+            "max_label_entropy": 4.678508854797678,
+            "digit_ratio": 0.22033898305084745,
+            "alphabetic_ratio": 0.7796610169491526,
+            "hexadecimal_ratio": 0.4576271186440678,
+            "unique_characters": 31,
+            "repeated_labels": 0,
+            "subdomain_depth_proxy": 1,
+            "sample_characters": 59,
+            "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+            "label_statistics": [
+              {
+                "length": 48,
+                "entropy": 4.678508854797678
+              },
+              {
+                "length": 7,
+                "entropy": 2.521640636343318
+              },
+              {
+                "length": 4,
+                "entropy": 1.5
+              }
+            ]
+          }
+        },
+        "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+        "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+      },
+      {
+        "signal_type": "DNS_HIGH_ENTROPY_LABEL",
+        "detector": "dns_intelligence",
+        "detector_version": "1.0.0",
+        "observed_value": 4.678508854797678,
+        "reference_threshold": 3.5,
+        "comparison": ">=",
+        "unit": "bits/character",
+        "observation_window": {
+          "start": 943,
+          "end": 1003,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "domain": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+          "scope": "latest observed message",
+          "sample_count": 1,
+          "statistics": {
+            "qname_length": 61,
+            "label_count": 3,
+            "longest_label": 48,
+            "character_entropy": 4.780616778028725,
+            "max_label_entropy": 4.678508854797678,
+            "digit_ratio": 0.22033898305084745,
+            "alphabetic_ratio": 0.7796610169491526,
+            "hexadecimal_ratio": 0.4576271186440678,
+            "unique_characters": 31,
+            "repeated_labels": 0,
+            "subdomain_depth_proxy": 1,
+            "sample_characters": 59,
+            "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+            "label_statistics": [
+              {
+                "length": 48,
+                "entropy": 4.678508854797678
+              },
+              {
+                "length": 7,
+                "entropy": 2.521640636343318
+              },
+              {
+                "length": 4,
+                "entropy": 1.5
+              }
+            ]
+          }
+        },
+        "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+        "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+      },
+      {
+        "signal_type": "DNS_UNIQUE_DOMAIN_RATE",
+        "detector": "dns_intelligence",
+        "detector_version": "1.0.0",
+        "observed_value": 0.4,
+        "reference_threshold": 0.26666666666666666,
+        "comparison": ">=",
+        "unit": "distinct queried names/second",
+        "observation_window": {
+          "start": 943,
+          "end": 1003,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "questions": 24,
+          "query_messages": 24,
+          "query_rate": 0.4,
+          "unique_domains": 24,
+          "unique_parent_proxies": 1,
+          "repeated_questions_lower_bound": 0,
+          "qtype_distribution": {
+            "1": 24
+          },
+          "identity_counts_are_lower_bounds": false,
+          "membership_overflows": 0,
+          "high_entropy_ratio": 1.0,
+          "long_label_ratio": 1.0,
+          "long_query_ratio": 0.0,
+          "mean_query_length": 61.0,
+          "mean_max_label_entropy": 4.555865084580145,
+          "txt_ratio": 0.0,
+          "observed_responses": 0,
+          "nxdomain_count": 0,
+          "nxdomain_ratio": null,
+          "paired_responses": 0,
+          "paired_nxdomain_ratio": null
+        },
+        "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+        "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+      },
+      {
+        "signal_type": "DNS_TUNNELLING_LIKE_BEHAVIOR",
+        "detector": "dns_intelligence",
+        "detector_version": "1.0.0",
+        "observed_value": 24,
+        "reference_threshold": 16,
+        "comparison": ">=",
+        "unit": "distinct names under parent proxy",
+        "observation_window": {
+          "start": 943,
+          "end": 1003,
+          "duration_sec": 60,
+          "clock": "capture_event_time",
+          "alignment": "fixed buckets; latest bucket may be partial"
+        },
+        "supporting_context": {
+          "questions": 24,
+          "query_messages": 24,
+          "query_rate": 0.4,
+          "unique_domains": 24,
+          "unique_parent_proxies": 1,
+          "repeated_questions_lower_bound": 0,
+          "qtype_distribution": {
+            "1": 24
+          },
+          "identity_counts_are_lower_bounds": false,
+          "membership_overflows": 0,
+          "high_entropy_ratio": 1.0,
+          "long_label_ratio": 1.0,
+          "long_query_ratio": 0.0,
+          "mean_query_length": 61.0,
+          "mean_max_label_entropy": 4.555865084580145,
+          "txt_ratio": 0.0,
+          "observed_responses": 0,
+          "nxdomain_count": 0,
+          "nxdomain_ratio": null,
+          "paired_responses": 0,
+          "paired_nxdomain_ratio": null,
+          "parent_proxy": "service.test",
+          "criteria": "minimum questions AND unique names under repeated parent proxy AND entropy AND long labels AND question rate",
+          "policy_thresholds": {
+            "enabled": true,
+            "window_sec": 60,
+            "bucket_sec": 1,
+            "max_keys": 512,
+            "max_members": 128,
+            "max_transactions": 1024,
+            "transaction_ttl_sec": 10,
+            "max_observations": 1024,
+            "entropy_bits": 3.5,
+            "entropy_min_label": 20,
+            "long_label": 40,
+            "long_query": 100,
+            "min_queries": 20,
+            "unique_domains": 16,
+            "unique_subdomains": 16,
+            "query_rate": 0.3,
+            "high_entropy_ratio": 0.7,
+            "long_label_ratio": 0.7,
+            "nxdomain_ratio": 0.5,
+            "min_responses": 10,
+            "txt_ratio": 0.8
+          }
+        },
+        "confidence_semantics": "Operational heuristic; not attack probability or confirmed malicious activity.",
+        "interpretation": "Legitimate CDN, cloud hostnames, telemetry, discovery and security records may produce these observations."
+      }
+    ],
+    "dns_attack_context": [
+      {
+        "technique_id": "T1071.004",
+        "technique_name": "Application Layer Protocol: DNS",
+        "tactic": "Command and Control",
+        "rationale": "Context only: combined passive DNS patterns may also be legitimate. No command-and-control, transfer, intent or attribution is established.",
+        "applicability": "high",
+        "qualification": "possible",
+        "source": "dns_intelligence"
+      }
+    ],
+    "dns_status": "PARSED",
+    "dns_observation": {
+      "timestamp": 1002.3,
+      "message": {
+        "status": "PARSED",
+        "reason": null,
+        "transaction_id": 23,
+        "qr": false,
+        "opcode": 0,
+        "rcode": 0,
+        "question_count": 1,
+        "answer_count": 0,
+        "record_count": 0,
+        "questions": [
+          {
+            "name": "sfbt1y7wimr2ao3bgf50b61wdncxlnxxsuf4l42kll8u7mhf.service.test",
+            "qtype": 1,
+            "qtype_name": "A",
+            "qclass": 1
+          }
+        ],
+        "response_record_types": [],
+        "message_length": 79,
+        "truncated": false
+      },
+      "visibility": "QUERY_ONLY",
+      "lexical": [
+        {
+          "qname_length": 61,
+          "label_count": 3,
+          "longest_label": 48,
+          "character_entropy": 4.780616778028725,
+          "max_label_entropy": 4.678508854797678,
+          "digit_ratio": 0.22033898305084745,
+          "alphabetic_ratio": 0.7796610169491526,
+          "hexadecimal_ratio": 0.4576271186440678,
+          "unique_characters": 31,
+          "repeated_labels": 0,
+          "subdomain_depth_proxy": 1,
+          "sample_characters": 59,
+          "entropy_scope": "lowercase ASCII characters; dots excluded; bits/character",
+          "label_statistics": [
+            {
+              "length": 48,
+              "entropy": 4.678508854797678
+            },
+            {
+              "length": 7,
+              "entropy": 2.521640636343318
+            },
+            {
+              "length": 4,
+              "entropy": 1.5
+            }
+          ]
+        }
+      ],
+      "client": "192.0.2.1",
+      "parent": "service.test",
+      "server": "198.51.100.53",
+      "retention": "Latest retained message for this conversation; not a complete DNS history",
+      "parent_semantics": "Last two labels only; not a public-suffix/registrable-domain classification",
+      "disposition": "Contextual evidence",
+      "source_window": {
+        "questions": 24,
+        "query_messages": 24,
+        "query_rate": 0.4,
+        "unique_domains": 24,
+        "unique_parent_proxies": 1,
+        "repeated_questions_lower_bound": 0,
+        "qtype_distribution": {
+          "1": 24
+        },
+        "identity_counts_are_lower_bounds": false,
+        "membership_overflows": 0,
+        "high_entropy_ratio": 1.0,
+        "long_label_ratio": 1.0,
+        "long_query_ratio": 0.0,
+        "mean_query_length": 61.0,
+        "mean_max_label_entropy": 4.555865084580145,
+        "txt_ratio": 0.0,
+        "observed_responses": 0,
+        "nxdomain_count": 0,
+        "nxdomain_ratio": null,
+        "paired_responses": 0,
+        "paired_nxdomain_ratio": null
+      },
+      "server_window": {
+        "questions": 24,
+        "query_messages": 24,
+        "query_rate": 0.4,
+        "unique_domains": 24,
+        "unique_parent_proxies": 1,
+        "repeated_questions_lower_bound": 0,
+        "qtype_distribution": {
+          "1": 24
+        },
+        "identity_counts_are_lower_bounds": false,
+        "membership_overflows": 0,
+        "high_entropy_ratio": 1.0,
+        "long_label_ratio": 1.0,
+        "long_query_ratio": 0.0,
+        "mean_query_length": 61.0,
+        "mean_max_label_entropy": 4.555865084580145,
+        "txt_ratio": 0.0,
+        "observed_responses": 0,
+        "nxdomain_count": 0,
+        "nxdomain_ratio": null,
+        "paired_responses": 0,
+        "paired_nxdomain_ratio": null
+      },
+      "parent_window": {
+        "questions": 24,
+        "query_messages": 24,
+        "query_rate": 0.4,
+        "unique_domains": 24,
+        "unique_parent_proxies": 1,
+        "repeated_questions_lower_bound": 0,
+        "qtype_distribution": {
+          "1": 24
+        },
+        "identity_counts_are_lower_bounds": false,
+        "membership_overflows": 0,
+        "high_entropy_ratio": 1.0,
+        "long_label_ratio": 1.0,
+        "long_query_ratio": 0.0,
+        "mean_query_length": 61.0,
+        "mean_max_label_entropy": 4.555865084580145,
+        "txt_ratio": 0.0,
+        "observed_responses": 0,
+        "nxdomain_count": 0,
+        "nxdomain_ratio": null,
+        "paired_responses": 0,
+        "paired_nxdomain_ratio": null
+      },
+      "observation_window": {
+        "start": 943,
+        "end": 1003,
+        "duration_sec": 60,
+        "clock": "capture_event_time",
+        "alignment": "fixed buckets; latest bucket may be partial"
+      }
+    },
+    "source": {
+      "source_mode": "REPLAY",
+      "replay_file_identifier": "50967626ad20465fa6c9429e57f8aca9"
+    },
+    "deployment_model": {
+      "model_name": "runtime",
+      "model_version": "1.0.0",
+      "feature_schema_version": "2.0.0",
+      "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+    }
+  },
+  "src_ip": "192.0.2.1",
+  "dst_ip": "198.51.100.53",
+  "src_port": 42000,
+  "dst_port": 53,
+  "protocol": 17
+}

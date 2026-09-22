@@ -1,0 +1,28 @@
+{
+  "phase": "SIH-F4",
+  "backend": {
+    "passed": 773,
+    "warnings": 14
+  },
+  "frontend": {
+    "passed": 76,
+    "files": 5
+  },
+  "combined": 849,
+  "new_backend_cases": 76,
+  "new_frontend_cases": 9,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "scientific_integrity": "23/23 unchanged",
+  "dns_live_replay_parity": "8/8 PASS plus repeated replay",
+  "core_and_f3_regressions": "PASS",
+  "sqlite_rest_authenticated_websocket": "PASS",
+  "benchmark_suites": {
+    "enabled": 7,
+    "disabled": 7,
+    "seconds_per_workload": 30,
+    "dns_processing_errors": 0
+  },
+  "real_interface": "NOT VERIFIED; existing BPF limitation unchanged",
+  "decision": "GO FOR SIH-F5"
+}

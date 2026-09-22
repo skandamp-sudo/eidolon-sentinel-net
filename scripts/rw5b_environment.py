@@ -28,8 +28,9 @@ STAGES = (
 def validate_benchmark(report):
     """Reject incomplete/nonfinite or arithmetically inconsistent measurements."""
     results = report["results"]
-    if len(results) != 6 or len({r["workload"] for r in results}) != 6:
-        raise ValueError("Six distinct workloads required")
+    expected = 7 if report.get("phase") == "SIH-F4" else 6
+    if len(results) != expected or len({r["workload"] for r in results}) != expected:
+        raise ValueError(f"{expected} distinct workloads required")
     for r in results:
         duration = r["elapsed_sec_including_drain"]
         if not math.isfinite(duration) or duration <= 0:
@@ -53,7 +54,8 @@ def validate_benchmark(report):
         ]:
             if not math.isclose(r[rate], r[count] * scale / duration, rel_tol=1e-9):
                 raise ValueError("Inconsistent throughput")
-        for stage in STAGES:
+        stages = (*STAGES, "dns_processing") if report.get("dns_enabled") else STAGES
+        for stage in stages:
             latency = r["latency_ms"][stage]
             values = [latency[p] for p in ("p50", "p95", "p99")]
             if not all(math.isfinite(v) and v >= 0 for v in values) or values != sorted(values):
@@ -151,7 +153,7 @@ def main():
     raw = args.benchmark.read_bytes()
     result = collect_environment(json.loads(raw), raw)
     args.output.write_text(json.dumps(result, indent=2) + "\n")
-    print("PASS: six complete workloads; environment manifest written")
+    print(f"PASS: {len(result['workloads'])} complete workloads; environment manifest written")
 
 
 if __name__ == "__main__":

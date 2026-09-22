@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "overflow": false,
+      "visibility": "QUERY_ONLY",
+      "dns_status": "PARSED",
+      "signal": "DNS_TUNNELLING_LIKE_BEHAVIOR"
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "visibility": "QUERY_ONLY",
+      "dns_status": "PARSED",
+      "signal": "DNS_TUNNELLING_LIKE_BEHAVIOR"
+    }
+  ],
+  "errors": [],
+  "note": "Actual approved frozen QA runtime on generated passive DNS PCAP. Not malware or production traffic."
+}

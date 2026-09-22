@@ -235,6 +235,20 @@ export function Sensor() {
       <p className="page-description">Kernel capture drops: {m?.kernel_capture_drops == null ? 'Unavailable from capture backend' : formatNumber(m.kernel_capture_drops)}. Packets dropped counts application capture-queue saturation; delivery drops count subscriber copies.</p>
       <p className="page-description">v2.0.0 limitation: continuously active tuples retain growing exact timestamp and packet-size histories. Per-flow memory is not strictly bounded.</p>
 
+      <div className="section-header">Passive DNS intelligence</div>
+      <div className="metrics-grid">
+        <MetricCard title="DNS Observations" value={m?.dns_messages_observed} />
+        <MetricCard title="DNS Parsed" value={m?.dns_messages_parsed} />
+        <MetricCard title="DNS Malformed" value={m?.dns_malformed} />
+        <MetricCard title="DNS Truncated" value={m?.dns_truncated} />
+        <MetricCard title="DNS Unavailable" value={m?.dns_unavailable} />
+        <MetricCard title="DNS State Keys" value={m?.dns_state_keys} />
+        <MetricCard title="DNS Key Peak" value={m?.dns_keys_peak} />
+        <MetricCard title="DNS Evictions" value={m?.dns_evictions} />
+        <MetricCard title="DNS Signals" value={m?.dns_evidence_generated} />
+        <MetricCard title="DNS Errors" value={m?.dns_processing_errors} warn />
+      </div>
+
       <div className="section-header">Streaming intelligence</div>
       <div className="card-grid">
         <MetricCard title="Intelligence Keys" value={m?.intelligence_keys} />

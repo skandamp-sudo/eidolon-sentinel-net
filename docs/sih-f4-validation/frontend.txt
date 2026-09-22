@@ -1,0 +1,18 @@
+
+> sentinel-net-soc@0.6.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/skandamp/Desktop/Eidolon Sentinel-NET/frontend
+
+ ✓ src/__tests__/api.test.ts (11 tests) 12ms
+ ✓ src/__tests__/websocket.test.ts (11 tests) 21ms
+ ✓ src/__tests__/format.test.ts (29 tests) 38ms
+ ✓ src/__tests__/sensor-health.test.tsx (5 tests) 318ms
+ ✓ src/__tests__/detection-detail.test.tsx (20 tests) 1072ms
+
+ Test Files  5 passed (5)
+      Tests  76 passed (76)
+   Start at  16:37:56
+   Duration  3.24s (transform 372ms, setup 802ms, collect 850ms, tests 1.46s, environment 4.36s, prepare 1.14s)
+

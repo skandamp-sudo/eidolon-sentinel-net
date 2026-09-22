@@ -76,7 +76,25 @@ export interface BehavioralEvidence {
   interpretation: string;
 }
 
+export interface DNSObservation {
+  timestamp: number;
+  visibility: string;
+  disposition: string;
+  retention: string;
+  parent_semantics: string;
+  message: { status: string; reason?: string; questions?: { name: string; qtype: number; qtype_name: string; qclass: number }[]; qr?: boolean; rcode?: number; response_record_types?: number[]; message_length?: number };
+  lexical: { qname_length: number; longest_label: number; character_entropy: number; max_label_entropy: number; label_count: number; sample_characters: number }[];
+  observation_window?: { start: number; end: number; duration_sec: number };
+  source_window?: Record<string, unknown> | null;
+  parent_window?: Record<string, unknown> | null;
+  server_window?: Record<string, unknown> | null;
+}
+
 export interface DetectionEvent {
+  dns_status?: string;
+  dns_observation?: DNSObservation;
+  dns_evidence?: BehavioralEvidence[];
+  dns_attack_context?: ATTACKMapping[];
   behavioral_evidence_status?: string;
   behavioral_evidence?: BehavioralEvidence[];
   behavioral_policy?: { action?: string; behavioral_alert?: boolean; semantics?: string };
@@ -177,6 +195,16 @@ export interface StatsResponse {
 // ─── Status ──────────────────────────────────────────────────────────
 
 export interface SensorMetrics {
+  dns_messages_observed?: number;
+  dns_messages_parsed?: number;
+  dns_malformed?: number;
+  dns_truncated?: number;
+  dns_unavailable?: number;
+  dns_state_keys?: number;
+  dns_keys_peak?: number;
+  dns_evictions?: number;
+  dns_evidence_generated?: number;
+  dns_processing_errors?: number;
   intelligence_keys?: number;
   intelligence_keys_peak?: number;
   intelligence_evictions?: number;

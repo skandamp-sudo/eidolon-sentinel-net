@@ -11,6 +11,7 @@ ERROR_COUNTERS = (
     "output_errors",
     "retention_failures",
     "intelligence_processing_errors",
+    "dns_processing_errors",
 )
 
 

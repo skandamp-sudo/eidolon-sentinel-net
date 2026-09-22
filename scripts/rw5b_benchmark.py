@@ -23,7 +23,8 @@ import time
 from datetime import UTC, datetime
 from pathlib import Path
 
-from scapy.all import IP, TCP, UDP, Ether, Raw
+from scapy.all import IP, TCP, UDP, Ether, Raw, DNS, DNSQR
+from sentinel_net.dns.config import DNSConfig
 from scapy.utils import PcapWriter
 
 from sentinel_net.config import SentinelConfig
@@ -44,6 +45,7 @@ WORKLOADS = [
     "D_burst",
     "E_slow_websocket",
     "F_slow_storage",
+    "G_dns_heavy",
 ]
 
 
@@ -78,6 +80,15 @@ def templates(path, workload):
                 / layer
                 / Raw(bytes([i % 251]) * (32 + i % 128))
             )
+            if workload.startswith("G"):
+                pair = i // 2
+                label = hashlib.sha256(f"safe-dns-fixture-{pair}".encode()).hexdigest()[:48]
+                parent = "service.test" if pair % 2 else f"parent{pair % 64}.test"
+                client = f"192.0.2.{pair % 8 + 1}"
+                reverse = bool(i % 2)
+                dns = DNS(id=pair, qr=int(reverse), rcode=3 if reverse and pair % 3 == 0 else 0,
+                          qd=DNSQR(qname=f"{label}.{parent}", qtype=16 if pair % 4 == 0 else 1))
+                pkt = ether / IP(src="198.51.100.53" if reverse else client, dst=client if reverse else "198.51.100.53") / UDP(sport=53 if reverse else 10000 + pair % 64, dport=10000 + pair % 64 if reverse else 53) / dns
             pkt.time = 1700000000 + i * 0.001
             writer.write(pkt)
             packets.append(extract_raw_packet(pkt))
@@ -232,6 +243,7 @@ async def run(args):
     try:
         config = SentinelConfig(
             intelligence=IntelligenceConfig(enabled=not args.intelligence_disabled),
+            dns=DNSConfig(enabled=not args.dns_disabled),
             database_path=out / "events.db",
             max_active_flows=64,
             capture_queue_size=128,
@@ -412,6 +424,7 @@ def main():
     p.add_argument("--output", type=Path, required=True)
     p.add_argument("--workload", choices=WORKLOADS)
     p.add_argument("--intelligence-disabled", action="store_true", help="Same-runtime operational comparison with streaming intelligence disabled")
+    p.add_argument("--dns-disabled", action="store_true", help="F3 enabled with DNS intelligence disabled comparison")
     args = p.parse_args()
     if args.seconds <= 0 or args.seconds > 3600:
         p.error("duration must be in (0,3600] seconds")
@@ -435,12 +448,13 @@ def main():
                     "--workload",
                     workload,
                     *(["--intelligence-disabled"] if args.intelligence_disabled else []),
+                    *(["--dns-disabled"] if args.dns_disabled else []),
                 ],
                 check=True,
             )
         results = [json.loads((args.output / w / "result.json").read_text()) for w in WORKLOADS]
         (args.output / "benchmark.json").write_text(
-            json.dumps({"phase": "SIH-F3", "intelligence_enabled": not args.intelligence_disabled, "results": results}, indent=2)
+            json.dumps({"phase": "SIH-F4", "dns_enabled": not args.dns_disabled, "intelligence_enabled": not args.intelligence_disabled, "results": results}, indent=2)
         )
 
 

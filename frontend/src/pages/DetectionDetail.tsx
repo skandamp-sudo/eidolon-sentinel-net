@@ -259,6 +259,39 @@ export function DetectionDetail() {
         {event.behavioral_attack_context?.map((mapping, index) => <p key={index}>{mapping.technique_id} · {mapping.technique_name} — {mapping.qualification}: {mapping.rationale}</p>)}
       </div>
 
+      <div className="card detail-section">
+        <h2 className="detail-section__title">DNS OBSERVATION</h2>
+        <p className="page-description">Passive DNS metadata and derived heuristics are contextual evidence, not attack probabilities. CDN, cloud services, telemetry and security records can produce similar patterns.</p>
+        <p>Parser status: {event.dns_status ?? 'not_recorded'}</p>
+        {event.dns_observation?.message ? <>
+          <p>Visibility: {event.dns_observation.visibility.replaceAll('_', ' ')} · Contextual evidence</p>
+          <p>{event.dns_observation.message.reason}</p>
+          <div className="data-table-container" role="region" aria-label="DNS observations table" tabIndex={0}>
+            <table className="data-table"><thead><tr><th>MEASURED · Domain / QTYPE</th><th>DERIVED · Length</th><th>DERIVED · Entropy</th></tr></thead>
+            <tbody>{event.dns_observation.message.questions?.map((question, i) => <tr key={i}>
+              <td style={{ overflowWrap: 'anywhere', maxWidth: '28rem' }}>{question.name || '(root)'}<br />{question.qtype_name} ({question.qtype}) · Class {question.qclass}</td>
+              <td>{event.dns_observation?.lexical?.[i] ? <>QNAME: {event.dns_observation.lexical[i].qname_length} characters<br />Longest label: {event.dns_observation.lexical[i].longest_label}</> : 'UNAVAILABLE'}</td>
+              <td>{event.dns_observation?.lexical?.[i] ? <>{event.dns_observation.lexical[i].character_entropy.toFixed(3)} bits/character<br /><small>Lowercase name; dots excluded · {event.dns_observation.lexical[i].sample_characters} characters</small></> : 'UNAVAILABLE'}</td>
+            </tr>)}</tbody></table>
+          </div>
+          <p>MEASURED · {event.dns_observation.message.message_length ?? 'UNAVAILABLE'} message bytes · Response code: {event.dns_observation.message.qr ? event.dns_observation.message.rcode : 'UNAVAILABLE — query observation'}</p>
+          <p>MEASURED · Response record types: {event.dns_observation.message.qr ? event.dns_observation.message.response_record_types?.join(', ') || 'None observed' : 'UNAVAILABLE'}</p>
+          {event.dns_observation.observation_window && <p>Window: {event.dns_observation.observation_window.duration_sec} s · Capture event time; latest bucket may be partial</p>}
+          <p>{event.dns_observation.retention}. {event.dns_observation.parent_semantics}.</p>
+          <p>Missing responses are unobserved, not inferred failures.</p>
+          <details><summary>DERIVED · Bounded window measurements</summary>
+            {[['Source', event.dns_observation.source_window], ['Server', event.dns_observation.server_window], ['Parent proxy', event.dns_observation.parent_window]].map(([label, value]) => <div key={String(label)}><h3>{String(label)}</h3><dl>{value && typeof value === 'object' ? Object.entries(value).map(([key, item]) => <div key={key}><dt>{key.replaceAll('_', ' ')}</dt><dd>{item === null ? 'UNAVAILABLE' : typeof item === 'object' ? JSON.stringify(item) : String(item)}</dd></div>) : 'UNAVAILABLE'}</dl></div>)}
+          </details>
+        </> : <p className="page-description">{event.dns_status === 'disabled' ? 'DNS intelligence was disabled for this event.' : event.dns_status === 'unavailable_processing_error' ? 'DNS evidence unavailable due to an operational processing error.' : event.dns_status === 'unavailable_or_not_observed' ? 'UNAVAILABLE — no retained observable DNS metadata for this flow. Encrypted DNS cannot be identified or decoded here.' : 'DNS metadata was not recorded for this event.'}</p>}
+        {event.dns_evidence?.length ? <div className="data-table-container" role="region" aria-label="DNS evidence table" tabIndex={0}>
+          <table className="data-table"><thead><tr><th>DERIVED · Contextual signal</th><th>Observed / reference</th><th>Scope and limits</th></tr></thead><tbody>{event.dns_evidence.map((signal, i) => <tr key={i}>
+            <td>{signal.signal_type}</td><td>{signal.observed_value.toLocaleString(undefined, { maximumFractionDigits: 4 })} {signal.unit}<br />Reference: {signal.comparison} {signal.reference_threshold}</td>
+            <td><details><summary>Supporting observations</summary><dl>{Object.entries(signal.supporting_context).map(([key, value]) => <div key={key}><dt>{key.replaceAll('_', ' ')}</dt><dd style={{ overflowWrap: 'anywhere' }}>{typeof value === 'object' ? JSON.stringify(value) : String(value)}</dd></div>)}</dl><p>{signal.confidence_semantics}</p><p>{signal.interpretation}</p></details></td>
+          </tr>)}</tbody></table>
+        </div> : <p>No DNS heuristic signals were recorded.</p>}
+        {event.dns_attack_context?.map((mapping, i) => <p key={i}>{mapping.technique_id} · {mapping.technique_name} — {mapping.qualification}: {mapping.rationale}</p>)}
+      </div>
+
       {/* ─── RATIONALE ──────────────────────────────── */}
       <div className="card detail-section">
         <h2 className="detail-section__title">RATIONALE</h2>

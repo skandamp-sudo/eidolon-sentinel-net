@@ -1,0 +1,1574 @@
+{
+  "phase": "SIH-F4",
+  "method": "One sequential 30-second run per workload/mode; disabled first, enabled second. Descriptive, not a causal or universal capacity estimate.",
+  "results": [
+    {
+      "workload": "A_mixed",
+      "workload_sha256": "b4f92ada49bce60c9d8f382b44db18c8e77231089432ad74e582dbebccfb7f88",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 397.78936937782083,
+          "dns_disabled": 396.5352157379448,
+          "dns_enabled": 389.81660780711405,
+          "enabled_vs_disabled_percent": -1.6943281867986215
+        },
+        "flows_per_sec": {
+          "historical_f3": 50.25370364308413,
+          "dns_disabled": 50.10504271016456,
+          "dns_enabled": 49.24800008695001,
+          "enabled_vs_disabled_percent": -1.7104917526408747
+        },
+        "processing_mbps": {
+          "historical_f3": 0.45633145578392387,
+          "dns_disabled": 0.45468143891784585,
+          "dns_enabled": 0.44735017874549593,
+          "enabled_vs_disabled_percent": -1.6123948648087638
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.030766997952014208,
+            "p95": 0.3059994987779646,
+            "p99": 0.3466866026428762,
+            "samples": 4096,
+            "total_observations": 13487,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5881960005353903,
+            "p95": 12.222718250086473,
+            "p99": 19.80164010019513,
+            "samples": 4096,
+            "total_observations": 11974,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.48395799967693165,
+            "p95": 0.7590187997266183,
+            "p99": 0.9211665618931868,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.254755996953463,
+            "p95": 5.860206600482342,
+            "p99": 22.30150183706428,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.766812999150716,
+            "p95": 6.456316399271599,
+            "p99": 23.08367435936816,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.238678000954678,
+            "p95": 8.654331201250896,
+            "p99": 31.624250038293862,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.4908939994929824,
+            "p95": 6.394130200351346,
+            "p99": 16.367465321090922,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3423649977776222,
+            "p95": 0.44199760086485174,
+            "p99": 0.5267307990288815,
+            "samples": 1513,
+            "total_observations": 1513,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.0309014994854806,
+            "p95": 0.30653599878860405,
+            "p99": 0.35744605065701923,
+            "samples": 4096,
+            "total_observations": 13275,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.013519500498659909,
+            "p95": 0.018489750800654292,
+            "p99": 0.02420124965283324,
+            "samples": 4096,
+            "total_observations": 13275,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.610192000749521,
+            "p95": 12.07015149975632,
+            "p99": 16.036478900969918,
+            "samples": 4096,
+            "total_observations": 11786,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.48949299889500253,
+            "p95": 0.7375678011158011,
+            "p99": 0.8896899211686095,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.295718998037046,
+            "p95": 5.61063500063028,
+            "p99": 21.814977560570693,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.812095998204313,
+            "p95": 6.1586044015712105,
+            "p99": 22.585297120094758,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.314107002253877,
+            "p95": 8.322715798567511,
+            "p99": 31.48663488274891,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.572696001152508,
+            "p95": 6.634351198590554,
+            "p99": 17.834158479962863,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.347253997460939,
+            "p95": 0.44004960072925314,
+            "p99": 0.5078350385883814,
+            "samples": 1489,
+            "total_observations": 1489,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224276480,
+          "sampled_peak": 231591936,
+          "final": 231591936,
+          "process_lifetime_peak": 231608320
+        },
+        "enabled": {
+          "initial": 224378880,
+          "sampled_peak": 231927808,
+          "final": 231919616,
+          "process_lifetime_peak": 231936000
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "B_cardinality",
+      "workload_sha256": "4f639df944ff74a7e0917607305c51ea376c8a0e4fe58e4cac198348c1431682",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 89.87586552380274,
+          "dns_disabled": 88.97292336934053,
+          "dns_enabled": 86.60662548175821,
+          "enabled_vs_disabled_percent": -2.6595707974654825
+        },
+        "flows_per_sec": {
+          "historical_f3": 87.82062794558148,
+          "dns_disabled": 86.91517954692188,
+          "dns_enabled": 84.56462794981556,
+          "enabled_vs_disabled_percent": -2.704420113217798
+        },
+        "processing_mbps": {
+          "historical_f3": 0.10695821732632901,
+          "dns_disabled": 0.10597890222021696,
+          "dns_enabled": 0.10334919013477067,
+          "enabled_vs_disabled_percent": -2.481354335962005
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.23204399985843338,
+            "p95": 0.35046749962930335,
+            "p99": 0.5294180502460235,
+            "samples": 4096,
+            "total_observations": 5385,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 9.495172998867929,
+            "p95": 20.638466648779286,
+            "p99": 33.02299531045719,
+            "samples": 2724,
+            "total_observations": 2724,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4034849989693612,
+            "p95": 0.5084989970782772,
+            "p99": 0.7764267997117718,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.204076998576056,
+            "p95": 5.552574995817849,
+            "p99": 21.020885402685977,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.612980003003031,
+            "p95": 6.01416999779758,
+            "p99": 21.619120601099,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.801019000500673,
+            "p95": 8.228946000599535,
+            "p99": 332.1265669976136,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.417021998553537,
+            "p95": 12.030652997054858,
+            "p99": 17.663478200848033,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.33927199910976924,
+            "p95": 0.4459219999262132,
+            "p99": 0.5512673997145613,
+            "samples": 2661,
+            "total_observations": 2661,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.23523699928773567,
+            "p95": 0.37247774980642134,
+            "p99": 0.48430944952997457,
+            "samples": 4096,
+            "total_observations": 5281,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.016900499758776277,
+            "p95": 0.023230251827044412,
+            "p99": 0.032799149630591384,
+            "samples": 4096,
+            "total_observations": 5281,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 9.6988360000978,
+            "p95": 20.543521148465516,
+            "p99": 36.082736630560234,
+            "samples": 2672,
+            "total_observations": 2672,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.411916000302881,
+            "p95": 0.5173227997147478,
+            "p99": 0.7491383602609861,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.306538998207543,
+            "p95": 5.670790201111231,
+            "p99": 20.01410807744837,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.715331997431349,
+            "p95": 6.138948001171229,
+            "p99": 20.691471239115344,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 5.953816002147505,
+            "p95": 8.156440401944565,
+            "p99": 433.3917583586306,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.492887997505022,
+            "p95": 12.155858400365105,
+            "p99": 25.84886431897769,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3486519999569282,
+            "p95": 0.44567620134330355,
+            "p99": 0.5357366400130561,
+            "samples": 2609,
+            "total_observations": 2609,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224333824,
+          "sampled_peak": 231763968,
+          "final": 231763968,
+          "process_lifetime_peak": 231780352
+        },
+        "enabled": {
+          "initial": 224567296,
+          "sampled_peak": 231952384,
+          "final": 231952384,
+          "process_lifetime_peak": 231989248
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "C_long_tuple",
+      "workload_sha256": "ae1ceeae264d06a3b5867647995dc7dceeb3eb6c63d2b1bab941ea940a955cd9",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 1484.4066752996214,
+          "dns_disabled": 1493.8590955824764,
+          "dns_enabled": 1453.1832689693836,
+          "enabled_vs_disabled_percent": -2.722869026494945
+        },
+        "flows_per_sec": {
+          "historical_f3": 0.03328564614090101,
+          "dns_disabled": 0.033283405645399736,
+          "dns_enabled": 0.03327341825730145,
+          "enabled_vs_disabled_percent": -0.030007109863372516
+        },
+        "processing_mbps": {
+          "historical_f3": 1.7748242041641518,
+          "dns_disabled": 1.7861582242362994,
+          "dns_enabled": 1.7376542252665093,
+          "enabled_vs_disabled_percent": -2.715548841734272
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.017747999663697556,
+            "p95": 0.021018500774516724,
+            "p99": 0.028890300018247373,
+            "samples": 4096,
+            "total_observations": 44884,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.334186001055059,
+            "p95": 0.4646659981517587,
+            "p99": 0.5948985499344419,
+            "samples": 4096,
+            "total_observations": 44883,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 2.44019299861975,
+            "p95": 2.44019299861975,
+            "p99": 2.44019299861975,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.415700001321966,
+            "p95": 5.415700001321966,
+            "p99": 5.415700001321966,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 7.855892999941716,
+            "p95": 7.855892999941716,
+            "p99": 7.855892999941716,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 27.894645001651952,
+            "p95": 27.894645001651952,
+            "p99": 27.894645001651952,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 14.731341998412972,
+            "p95": 14.731341998412972,
+            "p99": 14.731341998412972,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3443429995968472,
+            "p95": 0.3443429995968472,
+            "p99": 0.3443429995968472,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.017600499631953426,
+            "p95": 0.02435775240883231,
+            "p99": 0.058726899078465136,
+            "samples": 4096,
+            "total_observations": 43675,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.008515999070368707,
+            "p95": 0.010437500350235496,
+            "p99": 0.030109049839666117,
+            "samples": 4096,
+            "total_observations": 43675,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.3435274993535131,
+            "p95": 0.5333552498996141,
+            "p99": 0.700508702720982,
+            "samples": 4096,
+            "total_observations": 43674,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 9.240783998393454,
+            "p95": 9.240783998393454,
+            "p99": 9.240783998393454,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.826980002893833,
+            "p95": 5.826980002893833,
+            "p99": 5.826980002893833,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 15.067764001287287,
+            "p95": 15.067764001287287,
+            "p99": 15.067764001287287,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 34.29575600239332,
+            "p95": 34.29575600239332,
+            "p99": 34.29575600239332,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 16.826109000248834,
+            "p95": 16.826109000248834,
+            "p99": 16.826109000248834,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3673690007417463,
+            "p95": 0.3673690007417463,
+            "p99": 0.3673690007417463,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224399360,
+          "sampled_peak": 232857600,
+          "final": 232857600,
+          "process_lifetime_peak": 232992768
+        },
+        "enabled": {
+          "initial": 224468992,
+          "sampled_peak": 232562688,
+          "final": 232562688,
+          "process_lifetime_peak": 232632320
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "D_burst",
+      "workload_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 286.90979037569906,
+          "dns_disabled": 290.16230600158525,
+          "dns_enabled": 276.2197237209706,
+          "enabled_vs_disabled_percent": -4.805097696093741
+        },
+        "flows_per_sec": {
+          "historical_f3": 71.69474013948157,
+          "dns_disabled": 72.54057650039631,
+          "dns_enabled": 69.05493093024265,
+          "enabled_vs_disabled_percent": -4.805097696093741
+        },
+        "processing_mbps": {
+          "historical_f3": 0.20701018904441557,
+          "dns_disabled": 0.2091739098335397,
+          "dns_enabled": 0.19914475180586835,
+          "enabled_vs_disabled_percent": -4.794650554484803
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.028335001843515784,
+            "p95": 0.26825950135389576,
+            "p99": 0.3730048507350151,
+            "samples": 4096,
+            "total_observations": 11085,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6397994984581601,
+            "p95": 12.771537000844546,
+            "p99": 23.20388384887343,
+            "samples": 4096,
+            "total_observations": 8868,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.47983900003600866,
+            "p95": 0.5891056018299423,
+            "p99": 0.8273641603591397,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.646449004212627,
+            "p95": 6.41292719883495,
+            "p99": 23.56298059632538,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.13032600065344,
+            "p95": 6.912090999685459,
+            "p99": 24.44658471824369,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.606812999962131,
+            "p95": 8.52770280034747,
+            "p99": 26.28417375977736,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.361866001592716,
+            "p95": 11.802159799117339,
+            "p99": 16.59939080025652,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.34211499951197766,
+            "p95": 0.42987799970433116,
+            "p99": 0.521191838488449,
+            "samples": 2217,
+            "total_observations": 2217,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.0324180000461638,
+            "p95": 0.2890505020332057,
+            "p99": 0.36875265086564496,
+            "samples": 4096,
+            "total_observations": 10570,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.014053501217858866,
+            "p95": 0.01977775082195876,
+            "p99": 0.02577149771241239,
+            "samples": 4096,
+            "total_observations": 10570,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6803800006309757,
+            "p95": 13.735249251112691,
+            "p99": 25.380923100055956,
+            "samples": 4096,
+            "total_observations": 8456,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.48338550004700664,
+            "p95": 0.6045171483492595,
+            "p99": 0.8900535394059258,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.829457500818535,
+            "p95": 6.706992200452078,
+            "p99": 22.582061138673446,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.333004499334493,
+            "p95": 7.231887651323632,
+            "p99": 23.266901710630915,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.932280501132482,
+            "p95": 9.10809175147733,
+            "p99": 26.16612914025608,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.4367900005017873,
+            "p95": 12.398303650661541,
+            "p99": 23.921949800277982,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3469714974926319,
+            "p95": 0.4386389991850592,
+            "p99": 0.5358229918056167,
+            "samples": 2114,
+            "total_observations": 2114,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224587776,
+          "sampled_peak": 231542784,
+          "final": 231542784,
+          "process_lifetime_peak": 231563264
+        },
+        "enabled": {
+          "initial": 224550912,
+          "sampled_peak": 232067072,
+          "final": 232054784,
+          "process_lifetime_peak": 232071168
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "E_slow_websocket",
+      "workload_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 263.2195109609538,
+          "dns_disabled": 257.9849974739485,
+          "dns_enabled": 227.5255114315053,
+          "enabled_vs_disabled_percent": -11.806688893031092
+        },
+        "flows_per_sec": {
+          "historical_f3": 65.80487774023845,
+          "dns_disabled": 64.51291076072906,
+          "dns_enabled": 56.88137785787632,
+          "enabled_vs_disabled_percent": -11.829466091147566
+        },
+        "processing_mbps": {
+          "historical_f3": 0.3143691259850969,
+          "dns_disabled": 0.30800462964241077,
+          "dns_enabled": 0.27162787295488594,
+          "enabled_vs_disabled_percent": -11.810457761546555
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.031698002203484066,
+            "p95": 0.31325499821832636,
+            "p99": 0.3611417021602395,
+            "samples": 4096,
+            "total_observations": 9678,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5577404990617651,
+            "p95": 12.40144349867478,
+            "p99": 23.312836248806104,
+            "samples": 4096,
+            "total_observations": 7742,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.48432299990963656,
+            "p95": 0.6025464981576079,
+            "p99": 0.780348701300683,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.4014775012328755,
+            "p95": 5.623455253044085,
+            "p99": 22.360793546067733,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.895369498626678,
+            "p95": 6.182433497997408,
+            "p99": 23.11973699961527,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.2664514989592135,
+            "p95": 7.852198000364297,
+            "p99": 25.32777310079837,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.5255360014853068,
+            "p95": 12.095964500076661,
+            "p99": 25.824604901390565,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3648309993877774,
+            "p95": 0.47605424970242893,
+            "p99": 0.5553888495342111,
+            "samples": 1936,
+            "total_observations": 1936,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.037988000258337706,
+            "p95": 0.36718600040330784,
+            "p99": 0.4294310007026073,
+            "samples": 4096,
+            "total_observations": 8535,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.016972999219433405,
+            "p95": 0.02157150174753042,
+            "p99": 0.02951014903374017,
+            "samples": 4096,
+            "total_observations": 8535,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6887715007906081,
+            "p95": 15.097800000148709,
+            "p99": 29.337480497997646,
+            "samples": 4096,
+            "total_observations": 6828,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5645460005325731,
+            "p95": 0.6942263011296745,
+            "p99": 0.8885526769154247,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.862772999331355,
+            "p95": 6.475095296627838,
+            "p99": 25.651748197633452,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.42474299800233,
+            "p95": 7.093055400036969,
+            "p99": 26.715173219563454,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.098098998540081,
+            "p95": 9.145147702292881,
+            "p99": 29.436000679852445,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.746995996858459,
+            "p95": 12.153178999869738,
+            "p99": 24.111352360996584,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.4005859991593752,
+            "p95": 0.48708670074120164,
+            "p99": 0.5725183612958064,
+            "samples": 1707,
+            "total_observations": 1707,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 240406528,
+          "sampled_peak": 251940864,
+          "final": 251928576,
+          "process_lifetime_peak": 251953152
+        },
+        "enabled": {
+          "initial": 240476160,
+          "sampled_peak": 248168448,
+          "final": 248152064,
+          "process_lifetime_peak": 248176640
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "F_slow_storage",
+      "workload_sha256": "49a47ab82f0fff90719f003976beada83f4797e0c93855f725965138e564cc55",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": 113.1066985143735,
+          "dns_disabled": 111.14850946563514,
+          "dns_enabled": 111.97214598811674,
+          "enabled_vs_disabled_percent": 0.7410234527132742
+        },
+        "flows_per_sec": {
+          "historical_f3": 28.276674628593376,
+          "dns_disabled": 27.80377633427362,
+          "dns_enabled": 27.993036497029184,
+          "enabled_vs_disabled_percent": 0.6806994865739213
+        },
+        "processing_mbps": {
+          "historical_f3": 0.13473205979782127,
+          "dns_disabled": 0.1327764510642556,
+          "dns_enabled": 0.13350918846788823,
+          "enabled_vs_disabled_percent": 0.5518579520385369
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.03336000008857809,
+            "p95": 0.3426317498451681,
+            "p99": 0.441206250616233,
+            "samples": 4096,
+            "total_observations": 4173,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5990095014567487,
+            "p95": 31.725467700016452,
+            "p99": 48.847588140852245,
+            "samples": 3338,
+            "total_observations": 3338,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5061100018792786,
+            "p95": 0.6387404995621182,
+            "p99": 0.8849727601045738,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.507210000156192,
+            "p95": 6.523493799977583,
+            "p99": 22.53171873941027,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.019745000026887,
+            "p95": 7.151985199379851,
+            "p99": 23.534319658720044,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.362205000186805,
+            "p95": 8.95032230109791,
+            "p99": 25.230191937880576,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 22.893874996952945,
+            "p95": 32.894488698366324,
+            "p99": 45.24284210056066,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.36692299909191206,
+            "p95": 0.4667381988838315,
+            "p99": 0.5357318991445936,
+            "samples": 835,
+            "total_observations": 835,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.031325002055382356,
+            "p95": 0.33207624983333517,
+            "p99": 0.4195495992462387,
+            "samples": 4096,
+            "total_observations": 4200,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.01400700057274662,
+            "p95": 0.019533748854883015,
+            "p99": 0.027684649649017963,
+            "samples": 4096,
+            "total_observations": 4200,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.61015549908916,
+            "p95": 31.333645751328728,
+            "p99": 45.95157287047186,
+            "samples": 3360,
+            "total_observations": 3360,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5099059999338351,
+            "p95": 0.6109827983891591,
+            "p99": 0.7601716398858117,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.44408250041306,
+            "p95": 6.298930447883321,
+            "p99": 21.733703450008765,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.953707999447943,
+            "p95": 6.911824851522396,
+            "p99": 22.488989680678063,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.34662250195106,
+            "p95": 8.81745945098373,
+            "p99": 24.341847829637118,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 22.893257499163155,
+            "p95": 33.12682960076927,
+            "p99": 42.77377961967432,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3587770006561186,
+            "p95": 0.4236598510033218,
+            "p99": 0.4645515993979643,
+            "samples": 840,
+            "total_observations": 840,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224395264,
+          "sampled_peak": 230813696,
+          "final": 230813696,
+          "process_lifetime_peak": 230834176
+        },
+        "enabled": {
+          "initial": 224485376,
+          "sampled_peak": 231317504,
+          "final": 231305216,
+          "process_lifetime_peak": 231329792
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 0,
+        "dns_messages_parsed": 0,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 0,
+        "dns_buckets_per_key_peak": 0,
+        "dns_members_per_dimension_peak": 0,
+        "dns_member_overflows": 0,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 0,
+        "dns_observations": 0,
+        "dns_observations_peak": 0,
+        "dns_evidence_generated": 0,
+        "dns_processing_errors": 0
+      }
+    },
+    {
+      "workload": "G_dns_heavy",
+      "workload_sha256": "4d82082ab343d0e62a4d5b08d222d37afda2d64323e712f3770b2407f170cc1d",
+      "model_identity": {
+        "model_name": "runtime",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0",
+        "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+      },
+      "rates": {
+        "packets_per_sec": {
+          "historical_f3": null,
+          "dns_disabled": 1193.7439049789239,
+          "dns_enabled": 1021.9765994200875,
+          "enabled_vs_disabled_percent": -14.388957702101857
+        },
+        "flows_per_sec": {
+          "historical_f3": null,
+          "dns_disabled": 2.0854837014426795,
+          "dns_enabled": 2.0848022937840054,
+          "enabled_vs_disabled_percent": -0.03267384243773597
+        },
+        "processing_mbps": {
+          "historical_f3": null,
+          "dns_disabled": 1.159571169047084,
+          "dns_enabled": 0.9927210900319899,
+          "enabled_vs_disabled_percent": -14.388946833872096
+        }
+      },
+      "latency_ms": {
+        "disabled": {
+          "stream_intelligence": {
+            "p50": 0.01921600050991401,
+            "p95": 0.024206497982959263,
+            "p99": 0.25886855073622467,
+            "samples": 4096,
+            "total_observations": 36698,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.4158769988862332,
+            "p95": 0.5866857472938136,
+            "p99": 0.715442199907557,
+            "samples": 4096,
+            "total_observations": 36634,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5150634988240199,
+            "p95": 0.7127202001356634,
+            "p99": 2.1237167592334933,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.166345997873577,
+            "p95": 5.074288400646765,
+            "p99": 5.751670309873585,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.676251001001219,
+            "p95": 5.592778300524515,
+            "p99": 8.14533643853792,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 335.69261050070054,
+            "p95": 644.9214117476004,
+            "p99": 668.7061383096079,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.6383655003883177,
+            "p95": 4.538702196987279,
+            "p99": 19.933192000353277,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3993954996985849,
+            "p95": 0.5145936511325998,
+            "p99": 0.5896286190545651,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "enabled": {
+          "stream_intelligence": {
+            "p50": 0.016389500160585158,
+            "p95": 0.03550275050656637,
+            "p99": 0.2307409013155848,
+            "samples": 4096,
+            "total_observations": 31437,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.18672349870030303,
+            "p95": 0.34516749838076066,
+            "p99": 0.47283119893108966,
+            "samples": 4096,
+            "total_observations": 31437,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.5487554990395438,
+            "p95": 0.8607600020695827,
+            "p99": 1.1714661006408285,
+            "samples": 4096,
+            "total_observations": 31373,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4646420002245577,
+            "p95": 0.5428258980828105,
+            "p99": 4.46730345985995,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 3.609298997616861,
+            "p95": 4.40108755192341,
+            "p99": 5.331293546914821,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.081414999745903,
+            "p95": 4.913333301374222,
+            "p99": 9.834743028040949,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 371.37967349735845,
+            "p95": 656.2712823017137,
+            "p99": 679.6930809503829,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.1696434980403865,
+            "p95": 4.294522901545857,
+            "p99": 19.589312599346137,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.5317529994499637,
+            "p95": 0.6398077004632795,
+            "p99": 0.8531790784036263,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        }
+      },
+      "rss_bytes": {
+        "disabled": {
+          "initial": 224493568,
+          "sampled_peak": 234803200,
+          "final": 234803200,
+          "process_lifetime_peak": 234872832
+        },
+        "enabled": {
+          "initial": 224497664,
+          "sampled_peak": 234799104,
+          "final": 234799104,
+          "process_lifetime_peak": 234872832
+        }
+      },
+      "dns_metrics": {
+        "dns_messages_observed": 31373,
+        "dns_messages_parsed": 31373,
+        "dns_malformed": 0,
+        "dns_truncated": 0,
+        "dns_unavailable": 0,
+        "dns_state_keys": 0,
+        "dns_keys_peak": 45,
+        "dns_buckets_per_key_peak": 2,
+        "dns_members_per_dimension_peak": 128,
+        "dns_member_overflows": 11719,
+        "dns_late_observations": 0,
+        "dns_evictions": 0,
+        "dns_expirations": 0,
+        "dns_transactions": 0,
+        "dns_transactions_peak": 1,
+        "dns_observations": 0,
+        "dns_observations_peak": 64,
+        "dns_evidence_generated": 239,
+        "dns_processing_errors": 0
+      }
+    }
+  ]
+}

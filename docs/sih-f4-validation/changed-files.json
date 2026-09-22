@@ -1,0 +1,23 @@
+[
+  "frontend/src/__tests__/detection-detail.test.tsx",
+  "frontend/src/__tests__/fixtures/f4-event.json",
+  "frontend/src/api/types.ts",
+  "frontend/src/pages/DetectionDetail.tsx",
+  "frontend/src/pages/Sensor.tsx",
+  "scripts/rw5b_benchmark.py",
+  "scripts/rw5b_environment.py",
+  "src/sentinel_net/cli.py",
+  "src/sentinel_net/config.py",
+  "src/sentinel_net/demo_replay.py",
+  "src/sentinel_net/dns/__init__.py",
+  "src/sentinel_net/dns/config.py",
+  "src/sentinel_net/dns/engine.py",
+  "src/sentinel_net/dns/parser.py",
+  "src/sentinel_net/models/event_record.py",
+  "src/sentinel_net/sensor/metrics.py",
+  "src/sentinel_net/sensor/operational_health.py",
+  "src/sentinel_net/sensor/pipeline.py",
+  "tests/integration/test_dns_delivery.py",
+  "tests/unit/test_dns_intelligence.py",
+  "tests/unit/test_dns_parity.py"
+]

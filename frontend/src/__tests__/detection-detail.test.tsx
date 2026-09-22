@@ -74,3 +74,36 @@ it.each([
   renderEvent({ ...replayEvent, behavioral_evidence: [], behavioral_evidence_status: status });
   expect(await screen.findByText(message)).toBeInTheDocument();
 });
+
+it('renders persisted passive DNS measurements and separate contextual signals', async () => {
+  const { default: record } = await import('./fixtures/f4-event.json');
+  renderEvent(record);
+  expect(await screen.findByRole('region', { name: 'DNS observations table' })).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: 'DNS evidence table' })).toBeInTheDocument();
+  expect(screen.getByText('DNS_TUNNELLING_LIKE_BEHAVIOR')).toBeInTheDocument();
+  expect(screen.getAllByText(record.dns_observation.message.questions[0]!.name).length).toBeGreaterThan(0);
+  expect(screen.getByText(/Visibility: QUERY ONLY/)).toBeInTheDocument();
+  expect(screen.getByText('Missing responses are unobserved, not inferred failures.')).toBeInTheDocument();
+  expect(screen.getByText(/MEASURED · Domain/)).toBeInTheDocument();
+  expect(screen.getByText('DERIVED · Entropy')).toBeInTheDocument();
+  expect(screen.getByText('Classification Score')).toBeInTheDocument();
+  expect(screen.getByText(/T1071.004 · Application Layer Protocol: DNS/)).toBeInTheDocument();
+});
+
+it.each([
+  ['not_recorded', 'DNS metadata was not recorded for this event.'],
+  ['disabled', 'DNS intelligence was disabled for this event.'],
+  ['unavailable_processing_error', 'DNS evidence unavailable due to an operational processing error.'],
+  ['unavailable_or_not_observed', 'UNAVAILABLE — no retained observable DNS metadata for this flow. Encrypted DNS cannot be identified or decoded here.'],
+])('distinguishes DNS evidence status %s', async (status, message) => {
+  renderEvent({ ...replayEvent, dns_status: status });
+  expect(await screen.findByText(message)).toBeInTheDocument();
+});
+
+it.each(['MALFORMED', 'TRUNCATED', 'UNSUPPORTED', 'ENCRYPTED_OR_UNAVAILABLE'])('shows parser status %s without inventing DNS values or heuristics', async status => {
+  renderEvent({ ...replayEvent, dns_status: status, dns_observation: { message: { status, reason: 'Metadata unavailable' }, visibility: 'UNAVAILABLE', lexical: [] }, dns_evidence: [] });
+  expect(await screen.findByText('Parser status: '+status)).toBeInTheDocument();
+  expect(screen.getByText('Metadata unavailable')).toBeInTheDocument();
+  expect(screen.queryByRole('region', { name: 'DNS evidence table' })).not.toBeInTheDocument();
+  expect(screen.queryByText(/NaN/)).not.toBeInTheDocument();
+});

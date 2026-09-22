@@ -6,6 +6,8 @@ import logging
 import threading
 import time
 
+from sentinel_net.dns.config import DNSConfig
+from sentinel_net.dns.engine import DNSIntelligence
 from sentinel_net.features.extractor import FeatureExtractor
 from sentinel_net.intelligence.config import IntelligenceConfig
 from sentinel_net.intelligence.engine import StreamingIntelligence
@@ -43,6 +45,8 @@ class PacketProcessingPipeline:
         self._extractor = FeatureExtractor()
         self.intelligence = StreamingIntelligence(getattr(config, "intelligence", IntelligenceConfig()), metrics)
         self._intelligence_failed = False
+        self.dns = DNSIntelligence(getattr(config, "dns", DNSConfig()), metrics)
+        self._dns_failed = False
         self._detection = timed_detector(detection_pipeline, metrics)
         self._db = db
         self._event_loop = event_loop
@@ -137,6 +141,7 @@ class PacketProcessingPipeline:
                     self._metrics.increment('source_errors')
                     self._metrics.set_gauge('last_error_kind', 'SOURCE_ERROR')
                 self.intelligence.close()
+                self.dns.close()
                 self._running.clear()
 
     def _intelligence_call(self, method, *args):
@@ -153,6 +158,21 @@ class PacketProcessingPipeline:
             logger.exception("Streaming evidence unavailable; canonical processing continues")
         finally:
             self._metrics.observe_latency("stream_intelligence", time.monotonic()-started)
+
+    def _dns_call(self, method, *args):
+        if self._dns_failed or not self.dns.config.enabled:
+            return
+        started = time.monotonic()
+        try:
+            method(*args)
+        except Exception:
+            self._dns_failed = True
+            self.dns.close()
+            self._metrics.increment("dns_processing_errors")
+            self._metrics.set_gauge("last_error_kind", "DNS_ERROR")
+            logger.exception("DNS evidence unavailable; canonical processing continues")
+        finally:
+            self._metrics.observe_latency("dns_processing", time.monotonic() - started)
 
     def _processing_loop(self):
         watermark = float('-inf')
@@ -192,6 +212,7 @@ class PacketProcessingPipeline:
                             previous_flows = self._aggregator.total_flows_created
                             self._aggregator.ingest(parsed)
                             self._intelligence_call(self.intelligence.observe_packet, parsed, self._aggregator.total_flows_created > previous_flows)
+                            self._dns_call(self.dns.observe_packet, parsed)
                             self._metrics.increment('packets_processed')
                             self._metrics.increment('bytes_processed', getattr(packet, 'capture_length', parsed.ip_total_length))
                     except Exception as exc:
@@ -243,6 +264,14 @@ class PacketProcessingPipeline:
                     event.metadata.pop("behavioral_evidence", None)
                     event.metadata.pop("behavioral_policy", None)
                     event.metadata.pop("behavioral_attack_context", None)
+                self._dns_call(self.dns.enrich, event, flow)
+                if self._dns_failed:
+                    event.metadata["dns_status"] = "unavailable_processing_error"
+                    event.metadata.pop("dns_observation", None)
+                    event.metadata["dns_evidence"] = []
+                    event.metadata["dns_attack_context"] = []
+                elif not self.dns.config.enabled:
+                    event.metadata["dns_status"] = "disabled"
                 event.metadata['source'] = dict(self.source.provenance)
                 identity = getattr(self._detection, 'deployment_identity', None)
                 if identity:

@@ -57,6 +57,10 @@ class EventRecord(BaseModel):
         'items': [], 'explanation_available': False,
         'unavailable_reason': 'Evidence was not recorded for this event.',
     })
+    dns_status: str = 'not_recorded'
+    dns_observation: dict[str, Any] = Field(default_factory=dict)
+    dns_attack_context: list[dict[str, Any]] = Field(default_factory=list)
+    dns_evidence: list[dict[str, Any]] = Field(default_factory=list)
     behavioral_evidence_status: str = 'not_recorded'
     behavioral_evidence: list[dict[str, Any]] = Field(default_factory=list)
     behavioral_policy: dict[str, Any] = Field(default_factory=dict)
@@ -78,12 +82,14 @@ class EventRecord(BaseModel):
             value = dict(value)
             value.setdefault('event_id', value.get('id'))
             metadata = value.get('metadata') or {}
-            for key in ('behavioral_evidence', 'behavioral_policy', 'behavioral_attack_context', 'behavioral_evidence_status'):
+            for key in ('behavioral_evidence', 'behavioral_policy', 'behavioral_attack_context', 'behavioral_evidence_status', 'dns_status', 'dns_observation', 'dns_evidence', 'dns_attack_context'):
                 if key in metadata:
                     value.setdefault(key, metadata[key])
             behavioral = value.get('behavioral_evidence', [])
             detectors = sorted({e.get('detector') for e in behavioral if e.get('detector') in
                                 ('stream_ddos','stream_c2','stream_recon','stream_asymmetry')})
+            if value.get('dns_evidence'):
+                detectors.append('dns_intelligence')
             value['detection_source'] = list(dict.fromkeys(value.get('detection_source', []) + detectors))
             value.setdefault('threat_class', value.get('threat_type'))
             deployment = value.get('metadata', {}).get('deployment_model', {})
