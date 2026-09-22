@@ -235,6 +235,26 @@ export function Sensor() {
       <p className="page-description">Kernel capture drops: {m?.kernel_capture_drops == null ? 'Unavailable from capture backend' : formatNumber(m.kernel_capture_drops)}. Packets dropped counts application capture-queue saturation; delivery drops count subscriber copies.</p>
       <p className="page-description">v2.0.0 limitation: continuously active tuples retain growing exact timestamp and packet-size histories. Per-flow memory is not strictly bounded.</p>
 
+      <div className="section-header">Encrypted-session metadata</div>
+      <div className="metrics-grid">
+        <MetricCard title="TLS Records" value={m?.tls_records_observed} />
+        <MetricCard title="ClientHello" value={m?.tls_client_hello} />
+        <MetricCard title="ServerHello" value={m?.tls_server_hello} />
+        <MetricCard title="TLS Malformed" value={m?.tls_malformed} />
+        <MetricCard title="TLS Truncated" value={m?.tls_truncated} />
+        <MetricCard title="TLS Evictions" value={m?.tls_reassembly_evictions} />
+        <MetricCard title="TLS Buffer Peak Bytes" value={m?.tls_reassembly_bytes_peak} />
+        <MetricCard title="TLS Evidence" value={m?.tls_evidence_generated} />
+        <MetricCard title="QUIC Candidates" value={m?.quic_packets_observed} />
+        <MetricCard title="QUIC Long Headers" value={m?.quic_long_headers} />
+        <MetricCard title="QUIC Unknown Versions" value={m?.quic_unknown_versions} />
+        <MetricCard title="QUIC Malformed" value={m?.quic_malformed} />
+        <MetricCard title="QUIC Evidence" value={m?.quic_evidence_generated} />
+        <MetricCard title="Metadata Connections" value={m?.encrypted_metadata_state} />
+        <MetricCard title="Metadata State Peak" value={m?.encrypted_metadata_state_peak} />
+        <MetricCard title="Metadata Errors" value={m?.encrypted_metadata_processing_errors} warn />
+      </div>
+
       <div className="section-header">Passive DNS intelligence</div>
       <div className="metrics-grid">
         <MetricCard title="DNS Observations" value={m?.dns_messages_observed} />

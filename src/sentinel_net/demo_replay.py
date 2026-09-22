@@ -20,6 +20,7 @@ import time
 from dataclasses import dataclass, field
 from sentinel_net.intelligence.config import IntelligenceConfig
 from sentinel_net.dns.config import DNSConfig
+from sentinel_net.encrypted.config import EncryptedConfig
 from pathlib import Path
 
 
@@ -50,6 +51,7 @@ class DemoReplayConfig:
     max_active_flows: int = 100_000
     intelligence: IntelligenceConfig = field(default_factory=IntelligenceConfig)
     dns: DNSConfig = field(default_factory=DNSConfig)
+    encrypted: EncryptedConfig = field(default_factory=EncryptedConfig)
 
 
 async def load_detection_pipeline(config):
@@ -80,7 +82,7 @@ async def run_replay(config, db, event_bus, lifecycle, metrics, *, detection=Non
         source = PcapReplaySource(config.pcap_path, metrics,
                                   realtime=config.realtime, speed=config.speed)
         runtime = SimpleNamespace(flow_idle_timeout_sec=config.flow_idle_timeout,
-                                  max_active_flows=config.max_active_flows, intelligence=config.intelligence, dns=config.dns)
+                                  max_active_flows=config.max_active_flows, intelligence=config.intelligence, dns=config.dns, encrypted=config.encrypted)
         pipeline = PacketProcessingPipeline(runtime, source, event_bus, metrics, detection,
                                             db=db, event_loop=asyncio.get_running_loop())
         await asyncio.to_thread(pipeline.start)

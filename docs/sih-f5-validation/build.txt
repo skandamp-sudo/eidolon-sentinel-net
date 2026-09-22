@@ -1,0 +1,15 @@
+
+> sentinel-net-soc@0.6.0 build
+> tsc -b && vite build
+
+vite v6.4.3 building for production...
+transforming...
+✓ 58 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                         0.60 kB │ gzip:  0.41 kB
+dist/assets/ProductSite-CNzW60BC.css   12.29 kB │ gzip:  2.83 kB
+dist/assets/index-CxroS0dr.css         22.82 kB │ gzip:  4.74 kB
+dist/assets/ProductSite-rXLHWNuZ.js    16.72 kB │ gzip:  5.04 kB
+dist/assets/index-CBnnaIjt.js         319.85 kB │ gzip: 93.89 kB
+✓ built in 1.47s

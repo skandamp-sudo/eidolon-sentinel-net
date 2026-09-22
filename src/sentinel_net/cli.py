@@ -177,6 +177,7 @@ def _run_replay(args: argparse.Namespace) -> None:
     replay_config = DemoReplayConfig(
         intelligence=config.intelligence,
         dns=config.dns,
+        encrypted=config.encrypted,
         pcap_path=pcap_path,
         model=args.model,
         model_registry=config.model_registry,

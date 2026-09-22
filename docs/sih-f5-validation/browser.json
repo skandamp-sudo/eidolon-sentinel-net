@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "family": "tls",
+      "width": 1440,
+      "documentOverflow": false,
+      "status": "COMPLETE",
+      "visibility": "BOTH"
+    },
+    {
+      "family": "tls",
+      "width": 390,
+      "documentOverflow": false,
+      "status": "COMPLETE",
+      "visibility": "BOTH"
+    },
+    {
+      "family": "quic",
+      "width": 1440,
+      "documentOverflow": false,
+      "status": "COMPLETE",
+      "visibility": "ONE_DIRECTION_OBSERVED"
+    },
+    {
+      "family": "quic",
+      "width": 390,
+      "documentOverflow": false,
+      "status": "COMPLETE",
+      "visibility": "ONE_DIRECTION_OBSERVED"
+    }
+  ],
+  "errors": [],
+  "note": "Actual approved frozen QA model plus safe offline protocol fixtures; no malware or production traffic claims."
+}

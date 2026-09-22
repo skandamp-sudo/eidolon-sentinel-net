@@ -57,6 +57,12 @@ class EventRecord(BaseModel):
         'items': [], 'explanation_available': False,
         'unavailable_reason': 'Evidence was not recorded for this event.',
     })
+    tls_status: str = 'not_recorded'
+    tls_observation: dict[str, Any] = Field(default_factory=dict)
+    tls_evidence: list[dict[str, Any]] = Field(default_factory=list)
+    quic_status: str = 'not_recorded'
+    quic_observation: dict[str, Any] = Field(default_factory=dict)
+    quic_evidence: list[dict[str, Any]] = Field(default_factory=list)
     dns_status: str = 'not_recorded'
     dns_observation: dict[str, Any] = Field(default_factory=dict)
     dns_attack_context: list[dict[str, Any]] = Field(default_factory=list)
@@ -82,12 +88,16 @@ class EventRecord(BaseModel):
             value = dict(value)
             value.setdefault('event_id', value.get('id'))
             metadata = value.get('metadata') or {}
-            for key in ('behavioral_evidence', 'behavioral_policy', 'behavioral_attack_context', 'behavioral_evidence_status', 'dns_status', 'dns_observation', 'dns_evidence', 'dns_attack_context'):
+            for key in ('behavioral_evidence', 'behavioral_policy', 'behavioral_attack_context', 'behavioral_evidence_status', 'dns_status', 'dns_observation', 'dns_evidence', 'dns_attack_context', 'tls_status', 'tls_observation', 'tls_evidence', 'quic_status', 'quic_observation', 'quic_evidence'):
                 if key in metadata:
                     value.setdefault(key, metadata[key])
             behavioral = value.get('behavioral_evidence', [])
             detectors = sorted({e.get('detector') for e in behavioral if e.get('detector') in
                                 ('stream_ddos','stream_c2','stream_recon','stream_asymmetry')})
+            for family in ('tls', 'quic'):
+                for signal in value.get(family + '_evidence', []):
+                    if signal.get('detector') in ('tls_metadata', 'quic_metadata', 'encrypted_session_behavior'):
+                        detectors.append(signal['detector'])
             if value.get('dns_evidence'):
                 detectors.append('dns_intelligence')
             value['detection_source'] = list(dict.fromkeys(value.get('detection_source', []) + detectors))

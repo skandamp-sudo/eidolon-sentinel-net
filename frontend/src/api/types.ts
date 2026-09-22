@@ -67,7 +67,7 @@ export interface BehavioralEvidence {
   signal_type: string;
   observed_value: number;
   unit: string;
-  reference_threshold: number;
+  reference_threshold: number | null;
   comparison: string;
   observation_window: { start: number; end: number; duration_sec: number; clock: string; alignment: string };
   supporting_context: Record<string, unknown>;
@@ -90,7 +90,27 @@ export interface DNSObservation {
   server_window?: Record<string, unknown> | null;
 }
 
+export interface TLSHello {
+  handshake_type: number; legacy_version: number; supported_versions: number[]; selected_version: number | null;
+  cipher_suites: number[]; extension_ids: number[]; supported_groups: number[]; signature_algorithms: number[];
+  sni: string | null; sni_status: string; alpn: { value: string; encoding: string }[];
+  fingerprint: { family: string; digest: string; canonical: string; semantics: string };
+}
+export interface EncryptedDirection {
+  source_ip: string; source_port: number; status: string; reason?: string; hello?: TLSHello;
+  timestamp?: number; last_packet_timestamp?: number; latest_packet_status?: string; latest_packet_reason?: string;
+  version_hex?: string; packet_type?: string; long_header?: boolean;
+  destination_cid_length?: number; destination_cid_sha256?: string | null;
+  source_cid_length?: number; source_cid_sha256?: string | null;
+  token_length?: number; declared_packet_length?: number; supported_versions?: number[];
+}
+export interface EncryptedObservation {
+  visibility: string; directions: EncryptedDirection[]; timing: Record<string, unknown>; limits: string;
+}
+
 export interface DetectionEvent {
+  tls_status?: string; tls_observation?: EncryptedObservation; tls_evidence?: BehavioralEvidence[];
+  quic_status?: string; quic_observation?: EncryptedObservation; quic_evidence?: BehavioralEvidence[];
   dns_status?: string;
   dns_observation?: DNSObservation;
   dns_evidence?: BehavioralEvidence[];
@@ -195,6 +215,22 @@ export interface StatsResponse {
 // ─── Status ──────────────────────────────────────────────────────────
 
 export interface SensorMetrics {
+  tls_records_observed?: number;
+  tls_client_hello?: number;
+  tls_server_hello?: number;
+  tls_malformed?: number;
+  tls_truncated?: number;
+  tls_reassembly_evictions?: number;
+  tls_reassembly_bytes_peak?: number;
+  tls_evidence_generated?: number;
+  quic_packets_observed?: number;
+  quic_long_headers?: number;
+  quic_unknown_versions?: number;
+  quic_malformed?: number;
+  quic_evidence_generated?: number;
+  encrypted_metadata_state?: number;
+  encrypted_metadata_state_peak?: number;
+  encrypted_metadata_processing_errors?: number;
   dns_messages_observed?: number;
   dns_messages_parsed?: number;
   dns_malformed?: number;

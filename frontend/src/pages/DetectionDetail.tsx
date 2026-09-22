@@ -1,3 +1,4 @@
+import { EncryptedSession } from '@/components/EncryptedSession';
 /**
  * Detection Detail — Single detection investigation view.
  *
@@ -291,6 +292,8 @@ export function DetectionDetail() {
         </div> : <p>No DNS heuristic signals were recorded.</p>}
         {event.dns_attack_context?.map((mapping, i) => <p key={i}>{mapping.technique_id} · {mapping.technique_name} — {mapping.qualification}: {mapping.rationale}</p>)}
       </div>
+
+      <EncryptedSession event={event} />
 
       {/* ─── RATIONALE ──────────────────────────────── */}
       <div className="card detail-section">

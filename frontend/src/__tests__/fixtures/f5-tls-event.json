@@ -1,0 +1,1793 @@
+{
+  "event_schema_version": "2.0.0",
+  "id": "d99f606d-7e0b-4e22-ac2e-6bdd480f0988",
+  "event_id": "d99f606d-7e0b-4e22-ac2e-6bdd480f0988",
+  "timestamp": 1790077552.156131,
+  "created_at": 1790077552.156131,
+  "flow_id": "55a5f5c4-4bc0-4923-87b0-dc0225955f8c",
+  "severity": "medium",
+  "threat_type": "ddos",
+  "threat_class": "ddos",
+  "classification_score": 0.5806687474250793,
+  "classification_score_type": "uncalibrated_classifier_score",
+  "classification_score_class": "ddos",
+  "anomaly_score": 0.5228440487003442,
+  "anomaly_score_type": "normalized_anomaly_score",
+  "detection_source": [
+    "ml_classifier",
+    "anomaly_detector",
+    "tls_metadata",
+    "encrypted_session_behavior"
+  ],
+  "source_mode": "REPLAY",
+  "capture_interface": null,
+  "replay_file_identifier": "7952cf238f2e4d2a98c291fa172241b2",
+  "model_name": "runtime",
+  "deployment_model_version": "1.0.0",
+  "model_manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+  "model_version": "1.0.0",
+  "anomaly_model_version": "1.0.0",
+  "feature_schema_version": "2.0.0",
+  "explanation_version": "1.0.0",
+  "evidence": {
+    "items": [
+      {
+        "feature_name": "bytes_per_sec",
+        "observed_value": 3250.3601325596665,
+        "reference_value": 0.048948707654247775,
+        "contribution": 3086.261481139035,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "total_bytes",
+        "observed_value": 245.85433652250475,
+        "reference_value": 0.19909940074149152,
+        "contribution": 252.26939129686977,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_bytes",
+        "observed_value": 181.64690569768499,
+        "reference_value": 0.11618339759144632,
+        "contribution": 247.8342017962763,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p90",
+        "observed_value": 216.57908550434797,
+        "reference_value": 0.09454877898819113,
+        "contribution": 204.83786739058348,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p75",
+        "observed_value": 164.18597841716894,
+        "reference_value": -0.18190894888669912,
+        "contribution": 183.28419178666107,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "payload_bytes_total",
+        "observed_value": 173.54613098952663,
+        "reference_value": 0.08959341572900685,
+        "contribution": 182.69382608310968,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_p25",
+        "observed_value": 161.44971458384342,
+        "reference_value": 0.13301380144996036,
+        "contribution": 180.35030396009813,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_max",
+        "observed_value": 178.68708493558054,
+        "reference_value": -0.17034143298040835,
+        "contribution": 165.19227209358306,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "forward_payload_bytes",
+        "observed_value": 141.28079490913484,
+        "reference_value": -0.29799253964971023,
+        "contribution": 148.67472866273314,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_median",
+        "observed_value": 150.7192712826883,
+        "reference_value": 0.077609705033625,
+        "contribution": 127.68102336531915,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "reverse_bytes",
+        "observed_value": 121.6626939324713,
+        "reference_value": 0.039162714566318924,
+        "contribution": 127.565957519735,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_mean",
+        "observed_value": 129.64994138168728,
+        "reference_value": 0.11167855262643003,
+        "contribution": 117.61301021468101,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_min",
+        "observed_value": 100.18337427450535,
+        "reference_value": -0.4456178729771162,
+        "contribution": 108.13583440372201,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "reverse_payload_bytes",
+        "observed_value": 67.31338995427865,
+        "reference_value": 0.07999512295299971,
+        "contribution": 84.62315055480936,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "pkt_size_std",
+        "observed_value": 36.34044675465253,
+        "reference_value": 0.042526785586334534,
+        "contribution": 38.310618635648126,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "packets_per_sec",
+        "observed_value": 16.779168458653324,
+        "reference_value": -0.13440190415912262,
+        "contribution": 18.42370788187393,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "protocol",
+        "observed_value": 5.428569278842724,
+        "reference_value": -0.29213556082717096,
+        "contribution": 6.526002676405168,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "ip_version",
+        "observed_value": 3.9079658433986246,
+        "reference_value": -0.01936343921618368,
+        "contribution": 3.5329552257984096,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "ack_count",
+        "observed_value": 1.8789916673428257,
+        "reference_value": 0.14513014178562733,
+        "contribution": 2.1139646035475774,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      },
+      {
+        "feature_name": "psh_count",
+        "observed_value": 1.7236204240544508,
+        "reference_value": -0.09057364427422109,
+        "contribution": 2.1061419328332693,
+        "direction": "increase",
+        "evidence_type": "statistical",
+        "source": "training_distribution",
+        "model_name": "isolation_forest",
+        "model_version": "1.0.0",
+        "feature_schema_version": "2.0.0"
+      }
+    ],
+    "explanation_available": true,
+    "unavailable_reason": null
+  },
+  "tls_status": "COMPLETE",
+  "tls_observation": {
+    "visibility": "BOTH",
+    "directions": [
+      {
+        "source_ip": "192.0.2.1",
+        "source_port": 42000,
+        "started_at": 1000.0,
+        "status": "COMPLETE",
+        "hello": {
+          "handshake_type": 1,
+          "legacy_version": 771,
+          "session_id_length": 0,
+          "extension_ids": [
+            0,
+            10,
+            11,
+            13,
+            16,
+            43
+          ],
+          "supported_versions": [
+            772,
+            771
+          ],
+          "supported_groups": [
+            29,
+            23
+          ],
+          "signature_algorithms": [
+            1027,
+            2052
+          ],
+          "ec_point_formats": [
+            0
+          ],
+          "alpn": [
+            {
+              "value": "h2",
+              "encoding": "ascii"
+            },
+            {
+              "value": "http/1.1",
+              "encoding": "ascii"
+            }
+          ],
+          "sni": "example.test",
+          "sni_status": "plaintext_observed",
+          "ja4_status": "NOT_IMPLEMENTED",
+          "cipher_suites": [
+            4865,
+            4866,
+            49199
+          ],
+          "compression_methods": [
+            0
+          ],
+          "selected_version": null,
+          "fingerprint": {
+            "family": "JA3",
+            "canonical": "771,4865-4866-49199,0-10-11-13-16-43,29-23,0",
+            "digest": "c9e264cb3675678ee364e81f3b6da7ad",
+            "semantics": "Metadata identifier only; no reputation or malware conclusion"
+          }
+        },
+        "record_count": 1,
+        "records": [
+          {
+            "content_type": 22,
+            "version": 771,
+            "length": 125
+          }
+        ],
+        "trailing_handshake_bytes_uninspected": 0,
+        "retransmitted_bytes_while_buffering": 0,
+        "out_of_order_segments": 0
+      },
+      {
+        "source_ip": "198.51.100.1",
+        "source_port": 443,
+        "started_at": 1000.1,
+        "status": "COMPLETE",
+        "hello": {
+          "handshake_type": 2,
+          "legacy_version": 771,
+          "session_id_length": 0,
+          "extension_ids": [
+            43,
+            51
+          ],
+          "supported_versions": [
+            772
+          ],
+          "supported_groups": [],
+          "signature_algorithms": [],
+          "ec_point_formats": [],
+          "alpn": [],
+          "sni": null,
+          "sni_status": "not_observed",
+          "ja4_status": "NOT_IMPLEMENTED",
+          "cipher_suites": [
+            4865
+          ],
+          "selected_cipher_suite": 4865,
+          "compression_methods": [
+            0
+          ],
+          "hello_retry_request": false,
+          "selected_version": 772,
+          "fingerprint": {
+            "family": "JA3S",
+            "canonical": "771,4865,43-51",
+            "digest": "f4febc55ea12b31ae17cfb7e614afda8",
+            "semantics": "Metadata identifier only; no reputation or malware conclusion"
+          }
+        },
+        "record_count": 1,
+        "records": [
+          {
+            "content_type": 22,
+            "version": 771,
+            "length": 58
+          }
+        ],
+        "trailing_handshake_bytes_uninspected": 0,
+        "retransmitted_bytes_while_buffering": 0,
+        "out_of_order_segments": 0
+      }
+    ],
+    "timing": {
+      "sample_count": 2,
+      "total_observed_packets": 2,
+      "samples_capped": false,
+      "scope": "latest bounded transport packet samples, including retransmissions; sorted by capture time",
+      "packet_size_min": 103,
+      "packet_size_max": 170,
+      "packet_size_mean": 136.5,
+      "inter_packet_mean_sec": 0.10000000000002274,
+      "inter_packet_min_sec": 0.10000000000002274,
+      "inter_packet_max_sec": 0.10000000000002274,
+      "direction_count": 2,
+      "clock": "capture_event_time"
+    },
+    "observation_window": {
+      "start": 1000.0,
+      "end": 1000.1,
+      "duration_sec": 0.10000000000002274,
+      "clock": "capture_event_time",
+      "alignment": "retained connection observation interval; not a negotiated session"
+    },
+    "application_payload": "NOT_DECRYPTED_OR_INSPECTED",
+    "ja4_status": "NOT_IMPLEMENTED",
+    "limits": "First supported hello per direction only; missing peer hello is unobserved, not failure. ECH outer metadata cannot reveal the inner name."
+  },
+  "tls_evidence": [
+    {
+      "signal_type": "TLS_CLIENT_HELLO_OBSERVED",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "hello",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "role": "CLIENT"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_VERSION_CONTEXT",
+      "detector": "tls_metadata",
+      "observed_value": 771,
+      "unit": "wire legacy version",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "supported_versions": [
+          772,
+          771
+        ],
+        "selected_version": null,
+        "note": "TLS 1.3 uses a legacy hello version; offered values do not establish negotiation."
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_CIPHER_PROFILE",
+      "detector": "tls_metadata",
+      "observed_value": 3,
+      "unit": "observed cipher suites",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "cipher_suites": [
+          4865,
+          4866,
+          49199
+        ]
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_EXTENSION_PROFILE",
+      "detector": "tls_metadata",
+      "observed_value": 6,
+      "unit": "observed extensions",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "extension_ids": [
+          0,
+          10,
+          11,
+          13,
+          16,
+          43
+        ]
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_FINGERPRINT",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "metadata identifier",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "family": "JA3",
+        "canonical": "771,4865-4866-49199,0-10-11-13-16-43,29-23,0",
+        "digest": "c9e264cb3675678ee364e81f3b6da7ad",
+        "semantics": "Metadata identifier only; no reputation or malware conclusion"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_SNI_CONTEXT",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "visible name",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "sni": "example.test",
+        "visibility": "plaintext_observed"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_ALPN_CONTEXT",
+      "detector": "tls_metadata",
+      "observed_value": 2,
+      "unit": "visible protocol identifiers",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "alpn": [
+          {
+            "value": "h2",
+            "encoding": "ascii"
+          },
+          {
+            "value": "http/1.1",
+            "encoding": "ascii"
+          }
+        ]
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_SERVER_HELLO_OBSERVED",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "hello",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "role": "SERVER"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_VERSION_CONTEXT",
+      "detector": "tls_metadata",
+      "observed_value": 771,
+      "unit": "wire legacy version",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "supported_versions": [
+          772
+        ],
+        "selected_version": 772,
+        "note": "TLS 1.3 uses a legacy hello version; offered values do not establish negotiation."
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_CIPHER_PROFILE",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "observed cipher suites",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "cipher_suites": [
+          4865
+        ]
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_EXTENSION_PROFILE",
+      "detector": "tls_metadata",
+      "observed_value": 2,
+      "unit": "observed extensions",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "extension_ids": [
+          43,
+          51
+        ]
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "TLS_FINGERPRINT",
+      "detector": "tls_metadata",
+      "observed_value": 1,
+      "unit": "metadata identifier",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "family": "JA3S",
+        "canonical": "771,4865,43-51",
+        "digest": "f4febc55ea12b31ae17cfb7e614afda8",
+        "semantics": "Metadata identifier only; no reputation or malware conclusion"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    },
+    {
+      "signal_type": "ENCRYPTED_SESSION_PACKET_TIMING",
+      "detector": "encrypted_session_behavior",
+      "observed_value": 2,
+      "unit": "retained transport samples",
+      "reference_threshold": null,
+      "comparison": "observed",
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "supporting_context": {
+        "sample_count": 2,
+        "total_observed_packets": 2,
+        "samples_capped": false,
+        "scope": "latest bounded transport packet samples, including retransmissions; sorted by capture time",
+        "packet_size_min": 103,
+        "packet_size_max": 170,
+        "packet_size_mean": 136.5,
+        "inter_packet_mean_sec": 0.10000000000002274,
+        "inter_packet_min_sec": 0.10000000000002274,
+        "inter_packet_max_sec": 0.10000000000002274,
+        "direction_count": 2,
+        "clock": "capture_event_time"
+      },
+      "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+      "confidence_semantics": "No malware verdict, attribution or attack probability."
+    }
+  ],
+  "quic_status": "UNAVAILABLE",
+  "quic_observation": {},
+  "quic_evidence": [],
+  "dns_status": "unavailable_or_not_observed",
+  "dns_observation": {},
+  "dns_attack_context": [],
+  "dns_evidence": [],
+  "behavioral_evidence_status": "available",
+  "behavioral_evidence": [],
+  "behavioral_policy": {
+    "version": "sih-f3/1.0",
+    "action": "informational",
+    "behavioral_alert": false,
+    "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+  },
+  "behavioral_attack_context": [],
+  "rationale": "Anomaly score: 0.52 (threshold: 0.5). Classified as ddos with confidence 0.58.",
+  "metadata": {
+    "classification_score_class": "ddos",
+    "feature_schema_version": "2.0.0",
+    "anomaly_model": "isolation_forest",
+    "classifier_model": "xgboost",
+    "explanation": {
+      "explanation_id": "b8dc3053-5147-40e4-95cf-b6270a8e14cf",
+      "detection_event_id": "d99f606d-7e0b-4e22-ac2e-6bdd480f0988",
+      "explanation_version": "1.0.0",
+      "generation_timestamp": 1790077552.156482,
+      "threat_type": "ddos",
+      "anomaly_score": 0.5228440487003442,
+      "confidence": 0.5806687474250793,
+      "severity": "medium",
+      "rationale": "THREAT: Possible DDoS Attack\n\nANOMALY SCORE: 0.52\n\nMODEL: xgboost (confidence: 0.58)\n\nEVIDENCE:\n  - byte rate significantly above baseline (observed: 3250.36, baseline: 0.05) (z-score: 3086.3)\n  - total byte volume significantly above baseline (observed: 245.85, baseline: 0.20) (z-score: 252.3)\n  - forward_bytes significantly above baseline (observed: 181.65, baseline: 0.12) (z-score: 247.8)\n  - pkt_size_p90 significantly above baseline (observed: 216.58, baseline: 0.09) (z-score: 204.8)\n  - pkt_size_p75 significantly above baseline (observed: 164.19, baseline: -0.18) (z-score: 183.3)\n\nPOTENTIAL ATT&CK TECHNIQUES:\n  - T1498 Network Denial of Service (Impact) \u2014 possible\n  - T1499 Endpoint Denial of Service (Impact) \u2014 possible\n\nLIMITATION: Classification is based on observable network metadata only. Encrypted payload contents are not inspected. This is a model classification, not a confirmed attack.",
+      "classifier_evidence": {
+        "items": [],
+        "explanation_available": false,
+        "unavailable_reason": "SHAP is not installed. Install via: pip install sentinel-net[explainability]"
+      },
+      "anomaly_evidence": {
+        "items": [
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 3250.3601325596665,
+            "reference_value": 0.048948707654247775,
+            "contribution": 3086.261481139035,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 245.85433652250475,
+            "reference_value": 0.19909940074149152,
+            "contribution": 252.26939129686977,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 181.64690569768499,
+            "reference_value": 0.11618339759144632,
+            "contribution": 247.8342017962763,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 216.57908550434797,
+            "reference_value": 0.09454877898819113,
+            "contribution": 204.83786739058348,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 164.18597841716894,
+            "reference_value": -0.18190894888669912,
+            "contribution": 183.28419178666107,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 173.54613098952663,
+            "reference_value": 0.08959341572900685,
+            "contribution": 182.69382608310968,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 161.44971458384342,
+            "reference_value": 0.13301380144996036,
+            "contribution": 180.35030396009813,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 178.68708493558054,
+            "reference_value": -0.17034143298040835,
+            "contribution": 165.19227209358306,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 141.28079490913484,
+            "reference_value": -0.29799253964971023,
+            "contribution": 148.67472866273314,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 150.7192712826883,
+            "reference_value": 0.077609705033625,
+            "contribution": 127.68102336531915,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "reverse_bytes",
+            "observed_value": 121.6626939324713,
+            "reference_value": 0.039162714566318924,
+            "contribution": 127.565957519735,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 129.64994138168728,
+            "reference_value": 0.11167855262643003,
+            "contribution": 117.61301021468101,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 100.18337427450535,
+            "reference_value": -0.4456178729771162,
+            "contribution": 108.13583440372201,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "reverse_payload_bytes",
+            "observed_value": 67.31338995427865,
+            "reference_value": 0.07999512295299971,
+            "contribution": 84.62315055480936,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_std",
+            "observed_value": 36.34044675465253,
+            "reference_value": 0.042526785586334534,
+            "contribution": 38.310618635648126,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 16.779168458653324,
+            "reference_value": -0.13440190415912262,
+            "contribution": 18.42370788187393,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 5.428569278842724,
+            "reference_value": -0.29213556082717096,
+            "contribution": 6.526002676405168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ack_count",
+            "observed_value": 1.8789916673428257,
+            "reference_value": 0.14513014178562733,
+            "contribution": 2.1139646035475774,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "psh_count",
+            "observed_value": 1.7236204240544508,
+            "reference_value": -0.09057364427422109,
+            "contribution": 2.1061419328332693,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "attack_mappings": [
+        {
+          "technique_id": "T1498",
+          "technique_name": "Network Denial of Service",
+          "tactic": "Impact",
+          "rationale": "High packet rate or volume directed at target",
+          "applicability": "high",
+          "qualification": "possible"
+        },
+        {
+          "technique_id": "T1499",
+          "technique_name": "Endpoint Denial of Service",
+          "tactic": "Impact",
+          "rationale": "Connection flooding or resource exhaustion patterns",
+          "applicability": "medium",
+          "qualification": "possible"
+        }
+      ],
+      "evidence": {
+        "items": [
+          {
+            "feature_name": "bytes_per_sec",
+            "observed_value": 3250.3601325596665,
+            "reference_value": 0.048948707654247775,
+            "contribution": 3086.261481139035,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "total_bytes",
+            "observed_value": 245.85433652250475,
+            "reference_value": 0.19909940074149152,
+            "contribution": 252.26939129686977,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_bytes",
+            "observed_value": 181.64690569768499,
+            "reference_value": 0.11618339759144632,
+            "contribution": 247.8342017962763,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p90",
+            "observed_value": 216.57908550434797,
+            "reference_value": 0.09454877898819113,
+            "contribution": 204.83786739058348,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p75",
+            "observed_value": 164.18597841716894,
+            "reference_value": -0.18190894888669912,
+            "contribution": 183.28419178666107,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "payload_bytes_total",
+            "observed_value": 173.54613098952663,
+            "reference_value": 0.08959341572900685,
+            "contribution": 182.69382608310968,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_p25",
+            "observed_value": 161.44971458384342,
+            "reference_value": 0.13301380144996036,
+            "contribution": 180.35030396009813,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_max",
+            "observed_value": 178.68708493558054,
+            "reference_value": -0.17034143298040835,
+            "contribution": 165.19227209358306,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "forward_payload_bytes",
+            "observed_value": 141.28079490913484,
+            "reference_value": -0.29799253964971023,
+            "contribution": 148.67472866273314,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_median",
+            "observed_value": 150.7192712826883,
+            "reference_value": 0.077609705033625,
+            "contribution": 127.68102336531915,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "reverse_bytes",
+            "observed_value": 121.6626939324713,
+            "reference_value": 0.039162714566318924,
+            "contribution": 127.565957519735,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_mean",
+            "observed_value": 129.64994138168728,
+            "reference_value": 0.11167855262643003,
+            "contribution": 117.61301021468101,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_min",
+            "observed_value": 100.18337427450535,
+            "reference_value": -0.4456178729771162,
+            "contribution": 108.13583440372201,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "reverse_payload_bytes",
+            "observed_value": 67.31338995427865,
+            "reference_value": 0.07999512295299971,
+            "contribution": 84.62315055480936,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "pkt_size_std",
+            "observed_value": 36.34044675465253,
+            "reference_value": 0.042526785586334534,
+            "contribution": 38.310618635648126,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "packets_per_sec",
+            "observed_value": 16.779168458653324,
+            "reference_value": -0.13440190415912262,
+            "contribution": 18.42370788187393,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "protocol",
+            "observed_value": 5.428569278842724,
+            "reference_value": -0.29213556082717096,
+            "contribution": 6.526002676405168,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ip_version",
+            "observed_value": 3.9079658433986246,
+            "reference_value": -0.01936343921618368,
+            "contribution": 3.5329552257984096,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "ack_count",
+            "observed_value": 1.8789916673428257,
+            "reference_value": 0.14513014178562733,
+            "contribution": 2.1139646035475774,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          },
+          {
+            "feature_name": "psh_count",
+            "observed_value": 1.7236204240544508,
+            "reference_value": -0.09057364427422109,
+            "contribution": 2.1061419328332693,
+            "direction": "increase",
+            "evidence_type": "statistical",
+            "source": "training_distribution",
+            "model_name": "isolation_forest",
+            "model_version": "1.0.0",
+            "feature_schema_version": "2.0.0"
+          }
+        ],
+        "explanation_available": true,
+        "unavailable_reason": null
+      },
+      "evidence_value_space": "standardized_model_input"
+    },
+    "behavioral_evidence_status": "available",
+    "behavioral_evidence": [],
+    "behavioral_policy": {
+      "version": "sih-f3/1.0",
+      "action": "informational",
+      "behavioral_alert": false,
+      "semantics": "Operational heuristic evidence; not an attack confirmation or probability. ML severity and scores are unchanged."
+    },
+    "behavioral_attack_context": [],
+    "dns_evidence": [],
+    "dns_attack_context": [],
+    "dns_status": "unavailable_or_not_observed",
+    "tls_status": "COMPLETE",
+    "tls_evidence": [
+      {
+        "signal_type": "TLS_CLIENT_HELLO_OBSERVED",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "hello",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "role": "CLIENT"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_VERSION_CONTEXT",
+        "detector": "tls_metadata",
+        "observed_value": 771,
+        "unit": "wire legacy version",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "supported_versions": [
+            772,
+            771
+          ],
+          "selected_version": null,
+          "note": "TLS 1.3 uses a legacy hello version; offered values do not establish negotiation."
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_CIPHER_PROFILE",
+        "detector": "tls_metadata",
+        "observed_value": 3,
+        "unit": "observed cipher suites",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "cipher_suites": [
+            4865,
+            4866,
+            49199
+          ]
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_EXTENSION_PROFILE",
+        "detector": "tls_metadata",
+        "observed_value": 6,
+        "unit": "observed extensions",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "extension_ids": [
+            0,
+            10,
+            11,
+            13,
+            16,
+            43
+          ]
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_FINGERPRINT",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "metadata identifier",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "family": "JA3",
+          "canonical": "771,4865-4866-49199,0-10-11-13-16-43,29-23,0",
+          "digest": "c9e264cb3675678ee364e81f3b6da7ad",
+          "semantics": "Metadata identifier only; no reputation or malware conclusion"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_SNI_CONTEXT",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "visible name",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "sni": "example.test",
+          "visibility": "plaintext_observed"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_ALPN_CONTEXT",
+        "detector": "tls_metadata",
+        "observed_value": 2,
+        "unit": "visible protocol identifiers",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "alpn": [
+            {
+              "value": "h2",
+              "encoding": "ascii"
+            },
+            {
+              "value": "http/1.1",
+              "encoding": "ascii"
+            }
+          ]
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_SERVER_HELLO_OBSERVED",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "hello",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "role": "SERVER"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_VERSION_CONTEXT",
+        "detector": "tls_metadata",
+        "observed_value": 771,
+        "unit": "wire legacy version",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "supported_versions": [
+            772
+          ],
+          "selected_version": 772,
+          "note": "TLS 1.3 uses a legacy hello version; offered values do not establish negotiation."
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_CIPHER_PROFILE",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "observed cipher suites",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "cipher_suites": [
+            4865
+          ]
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_EXTENSION_PROFILE",
+        "detector": "tls_metadata",
+        "observed_value": 2,
+        "unit": "observed extensions",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "extension_ids": [
+            43,
+            51
+          ]
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "TLS_FINGERPRINT",
+        "detector": "tls_metadata",
+        "observed_value": 1,
+        "unit": "metadata identifier",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "family": "JA3S",
+          "canonical": "771,4865,43-51",
+          "digest": "f4febc55ea12b31ae17cfb7e614afda8",
+          "semantics": "Metadata identifier only; no reputation or malware conclusion"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      },
+      {
+        "signal_type": "ENCRYPTED_SESSION_PACKET_TIMING",
+        "detector": "encrypted_session_behavior",
+        "observed_value": 2,
+        "unit": "retained transport samples",
+        "reference_threshold": null,
+        "comparison": "observed",
+        "observation_window": {
+          "start": 1000.0,
+          "end": 1000.1,
+          "duration_sec": 0.10000000000002274,
+          "clock": "capture_event_time",
+          "alignment": "retained connection observation interval; not a negotiated session"
+        },
+        "supporting_context": {
+          "sample_count": 2,
+          "total_observed_packets": 2,
+          "samples_capped": false,
+          "scope": "latest bounded transport packet samples, including retransmissions; sorted by capture time",
+          "packet_size_min": 103,
+          "packet_size_max": 170,
+          "packet_size_mean": 136.5,
+          "inter_packet_mean_sec": 0.10000000000002274,
+          "inter_packet_min_sec": 0.10000000000002274,
+          "inter_packet_max_sec": 0.10000000000002274,
+          "direction_count": 2,
+          "clock": "capture_event_time"
+        },
+        "interpretation": "Contextual metadata; legitimate browsers, services and libraries share these values.",
+        "confidence_semantics": "No malware verdict, attribution or attack probability."
+      }
+    ],
+    "quic_status": "UNAVAILABLE",
+    "quic_evidence": [],
+    "tls_observation": {
+      "visibility": "BOTH",
+      "directions": [
+        {
+          "source_ip": "192.0.2.1",
+          "source_port": 42000,
+          "started_at": 1000.0,
+          "status": "COMPLETE",
+          "hello": {
+            "handshake_type": 1,
+            "legacy_version": 771,
+            "session_id_length": 0,
+            "extension_ids": [
+              0,
+              10,
+              11,
+              13,
+              16,
+              43
+            ],
+            "supported_versions": [
+              772,
+              771
+            ],
+            "supported_groups": [
+              29,
+              23
+            ],
+            "signature_algorithms": [
+              1027,
+              2052
+            ],
+            "ec_point_formats": [
+              0
+            ],
+            "alpn": [
+              {
+                "value": "h2",
+                "encoding": "ascii"
+              },
+              {
+                "value": "http/1.1",
+                "encoding": "ascii"
+              }
+            ],
+            "sni": "example.test",
+            "sni_status": "plaintext_observed",
+            "ja4_status": "NOT_IMPLEMENTED",
+            "cipher_suites": [
+              4865,
+              4866,
+              49199
+            ],
+            "compression_methods": [
+              0
+            ],
+            "selected_version": null,
+            "fingerprint": {
+              "family": "JA3",
+              "canonical": "771,4865-4866-49199,0-10-11-13-16-43,29-23,0",
+              "digest": "c9e264cb3675678ee364e81f3b6da7ad",
+              "semantics": "Metadata identifier only; no reputation or malware conclusion"
+            }
+          },
+          "record_count": 1,
+          "records": [
+            {
+              "content_type": 22,
+              "version": 771,
+              "length": 125
+            }
+          ],
+          "trailing_handshake_bytes_uninspected": 0,
+          "retransmitted_bytes_while_buffering": 0,
+          "out_of_order_segments": 0
+        },
+        {
+          "source_ip": "198.51.100.1",
+          "source_port": 443,
+          "started_at": 1000.1,
+          "status": "COMPLETE",
+          "hello": {
+            "handshake_type": 2,
+            "legacy_version": 771,
+            "session_id_length": 0,
+            "extension_ids": [
+              43,
+              51
+            ],
+            "supported_versions": [
+              772
+            ],
+            "supported_groups": [],
+            "signature_algorithms": [],
+            "ec_point_formats": [],
+            "alpn": [],
+            "sni": null,
+            "sni_status": "not_observed",
+            "ja4_status": "NOT_IMPLEMENTED",
+            "cipher_suites": [
+              4865
+            ],
+            "selected_cipher_suite": 4865,
+            "compression_methods": [
+              0
+            ],
+            "hello_retry_request": false,
+            "selected_version": 772,
+            "fingerprint": {
+              "family": "JA3S",
+              "canonical": "771,4865,43-51",
+              "digest": "f4febc55ea12b31ae17cfb7e614afda8",
+              "semantics": "Metadata identifier only; no reputation or malware conclusion"
+            }
+          },
+          "record_count": 1,
+          "records": [
+            {
+              "content_type": 22,
+              "version": 771,
+              "length": 58
+            }
+          ],
+          "trailing_handshake_bytes_uninspected": 0,
+          "retransmitted_bytes_while_buffering": 0,
+          "out_of_order_segments": 0
+        }
+      ],
+      "timing": {
+        "sample_count": 2,
+        "total_observed_packets": 2,
+        "samples_capped": false,
+        "scope": "latest bounded transport packet samples, including retransmissions; sorted by capture time",
+        "packet_size_min": 103,
+        "packet_size_max": 170,
+        "packet_size_mean": 136.5,
+        "inter_packet_mean_sec": 0.10000000000002274,
+        "inter_packet_min_sec": 0.10000000000002274,
+        "inter_packet_max_sec": 0.10000000000002274,
+        "direction_count": 2,
+        "clock": "capture_event_time"
+      },
+      "observation_window": {
+        "start": 1000.0,
+        "end": 1000.1,
+        "duration_sec": 0.10000000000002274,
+        "clock": "capture_event_time",
+        "alignment": "retained connection observation interval; not a negotiated session"
+      },
+      "application_payload": "NOT_DECRYPTED_OR_INSPECTED",
+      "ja4_status": "NOT_IMPLEMENTED",
+      "limits": "First supported hello per direction only; missing peer hello is unobserved, not failure. ECH outer metadata cannot reveal the inner name."
+    },
+    "source": {
+      "source_mode": "REPLAY",
+      "replay_file_identifier": "7952cf238f2e4d2a98c291fa172241b2"
+    },
+    "deployment_model": {
+      "model_name": "runtime",
+      "model_version": "1.0.0",
+      "feature_schema_version": "2.0.0",
+      "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+    }
+  },
+  "src_ip": "192.0.2.1",
+  "dst_ip": "198.51.100.1",
+  "src_port": 42000,
+  "dst_port": 443,
+  "protocol": 6
+}

@@ -1,0 +1,63 @@
+{
+  "phase": "SIH-F5",
+  "backend": {
+    "passed": 866,
+    "warnings": 14
+  },
+  "frontend": {
+    "passed": 90,
+    "files": 6
+  },
+  "combined_passed": 956,
+  "focused_backend_passed": 93,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "f5_parity_cases": 12,
+  "f3_parity_cases": 7,
+  "f4_parity_cases": 8,
+  "protected_unchanged": 23,
+  "schema_version": "2.0.0",
+  "feature_count": 52,
+  "ja4": "NOT_IMPLEMENTED",
+  "browser": {
+    "checks": [
+      {
+        "family": "tls",
+        "width": 1440,
+        "documentOverflow": false,
+        "status": "COMPLETE",
+        "visibility": "BOTH"
+      },
+      {
+        "family": "tls",
+        "width": 390,
+        "documentOverflow": false,
+        "status": "COMPLETE",
+        "visibility": "BOTH"
+      },
+      {
+        "family": "quic",
+        "width": 1440,
+        "documentOverflow": false,
+        "status": "COMPLETE",
+        "visibility": "ONE_DIRECTION_OBSERVED"
+      },
+      {
+        "family": "quic",
+        "width": 390,
+        "documentOverflow": false,
+        "status": "COMPLETE",
+        "visibility": "ONE_DIRECTION_OBSERVED"
+      }
+    ],
+    "errors": [],
+    "note": "Actual approved frozen QA model plus safe offline protocol fixtures; no malware or production traffic claims."
+  },
+  "benchmark_pairs": 9,
+  "benchmark_matching_hashes": true,
+  "benchmark_metadata_errors": 0,
+  "metadata_state_cap_observed": 64,
+  "ruff": "PASS",
+  "git_diff_check": "PASS",
+  "recommendation": "GO FOR FINAL SCIENTIFIC REVALIDATION"
+}

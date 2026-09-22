@@ -28,7 +28,7 @@ STAGES = (
 def validate_benchmark(report):
     """Reject incomplete/nonfinite or arithmetically inconsistent measurements."""
     results = report["results"]
-    expected = 7 if report.get("phase") == "SIH-F4" else 6
+    expected = {"SIH-F4": 7, "SIH-F5": 9}.get(report.get("phase"), 6)
     if len(results) != expected or len({r["workload"] for r in results}) != expected:
         raise ValueError(f"{expected} distinct workloads required")
     for r in results:
@@ -55,6 +55,12 @@ def validate_benchmark(report):
             if not math.isclose(r[rate], r[count] * scale / duration, rel_tol=1e-9):
                 raise ValueError("Inconsistent throughput")
         stages = (*STAGES, "dns_processing") if report.get("dns_enabled") else STAGES
+        if report.get("encrypted_enabled"):
+            stages = (*stages, "encrypted_metadata_processing")
+            if r["workload"].startswith("H"):
+                stages = (*stages, "tls_metadata_processing")
+            if r["workload"].startswith("I"):
+                stages = (*stages, "quic_metadata_processing")
         for stage in stages:
             latency = r["latency_ms"][stage]
             values = [latency[p] for p in ("p50", "p95", "p99")]

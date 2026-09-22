@@ -1,0 +1,4 @@
+
+> sentinel-net-soc@0.6.0 typecheck
+> tsc --noEmit
+

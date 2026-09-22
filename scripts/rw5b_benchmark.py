@@ -25,6 +25,7 @@ from pathlib import Path
 
 from scapy.all import IP, TCP, UDP, Ether, Raw, DNS, DNSQR
 from sentinel_net.dns.config import DNSConfig
+from sentinel_net.encrypted.config import EncryptedConfig
 from scapy.utils import PcapWriter
 
 from sentinel_net.config import SentinelConfig
@@ -46,6 +47,8 @@ WORKLOADS = [
     "E_slow_websocket",
     "F_slow_storage",
     "G_dns_heavy",
+    "H_tls_heavy",
+    "I_quic_headers",
 ]
 
 
@@ -89,6 +92,19 @@ def templates(path, workload):
                 dns = DNS(id=pair, qr=int(reverse), rcode=3 if reverse and pair % 3 == 0 else 0,
                           qd=DNSQR(qname=f"{label}.{parent}", qtype=16 if pair % 4 == 0 else 1))
                 pkt = ether / IP(src="198.51.100.53" if reverse else client, dst=client if reverse else "198.51.100.53") / UDP(sport=53 if reverse else 10000 + pair % 64, dport=10000 + pair % 64 if reverse else 53) / dns
+            if workload.startswith("H"):
+                from f5_fixtures import client_hello, server_hello
+                client = client_hello()
+                port = 10000 + i // 4
+                phase = i % 4
+                reverse = phase == 2
+                body = client[:40] if phase == 0 else client[40:] if phase == 1 else server_hello() if phase == 2 else b""
+                seq = 1000 if phase == 0 else 1041 if phase == 1 else 2000 if phase == 2 else 1001 + len(client)
+                pkt = ether / IP(src="198.51.100.1" if reverse else "192.0.2.1", dst="192.0.2.1" if reverse else "198.51.100.1") / TCP(sport=443 if reverse else port, dport=port if reverse else 443, seq=seq, flags="S" if phase == 0 else "R" if phase == 3 else "PA") / Raw(body)
+            if workload.startswith("I"):
+                from f5_fixtures import quic_initial
+                body = quic_initial(dcid=i.to_bytes(8,"big"), packet_type=0 if i % 2 == 0 else 2)
+                pkt = ether / IP(src="192.0.2.1", dst="198.51.100.1") / UDP(sport=10000 + i % 256, dport=443) / Raw(body)
             pkt.time = 1700000000 + i * 0.001
             writer.write(pkt)
             packets.append(extract_raw_packet(pkt))
@@ -244,6 +260,7 @@ async def run(args):
         config = SentinelConfig(
             intelligence=IntelligenceConfig(enabled=not args.intelligence_disabled),
             dns=DNSConfig(enabled=not args.dns_disabled),
+            encrypted=EncryptedConfig(enabled=not args.encrypted_disabled, max_connections=64),
             database_path=out / "events.db",
             max_active_flows=64,
             capture_queue_size=128,
@@ -341,7 +358,7 @@ async def run(args):
         result = {
             "source_sha256": {
                 str(path): hashlib.sha256(path.read_bytes()).hexdigest()
-                for path in sorted([*Path('src/sentinel_net').rglob('*.py'), Path(__file__).relative_to(Path.cwd())])
+                for path in sorted([*Path('src/sentinel_net').rglob('*.py'), Path('scripts/f5_fixtures.py'), Path(__file__).relative_to(Path.cwd())])
             },
             "workload": args.workload,
             "started_at": started_utc,
@@ -425,6 +442,7 @@ def main():
     p.add_argument("--workload", choices=WORKLOADS)
     p.add_argument("--intelligence-disabled", action="store_true", help="Same-runtime operational comparison with streaming intelligence disabled")
     p.add_argument("--dns-disabled", action="store_true", help="F3 enabled with DNS intelligence disabled comparison")
+    p.add_argument("--encrypted-disabled", action="store_true", help="F3/F4 enabled, F5 metadata disabled control")
     args = p.parse_args()
     if args.seconds <= 0 or args.seconds > 3600:
         p.error("duration must be in (0,3600] seconds")
@@ -449,12 +467,13 @@ def main():
                     workload,
                     *(["--intelligence-disabled"] if args.intelligence_disabled else []),
                     *(["--dns-disabled"] if args.dns_disabled else []),
+                    *(["--encrypted-disabled"] if args.encrypted_disabled else []),
                 ],
                 check=True,
             )
         results = [json.loads((args.output / w / "result.json").read_text()) for w in WORKLOADS]
         (args.output / "benchmark.json").write_text(
-            json.dumps({"phase": "SIH-F4", "dns_enabled": not args.dns_disabled, "intelligence_enabled": not args.intelligence_disabled, "results": results}, indent=2)
+            json.dumps({"phase": "SIH-F5", "encrypted_enabled": not args.encrypted_disabled, "dns_enabled": not args.dns_disabled, "intelligence_enabled": not args.intelligence_disabled, "results": results}, indent=2)
         )
 
 

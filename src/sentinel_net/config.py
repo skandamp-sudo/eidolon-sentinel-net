@@ -15,6 +15,7 @@ from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from sentinel_net.intelligence.config import IntelligenceConfig
 from sentinel_net.dns.config import DNSConfig
+from sentinel_net.encrypted.config import EncryptedConfig
 
 
 class SentinelConfig(BaseSettings):
@@ -57,6 +58,7 @@ class SentinelConfig(BaseSettings):
 
     intelligence: IntelligenceConfig = Field(default_factory=IntelligenceConfig)
     dns: DNSConfig = Field(default_factory=DNSConfig)
+    encrypted: EncryptedConfig = Field(default_factory=EncryptedConfig)
 
     # ── Retention ──
     max_events: int = Field(default=100_000, ge=0)

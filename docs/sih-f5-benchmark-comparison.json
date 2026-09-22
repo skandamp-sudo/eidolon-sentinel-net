@@ -1,0 +1,2357 @@
+{
+  "phase": "SIH-F5",
+  "matching_inputs_model_source": true,
+  "original_A_to_G_inputs_unchanged": true,
+  "single_run_not_statistical": true,
+  "results": [
+    {
+      "workload": "A_mixed",
+      "pps_change_percent": -1.6363442523480431,
+      "disabled": {
+        "packets_per_sec": 369.6575632270358,
+        "flows_per_sec": 46.74135869821198,
+        "processing_mbps": 0.4240452914363435,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.03306500002508983,
+            "p95": 0.32330149952031206,
+            "p99": 0.39397535165335285,
+            "samples": 4096,
+            "total_observations": 12570,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.014513498172163963,
+            "p95": 0.020267750187485944,
+            "p99": 0.027166298605152444,
+            "samples": 4096,
+            "total_observations": 12570,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6467829989560414,
+            "p95": 13.074157501250738,
+            "p99": 22.347904950584102,
+            "samples": 4096,
+            "total_observations": 11159,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5027529987273738,
+            "p95": 0.6977484990784433,
+            "p99": 0.8805843001027824,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.564491999190068,
+            "p95": 6.115558497185702,
+            "p99": 23.737059905033675,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.081882998638321,
+            "p95": 6.696676000501611,
+            "p99": 24.541747402327026,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.652387000940507,
+            "p95": 9.605584000382805,
+            "p99": 34.81933409930216,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.752857999439584,
+            "p95": 6.4445715015608585,
+            "p99": 24.854276297992687,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.37174699900788255,
+            "p95": 0.47968950093491003,
+            "p99": 0.59915549827565,
+            "samples": 1411,
+            "total_observations": 1411,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224784384,
+          "sampled_peak": 232509440,
+          "final": 232509440,
+          "process_lifetime_peak": 232525824
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 363.60869293780036,
+        "flows_per_sec": 45.98074239717814,
+        "processing_mbps": 0.41709227428590406,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.03283099977124948,
+            "p95": 0.3100277499470394,
+            "p99": 0.3858306479742171,
+            "samples": 4096,
+            "total_observations": 12373,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.014123997971182689,
+            "p95": 0.020091000806132797,
+            "p99": 0.029285947857715662,
+            "samples": 4096,
+            "total_observations": 12373,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.064515999838477,
+            "p95": 0.1360850010314607,
+            "p99": 0.18280050171597415,
+            "samples": 4096,
+            "total_observations": 12373,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6856169984530425,
+            "p95": 12.58572750066378,
+            "p99": 20.854208599121254,
+            "samples": 4096,
+            "total_observations": 10984,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.09971650069928728,
+            "p95": 0.15124600031413138,
+            "p99": 0.21671875128959078,
+            "samples": 4096,
+            "total_observations": 5492,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.49706900244927965,
+            "p95": 0.7535026001278305,
+            "p99": 1.012564761185784,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.483651002374245,
+            "p95": 6.158291399333393,
+            "p99": 22.774800242332272,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.996499999833759,
+            "p95": 6.729202000133228,
+            "p99": 23.63381415925686,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 6.730591001542052,
+            "p95": 9.544759400159815,
+            "p99": 37.03847248019789,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.7508940002007876,
+            "p95": 6.243935000384223,
+            "p99": 17.3424307217646,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.37143699955777265,
+            "p95": 0.49399479830753984,
+            "p99": 0.6329816022480365,
+            "samples": 1389,
+            "total_observations": 1389,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224813056,
+          "sampled_peak": 232370176,
+          "final": 232370176,
+          "process_lifetime_peak": 232386560
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 16,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 16,
+          "encrypted_metadata_samples_per_connection_peak": 64,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "B_cardinality",
+      "pps_change_percent": 3.135850677166907,
+      "disabled": {
+        "packets_per_sec": 68.97686602775538,
+        "flows_per_sec": 66.94338799324504,
+        "processing_mbps": 0.08204819194330429,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.2738584989856463,
+            "p95": 0.452753250101523,
+            "p99": 0.6688911473247575,
+            "samples": 4096,
+            "total_observations": 4211,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.019825500203296542,
+            "p95": 0.030944747777539305,
+            "p99": 0.04382605093269378,
+            "samples": 4096,
+            "total_observations": 4211,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 12.017225999443326,
+            "p95": 26.264644200273317,
+            "p99": 42.514841158699596,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.45631849934579805,
+            "p95": 0.6492631493529188,
+            "p99": 0.9068968795327237,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.615006000880385,
+            "p95": 7.382103251802619,
+            "p99": 24.495850172643248,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 6.094984499213751,
+            "p95": 7.907439850350783,
+            "p99": 25.28290265108807,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.626158499988378,
+            "p95": 11.175415201250866,
+            "p99": 564.0693513904623,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.90972199945827,
+            "p95": 15.363017200070308,
+            "p99": 31.518657419182997,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.42623449917300604,
+            "p95": 0.6268565977734397,
+            "p99": 0.8172946717968443,
+            "samples": 2074,
+            "total_observations": 2074,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 225185792,
+          "sampled_peak": 232013824,
+          "final": 232013824,
+          "process_lifetime_peak": 232030208
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 71.13987754817525,
+        "flows_per_sec": 69.10269014565932,
+        "processing_mbps": 0.0847604478487808,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.2348689977225149,
+            "p95": 0.4136382513024728,
+            "p99": 0.565383149842092,
+            "samples": 4096,
+            "total_observations": 4337,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.019028000679099932,
+            "p95": 0.02603699977044016,
+            "p99": 0.03486519926809706,
+            "samples": 4096,
+            "total_observations": 4337,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.4692410002462566,
+            "p95": 0.5804489515867316,
+            "p99": 0.7505245083666521,
+            "samples": 2200,
+            "total_observations": 2200,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.35503300023265183,
+            "p95": 0.5528602496269741,
+            "p99": 0.6790895009544364,
+            "samples": 4096,
+            "total_observations": 4337,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 12.197703999845544,
+            "p95": 25.454016999174193,
+            "p99": 42.526486979368165,
+            "samples": 2200,
+            "total_observations": 2200,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.46079299863777123,
+            "p95": 0.585798000975046,
+            "p99": 0.8531016376218746,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.1644380000652745,
+            "p95": 6.5913141996134055,
+            "p99": 25.030164242925697,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.645047000143677,
+            "p95": 7.157828999334014,
+            "p99": 26.346135519415803,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.866171999921789,
+            "p95": 12.286152000888244,
+            "p99": 621.1521139199598,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.8648029983742163,
+            "p95": 12.97097539936657,
+            "p99": 23.380690680059715,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.41860099736368284,
+            "p95": 0.5383230010920669,
+            "p99": 0.6418412001221439,
+            "samples": 2137,
+            "total_observations": 2137,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224948224,
+          "sampled_peak": 234586112,
+          "final": 227958784,
+          "process_lifetime_peak": 234635264
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 2136,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 4194304,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 64,
+          "encrypted_metadata_samples_per_connection_peak": 1,
+          "encrypted_metadata_evictions": 2136,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "C_long_tuple",
+      "pps_change_percent": 8.98395967490815,
+      "disabled": {
+        "packets_per_sec": 1220.830850519105,
+        "flows_per_sec": 0.033266052222651984,
+        "processing_mbps": 1.4596656700295152,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.02087050052068662,
+            "p95": 0.04085974796907976,
+            "p99": 0.0713257984898519,
+            "samples": 4096,
+            "total_observations": 36700,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.010076000762637705,
+            "p95": 0.01658774726820411,
+            "p99": 0.034259502353961614,
+            "samples": 4096,
+            "total_observations": 36700,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.40096200063999277,
+            "p95": 0.6542585006172885,
+            "p99": 0.9284622481573026,
+            "samples": 4096,
+            "total_observations": 36699,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 3.7447479990078136,
+            "p95": 3.7447479990078136,
+            "p99": 3.7447479990078136,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 7.089857001119526,
+            "p95": 7.089857001119526,
+            "p99": 7.089857001119526,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 10.83460500012734,
+            "p95": 10.83460500012734,
+            "p99": 10.83460500012734,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 33.05446399826906,
+            "p95": 33.05446399826906,
+            "p99": 33.05446399826906,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 23.282349997316487,
+            "p95": 23.282349997316487,
+            "p99": 23.282349997316487,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.7532810013799462,
+            "p95": 0.7532810013799462,
+            "p99": 0.7532810013799462,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 225030144,
+          "sampled_peak": 231997440,
+          "final": 231997440,
+          "process_lifetime_peak": 232075264
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 1330.5098018285796,
+        "flows_per_sec": 0.03326607165287978,
+        "processing_mbps": 1.590746820697606,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.018171002011513337,
+            "p95": 0.023652250092709437,
+            "p99": 0.03635029952420155,
+            "samples": 4096,
+            "total_observations": 39997,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.009033999958774075,
+            "p95": 0.010828750419022981,
+            "p99": 0.016190751557587656,
+            "samples": 4096,
+            "total_observations": 39997,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.03529149944370147,
+            "p95": 0.04423474820214324,
+            "p99": 0.08977989928098398,
+            "samples": 4096,
+            "total_observations": 39996,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.03932699837605469,
+            "p95": 0.04930049999529729,
+            "p99": 0.09999585145124014,
+            "samples": 4096,
+            "total_observations": 39997,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.39129100150603335,
+            "p95": 0.5769009994764929,
+            "p99": 0.7376883009783346,
+            "samples": 4096,
+            "total_observations": 39996,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 16.929135999816936,
+            "p95": 16.929135999816936,
+            "p99": 16.929135999816936,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.722556001273915,
+            "p95": 5.722556001273915,
+            "p99": 5.722556001273915,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 22.65169200109085,
+            "p95": 22.65169200109085,
+            "p99": 22.65169200109085,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 41.8831080023665,
+            "p95": 41.8831080023665,
+            "p99": 41.8831080023665,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 16.278702001727652,
+            "p95": 16.278702001727652,
+            "p99": 16.278702001727652,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3949730016756803,
+            "p95": 0.3949730016756803,
+            "p99": 0.3949730016756803,
+            "samples": 1,
+            "total_observations": 1,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224874496,
+          "sampled_peak": 232640512,
+          "final": 232640512,
+          "process_lifetime_peak": 233037824
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 1,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 1,
+          "encrypted_metadata_samples_per_connection_peak": 64,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "D_burst",
+      "pps_change_percent": 14.715230378793498,
+      "disabled": {
+        "packets_per_sec": 223.8004527236503,
+        "flows_per_sec": 55.950113180912574,
+        "processing_mbps": 0.16092893927841118,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.041688499550218694,
+            "p95": 0.3580470001907088,
+            "p99": 0.5092108471217218,
+            "samples": 4096,
+            "total_observations": 8590,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.017402500816388056,
+            "p95": 0.028322499929345213,
+            "p99": 0.039962751179700745,
+            "samples": 4096,
+            "total_observations": 8590,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.8078710015979595,
+            "p95": 18.27327949922619,
+            "p99": 34.63070674806662,
+            "samples": 4096,
+            "total_observations": 6872,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5580310007644584,
+            "p95": 0.7872710502851985,
+            "p99": 1.1906829499639566,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.824939000376617,
+            "p95": 8.864623299814406,
+            "p99": 29.585147262805528,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 6.397685998308589,
+            "p95": 9.621158648769777,
+            "p99": 30.510057760038748,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 8.332913001140696,
+            "p95": 12.207716299963064,
+            "p99": 34.371924760343965,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.2290649996866705,
+            "p95": 11.658264301695315,
+            "p99": 28.751752540738366,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.419332000092254,
+            "p95": 0.6868920012493611,
+            "p99": 0.8634191694727633,
+            "samples": 1718,
+            "total_observations": 1718,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224989184,
+          "sampled_peak": 231206912,
+          "final": 231194624,
+          "process_lifetime_peak": 231215104
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 256.7332049307183,
+        "flows_per_sec": 64.18330123267957,
+        "processing_mbps": 0.1849279486715729,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.03268799991928972,
+            "p95": 0.25776524944376433,
+            "p99": 0.3358280006068531,
+            "samples": 4096,
+            "total_observations": 9815,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.014437498975894414,
+            "p95": 0.021030500647611916,
+            "p99": 0.032968449704640086,
+            "samples": 4096,
+            "total_observations": 9815,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.1407350009685615,
+            "p95": 0.19562099987524562,
+            "p99": 0.2501071983715522,
+            "samples": 4096,
+            "total_observations": 7852,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.1414359994669212,
+            "p95": 0.19622874970082194,
+            "p99": 0.24579609998909308,
+            "samples": 4096,
+            "total_observations": 9815,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.8496250011376105,
+            "p95": 14.524393749525188,
+            "p99": 25.44596010284299,
+            "samples": 4096,
+            "total_observations": 7852,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.48848199730855413,
+            "p95": 0.6141198980913031,
+            "p99": 0.9108782998373497,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.838914999709232,
+            "p95": 6.797718297821119,
+            "p99": 25.913472677857364,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.334468001819914,
+            "p95": 7.350368100378545,
+            "p99": 26.68374703913276,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.347931001277175,
+            "p95": 9.548822801662025,
+            "p99": 30.022641979230638,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 2.5961729988921434,
+            "p95": 11.894072098584717,
+            "p99": 18.282084540187483,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.3750349969777744,
+            "p95": 0.4850324992730748,
+            "p99": 0.5963472606526916,
+            "samples": 1963,
+            "total_observations": 1963,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224956416,
+          "sampled_peak": 232394752,
+          "final": 232382464,
+          "process_lifetime_peak": 232402944
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 32,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 32,
+          "encrypted_metadata_samples_per_connection_peak": 64,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "E_slow_websocket",
+      "pps_change_percent": 10.335661550613139,
+      "disabled": {
+        "packets_per_sec": 183.17347451411553,
+        "flows_per_sec": 45.79336862852888,
+        "processing_mbps": 0.21907547551888215,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.05132950172992423,
+            "p95": 0.45637599851033883,
+            "p99": 0.6059268984245141,
+            "samples": 4096,
+            "total_observations": 6880,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.020146499082329683,
+            "p95": 0.031948248761182185,
+            "p99": 0.041599298310757225,
+            "samples": 4096,
+            "total_observations": 6880,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.785763999374467,
+            "p95": 18.569275750451197,
+            "p99": 41.32086549925597,
+            "samples": 4096,
+            "total_observations": 5504,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.6237710003915709,
+            "p95": 0.855778749610181,
+            "p99": 1.2095570009478251,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 6.125782001618063,
+            "p95": 8.91178999972908,
+            "p99": 29.991918997438916,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 6.771858499632799,
+            "p95": 9.65499800076941,
+            "p99": 31.756116499309428,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 8.705556499990053,
+            "p95": 12.376742250125972,
+            "p99": 34.737352752017614,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.471006999461679,
+            "p95": 16.031047248361574,
+            "p99": 38.07340249932167,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.4952374983986374,
+            "p95": 0.7206235004559858,
+            "p99": 0.9574087480359594,
+            "samples": 1376,
+            "total_observations": 1376,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 240689152,
+          "sampled_peak": 249339904,
+          "final": 249319424,
+          "process_lifetime_peak": 249348096
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 202.10566489039311,
+        "flows_per_sec": 50.5430751135388,
+        "processing_mbps": 0.24119861781156593,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.042713998482213356,
+            "p95": 0.38360824873961974,
+            "p99": 0.4926398511088337,
+            "samples": 4096,
+            "total_observations": 7583,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.01811299989640247,
+            "p95": 0.02422550187475281,
+            "p99": 0.033423001150367795,
+            "samples": 4096,
+            "total_observations": 7583,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.18051699953502975,
+            "p95": 0.24561100053688278,
+            "p99": 0.32253855042654395,
+            "samples": 4096,
+            "total_observations": 6066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.18196850214735605,
+            "p95": 0.25493774865026353,
+            "p99": 0.35523804999684283,
+            "samples": 4096,
+            "total_observations": 7583,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.9354265002912143,
+            "p95": 16.28815424919594,
+            "p99": 39.8370156981401,
+            "samples": 4096,
+            "total_observations": 6066,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5848360015079379,
+            "p95": 0.7251971997902729,
+            "p99": 0.9846773624303743,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.26684199940064,
+            "p95": 6.99022620174219,
+            "p99": 27.28674419835442,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.85673200112069,
+            "p95": 7.617061199562158,
+            "p99": 28.168783958681153,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.867206000810256,
+            "p95": 10.079921001306502,
+            "p99": 31.12450003973208,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.010811000422109,
+            "p95": 14.82751699877554,
+            "p99": 34.716702677833325,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.44760699893231504,
+            "p95": 0.5724330010707491,
+            "p99": 0.7074051980453075,
+            "samples": 1517,
+            "total_observations": 1517,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 241078272,
+          "sampled_peak": 254058496,
+          "final": 254058496,
+          "process_lifetime_peak": 254083072
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 32,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 32,
+          "encrypted_metadata_samples_per_connection_peak": 64,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "F_slow_storage",
+      "pps_change_percent": 6.429421135202729,
+      "disabled": {
+        "packets_per_sec": 95.94044384378378,
+        "flows_per_sec": 23.985110960945946,
+        "processing_mbps": 0.11419897631218744,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.05115749991091434,
+            "p95": 0.456869950176042,
+            "p99": 0.5906091607903345,
+            "samples": 3600,
+            "total_observations": 3600,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.0191114995686803,
+            "p95": 0.03061944953515192,
+            "p99": 0.04015447284473324,
+            "samples": 3600,
+            "total_observations": 3600,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.7939795013953699,
+            "p95": 36.33888044769263,
+            "p99": 58.75422792796599,
+            "samples": 2880,
+            "total_observations": 2880,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.6198214996402385,
+            "p95": 0.8244537515565751,
+            "p99": 1.0810746400238709,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.974650497591938,
+            "p95": 8.710581552986687,
+            "p99": 29.007647501748554,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 6.615782998778741,
+            "p95": 9.588096901097737,
+            "p99": 30.057410840636283,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 8.565712998461095,
+            "p95": 12.440752399925254,
+            "p99": 33.97486457022744,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 23.928859001898672,
+            "p95": 39.00901885081111,
+            "p99": 52.59413035189925,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.49901949932973366,
+            "p95": 0.7530260018029366,
+            "p99": 1.006246911201741,
+            "samples": 720,
+            "total_observations": 720,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224956416,
+          "sampled_peak": 231604224,
+          "final": 231600128,
+          "process_lifetime_peak": 231645184
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 102.10885901748333,
+        "flows_per_sec": 25.52721475437083,
+        "processing_mbps": 0.12199422605768188,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.04258999979356304,
+            "p95": 0.37756629917566886,
+            "p99": 0.5063178589989549,
+            "samples": 3830,
+            "total_observations": 3830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.01651599995966535,
+            "p95": 0.024264200328616408,
+            "p99": 0.031308368415920995,
+            "samples": 3830,
+            "total_observations": 3830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.16845299978740513,
+            "p95": 0.23559535093227169,
+            "p99": 0.319471348193474,
+            "samples": 3064,
+            "total_observations": 3064,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.16783700084488373,
+            "p95": 0.23992490132513908,
+            "p99": 0.3228892702099984,
+            "samples": 3830,
+            "total_observations": 3830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.8877684977051103,
+            "p95": 33.56496034775773,
+            "p99": 54.01384554075775,
+            "samples": 3064,
+            "total_observations": 3064,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5461104992718901,
+            "p95": 0.6835300009697676,
+            "p99": 0.8462090499961051,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.917918500723317,
+            "p95": 6.977122003263503,
+            "p99": 22.8896710490517,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.467836001116666,
+            "p95": 7.6472182481666096,
+            "p99": 24.193708750317462,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.490867501473986,
+            "p95": 10.45815825182217,
+            "p99": 26.729104051628386,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 23.386287997709587,
+            "p95": 36.70919299929665,
+            "p99": 50.560631500593466,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.4259749985067174,
+            "p95": 0.5591312501564971,
+            "p99": 0.7116982505976926,
+            "samples": 766,
+            "total_observations": 766,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224894976,
+          "sampled_peak": 231653376,
+          "final": 231641088,
+          "process_lifetime_peak": 231657472
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 32,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 32,
+          "encrypted_metadata_samples_per_connection_peak": 64,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "G_dns_heavy",
+      "pps_change_percent": 29.243766734883714,
+      "disabled": {
+        "packets_per_sec": 681.2174939457635,
+        "flows_per_sec": 2.0764869314406966,
+        "processing_mbps": 0.6617172051726039,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.024775001293164678,
+            "p95": 0.05202575175644597,
+            "p99": 0.2736830499998183,
+            "samples": 4096,
+            "total_observations": 21060,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.26957850059261546,
+            "p95": 0.4677379993154318,
+            "p99": 0.6522262017824698,
+            "samples": 4096,
+            "total_observations": 21060,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.7986119999259245,
+            "p95": 1.2183337485112133,
+            "p99": 1.6788929520771514,
+            "samples": 4096,
+            "total_observations": 20996,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4933085001539439,
+            "p95": 0.6895116506711928,
+            "p99": 6.284209669574882,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.375596001409576,
+            "p95": 5.911744750119396,
+            "p99": 12.738028738967804,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.969700499714236,
+            "p95": 6.548197000120124,
+            "p99": 22.832692151278025,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 431.9229640004778,
+            "p95": 766.8749304022639,
+            "p99": 795.2311963680768,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.625654000643408,
+            "p95": 4.952621650227227,
+            "p99": 17.49197962963079,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.6141624999145279,
+            "p95": 0.8545915001377578,
+            "p99": 1.1637446790336972,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224997376,
+          "sampled_peak": 234385408,
+          "final": 234385408,
+          "process_lifetime_peak": 234459136
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 880.4311488324832,
+        "flows_per_sec": 2.0758000930292475,
+        "processing_mbps": 0.8552278220029687,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.01985749986488372,
+            "p95": 0.027487249099067412,
+            "p99": 0.2727105495068828,
+            "samples": 4096,
+            "total_observations": 27209,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.22572049965674523,
+            "p95": 0.31856275109021226,
+            "p99": 0.45972009993420226,
+            "samples": 4096,
+            "total_observations": 27209,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.009261499144486152,
+            "p95": 0.011721749615389854,
+            "p99": 0.02000935037358434,
+            "samples": 4096,
+            "total_observations": 27209,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.6662885007244768,
+            "p95": 0.8982207500594086,
+            "p99": 1.1400403987863688,
+            "samples": 4096,
+            "total_observations": 27145,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.5146530002093641,
+            "p95": 0.6752659503035827,
+            "p99": 7.446722758395436,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.340328498074086,
+            "p95": 5.62341499771719,
+            "p99": 22.30133406297682,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 4.917956999634043,
+            "p95": 7.520268998814563,
+            "p99": 23.570040040285676,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 427.3763395012793,
+            "p95": 782.2064673000567,
+            "p99": 810.6024418085144,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.6041564999322873,
+            "p95": 4.87301205121184,
+            "p99": 16.153519571271307,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.6239000013010809,
+            "p95": 0.8134335490467489,
+            "p99": 0.9365207891096361,
+            "samples": 64,
+            "total_observations": 64,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224968704,
+          "sampled_peak": 235597824,
+          "final": 235597824,
+          "process_lifetime_peak": 235671552
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "H_tls_heavy",
+      "pps_change_percent": -1.7771656934437607,
+      "disabled": {
+        "packets_per_sec": 185.38985338422364,
+        "flows_per_sec": 46.34746334605591,
+        "processing_mbps": 0.15164890006829496,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.056451999626006,
+            "p95": 0.4737449999083765,
+            "p99": 0.6406072485333427,
+            "samples": 4096,
+            "total_observations": 6955,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.020687499272753485,
+            "p95": 0.033657250241958536,
+            "p99": 0.04520160127867716,
+            "samples": 4096,
+            "total_observations": 6955,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 0.857655999425333,
+            "p95": 19.5118662504683,
+            "p99": 42.316189998564376,
+            "samples": 4096,
+            "total_observations": 5564,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.7423889983328991,
+            "p95": 1.0538864989939611,
+            "p99": 1.4473541992629109,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 6.253950999962399,
+            "p95": 8.891405999747803,
+            "p99": 29.51485120102006,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 7.016702002147213,
+            "p95": 9.823288999541546,
+            "p99": 30.675953300305988,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 9.048457999597304,
+            "p95": 12.706296498436132,
+            "p99": 33.22601550135004,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.7751039999420755,
+            "p95": 15.553118999378057,
+            "p99": 33.782384499500026,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.5288760003168136,
+            "p95": 0.7975490007083863,
+            "p99": 0.9363693003251681,
+            "samples": 1391,
+            "total_observations": 1391,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 225247232,
+          "sampled_peak": 231952384,
+          "final": 231931904,
+          "process_lifetime_peak": 232001536
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 182.09516851075352,
+        "flows_per_sec": 45.52379212768838,
+        "processing_mbps": 0.14895384784179638,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.04191300104139373,
+            "p95": 0.3624455011959071,
+            "p99": 0.4686691474489635,
+            "samples": 4096,
+            "total_observations": 6830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.01574449925101362,
+            "p95": 0.02455474987073103,
+            "p99": 0.036550450386130265,
+            "samples": 4096,
+            "total_observations": 6830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "tls_metadata_processing": {
+            "p50": 0.4243260009388905,
+            "p95": 0.6300865015873569,
+            "p99": 0.7888766023825158,
+            "samples": 4096,
+            "total_observations": 5464,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.4408344975672662,
+            "p95": 0.653101752504881,
+            "p99": 0.8258540514361831,
+            "samples": 4096,
+            "total_observations": 6830,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 1.1465645002317615,
+            "p95": 17.819140248320764,
+            "p99": 38.757184199312256,
+            "samples": 4096,
+            "total_observations": 5464,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.6003215003147488,
+            "p95": 0.7755087490295409,
+            "p99": 1.0067270011859364,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 4.81805650088063,
+            "p95": 8.072425249338266,
+            "p99": 24.62619880170677,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.413616001533228,
+            "p95": 8.774530249866075,
+            "p99": 25.751357900117,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.690647500567138,
+            "p95": 12.32341599825304,
+            "p99": 29.764588699617867,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 4.526961000010488,
+            "p95": 17.586360248060373,
+            "p99": 32.327411149344684,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.7397935005428735,
+            "p95": 1.005350249215553,
+            "p99": 1.3254609510113347,
+            "samples": 1366,
+            "total_observations": 1366,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 225042432,
+          "sampled_peak": 232603648,
+          "final": 232394752,
+          "process_lifetime_peak": 232665088
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 2732,
+          "tls_client_hello": 1366,
+          "tls_server_hello": 1366,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 1302,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 65536,
+          "tls_evidence_generated": 17758,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 64,
+          "encrypted_metadata_samples_per_connection_peak": 4,
+          "encrypted_metadata_evictions": 1302,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    },
+    {
+      "workload": "I_quic_headers",
+      "pps_change_percent": 3.480065266251331,
+      "disabled": {
+        "packets_per_sec": 68.22563945552773,
+        "flows_per_sec": 60.05800945895149,
+        "processing_mbps": 0.04721227214814577,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.12383350076561328,
+            "p95": 0.48336025138269173,
+            "p99": 0.678013867945992,
+            "samples": 3958,
+            "total_observations": 3958,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.02136699913535267,
+            "p95": 0.03284560025349492,
+            "p99": 0.04388859899336234,
+            "samples": 3958,
+            "total_observations": 3958,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 12.7689549990464,
+            "p95": 27.638435000699243,
+            "p99": 46.21959452109877,
+            "samples": 2105,
+            "total_observations": 2105,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.504380001075333,
+            "p95": 0.6773930006602312,
+            "p99": 1.0769537999294703,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 6.001262001518626,
+            "p95": 8.099255998240547,
+            "p99": 27.640478600515056,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 6.529862999741454,
+            "p95": 8.699979798257116,
+            "p99": 28.60937732024468,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 8.207804999983637,
+            "p95": 29.07506039991857,
+            "p99": 607.4621086400296,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.188189999491442,
+            "p95": 14.834245800011534,
+            "p99": 29.67335895809811,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.4527849996520672,
+            "p95": 0.6775651992938947,
+            "p99": 0.9086913599458059,
+            "samples": 1853,
+            "total_observations": 1853,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224976896,
+          "sampled_peak": 232058880,
+          "final": 232058880,
+          "process_lifetime_peak": 232067072
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 0,
+          "quic_long_headers": 0,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 0,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 0,
+          "encrypted_metadata_samples_per_connection_peak": 0,
+          "encrypted_metadata_evictions": 0,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      },
+      "enabled": {
+        "packets_per_sec": 70.5999362368974,
+        "flows_per_sec": 62.46496416021787,
+        "processing_mbps": 0.0488552850024739,
+        "latency_ms": {
+          "stream_intelligence": {
+            "p50": 0.1067829980456736,
+            "p95": 0.41641324878582964,
+            "p99": 0.5468901994390762,
+            "samples": 4096,
+            "total_observations": 4122,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "dns_processing": {
+            "p50": 0.019945500753237866,
+            "p95": 0.02782700084935641,
+            "p99": 0.040812400948198095,
+            "samples": 4096,
+            "total_observations": 4122,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "quic_metadata_processing": {
+            "p50": 0.2796829976432491,
+            "p95": 0.37347599900385825,
+            "p99": 0.4909514806786316,
+            "samples": 2187,
+            "total_observations": 2187,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "encrypted_metadata_processing": {
+            "p50": 0.24129149824148044,
+            "p95": 0.3579425019779592,
+            "p99": 0.4740859991215987,
+            "samples": 4096,
+            "total_observations": 4122,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "packet_processing": {
+            "p50": 12.544709003122989,
+            "p95": 25.891968399810132,
+            "p99": 45.08956933837906,
+            "samples": 2187,
+            "total_observations": 2187,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "evidence_enrichment": {
+            "p50": 0.4647959976864513,
+            "p95": 0.6033966994436923,
+            "p99": 0.8500866217218578,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference": {
+            "p50": 5.464701000164496,
+            "p95": 7.14385020037298,
+            "p99": 25.214311081144963,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "inference_including_evidence": {
+            "p50": 5.9407779990579,
+            "p95": 7.679698500942322,
+            "p99": 27.205229519604543,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "flow_finalization_to_event": {
+            "p50": 7.960949002153939,
+            "p95": 13.3371662992431,
+            "p99": 740.1394188602,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "persistence": {
+            "p50": 3.27676799861365,
+            "p95": 15.094168497671488,
+            "p99": 32.87517472177569,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          },
+          "publication": {
+            "p50": 0.49069099986809306,
+            "p95": 0.656816399350646,
+            "p99": 0.8505570796842231,
+            "samples": 1935,
+            "total_observations": 1935,
+            "unit": "ms",
+            "scope": "last_4096_observations"
+          }
+        },
+        "rss_bytes": {
+          "initial": 224550912,
+          "sampled_peak": 232366080,
+          "final": 232366080,
+          "process_lifetime_peak": 232435712
+        },
+        "metadata_metrics": {
+          "tls_records_observed": 0,
+          "tls_client_hello": 0,
+          "tls_server_hello": 0,
+          "tls_malformed": 0,
+          "tls_truncated": 0,
+          "tls_unavailable": 0,
+          "tls_reassembly_evictions": 0,
+          "tls_reassembly_bytes": 0,
+          "tls_reassembly_bytes_peak": 0,
+          "tls_evidence_generated": 0,
+          "quic_packets_observed": 2187,
+          "quic_long_headers": 2187,
+          "quic_unknown_versions": 0,
+          "quic_malformed": 0,
+          "quic_truncated": 0,
+          "quic_unavailable": 0,
+          "quic_evidence_generated": 3628,
+          "encrypted_metadata_state": 0,
+          "encrypted_metadata_state_peak": 64,
+          "encrypted_metadata_samples_per_connection_peak": 1,
+          "encrypted_metadata_evictions": 2123,
+          "encrypted_metadata_expirations": 0,
+          "encrypted_metadata_late_observations": 0,
+          "encrypted_metadata_processing_errors": 0
+        }
+      }
+    }
+  ]
+}
