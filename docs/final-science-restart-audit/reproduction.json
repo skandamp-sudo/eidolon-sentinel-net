@@ -1,0 +1,43 @@
+{
+  "fixture": "synthetic eight-row confusion-matrix check",
+  "class_order": [
+    "benign",
+    "ddos"
+  ],
+  "confusion_matrix": [
+    [
+      3,
+      1
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "support": {
+    "benign": 4,
+    "ddos": 4
+  },
+  "expected_one_vs_rest": {
+    "benign": {
+      "fpr": 0.5,
+      "fnr": 0.25
+    },
+    "ddos": {
+      "fpr": 0.25,
+      "fnr": 0.5
+    }
+  },
+  "reported": {
+    "benign": {
+      "fpr": 0.25,
+      "fnr": 0.5
+    },
+    "ddos": {
+      "fpr": 0.25,
+      "fnr": 0.5
+    }
+  },
+  "defect_reproduced": true,
+  "models_trained": false
+}

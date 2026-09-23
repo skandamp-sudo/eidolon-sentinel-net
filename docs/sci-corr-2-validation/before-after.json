@@ -1,0 +1,129 @@
+{
+  "before": {
+    "accuracy": 0.625,
+    "precision_macro": 0.6333333333333333,
+    "recall_macro": 0.625,
+    "f1_macro": 0.6190476190476191,
+    "precision_weighted": 0.6333333333333333,
+    "recall_weighted": 0.625,
+    "f1_weighted": 0.6190476190476191,
+    "confusion_matrix": [
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1-score": 0.6666666666666666,
+        "support": 4.0,
+        "fpr": 0.25,
+        "fnr": 0.5
+      },
+      "ddos": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1-score": 0.5714285714285714,
+        "support": 4.0,
+        "fpr": 0.25,
+        "fnr": 0.5
+      }
+    },
+    "class_names": [
+      "benign",
+      "ddos"
+    ],
+    "roc_auc_ovr": null,
+    "pr_auc_macro": null
+  },
+  "after": {
+    "accuracy": 0.625,
+    "precision_macro": 0.6333333333333333,
+    "recall_macro": 0.625,
+    "f1_macro": 0.6190476190476191,
+    "precision_weighted": 0.6333333333333333,
+    "recall_weighted": 0.625,
+    "f1_weighted": 0.6190476190476191,
+    "confusion_matrix": [
+      [
+        3,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1-score": 0.6666666666666666,
+        "support": 4.0,
+        "fpr": 0.5,
+        "fnr": 0.25
+      },
+      "ddos": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1-score": 0.5714285714285714,
+        "support": 4.0,
+        "fpr": 0.25,
+        "fnr": 0.5
+      }
+    },
+    "class_names": [
+      "benign",
+      "ddos"
+    ],
+    "roc_auc_ovr": null,
+    "pr_auc_macro": null
+  },
+  "aggregate_fields_exactly_equal": [
+    "accuracy",
+    "precision_macro",
+    "recall_macro",
+    "f1_macro",
+    "precision_weighted",
+    "recall_weighted",
+    "f1_weighted"
+  ],
+  "confusion_matrix_exactly_equal": true,
+  "multiclass_complete_report_exactly_equal": true,
+  "anomaly_report_exactly_equal": true,
+  "anomaly_report": {
+    "precision_at_threshold": 0.6666666666666666,
+    "recall_at_threshold": 0.5,
+    "f1_at_threshold": 0.5714285714285714,
+    "fpr_at_threshold": 0.25,
+    "threshold": 0.5,
+    "roc_auc": 0.625,
+    "pr_auc": 0.7083333333333333
+  },
+  "frozen_bundle": {
+    "identity": {
+      "model_name": "runtime",
+      "model_version": "1.0.0",
+      "feature_schema_version": "2.0.0",
+      "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+    },
+    "hashes_unchanged": {
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/anomaly.joblib": "153cf24fde1ff649d6a8e8a0dcc450b45253952c346116c1f1e3aa34f69a6e33",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/anomaly_explainer.joblib": "e5aa35cc8b36aa92161ff9db70fff17c1e1b3f0817ffceb0afd9e2fac1c30433",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/preprocessor.joblib": "d2312c5f9b08abd9274fc5a872aed394215abaf0185ecd76bcbf8c4effb12eae",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/thresholds.json": "e3ee08d050b20ba04716c47adb8205dcf7b5ce4a487cc27c11e0f98bc21a9b14",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/classifier.joblib": "42b1095b6a0ff3b45cd7fc5ace63a83e33a070b2a350d0ecb8298b242c733f22",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/manifest.json": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/checksums.json": "1c2d606d9ac707e0bc2c2570bf520a8a39fb2ac217a9c48fc6ce59e296b52ce0"
+    },
+    "two_load_synthetic_vector_exact_parity": true,
+    "scope": "Existing frozen synthetic QA bundle; no training or CICIDS test predictions; report code only changed"
+  },
+  "before_source_sha256": "f91be2692b3807d6d7c26ec7ddee1efc0862e950d28142e0c5a3ce800f8e9d6b"
+}

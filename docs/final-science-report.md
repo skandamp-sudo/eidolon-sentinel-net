@@ -1,73 +1,68 @@
-# FINAL-SCIENCE — stopped at scientific preflight
+# FINAL-SCIENCE-RESTART — SC-3 scientific stop
 
-**NO-GO FOR FINAL SIH HARDENING.** The mandatory scientific stop rule was triggered by two reproducible defects in protected scientific source. No model training, final-test evaluation, threshold selection, candidate publication or product modification was performed. This is a stop report, not a completed scientific revalidation.
+**NO-GO FOR FINAL SIH HARDENING.** A new reproducible scientific reporting defect triggered the mandatory stop rule before model training. No protected source was patched, no final-test predictions were inspected, and no scientific candidate was created or published. This is an incomplete revalidation, not an accuracy report.
 
-Source revision: `9d6b3b4fe34d09237a827c445aea4c6a4173328c` (clean initial worktree). All 23 protected files remain byte-identical to the F5 integrity baseline. Historical reports remain untouched.
+## SC-3: binary per-class FPR/FNR uses the wrong class orientation
 
-## Confirmed defects and impact
+In `src/sentinel_net/detection/evaluation.py:61–65`, `ClassificationReport.from_predictions` unpacks the same binary confusion matrix as `tn, fp, fn, tp` for every class. That calculation treats the second sorted class as positive. It is then attached to both classes, although each entry is a per-class report. The multiclass branch already computes each class one-versus-rest.
 
-**SC-1: scenario split depends on Python hash randomization.** `src/sentinel_net/detection/dataset.py:194` constructs `list(set(scenarios))` before the seeded shuffle. The same eight scenario IDs and NumPy random seed 42 produce different partitions in fresh processes:
+The metric-only reproducer uses eight hand-specified labels/predictions, with four benign and four DDoS examples. No model or actual dataset predictions are involved. Sorted class order is benign, ddos; the confusion matrix is `[[3, 1], [2, 2]]` (rows true, columns predicted).
 
-| PYTHONHASHSEED | Validation | Test |
-|---|---|---|
-| 0 | Bruteforce-Tuesday | Benign-Monday, Infiltration-Thursday |
-| 1 | Botnet-Friday | Bruteforce-Tuesday, Infiltration-Thursday |
-| 2 | DDoS-Friday | Botnet-Friday, Portscan-Friday |
+| Per-class rate | Correct one-versus-rest | Current reported |
+|---|---:|---:|
+| benign FPR | 0.50 | 0.25 |
+| benign FNR | 0.25 | 0.50 |
+| ddos FPR | 0.25 | 0.25 |
+| ddos FNR | 0.50 | 0.50 |
 
-This changes training/validation/test composition before any model fitting. It affects reproducibility of all downstream supervised, anomaly, false-positive, threshold and robustness results when the historical driver is rerun from seed alone. It does **not** prove the archived metrics were incorrectly calculated for their recorded split. The historical explicit assignment is available and must be preserved rather than replaced with whichever assignment a new process generates.
+For the benign class as positive, TP=3, FN=1, FP=2, TN=2. For the ddos class as positive, TP=2, FN=2, FP=1, TN=3. Operational benign-to-malicious false-positive rate is a different, explicitly defined quantity: here 1/4 = 0.25, equal to the benign class's one-versus-rest FNR. These definitions must not be conflated.
 
-Proposed remediation, **not applied**: support/reuse a validated explicit partition manifest for historical reproduction, checking disjointness, full coverage, scenario IDs, dataset identity and row counts. For newly generated partitions, sort unique IDs before seeded shuffling and test across fresh processes with different hash seeds. Sorting alone must not silently substitute a new partition for the historical one. Reconcile this change with the protected-source policy in a separate authorized correction phase.
+**Demonstrated impact:** the first sorted class's binary per-class FPR/FNR is incorrect when the two class orientations have different rates. This can misstate class-level error analysis in binary reports. It does not demonstrate incorrect classifier predictions, aggregate accuracy, macro/weighted precision/recall/F1, confusion-matrix entries, the multiclass branch, or the separate `AnomalyReport`. No numerical impact on historical Phase 7/8 claims is inferred; historical binary report consumers need a scoped audit before any impact claim. Historical values remain historical measurements tied to their recorded partition and prior implementation.
 
-**SC-2: preprocessing metadata is wrong after all-missing columns are dropped.** `src/sentinel_net/detection/preprocessing.py:50` pairs the post-imputation variance mask with the original feature list; `n_features_out` at line 90 returns the pre-imputation selected width. A deterministic eight-row fixture with `pkt_size_median` missing and `iat_mean` constant produces:
+**Proposed fix, not applied:** compute TP/FP/FN/TN for each class from its own row/column in both binary and multiclass reports, retaining documented denominator behavior. Add asymmetric binary examples, reversed label names/order, multiclass and zero-support/one-class cases. Verify aggregate metrics and the raw confusion matrix remain unchanged. A separately authorized correction is required because `evaluation.py` is protected source.
 
-| Property | Actual | Reported |
-|---|---|---|
-| Output width | 51 | 52 |
-| Constant feature | iat_mean | pkt_size_p90 |
-| `output_feature_names` length | 51 | 51 (correct) |
+Reproduce with `PYTHONPATH=src .venv/bin/python docs/final-science-restart-audit/reproduce_metric_defect.py`. [Source](final-science-restart-audit/reproduce_metric_defect.py), [measured output](final-science-restart-audit/reproduction.json). No workaround, silent patch or continued scientific evaluation was used.
 
-The established CICIDS adapter declares 11 unavailable columns, so dropped-column handling is relevant to this evaluation. The demonstrated defect affects preprocessing identity/width and constant-feature reporting, including historical driver logs/smoke metadata using `constant_features`. This reproduction does **not** establish incorrect transformed numeric arrays or classifier predictions; historical metric deltas cannot be inferred from it. Existing `output_feature_names` already handles surviving names correctly, but the other accessors do not use it.
+## Requested 35-point disposition
 
-Proposed remediation, **not applied**: align the constant mask with the fitted imputer's surviving feature names and derive fitted output width from the actual transformed schema. Add tests for a dropped column before a constant column, multiple missing columns, tree/linear subsets and save/load identity. Preserve feature mathematics and missing values; do not fill missing columns with fabricated zeros.
+1. **Dataset identity — MEASURED.** All eight CICIDS2017 files were rehashed against the locked manifest. Parquet metadata totals **2,313,810 rows**. File schemas, byte sizes, counts and SHA-256 are in [environment](final-science-environment.json). This is not completed row-level adapter/label validation.
+2. **Exact split identity — VERIFIED ENGINEERING PROPERTY.** The partition file digest matches the authorized SCI-CORR-1 baseline. [Split manifest identity](final-science-split-manifest-used.json) retains the exact manifest, digest and independently reverified dataset identity. It is explicitly marked verified but not applied to training.
+3. **Actual partition counts — MEASURED from parquet metadata.** TRAIN **1,760,688**, VALIDATION **155,820**, TEST **397,302**. Exact scenario coverage/no overlap and reference-count matching verified. No split was generated or substituted.
+4. **Class distributions — NOT RUN.** The scientific stop occurred before row-level label/adapter validation. No historical distribution is presented as newly measured.
+5. **Preprocessing identity — NOT FITTED ON REAL DATA.** SC-2 corrected source is accepted and hash-verified. The requested current real-training-data precheck was not run after discovery of SC-3.
+6. **Evaluated candidate identity — NONE.** No candidate or model manifest was generated.
+7. **Exact training configuration — NOT EXECUTED.** No fitted model configuration exists for this attempt. Established seed-42 recipe was not run or tuned.
+8. **XGBoost aggregate metrics — NOT RUN.**
+9. **Random Forest aggregate metrics — NOT RUN.**
+10. **Logistic Regression aggregate metrics — NOT RUN.**
+11. **XGBoost per-class metrics — NOT RUN.** CSV is header-only, not zero-valued results.
+12. **Confusion matrix summary — NOT RUN for CICIDS.** The only new matrix is the eight-row synthetic SC-3 reproducer, explicitly not a model evaluation. Scientific confusion CSV is header-only.
+13. **Benign false-positive rate — NOT MEASURED on CICIDS.** No rate extrapolated from the synthetic reproduction.
+14. **C2 result — NOT REVALIDATED.** Weak historical performance is neither hidden nor replaced with an invented current result. F3 periodicity remains separate engineering evidence.
+15. **DDoS result — NOT REVALIDATED.** No supervised or anomaly metric; no inclusion of F3 rate/entropy evidence in ML results.
+16. **Reconnaissance result — NOT REVALIDATED.** The archived split has Portscan-Friday in training, not primary test. No zero-support recall claim.
+17. **Exfiltration limitation — NOT REVALIDATED.** Historical tiny support does not establish useful exfiltration accuracy; no new sample support or metric is claimed.
+18. **Isolation Forest ROC-AUC/PR-AUC — NOT RUN.** SC-3 is in ClassificationReport, not a demonstrated defect in AnomalyReport, but the global stop rule prevents continuing evaluation.
+19. **Threshold protocol/result — NOT RUN.** No threshold selected, recalibrated or tuned. Future validation-composition audit remains required; narrow validation implies exploratory operational claims unless justified. Model confidence and anomaly scores remain distinct.
+20. **Held-out-family results — NOT RUN.** [Novelty artifact](final-science-novelty.json) records the stop. No zero-day accuracy claim.
+21. **Simulated unidirectional results — NOT RUN.** No new SIMULATED UNIDIRECTIONAL TELEMETRY LOSS measurement or physical diode validation.
+22. **Robustness results — NOT RUN.** [Robustness artifact](final-science-robustness.json) records the stop. No prediction-change rates or causal importance claims.
+23. **UNSW compatibility — NOT COMPLETED THIS RESTART.** No direct transfer evaluated. Prior compatibility limitations remain: many missing canonical fields and explicit proxies require semantic/unit verification. **EXTERNAL-DATASET DIRECT EVALUATION NOT METHODOLOGICALLY VALID** without that compatibility. No fresh usable-feature count is asserted after the stop.
+24. **Historical comparison — NOT PERFORMED.** The brief requires current measurements first; none exist. [Comparison artifact](final-science-historical-comparison.json) is explicitly unavailable. No improvement/regression claims or historical report edits.
+25. **F3/F4/F5 engineering status — prior VERIFIED ENGINEERING PROPERTY.** Prior fixture, legitimate-control, malformed-input and bounded-state validation remains separate from population accuracy. Prior F3 7/7, F4 8/8, F5 12/12 parity passed, including the SCI-CORR-1 full regression. Not rerun after this stop.
+26. **Current claim matrix.** See [claims](final-science-claims.md). Newly measured claims are limited to the metric reproducer and metadata/hash inventory; no current accuracy claims.
+27. **Candidate recommendation: NOT SUITABLE FOR OPERATOR REVIEW.** No evaluated candidate exists. This says nothing new about existing deployed artifact quality. Nothing published or approved.
+28. **Backend total — NOT RERUN.** Previous SCI-CORR-1: **896 passed, 41 warnings**. Those are prior engineering results, not a fresh restart gate.
+29. **Frontend total — NOT RERUN.** Previous SCI-CORR-1: **90 passed across 6 files**.
+30. **TypeScript/build — NOT RERUN.** Previous SCI-CORR-1 both PASS. The mandatory scientific stop took precedence over post-evaluation gates; no evaluation completed.
+31. **Baseline integrity — VERIFIED ENGINEERING PROPERTY.** **23/23 byte-identical to SCI-CORR-1**, including its two authorized corrected files. Baseline `sci-corr-1-29bc756272dbd981a6768a94edfaa69c75de12f0a31c2158498dbd901c4d37f2`. They are not treated as failures against older hashes.
+32. **All parity results — NOT RERUN.** Prior core 7/7, F3 7/7, F4 8/8, F5 12/12 engineering evidence remains historical. No new evaluated-candidate runtime parity exists.
+33. **Remaining limitations.** SC-3 blocks this restart; model training, row-level prechecks, candidate identity, supervised/anomaly/robustness results and final claim validation remain incomplete. Real BPF, physical diode operation, JA4, encrypted DNS and population protocol precision/recall remain unverified or unsupported as previously documented.
+34. **Git recommendation.** Review and optionally commit the preserved stop provenance and new SC-3 audit as `docs: record binary per-class metric reporting blocker`. No commit/push was performed.
+35. **Recommended next phase.** Separately authorize a minimal SC-3 reporting correction and its regression/integrity transition, then restart FINAL-SCIENCE from preflight with the same archived explicit split. Do not begin SIH-F6, judge-demo or product work.
 
-Evidence: [reproducer](final-science-audit/reproduce.py), [exact output](final-science-audit/reproduction.json), [warnings](final-science-audit/reproduction-stderr.txt). Run with `PYTHONPATH=src .venv/bin/python docs/final-science-audit/reproduce.py`. This fits only a tiny synthetic preprocessor to demonstrate the defect; it trains no classifier/anomaly model and evaluates no real-data test rows.
+## Preserved provenance
 
-## Requested 31-point disposition
-
-1. **Dataset inventory — MEASURED.** Eight local CICIDS2017 parquet files, **2,313,810 rows** counted from parquet metadata. Full-file SHA-256, byte sizes, schemas and per-file counts are in [environment](final-science-environment.json). This is an inventory, not completed row-level quality/label validation. UNSW training/testing CSVs and raw files are present; they were not evaluated.
-2. **Scenario split — historical reference only.** TRAIN: Benign-Monday, Bruteforce-Tuesday, DoS-Wednesday, Infiltration-Thursday, Portscan-Friday. VALIDATION: WebAttacks-Thursday. TEST: Botnet-Friday, DDoS-Friday. These are recovered from `experiments/metrics/dataset_split.json`, not reassigned to improve results. Historical counts are 1,760,688 / 155,820 / 397,302; current per-partition row/label reconstruction was stopped. SC-1 prevents claiming the seeded driver reproduces this assignment by itself.
-3. **Evaluated candidate identity — NOT VERIFIED.** No candidate created or evaluated. No candidate manifest/hash exists for this attempt; none is fabricated.
-4. **Training configuration — reference only.** Historical seed 42; median imputation then StandardScaler fitted on training; tree subset 52 and linear subset 50 before all-missing-column removal; XGBoost 100 trees/depth 6/learning rate 0.1, RF 100 trees, logistic regression lbfgs/max_iter 1000, Isolation Forest 100 trees trained on benign samples. Effective fitted identities and full defaults were not locked because training stopped. This is not a training run or a single-seed result.
-5. **XGBoost results — NOT RUN.** No current accuracy, macro/weighted scores or confidence distributions.
-6. **Random Forest results — NOT RUN.** No current metrics.
-7. **Logistic Regression results — NOT RUN.** No current metrics.
-8. **Per-class metrics — NOT RUN.** CSV contains a header only; absent rows mean unavailable, not zero performance.
-9. **Confusion matrix — NOT RUN.** CSV contains a header only; no invented predictions/counts.
-10. **Benign false-positive analysis — NOT RUN.** No current benign support, predicted-malicious count or FPR is claimed.
-11. **Isolation Forest results — NOT RUN.** No current ROC-AUC, PR-AUC or threshold-dependent metrics.
-12. **Held-out-family results — NOT RUN.** [Novelty artifact](final-science-novelty.json) records the stop; no universal zero-day claim.
-13. **C2 findings — historical limitation only.** Historical primary test includes C2 while training does not. Archived XGBoost C2 recall is 0 with support 1,437; this is not a current measurement. F3 periodicity is separate contextual evidence and cannot replace ML recall.
-14. **DDoS findings — NOT REVALIDATED.** Historical primary training includes DoS variants mapped to `ddos`, with DDoS-Friday in test. Current supervised and anomaly performance remain unavailable; streaming rate/entropy evidence is excluded from ML metrics.
-15. **Reconnaissance findings — NOT REVALIDATED.** Historical primary split puts Portscan-Friday in training, with zero reconnaissance support in its primary test. A current recall claim from that test would be unsupported.
-16. **Exfiltration limitation — historical support only.** Archived training has 36 mapped Infiltration samples and no primary test support. This cannot establish meaningful exfiltration accuracy; current labels/support were not revalidated.
-17. **Simulated unidirectional results — NOT RUN due to stop.** No delta reported. A future rerun must specify removed directional fields and be labeled SIMULATED UNIDIRECTIONAL TELEMETRY LOSS, never physical data-diode validation.
-18. **Robustness results — NOT RUN due to stop.** Timing jitter, packet-size noise, duration changes, imbalance and metadata dropout are unavailable in [robustness artifact](final-science-robustness.json). No causal importance claim.
-19. **Score/threshold semantics.** MODEL CONFIDENCE SCORE is not calibrated true attack probability; anomaly score is separate. No recalibration or threshold change occurred. Historical validation contains benign plus web attacks mapped to `other`, a narrow composition. Any resumed threshold-dependent operational results require a justified validation-only protocol or explicit exploratory labeling; test results must not select thresholds.
-20. **Historical comparison.** [Comparison JSON](final-science-historical-comparison.json) preserves historical supervised values with current values/deltas null and comparable NO. Historical Phase 8 novelty remains reference only; no current novelty comparison exists. The stop does not justify calling any historical/current change an improvement or regression.
-21. **Protocol / behavioral evidence validation status — prior VERIFIED ENGINEERING PROPERTY.** F3/F4/F5 have deterministic positive/legitimate/malformed/bounded-state tests and recorded 7/8/12-case parity in the F5 engineering baseline. No population-level precision/recall for these heuristics is established. No protocol suite was rerun after this mandatory stop. Operational performance remains separately documented in RW-5B/F3/F4/F5 reports.
-22. **What can be claimed.** Current dataset metadata inventory/hashes, two reproduced preflight defects, clean starting revision and unchanged protected scientific source. Prior engineering results may be cited with their phase and date; they are not new accuracy measurements.
-23. **What cannot be claimed.** Current supervised/anomaly accuracy, candidate equivalence, final scientific completion, production readiness, universal zero-day detection, physical diode verification or population protocol-heuristic accuracy. **EXTERNAL-DATASET DIRECT EVALUATION NOT METHODOLOGICALLY VALID** under the unvalidated CICIDS-to-UNSW representation: UNSW adapter contains many missing fields and explicit proxies with different source semantics. Full UNSW unit/semantic audit was not completed; no direct-transfer metric was forced.
-24. **Exact backend/frontend totals.** No new full regression run. Last F5 baseline: 866 backend passed (14 warnings), 90 frontend passed across 6 files; 956 combined. These are clearly prior results, not FINAL-SCIENCE gates.
-25. **TypeScript/build.** Not rerun after stop. Prior F5: both PASS. No product/source edits made.
-26. **23-file integrity — VERIFIED ENGINEERING PROPERTY in this audit.** 23/23 hashes match F5. Canonical 52-feature schema v2.0.0 unchanged. No scientific source fix applied.
-27. **Parity regression status.** Not rerun. Prior core 7/7, F3 7/7, F4 8/8, F5 12/12 PASS; no current candidate runtime parity exists because no candidate was trained.
-28. **Remaining scientific limitations.** SC-1/SC-2 block the mandated evaluation workflow; dataset row-level audit, exact current partition counts, model/artifact identity, calibration, threshold protocol and all requested experiments remain incomplete. Historical CICFlowMeter feature tables also cannot by themselves validate corrected runtime segmentation. BPF, exact-history growth and prior protocol coverage limits remain.
-29. **Operator approval/publication.** No evaluated candidate is available for approval. Existing deployment remains untouched. Do not publish a model based on this stop report.
-30. **Git recommendation.** Review and optionally commit these audit-only documents as `docs: record final-science preflight blockers`. No commit/push performed. Preserve historical reports.
-31. **Recommended next phase.** Separately authorize a narrowly scoped scientific reproducibility correction for SC-1/SC-2, review protected-baseline changes explicitly, then restart FINAL-SCIENCE preflight with the archived partition locked before inspecting test results. Do not start SIH-F6 or PPT work.
-
-## Artifact status
-
-All requested artifact paths exist to make the stop explicit. Metrics/novelty/robustness contain null or NOT_RUN status, and metric CSVs are header-only. They are not completed evaluation deliverables. Environment binds current dataset hashes, source revision, library versions and protected-file hashes. [Claims](final-science-claims.md) distinguishes measured facts, prior engineering properties and unavailable results.
+The previous requested FINAL-SCIENCE artifacts are copied byte-for-byte to [previous-stop](final-science-restart-audit/previous-stop/final-science-report.md), with [archive hashes](final-science-restart-audit/previous-stop/archive-sha256.json). The original SC-1/SC-2 audit and SCI-CORR-1 artifacts remain in place. Current metric/novelty/robustness JSON files explicitly contain unavailable results; CSVs contain headers only. These are stop artifacts, not completed scientific deliverables.
 
 NO-GO FOR FINAL SIH HARDENING

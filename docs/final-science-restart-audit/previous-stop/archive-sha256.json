@@ -1,0 +1,11 @@
+{
+  "final-science-robustness.json": "a2c26a273b57bbce698101da3a1ea24cdcae0bcde25bf842254b76b521585bf3",
+  "final-science-confusion-matrix.csv": "9fefdedd98d4faea74bd9bb0b43e5520d1b7a605b00bf135251101c4942a242c",
+  "final-science-claims.md": "e386b37afe52d6d0289ab1dfa29bea887399a691a8d270b727a83f313e79aaec",
+  "final-science-environment.json": "6fa46c74055e8994eab0b9d7b18898b87d4a4833441ec847617491b10ee77f19",
+  "final-science-report.md": "a47486c15118d0503eb0ba76f7715549dac356c0a162ac722f9d090258eee997",
+  "final-science-class-metrics.csv": "2a3790f20d9d43ecb8b529a2e3661c7c22739da1988dcc4a3e5329586421dfe8",
+  "final-science-metrics.json": "bbfa1af16a1c25eec3be0cfcad71d9cc417586d4b66983200d9495c7780f8729",
+  "final-science-novelty.json": "a2c26a273b57bbce698101da3a1ea24cdcae0bcde25bf842254b76b521585bf3",
+  "final-science-historical-comparison.json": "46c487e62012b8c1c8709d6648343318fc149cc6b1c7029ceee6ae7eb280a95c"
+}

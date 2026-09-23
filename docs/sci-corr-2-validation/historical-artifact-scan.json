@@ -1,0 +1,107 @@
+[
+  {
+    "file": "experiments/metrics/model_performance.json",
+    "path": "/XGBoost",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/metrics/model_performance.json",
+    "path": "/RandomForest",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/metrics/model_performance.json",
+    "path": "/LogisticRegression",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/reports/complete_evaluation.json",
+    "path": "/experiment_A_model_performance/XGBoost",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/reports/complete_evaluation.json",
+    "path": "/experiment_A_model_performance/RandomForest",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/reports/complete_evaluation.json",
+    "path": "/experiment_A_model_performance/LogisticRegression",
+    "classes": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": 5
+  },
+  {
+    "file": "experiments/reports/synthetic_validation.json",
+    "path": "/model_comparison/xgboost",
+    "classes": [
+      "benign",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": null
+  },
+  {
+    "file": "experiments/reports/synthetic_validation.json",
+    "path": "/model_comparison/random_forest",
+    "classes": [
+      "benign",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": null
+  },
+  {
+    "file": "experiments/reports/synthetic_validation.json",
+    "path": "/model_comparison/logistic_regression",
+    "classes": [
+      "benign",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "matrix_rows": null
+  }
+]

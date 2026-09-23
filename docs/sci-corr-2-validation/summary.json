@@ -1,0 +1,25 @@
+{
+  "phase": "SCI-CORR-2",
+  "baseline_id": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+  "focused": 19,
+  "backend": 906,
+  "backend_warnings": 43,
+  "frontend": 90,
+  "combined": 996,
+  "typescript": "PASS",
+  "build": "PASS",
+  "full_suite_gates": [
+    "core live/replay",
+    "F3 parity",
+    "F4 parity",
+    "F5 parity",
+    "frozen bundle loader/inference",
+    "auth/event contract",
+    "sensor/replay lifecycle",
+    "SCI-CORR-1 split and preprocessing"
+  ],
+  "scientific_training": false,
+  "final_evaluation": false,
+  "historical_reports_modified": false,
+  "historical_binary_rate_consumer_classification": "NOT USED in inspected saved Phase 7/8 primary claims; external/unavailable material UNKNOWN"
+}

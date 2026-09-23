@@ -1,0 +1,17 @@
+...................                                                      [100%]
+=============================== warnings summary ===============================
+tests/unit/test_binary_class_rates.py::test_edge_cases_rates_and_aggregate_invariance[y4-p4]
+tests/unit/test_binary_class_rates.py::test_edge_cases_rates_and_aggregate_invariance[y4-p4]
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/metrics/_classification.py:614: UserWarning: A single label was found in 'y_true' and 'y_pred'. For the confusion matrix to have the correct shape, use the 'labels' parameter to pass all known labels.
+    warnings.warn(
+
+tests/unit/test_evaluation.py::TestAnomalyReport::test_single_class_roc_auc_none
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+    warnings.warn(
+
+tests/unit/test_evaluation.py::TestAnomalyReport::test_single_class_roc_auc_none
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:1192: UserWarning: No positive class found in y_true, recall is set to one for all thresholds.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+19 passed, 4 warnings in 2.99s

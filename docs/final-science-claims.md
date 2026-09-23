@@ -1,29 +1,26 @@
-# FINAL-SCIENCE claim matrix — mandatory scientific stop
+# FINAL-SCIENCE-RESTART claim matrix — SC-3 stop
 
-## WHAT WE CAN CLAIM
+## WHAT SENTINEL-NET CAN CLAIM
 
-| Classification | Claim | Evidence |
+| Category | Claim | Evidence |
 |---|---|---|
-| MEASURED | Eight local CICIDS2017 parquet files contain 2,313,810 rows by metadata count; full-file hashes recorded. | final-science-environment.json |
-| VERIFIED ENGINEERING PROPERTY | 23/23 protected source files match F5 at audited revision 9d6b3b4. | final-science-environment.json |
-| MEASURED | Same NumPy split seed produces different partitions under Python hash seeds 0/1/2. | final-science-audit/reproduction.json |
-| MEASURED | A dropped-column preprocessor fixture exposes incorrect output-width and constant-name reporting. | final-science-audit/reproduction.json |
-| VERIFIED ENGINEERING PROPERTY | Prior F5 recorded 866 backend and 90 frontend passes, plus protocol parity; not rerun in this stopped phase. | sih-f5-report.md |
-| LIMITED / EXPERIMENTAL | Historical Phase 7/8 metrics apply only to their archived methodology/artifacts and are not revalidated here. | final-science-historical-comparison.json |
+| MEASURED | Binary per-class FPR/FNR has an orientation error on the documented eight-row synthetic fixture. | final-science-restart-audit/reproduction.json |
+| MEASURED | Eight dataset files match archived hashes; parquet metadata totals 2,313,810 rows and the fixed partition counts. | final-science-environment.json |
+| VERIFIED ENGINEERING PROPERTY | All 23 protected files match the authorized SCI-CORR-1 baseline. | final-science-environment.json |
+| VERIFIED ENGINEERING PROPERTY | Archived split identity verified; no fallback or generated split applied. | final-science-split-manifest-used.json |
+| VERIFIED ENGINEERING PROPERTY | Prior SCI-CORR-1 recorded 896 backend and 90 frontend passes, with parity/runtime gates; not rerun here. | sci-corr-1-report.md |
+| LIMITED / EXPERIMENTAL | Historical science remains bound to its recorded partition and implementation; no numerical invalidation inferred from SC-3. | final-science-report.md |
 
-## WHAT WE CANNOT CLAIM
+## WHAT SENTINEL-NET CANNOT CLAIM
 
-| Classification | Unsupported claim |
-|---|---|
-| NOT VERIFIED | Current supervised accuracy, per-class recall, false-positive rate or calibration |
-| NOT VERIFIED | Current Isolation Forest ROC/PR or validation-selected operational recall |
-| NOT VERIFIED | Reproducibly evaluated or publication-ready scientific candidate |
-| SIMULATED | A future one-way perturbation would simulate telemetry loss; no new simulation ran here |
-| NOT VERIFIED | Physical data-diode operation or native real-interface BPF capture |
-| NOT VERIFIED | Population precision/recall for F3/F4/F5 contextual evidence |
-| NOT VERIFIED | Meaningful direct CICIDS-to-UNSW transfer without feature/unit/semantic compatibility |
-| NOT VERIFIED | Universal zero-day detection, production readiness or universal throughput |
+- **NOT VERIFIED:** current model accuracy, per-class recall/FPR, anomaly ranking, calibration or an evaluated candidate.
+- **SIMULATED:** no new one-way experiment ran; any future telemetry-removal result must remain explicitly simulated.
+- **NOT VERIFIED:** physical data-diode operation or native real-interface BPF capture.
+- **NOT VERIFIED:** universal zero-day detection, perfect accuracy, production readiness or capacity guarantees.
+- **NOT VERIFIED:** population precision/recall for F3/F4/F5 contextual heuristics.
+- **NOT VERIFIED / NOT IMPLEMENTED:** JA4, encrypted DNS analysis or TLS/QUIC payload inspection.
+- **NOT VERIFIED:** meaningful CICIDS-to-UNSW direct transfer without representation compatibility.
 
-No scores or sample supports were fabricated. Model confidence, anomaly scores, contextual protocol evidence and operational performance remain separate concepts. Final scientific revalidation is incomplete.
+No candidate exists for operator review or publication. Model confidence is not automatically calibrated attack probability; anomaly score and contextual evidence are separate. This restart stopped before scientific training and evaluation.
 
 NO-GO FOR FINAL SIH HARDENING

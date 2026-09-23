@@ -57,21 +57,16 @@ class ClassificationReport:
             else:
                 class_metrics = {"precision": 0.0, "recall": 0.0, "f1-score": 0.0, "support": 0}
             
-            # Calculate FPR and FNR
-            if len(labels) == 2:
-                # Binary classification
-                tn, fp, fn, tp = cm.ravel()
-                fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
-                fnr = fn / (fn + tp) if (fn + tp) > 0 else 0.0
-            else:
-                # Multiclass (one-vs-rest calculation for this specific class)
-                tp = cm[i, i]
-                fp = cm[:, i].sum() - tp
-                fn = cm[i, :].sum() - tp
-                tn = cm.sum() - (tp + fp + fn)
-                fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
-                fnr = fn / (fn + tp) if (fn + tp) > 0 else 0.0
-                
+            # Each class is positive in its own one-vs-rest comparison.
+            # For benign, FNR (not FPR) is benign -> non-benign error rate.
+            # Preserve the existing convention: zero denominator yields 0.0.
+            tp = cm[i, i]
+            fp = cm[:, i].sum() - tp
+            fn = cm[i, :].sum() - tp
+            tn = cm.sum() - (tp + fp + fn)
+            fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
+            fnr = fn / (fn + tp) if (fn + tp) > 0 else 0.0
+
             class_metrics["fpr"] = fpr
             class_metrics["fnr"] = fnr
             per_class[label_str] = class_metrics

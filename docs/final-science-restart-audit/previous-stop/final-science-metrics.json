@@ -1,0 +1,99 @@
+{
+  "status": "NOT_RUN_SCIENTIFIC_STOP",
+  "reason": "Confirmed protected preprocessing reporting defect and process-dependent scenario split; no silent patch or bypass permitted.",
+  "candidate": null,
+  "models": {
+    "XGBoost": null,
+    "RandomForest": null,
+    "LogisticRegression": null,
+    "IsolationForest": null
+  },
+  "dataset_rows_metadata_count": 2313810,
+  "historical_split_reference": {
+    "train_scenarios": [
+      "Benign-Monday",
+      "Bruteforce-Tuesday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday"
+    ],
+    "val_scenarios": [
+      "WebAttacks-Thursday"
+    ],
+    "test_scenarios": [
+      "Botnet-Friday",
+      "DDoS-Friday"
+    ],
+    "train_rows": 1760688,
+    "val_rows": 155820,
+    "test_rows": 397302,
+    "train_classes": {
+      "benign": 1555790,
+      "brute_force": 9150,
+      "ddos": 193756,
+      "exfiltration": 36,
+      "reconnaissance": 1956
+    },
+    "val_classes": {
+      "benign": 153677,
+      "other": 2143
+    },
+    "test_classes": {
+      "benign": 267851,
+      "c2": 1437,
+      "ddos": 128014
+    },
+    "random_seed": 42,
+    "feature_availability": {
+      "DIRECT": 29,
+      "DERIVED": 12,
+      "MISSING": 11
+    },
+    "missing_features": [
+      "pkt_size_median",
+      "pkt_size_p25",
+      "pkt_size_p75",
+      "pkt_size_p90",
+      "iat_median",
+      "syn_ack_count",
+      "ip_version",
+      "payload_bytes_total",
+      "forward_payload_bytes",
+      "reverse_payload_bytes",
+      "payload_ratio"
+    ]
+  },
+  "current_split_applied": false,
+  "training_configuration_reference": {
+    "random_seed": 42,
+    "XGBoost": {
+      "n_estimators": 100,
+      "max_depth": 6,
+      "learning_rate": 0.1
+    },
+    "RandomForest": {
+      "n_estimators": 100
+    },
+    "LogisticRegression": {
+      "max_iter": 1000,
+      "solver": "lbfgs"
+    },
+    "IsolationForest": {
+      "n_estimators": 100,
+      "training": "benign only"
+    },
+    "preprocessing": "training-fitted median imputer plus StandardScaler; tree 52 selected, linear 50 selected; all-missing columns dropped"
+  },
+  "full_regression_gates": "NOT_RERUN: stopped before scientific evaluation; prior F5 totals are historical engineering evidence only",
+  "previous_engineering_baseline": {
+    "backend_passed": 866,
+    "backend_warnings": 14,
+    "frontend_passed": 90,
+    "typescript": "PASS",
+    "build": "PASS",
+    "core_parity": 7,
+    "f3_parity": 7,
+    "f4_parity": 8,
+    "f5_parity": 12
+  }
+}
