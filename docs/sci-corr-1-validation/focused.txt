@@ -1,0 +1,33 @@
+.............................................................            [100%]
+=============================== warnings summary ===============================
+tests/unit/test_scientific_corrections.py: 11 warnings
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+    warnings.warn(
+
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped1-constant1-linear]
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+    warnings.warn(
+
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-tree]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-tree]
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+    warnings.warn(
+
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-linear]
+tests/unit/test_scientific_corrections.py::test_fitted_metadata_and_numeric_identity[dropped5-constant5-linear]
+  /Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+61 passed, 27 warnings in 14.77s

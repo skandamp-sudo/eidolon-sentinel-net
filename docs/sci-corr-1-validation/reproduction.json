@@ -1,0 +1,1169 @@
+{
+  "numeric_comparisons": [
+    {
+      "selected": 52,
+      "missing": [
+        15
+      ],
+      "constant": [
+        19
+      ],
+      "output_width": 51,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 52,
+      "missing": [
+        2,
+        15,
+        23
+      ],
+      "constant": [
+        19,
+        24
+      ],
+      "output_width": 49,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean",
+        "fwd_iat_mean"
+      ]
+    },
+    {
+      "selected": 52,
+      "missing": [],
+      "constant": [
+        19
+      ],
+      "output_width": 52,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 52,
+      "missing": [],
+      "constant": [],
+      "output_width": 52,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": []
+    },
+    {
+      "selected": 52,
+      "missing": [],
+      "constant": [
+        1,
+        4,
+        19
+      ],
+      "output_width": 52,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "total_packets",
+        "bytes_per_sec",
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 52,
+      "missing": [
+        15,
+        16,
+        17,
+        18,
+        23,
+        33,
+        44,
+        48,
+        49,
+        50,
+        51
+      ],
+      "constant": [
+        19,
+        45
+      ],
+      "output_width": 41,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "is_tcp",
+        "is_udp",
+        "is_icmp"
+      ],
+      "constant_features": [
+        "iat_mean",
+        "is_tcp"
+      ]
+    },
+    {
+      "selected": 50,
+      "missing": [
+        15
+      ],
+      "constant": [
+        19
+      ],
+      "output_width": 49,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 50,
+      "missing": [
+        2,
+        15,
+        23
+      ],
+      "constant": [
+        19,
+        24
+      ],
+      "output_width": 47,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean",
+        "fwd_iat_mean"
+      ]
+    },
+    {
+      "selected": 50,
+      "missing": [],
+      "constant": [
+        19
+      ],
+      "output_width": 50,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 50,
+      "missing": [],
+      "constant": [],
+      "output_width": 50,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": []
+    },
+    {
+      "selected": 50,
+      "missing": [],
+      "constant": [
+        1,
+        4,
+        19
+      ],
+      "output_width": 50,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "constant_features": [
+        "total_packets",
+        "bytes_per_sec",
+        "iat_mean"
+      ]
+    },
+    {
+      "selected": 50,
+      "missing": [
+        15,
+        16,
+        17,
+        18,
+        23,
+        33,
+        44,
+        48,
+        49,
+        50,
+        51
+      ],
+      "constant": [
+        19,
+        45
+      ],
+      "output_width": 40,
+      "numeric_exact_equal": true,
+      "output_feature_names": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp"
+      ],
+      "constant_features": [
+        "iat_mean",
+        "is_tcp"
+      ]
+    }
+  ],
+  "legacy_preprocessor": {
+    "artifact_sha256_unchanged": "f29a0596d0b70fc2cdcd49d147ec482f54980f05cba6cd82b527a0433762dd17",
+    "numeric_exact_equal": true,
+    "actual_width": 51,
+    "reported_width": 51,
+    "constant_features": [
+      "iat_mean"
+    ],
+    "names_length": 51,
+    "serialized_cache_still_legacy": [
+      "pkt_size_p90"
+    ]
+  },
+  "frozen_runtime": {
+    "identity": {
+      "model_name": "runtime",
+      "model_version": "1.0.0",
+      "feature_schema_version": "2.0.0",
+      "manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f"
+    },
+    "artifact_hashes_unchanged": {
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/anomaly.joblib": "153cf24fde1ff649d6a8e8a0dcc450b45253952c346116c1f1e3aa34f69a6e33",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/anomaly_explainer.joblib": "e5aa35cc8b36aa92161ff9db70fff17c1e1b3f0817ffceb0afd9e2fac1c30433",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/preprocessor.joblib": "d2312c5f9b08abd9274fc5a872aed394215abaf0185ecd76bcbf8c4effb12eae",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/thresholds.json": "e3ee08d050b20ba04716c47adb8205dcf7b5ce4a487cc27c11e0f98bc21a9b14",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/classifier.joblib": "42b1095b6a0ff3b45cd7fc5ace63a83e33a070b2a350d0ecb8298b242c733f22",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/manifest.json": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+      "/tmp/sentinel-rw4-preview/registry/runtime/1.0.0/checksums.json": "1c2d606d9ac707e0bc2c2570bf520a8a39fb2ac217a9c48fc6ce59e296b52ce0"
+    },
+    "synthetic_vector_preprocessing_classifier_anomaly_exact_parity": true,
+    "training": false,
+    "publication": false
+  },
+  "dataset_sha256_verified": {
+    "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+    "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+    "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+    "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+    "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+    "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+    "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+    "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+  },
+  "metadata_partition_row_counts": {
+    "train": 1760688,
+    "validation": 155820,
+    "test": 397302
+  },
+  "hashseed_processes": {
+    "0": {
+      "explicit": {
+        "source": "explicit_manifest",
+        "partition_origin": "EXPLICIT_MANIFEST",
+        "split_method_version": "explicit-scenario-manifest-v1",
+        "manifest_sha256": "d1e043a43fa3d2549a99a53f93c680d3d4f7787edce3c7410a06ed9f1f4402ae",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "train_scenarios": [
+          "Benign-Monday",
+          "Bruteforce-Tuesday",
+          "DoS-Wednesday",
+          "Infiltration-Thursday",
+          "Portscan-Friday"
+        ],
+        "val_scenarios": [
+          "WebAttacks-Thursday"
+        ],
+        "test_scenarios": [
+          "Botnet-Friday",
+          "DDoS-Friday"
+        ],
+        "random_state": null
+      },
+      "generated": {
+        "source": "scenario_split",
+        "partition_origin": "GENERATED_DETERMINISTIC",
+        "split_method_version": "scenario-sorted-shuffle-v1",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "n_scenarios": 8,
+        "train_scenarios": [
+          "Benign-Monday",
+          "Botnet-Friday",
+          "Bruteforce-Tuesday",
+          "Infiltration-Thursday",
+          "WebAttacks-Thursday"
+        ],
+        "val_scenarios": [
+          "DoS-Wednesday"
+        ],
+        "test_scenarios": [
+          "DDoS-Friday",
+          "Portscan-Friday"
+        ],
+        "random_state": 42
+      }
+    },
+    "1": {
+      "explicit": {
+        "source": "explicit_manifest",
+        "partition_origin": "EXPLICIT_MANIFEST",
+        "split_method_version": "explicit-scenario-manifest-v1",
+        "manifest_sha256": "d1e043a43fa3d2549a99a53f93c680d3d4f7787edce3c7410a06ed9f1f4402ae",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "train_scenarios": [
+          "Benign-Monday",
+          "Bruteforce-Tuesday",
+          "DoS-Wednesday",
+          "Infiltration-Thursday",
+          "Portscan-Friday"
+        ],
+        "val_scenarios": [
+          "WebAttacks-Thursday"
+        ],
+        "test_scenarios": [
+          "Botnet-Friday",
+          "DDoS-Friday"
+        ],
+        "random_state": null
+      },
+      "generated": {
+        "source": "scenario_split",
+        "partition_origin": "GENERATED_DETERMINISTIC",
+        "split_method_version": "scenario-sorted-shuffle-v1",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "n_scenarios": 8,
+        "train_scenarios": [
+          "Benign-Monday",
+          "Botnet-Friday",
+          "Bruteforce-Tuesday",
+          "Infiltration-Thursday",
+          "WebAttacks-Thursday"
+        ],
+        "val_scenarios": [
+          "DoS-Wednesday"
+        ],
+        "test_scenarios": [
+          "DDoS-Friday",
+          "Portscan-Friday"
+        ],
+        "random_state": 42
+      }
+    },
+    "2": {
+      "explicit": {
+        "source": "explicit_manifest",
+        "partition_origin": "EXPLICIT_MANIFEST",
+        "split_method_version": "explicit-scenario-manifest-v1",
+        "manifest_sha256": "d1e043a43fa3d2549a99a53f93c680d3d4f7787edce3c7410a06ed9f1f4402ae",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "train_scenarios": [
+          "Benign-Monday",
+          "Bruteforce-Tuesday",
+          "DoS-Wednesday",
+          "Infiltration-Thursday",
+          "Portscan-Friday"
+        ],
+        "val_scenarios": [
+          "WebAttacks-Thursday"
+        ],
+        "test_scenarios": [
+          "Botnet-Friday",
+          "DDoS-Friday"
+        ],
+        "random_state": null
+      },
+      "generated": {
+        "source": "scenario_split",
+        "partition_origin": "GENERATED_DETERMINISTIC",
+        "split_method_version": "scenario-sorted-shuffle-v1",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "n_scenarios": 8,
+        "train_scenarios": [
+          "Benign-Monday",
+          "Botnet-Friday",
+          "Bruteforce-Tuesday",
+          "Infiltration-Thursday",
+          "WebAttacks-Thursday"
+        ],
+        "val_scenarios": [
+          "DoS-Wednesday"
+        ],
+        "test_scenarios": [
+          "DDoS-Friday",
+          "Portscan-Friday"
+        ],
+        "random_state": 42
+      }
+    },
+    "random": {
+      "explicit": {
+        "source": "explicit_manifest",
+        "partition_origin": "EXPLICIT_MANIFEST",
+        "split_method_version": "explicit-scenario-manifest-v1",
+        "manifest_sha256": "d1e043a43fa3d2549a99a53f93c680d3d4f7787edce3c7410a06ed9f1f4402ae",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "train_scenarios": [
+          "Benign-Monday",
+          "Bruteforce-Tuesday",
+          "DoS-Wednesday",
+          "Infiltration-Thursday",
+          "Portscan-Friday"
+        ],
+        "val_scenarios": [
+          "WebAttacks-Thursday"
+        ],
+        "test_scenarios": [
+          "Botnet-Friday",
+          "DDoS-Friday"
+        ],
+        "random_state": null
+      },
+      "generated": {
+        "source": "scenario_split",
+        "partition_origin": "GENERATED_DETERMINISTIC",
+        "split_method_version": "scenario-sorted-shuffle-v1",
+        "dataset_identity": {
+          "dataset_id": "CICIDS2017",
+          "files": {
+            "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+            "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+            "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+            "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+            "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+            "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+            "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+            "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+          }
+        },
+        "row_counts": {
+          "train": 5,
+          "validation": 1,
+          "test": 2
+        },
+        "n_scenarios": 8,
+        "train_scenarios": [
+          "Benign-Monday",
+          "Botnet-Friday",
+          "Bruteforce-Tuesday",
+          "Infiltration-Thursday",
+          "WebAttacks-Thursday"
+        ],
+        "val_scenarios": [
+          "DoS-Wednesday"
+        ],
+        "test_scenarios": [
+          "DDoS-Friday",
+          "Portscan-Friday"
+        ],
+        "random_state": 42
+      }
+    }
+  }
+}

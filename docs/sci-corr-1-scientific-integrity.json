@@ -1,0 +1,74 @@
+{
+  "phase": "SCI-CORR-1",
+  "baseline_id": "sci-corr-1-29bc756272dbd981a6768a94edfaa69c75de12f0a31c2158498dbd901c4d37f2",
+  "checked_at": "2026-09-23T12:40:39.091217+00:00",
+  "previous_baseline": "docs/sih-f5-scientific-integrity.json",
+  "source_revision": "1fb90e7db871e0e4e555589db098ce0cbf7940c0",
+  "source_revision_scope": "base commit plus the exact corrected worktree file hashes below; not yet committed",
+  "authorization": "User SCI-CORR-1 explicitly authorizes protected-source correction only for SC-1 and SC-2",
+  "review_status": "Diff and scope reviewed by implementing agent; no independent human approval implied",
+  "protected_file_count": 23,
+  "intentionally_changed_count": 2,
+  "unchanged_count": 21,
+  "feature_count": 52,
+  "feature_schema_version": "2.0.0",
+  "changed_protected_files": {
+    "src/sentinel_net/detection/dataset.py": {
+      "previous_sha256": "d69adadcdc9e27c378ea83463cf0c31d42439d8692576fb88940ec266bc36eb5",
+      "new_sha256": "267ae91eef7e7021a2180b06feede621cc8c4f6a86bcf4a533122041702ec7cf",
+      "reason": "SC-1 explicit bound manifest path and deterministic sorted-shuffle path with provenance"
+    },
+    "src/sentinel_net/detection/preprocessing.py": {
+      "previous_sha256": "ec282476c0ddd38b8dca65ae0fac51c14cc61a71863c39db9abd8e518660488f",
+      "new_sha256": "72809d177be97dec0d0e010c3c06b2d29db24f3ffdd0e44e62d47fee5fc209d6",
+      "reason": "SC-2 align metadata with fitted surviving schema; preserve numeric transformations and legacy artifact bytes"
+    }
+  },
+  "sha256": {
+    "src/sentinel_net/features/__init__.py": "0a29a6a4321334acd020490e8b6204e854bef20847ec3e8e8cc9ce63c6bebd76",
+    "src/sentinel_net/features/extractor.py": "792c0a511b1cf9b12916e897a6be04b47735258f2febd57d09ce55195cb0a863",
+    "src/sentinel_net/features/schema.py": "cac2363f78d008f3c0106fafe23d017314b5dc18d226fe639705f03291e2c6d1",
+    "src/sentinel_net/detection/classifier.py": "21a81756889e5c35f62a800e3609ea91304e664803dcb6975ee4041a83b737d3",
+    "src/sentinel_net/detection/audit.py": "6c9b5b4e2869dec2f3173eb414e5eb0486bc468bb7abc180700d167f68112001",
+    "src/sentinel_net/detection/threshold_optimizer.py": "a6308dcb6d60054ddee1cefe47809b0316cc57165e2be10017e92218eaf2a7f8",
+    "src/sentinel_net/detection/thresholds.py": "b81e2211f28436c003f3ecab34fb50424b2da88cb2fe65c7ff735a1c818c5196",
+    "src/sentinel_net/detection/registry.py": "a8f9736f71c4d4fed260bb490f94c17bc4ea60f1fbabd71343e00827b1b58209",
+    "src/sentinel_net/detection/evaluation.py": "f91be2692b3807d6d7c26ec7ddee1efc0862e950d28142e0c5a3ce800f8e9d6b",
+    "src/sentinel_net/detection/__init__.py": "998aaef9b7b401efde2a41745994b927e063160d7ec98e713b4b21f434dae0f8",
+    "src/sentinel_net/detection/dataset.py": "267ae91eef7e7021a2180b06feede621cc8c4f6a86bcf4a533122041702ec7cf",
+    "src/sentinel_net/detection/preprocessing.py": "72809d177be97dec0d0e010c3c06b2d29db24f3ffdd0e44e62d47fee5fc209d6",
+    "src/sentinel_net/detection/anomaly.py": "74200899ed69a41a55c507f0966edbb4529c6e9f2a276ccce2a36ae38a7099f4",
+    "src/sentinel_net/detection/inference.py": "c425bc4b77759d42926db9e805b90cbdef34ae115e925c107dfd8d0ca1d3c2ce",
+    "src/sentinel_net/explainability/enrichment.py": "65d20c5a25284a68b39f445b23f5d44ba3b2092ec9c798be52d5089cc62d1796",
+    "src/sentinel_net/explainability/explainable_detection.py": "7f87e7c69096440fed3c8d7e412022d784bec41d9e8aef6e4036d51e92c053a7",
+    "src/sentinel_net/explainability/shap_explainer.py": "7d1198df99c2f69910faba35714a7e864a761ae1bc83a03de50efc94d2910b4d",
+    "src/sentinel_net/explainability/attack_mapping.py": "977263fe78e232082cf24b27faa2386d9f581f47cd886856edebb03a04f3c980",
+    "src/sentinel_net/explainability/__init__.py": "211a90eb016ab64be8420a8a98d1b84d5711d4eecfe87e10978a15f70aff82e5",
+    "src/sentinel_net/explainability/anomaly_explainer.py": "cfba3355ece4a213af4421abbc55443d056821ec1553bd9965d482e8b6e7e551",
+    "src/sentinel_net/explainability/rationale.py": "e202a767611199cfe07f73e73d093a3ee3163175b5429b7e4ace0a9e7407f6f9",
+    "src/sentinel_net/explainability/evidence.py": "ac42f8380836c35198ea75b78fce861c80a87c950c995822de8ed6a198655543",
+    "src/sentinel_net/flow/aggregator.py": "3e54818ba6cbe6fceae7e44fddf8c5fa62e3c850c492e4a15bbf60e9a1ce29c8"
+  },
+  "tests": {
+    "new_correction_cases": 30,
+    "focused_with_existing_dataset_preprocessing": 61,
+    "backend_passed": 896,
+    "backend_warnings": 41,
+    "frontend_passed": 90,
+    "frontend_files": 6,
+    "typescript": "PASS",
+    "build": "PASS",
+    "numeric_array_comparisons_exact": 12,
+    "hashseed_values": [
+      "0",
+      "1",
+      "2",
+      "random"
+    ],
+    "both_split_modes_identical_across_hashseeds": true
+  },
+  "partition_manifest": "experiments/manifests/final-science-partition.json",
+  "partition_manifest_file_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5",
+  "evidence": "docs/sci-corr-1-validation/reproduction.json",
+  "evidence_sha256": "1f4a4ebfb045eeae8957bd1f342487f800f1271a4e9ed5fe3954ac8d8b3c8722"
+}

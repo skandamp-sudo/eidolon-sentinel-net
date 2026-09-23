@@ -48,7 +48,8 @@ class FeaturePreprocessor:
         constant_mask = np.isclose(variances, 0.0)
         
         self._constant_features = [
-            feat for feat, is_const in zip(self._feature_subset, constant_mask) if is_const
+            feat for feat, is_const in zip(self._pipeline.named_steps['imputer'].get_feature_names_out(
+                list(self._feature_subset)), constant_mask) if is_const
         ]
         
         self._is_fitted = True
@@ -88,11 +89,18 @@ class FeaturePreprocessor:
         
     @property
     def n_features_out(self) -> int:
-        return len(self._feature_subset)
+        return len(self.output_feature_names)
         
     @property
     def constant_features(self) -> list[str]:
-        return self._constant_features
+        if not self._is_fitted:
+            return []
+        # Derive from fitted state so old serialized metadata is not trusted.
+        # Loading does not rewrite or republish the serialized artifact.
+        return [name for name, constant in zip(
+            self.output_feature_names,
+            np.isclose(self._pipeline.named_steps['scaler'].var_, 0.0),
+        ) if constant]
         
     @property
     def version(self) -> str:

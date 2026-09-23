@@ -1,0 +1,68 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [ 2 15 23]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+PASS: 12 exact before/after numeric comparisons; legacy and frozen artifact parity; eight dataset hashes; archived counts; four fresh-process seeds in both modes

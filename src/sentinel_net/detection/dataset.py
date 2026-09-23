@@ -3,6 +3,8 @@ Dataset pipeline for Sentinel-Net detection module.
 """
 
 import hashlib
+import json
+from copy import deepcopy
 import numpy as np
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Tuple, Any
@@ -184,14 +186,15 @@ class DatasetBuilder:
         
     def scenario_aware_split(self, X: np.ndarray, y: np.ndarray, scenarios: List[str], 
                              train_ratio: float = 0.7, val_ratio: float = 0.15, 
-                             test_ratio: float = 0.15, random_state: int = 42) -> DatasetSplit:
+                             test_ratio: float = 0.15, random_state: int = 42,
+                             dataset_identity: Optional[Dict[str, Any]] = None) -> DatasetSplit:
         """Splits by unique scenario groups, not individual samples.
 
         Ensures that all flows from a single scenario stay in the same
         partition, preventing data leakage between train/val/test.
         """
         scenarios_arr = np.array(scenarios)
-        unique_scenarios = list(set(scenarios))
+        unique_scenarios = sorted(set(scenarios))
         rng = np.random.RandomState(random_state)
         rng.shuffle(unique_scenarios)
 
@@ -224,6 +227,12 @@ class DatasetBuilder:
             split_strategy='scenario_aware',
             provenance={
                 'source': 'scenario_split',
+                'partition_origin': 'GENERATED_DETERMINISTIC',
+                'split_method_version': 'scenario-sorted-shuffle-v1',
+                'dataset_identity': deepcopy(dataset_identity),
+                'row_counts': {'train': len(X_train),
+                               'validation': int(val_mask.sum()),
+                               'test': int(test_mask.sum())},
                 'n_scenarios': n_scenarios,
                 'train_scenarios': sorted(train_scenarios),
                 'val_scenarios': sorted(val_scenarios),
@@ -232,6 +241,77 @@ class DatasetBuilder:
             }
         )
         
+    def explicit_manifest_split(
+        self, X: np.ndarray, y: np.ndarray, scenarios: List[str],
+        manifest: Dict[str, Any], *,
+        dataset_identity: Optional[Dict[str, Any]] = None,
+        required_partitions: Tuple[str, ...] = ('train', 'validation', 'test'),
+    ) -> DatasetSplit:
+        """Apply an explicit assignment without shuffling or changing row order.
+
+        Dataset identity is caller-supplied metadata (e.g. verified file hashes),
+        not a hash inferred from the feature matrix. A bound manifest requires
+        an exactly matching observed identity. Expected row counts are optional.
+        """
+        keys = ('train', 'validation', 'test')
+        if X.ndim != 2 or y.ndim != 1 or len(X) != len(y) or len(X) != len(scenarios):
+            raise ValueError('Feature, label and scenario row counts must agree')
+        if not all(isinstance(s, str) and s for s in scenarios):
+            raise ValueError('Scenario IDs must be non-empty strings')
+        if not isinstance(manifest, dict) or manifest.get('version') != 1:
+            raise ValueError('Explicit partition manifest version 1 required')
+        partitions = manifest.get('partitions')
+        if not isinstance(partitions, dict) or set(partitions) != set(keys):
+            raise ValueError('Exactly train/validation/test partition keys required')
+        if not set(required_partitions) <= set(keys):
+            raise ValueError('Unknown required partition')
+        assigned = []
+        for key in keys:
+            ids = partitions[key]
+            if not isinstance(ids, list) or not all(isinstance(s, str) and s for s in ids):
+                raise ValueError('Partition scenarios must be lists of non-empty strings')
+            if key in required_partitions and not ids:
+                raise ValueError('Required partition is empty')
+            assigned.extend(ids)
+        if len(assigned) != len(set(assigned)):
+            raise ValueError('Scenario assigned more than once')
+        if set(assigned) != set(scenarios):
+            raise ValueError('Assignment must cover exactly the observed scenarios')
+        bound_identity = manifest.get('dataset_identity')
+        if bound_identity is not None and bound_identity != dataset_identity:
+            raise ValueError('Observed dataset identity does not match manifest')
+        masks = {k: np.isin(scenarios, partitions[k]) for k in keys}
+        counts = {k: int(masks[k].sum()) for k in keys}
+        expected = manifest.get('expected_row_counts')
+        if expected is not None and (
+            not isinstance(expected, dict) or set(expected) != set(keys)
+            or any(type(expected[k]) is not int or expected[k] < 0 for k in keys)
+            or expected != counts
+        ):
+            raise ValueError('Observed partition row counts do not match manifest')
+        canonical = json.dumps(manifest, sort_keys=True, separators=(',', ':'), allow_nan=False)
+        return DatasetSplit(
+            X_train=X[masks['train']], y_train=y[masks['train']],
+            X_val=X[masks['validation']] if counts['validation'] else None,
+            y_val=y[masks['validation']] if counts['validation'] else None,
+            X_test=X[masks['test']] if counts['test'] else None,
+            y_test=y[masks['test']] if counts['test'] else None,
+            feature_names=list(self.feature_names), split_strategy='explicit_manifest',
+            train_scenario_ids=list(partitions['train']),
+            val_scenario_ids=list(partitions['validation']),
+            test_scenario_ids=list(partitions['test']),
+            provenance={
+                'source': 'explicit_manifest', 'partition_origin': 'EXPLICIT_MANIFEST',
+                'split_method_version': 'explicit-scenario-manifest-v1',
+                'manifest_sha256': hashlib.sha256(canonical.encode()).hexdigest(),
+                'dataset_identity': deepcopy(dataset_identity), 'row_counts': counts,
+                'train_scenarios': list(partitions['train']),
+                'val_scenarios': list(partitions['validation']),
+                'test_scenarios': list(partitions['test']),
+                'random_state': None,
+            },
+        )
+
     def temporal_split(self, X: np.ndarray, y: np.ndarray, timestamps: List[float], 
                        train_ratio: float = 0.7, val_ratio: float = 0.15) -> DatasetSplit:
         """Splits by timestamp order."""

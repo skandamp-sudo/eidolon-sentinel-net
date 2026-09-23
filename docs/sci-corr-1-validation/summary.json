@@ -1,0 +1,45 @@
+{
+  "phase": "SCI-CORR-1",
+  "backend": 896,
+  "backend_warnings": 41,
+  "frontend": 90,
+  "combined": 986,
+  "focused": 61,
+  "new_tests": 30,
+  "typescript": "PASS",
+  "build": "PASS",
+  "regression_gates": {
+    "core_live_replay": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_live_offline_parity.py"
+    },
+    "F3": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_stream_intelligence_parity.py"
+    },
+    "F4": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_dns_parity.py"
+    },
+    "F5": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_encrypted_parity.py"
+    },
+    "frozen_runtime_and_deployment_bundles": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_sensor_runtime_model.py"
+    },
+    "auth": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_api_auth.py"
+    },
+    "event_contract": {
+      "status": "PASS in full backend suite",
+      "file": "tests/unit/test_api_events.py"
+    }
+  },
+  "legacy_bundle_mutated": false,
+  "final_science_executed": false,
+  "scientific_candidate_trained": false,
+  "baseline_id": "sci-corr-1-29bc756272dbd981a6768a94edfaa69c75de12f0a31c2158498dbd901c4d37f2"
+}

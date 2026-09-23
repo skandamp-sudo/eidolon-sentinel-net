@@ -1,0 +1,16 @@
+docs/sci-corr-1-report.md
+docs/sci-corr-1-restart-contract.md
+docs/sci-corr-1-scientific-integrity.json
+docs/sci-corr-1-validation/audit.txt
+docs/sci-corr-1-validation/backend.txt
+docs/sci-corr-1-validation/build.txt
+docs/sci-corr-1-validation/changed-files.txt
+docs/sci-corr-1-validation/focused.txt
+docs/sci-corr-1-validation/frontend.txt
+docs/sci-corr-1-validation/reproduction.json
+docs/sci-corr-1-validation/summary.json
+docs/sci-corr-1-validation/typescript.txt
+experiments/manifests/final-science-partition.json
+src/sentinel_net/detection/dataset.py
+src/sentinel_net/detection/preprocessing.py
+tests/unit/test_scientific_corrections.py
