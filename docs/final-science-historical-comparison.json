@@ -1,7 +1,212 @@
 {
-  "status": "NOT_PERFORMED_NO_CURRENT_MEASUREMENTS",
-  "reason": "Brief requires comparing only after current measurements exist; evaluation stopped before training.",
-  "comparisons": [],
-  "historical_reports": "unchanged",
-  "prior_stop_comparison": "docs/final-science-restart-audit/previous-stop/final-science-historical-comparison.json"
+  "comparisons": [
+    {
+      "model": "XGBoost",
+      "metric": "accuracy",
+      "historical": 0.75943992227575,
+      "current": 0.75943992227575,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "precision_macro",
+      "historical": 0.36794035121006263,
+      "current": 0.36794035121006263,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "recall_macro",
+      "historical": 0.2531505793886527,
+      "current": 0.2531505793886527,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "f1_macro",
+      "historical": 0.2675121989116243,
+      "current": 0.2675121989116243,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "precision_weighted",
+      "historical": 0.8910849728410409,
+      "current": 0.8910849728410409,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "recall_weighted",
+      "historical": 0.75943992227575,
+      "current": 0.75943992227575,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "XGBoost",
+      "metric": "f1_weighted",
+      "historical": 0.7537496524624285,
+      "current": 0.7537496524624285,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "accuracy",
+      "historical": 0.7277612496287459,
+      "current": 0.7277612496287459,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "precision_macro",
+      "historical": 0.36753294106044043,
+      "current": 0.36753294106044043,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "recall_macro",
+      "historical": 0.2334397976520361,
+      "current": 0.2334397976520361,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "f1_macro",
+      "historical": 0.2408754302469084,
+      "current": 0.2408754302469084,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "precision_weighted",
+      "historical": 0.8903921841375405,
+      "current": 0.8903921841375405,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "recall_weighted",
+      "historical": 0.7277612496287459,
+      "current": 0.7277612496287459,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "RandomForest",
+      "metric": "f1_weighted",
+      "historical": 0.7108474921240995,
+      "current": 0.7108474921240995,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "accuracy",
+      "historical": 0.8773980498462127,
+      "current": 0.8773980498462127,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "precision_macro",
+      "historical": 0.3672030733127246,
+      "current": 0.3672030733127246,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "recall_macro",
+      "historical": 0.327363405266113,
+      "current": 0.327363405266113,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "f1_macro",
+      "historical": 0.33887073449753924,
+      "current": 0.33887073449753924,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "precision_weighted",
+      "historical": 0.8905496070888078,
+      "current": 0.8905496070888078,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "recall_weighted",
+      "historical": 0.8773980498462127,
+      "current": 0.8773980498462127,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "LogisticRegression",
+      "metric": "f1_weighted",
+      "historical": 0.868414496753214,
+      "current": 0.868414496753214,
+      "delta": 0.0,
+      "comparable": "NOT DIRECTLY COMPARABLE",
+      "reason": "Same recorded scenario assignment and recipe; historical candidate/data/environment identity not equivalently bound. Current explicit partition and corrected reporting baseline are fully identified; no improvement/regression inference."
+    },
+    {
+      "model": "IsolationForest c2",
+      "metric": "ROC-AUC",
+      "historical": 0.7169831857254881,
+      "current": 0.5986148101165324,
+      "delta": -0.11836837560895574,
+      "comparable": "NO",
+      "reason": "Different evaluation cohort/protocol; current experiment preserves mandatory primary scenario partition."
+    },
+    {
+      "model": "IsolationForest ddos",
+      "metric": "ROC-AUC",
+      "historical": 0.8872344583764029,
+      "current": 0.8216785333824871,
+      "delta": -0.06555592499391583,
+      "comparable": "NO",
+      "reason": "Different evaluation cohort/protocol; current experiment preserves mandatory primary scenario partition."
+    }
+  ],
+  "historical_reports_modified": false
 }

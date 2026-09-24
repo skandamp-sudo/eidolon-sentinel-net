@@ -1,5 +1,127 @@
 {
-  "status": "NOT_RUN_SCIENTIFIC_STOP",
-  "reason": "SC-3: ClassificationReport binary per-class FPR/FNR repeats positive-class rates for both classes; mandated scientific stop before training.",
-  "results": null
+  "claim_category": "LIMITED / EXPERIMENTAL",
+  "fixed_partition_only": true,
+  "protocol": "Isolation Forest held-out-family ranking. C2 already excluded from all training/preprocessing. DDoS supplementary preprocessor excludes all ddos training rows, then benign-only IsolationForest(n_estimators=100, random_state=42). No additional supervised novelty model. Other families lack support in fixed TEST and are not evaluated.",
+  "results": {
+    "c2": {
+      "label": "HELD-OUT ATTACK-FAMILY EVALUATION",
+      "model": "IsolationForest only",
+      "status": "LIMITED / EXPERIMENTAL",
+      "train_family_support_excluded": 0,
+      "training_benign_support": 1555790,
+      "test_family_support": 1437,
+      "test_benign_support": 267851,
+      "ranking": {
+        "precision_at_threshold": 0.001231423693711343,
+        "recall_at_threshold": 0.030619345859429367,
+        "f1_at_threshold": 0.0023676280671545416,
+        "fpr_at_threshold": 0.13323452217837528,
+        "threshold": 0.5,
+        "roc_auc": 0.5986148101165324,
+        "pr_auc": 0.0061283200419023015
+      },
+      "average_precision": 0.006698170204574464,
+      "validation_benign_support": 153677,
+      "operating_points": {
+        "0.01": {
+          "threshold": 0.6315127017588132,
+          "validation_achieved_fpr": 0.010008003800178297,
+          "test": {
+            "precision_at_threshold": 0.0,
+            "recall_at_threshold": 0.0,
+            "f1_at_threshold": 0.0,
+            "fpr_at_threshold": 0.04098547326685359,
+            "threshold": 0.6315127017588132,
+            "roc_auc": 0.5986148101165324,
+            "pr_auc": 0.0061283200419023015
+          }
+        },
+        "0.05": {
+          "threshold": 0.5415001254833137,
+          "validation_achieved_fpr": 0.050000976073192475,
+          "test": {
+            "precision_at_threshold": 0.001889575076043875,
+            "recall_at_threshold": 0.028531663187195546,
+            "f1_at_threshold": 0.003544413226712773,
+            "fpr_at_threshold": 0.08085465426673785,
+            "threshold": 0.5415001254833137,
+            "roc_auc": 0.5986148101165324,
+            "pr_auc": 0.0061283200419023015
+          }
+        }
+      }
+    },
+    "ddos": {
+      "label": "HELD-OUT ATTACK-FAMILY EVALUATION",
+      "model": "IsolationForest only",
+      "status": "LIMITED / EXPERIMENTAL",
+      "train_family_support_excluded": 193756,
+      "training_benign_support": 1555790,
+      "test_family_support": 128014,
+      "test_benign_support": 267851,
+      "ranking": {
+        "precision_at_threshold": 0.3948386878707475,
+        "recall_at_threshold": 0.18250347618229257,
+        "f1_at_threshold": 0.2496247028340946,
+        "fpr_at_threshold": 0.13368626587169732,
+        "threshold": 0.5,
+        "roc_auc": 0.8216785333824871,
+        "pr_auc": 0.5437375971936115
+      },
+      "average_precision": 0.5443527411094973,
+      "validation_benign_support": 153677,
+      "operating_points": {
+        "0.01": {
+          "threshold": 0.631220711061992,
+          "validation_achieved_fpr": 0.010021018109411297,
+          "test": {
+            "precision_at_threshold": 0.4882377602832254,
+            "recall_at_threshold": 0.08187385754683081,
+            "f1_at_threshold": 0.14023186893317546,
+            "fpr_at_threshold": 0.04101534061847818,
+            "threshold": 0.631220711061992,
+            "roc_auc": 0.8216785333824871,
+            "pr_auc": 0.5437375971936115
+          }
+        },
+        "0.05": {
+          "threshold": 0.5420919937360087,
+          "validation_achieved_fpr": 0.050000976073192475,
+          "test": {
+            "precision_at_threshold": 0.5006462035541196,
+            "recall_at_threshold": 0.1694580280281844,
+            "f1_at_threshold": 0.2532099168923336,
+            "fpr_at_threshold": 0.08077998588767636,
+            "threshold": 0.5420919937360087,
+            "roc_auc": 0.8216785333824871,
+            "pr_auc": 0.5437375971936115
+          }
+        }
+      }
+    },
+    "brute_force": {
+      "status": "NOT EVALUATED \u2014 INSUFFICIENT SUPPORT",
+      "reason": "No samples of this family in the mandatory fixed TEST partition; scenarios not moved",
+      "train_support": 9150,
+      "test_support": 0
+    },
+    "reconnaissance": {
+      "status": "NOT EVALUATED \u2014 INSUFFICIENT SUPPORT",
+      "reason": "No samples of this family in the mandatory fixed TEST partition; scenarios not moved",
+      "train_support": 1956,
+      "test_support": 0
+    },
+    "exfiltration": {
+      "status": "NOT EVALUATED \u2014 INSUFFICIENT SUPPORT",
+      "reason": "No samples of this family in the mandatory fixed TEST partition; scenarios not moved",
+      "train_support": 36,
+      "test_support": 0
+    },
+    "other": {
+      "status": "NOT EVALUATED \u2014 INSUFFICIENT SUPPORT",
+      "reason": "No samples of this family in the mandatory fixed TEST partition; scenarios not moved",
+      "train_support": 0,
+      "test_support": 0
+    }
+  }
 }

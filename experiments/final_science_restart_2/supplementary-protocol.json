@@ -1,0 +1,9 @@
+{
+  "locked_before_test_evaluation": true,
+  "partition": "original explicit manifest only; no scenario reassignment",
+  "novelty": "Isolation Forest held-out-family ranking. C2 already excluded from all training/preprocessing. DDoS supplementary preprocessor excludes all ddos training rows, then benign-only IsolationForest(n_estimators=100, random_state=42). No additional supervised novelty model. Other families lack support in fixed TEST and are not evaluated.",
+  "thresholds": "1% and 5% upper validation-benign score quantiles, method=higher; report achieved FPR and tie effects; exploratory",
+  "robustness": "First 10000 TEST rows in recorded adapter order, seed42. Existing five perturbations; preserve original NaNs so unavailable columns are never fabricated. Report sample support and limited prefix scope.",
+  "one_way": "Full TEST, established reverse-direction/ratio zeroing on available values only; preserve original NaNs. Simulated telemetry loss, not physical reconstruction.",
+  "serialization": "Estimator parameter missing=NaN in XGBoost is encoded as JSON null by run.py; actual resolved value is numpy.nan. Other null parameters represent estimator defaults unless noted. No change to estimator behavior."
+}

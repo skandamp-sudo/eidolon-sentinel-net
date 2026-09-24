@@ -1,0 +1,30 @@
+{
+  "scope": "Existing persisted F3/F4/F5 test-output records in isolated local QA database; no new PCAP/detection/model",
+  "viewports": [
+    {
+      "width": 1440,
+      "investigation_scrollWidth": 1440,
+      "assurance_scrollWidth": 1440
+    },
+    {
+      "width": 820,
+      "investigation_scrollWidth": 820,
+      "assurance_scrollWidth": 820
+    },
+    {
+      "width": 390,
+      "investigation_scrollWidth": 390,
+      "assurance_scrollWidth": 390
+    }
+  ],
+  "keyboard_disclosure": "PASS via Enter; visible focus ring",
+  "keyboard_export": "PASS via Enter; browser SHA-256 verified; focus restored to Download evidence JSON button",
+  "export_digest_observed": "5c262a965222c0f01d04aedc9bd4db3d028bca568f2d2f1f4d873f2f7994b65a",
+  "long_hash_wrap": "PASS at 390px",
+  "timeline_items": 17,
+  "readiness_missing_model": "UNAVAILABLE",
+  "physical_diode": "NOT VERIFIED",
+  "native_capture": "NOT VERIFIED",
+  "c2_recall_display": "0.000%",
+  "notes": "Visual screenshots inspected in browser tool; no physical device, screen-reader or external penetration-test claim"
+}

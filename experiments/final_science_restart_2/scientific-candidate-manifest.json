@@ -1,0 +1,65 @@
+{
+  "name": "final-science-fixed-split-seed42",
+  "version": "2026.09.23-seed42",
+  "status": "CANDIDATE",
+  "approved": false,
+  "published": false,
+  "source_revision": "dfb6ec14f19a5a8add47ee89dcc66291febb676f",
+  "scientific_baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+  "dataset": {
+    "dataset_id": "CICIDS2017",
+    "files": {
+      "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+      "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+      "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+      "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+      "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+      "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+      "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+      "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+    }
+  },
+  "split_manifest_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5",
+  "training_configuration_sha256": "fdc9f8bbf6cc6991bbac0fa40e59801ed1486df2e1f642927a832b21157fcd92",
+  "locked_recipe_sha256": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+  "adapter_file_order": {
+    "scope": "Observed local glob order during the run; current adapter consumes this order. No dataset files modified. Preserve this order when reconstructing the run; split membership is independently locked by manifest.",
+    "files": [
+      "DDoS-Friday-no-metadata.parquet",
+      "Bruteforce-Tuesday-no-metadata.parquet",
+      "Botnet-Friday-no-metadata.parquet",
+      "DoS-Wednesday-no-metadata.parquet",
+      "Benign-Monday-no-metadata.parquet",
+      "Infiltration-Thursday-no-metadata.parquet",
+      "Portscan-Friday-no-metadata.parquet",
+      "WebAttacks-Thursday-no-metadata.parquet"
+    ]
+  },
+  "preprocessing_sha256": {
+    "tree": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+    "linear": "c4be777fbaeeeca1e1a70c9957617dcba5ea396a93d6cd60d9549763574cedeb"
+  },
+  "schema_version": "2.0.0",
+  "schema_file_sha256": "cac2363f78d008f3c0106fafe23d017314b5dc18d226fe639705f03291e2c6d1",
+  "component_sha256": {
+    "RandomForest.joblib": "173f4c9477de7beeea850a1d010cb3b0057093f7766917981c87b111df73e9ee",
+    "novelty-ddos-iforest.joblib": "5ae1a4534a603ffea1f1cdc3d893e0fd46a9a18140c5e503d01d18d800be085e",
+    "LogisticRegression.joblib": "1c5c10344aa8057b50061a8e53a1e89977688b448f343179ab28a52b23d690e6",
+    "IsolationForest.joblib": "838fba977336414b1048711e26722ed9b53708408d57a49deea6eccd1275805c",
+    "XGBoost.joblib": "15b0bfee4dd8889840fa48c30ba0705d9f37a6eda7b644c90be5ffc44e3bd902",
+    "tree-preprocessor.joblib": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+    "novelty-ddos-preprocessor.joblib": "7e61b3b5f57427cd24659cb6e8e598f3b839f2eebd89cff8eb64356c5ab2b1b3",
+    "linear-preprocessor.joblib": "c4be777fbaeeeca1e1a70c9957617dcba5ea396a93d6cd60d9549763574cedeb",
+    "candidate/anomaly.joblib": "838fba977336414b1048711e26722ed9b53708408d57a49deea6eccd1275805c",
+    "candidate/preprocessor.joblib": "cb95ef38bdeaeb78c63eb3714d7a2ef1cc2346f9bede785715ab72deeb52a166",
+    "candidate/thresholds.json": "116fca21066d7512b1015e85327550d5cd9f4c40a7a429a86a5dd72ed32299c8",
+    "candidate/classifier.joblib": "9afa1542c0ad6b8287d8f93064677f6b13207dc1115abd3f1171f5a922ae58f6",
+    "candidate/manifest.json": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+    "candidate/checksums.json": "57bf71d4da2d865d5d0627c7cf2abc7bdc5033277520d617fd1f0faedf07dcc7"
+  },
+  "deployment_component_manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+  "primary_harness_sha256": "3a3dad65351ae86be3723fee8b6f72c7abe1935e7eec484964ed7be524d07d9f",
+  "resume_harness_sha256": "a691f3b26bbaea76ede4c5804c5d1c7b5c9b67de3c0117aff34794dbcc0bafaa",
+  "supplementary_protocol_sha256": "e98b7cdc7bfd3ee0b2081fe340d0a569441ba35e73e8d4401dada45f8c634ecd",
+  "supplementary_harness_sha256": "bf77720c94e9906a9a0750416a11e2c2551dd77c4accaa9d0100597529d10c05"
+}

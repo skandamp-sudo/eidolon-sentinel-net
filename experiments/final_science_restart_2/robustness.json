@@ -1,0 +1,55 @@
+{
+  "scope": "first 10000 TEST rows in adapter order; limited prefix, not representative full-test robustness",
+  "support": {
+    "benign": 10000
+  },
+  "seed": 42,
+  "NaNs_preserved": true,
+  "experiments": {
+    "timing_jitter": {
+      "perturbation_type": "timing_jitter",
+      "n_samples": 10000,
+      "classification_changed_count": 57,
+      "classification_changed_pct": 0.5700000000000001,
+      "mean_score_change": 0.004286566283553839,
+      "max_score_change": 0.5275459289550781,
+      "n_details_recorded": 50
+    },
+    "packet_size_noise": {
+      "perturbation_type": "packet_size_noise",
+      "n_samples": 10000,
+      "classification_changed_count": 0,
+      "classification_changed_pct": 0.0,
+      "mean_score_change": 0.0002990911016240716,
+      "max_score_change": 0.05886101722717285,
+      "n_details_recorded": 0
+    },
+    "duration_perturbation": {
+      "perturbation_type": "duration_perturbation",
+      "n_samples": 10000,
+      "classification_changed_count": 0,
+      "classification_changed_pct": 0.0,
+      "mean_score_change": 3.335523069836199e-05,
+      "max_score_change": 0.06218743324279785,
+      "n_details_recorded": 0
+    },
+    "directional_imbalance": {
+      "perturbation_type": "directional_imbalance",
+      "n_samples": 10000,
+      "classification_changed_count": 0,
+      "classification_changed_pct": 0.0,
+      "mean_score_change": 0.0020769555121660233,
+      "max_score_change": 0.44310641288757324,
+      "n_details_recorded": 0
+    },
+    "metadata_dropout": {
+      "perturbation_type": "metadata_dropout",
+      "n_samples": 10000,
+      "classification_changed_count": 54,
+      "classification_changed_pct": 0.54,
+      "mean_score_change": 0.005680579226464033,
+      "max_score_change": 0.4987282156944275,
+      "n_details_recorded": 50
+    }
+  }
+}

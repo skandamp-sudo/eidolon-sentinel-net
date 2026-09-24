@@ -1,0 +1,17 @@
+{
+  "phase": "FINAL-SCIENCE-RESTART",
+  "status": "NOT_RUN_SCIENTIFIC_STOP",
+  "reason": "SC-3: ClassificationReport binary per-class FPR/FNR repeats positive-class rates for both classes; mandated scientific stop before training.",
+  "candidate": null,
+  "class_distributions": null,
+  "preprocessing_real_data_precheck": null,
+  "model_metrics": null,
+  "regression_gates": "NOT_RERUN_AFTER_MANDATORY_STOP",
+  "previous_SCI_CORR_1_engineering_baseline": {
+    "backend": 896,
+    "warnings": 41,
+    "frontend": 90,
+    "typescript": "PASS",
+    "build": "PASS"
+  }
+}

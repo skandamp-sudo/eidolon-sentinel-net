@@ -1,5 +1,253 @@
 {
-  "status": "NOT_RUN_SCIENTIFIC_STOP",
-  "reason": "SC-3: ClassificationReport binary per-class FPR/FNR repeats positive-class rates for both classes; mandated scientific stop before training.",
-  "results": null
+  "claim_category": "SIMULATED",
+  "unidirectional": {
+    "label": "SIMULATED UNIDIRECTIONAL TELEMETRY LOSS",
+    "rows": 397302,
+    "features_zeroed_where_available": [
+      "reverse_packets",
+      "reverse_bytes",
+      "fwd_rev_packet_ratio",
+      "fwd_rev_byte_ratio",
+      "rev_iat_mean",
+      "rev_iat_std",
+      "rev_iat_min",
+      "rev_iat_max",
+      "reverse_payload_bytes",
+      "payload_ratio"
+    ],
+    "unavailable_NaNs_preserved": true,
+    "full": {
+      "accuracy": 0.75943992227575,
+      "precision_macro": 0.36794035121006263,
+      "recall_macro": 0.2531505793886527,
+      "f1_macro": 0.2675121989116243,
+      "precision_weighted": 0.8910849728410409,
+      "recall_weighted": 0.75943992227575,
+      "f1_weighted": 0.7537496524624285,
+      "confusion_matrix": [
+        [
+          267575,
+          1,
+          0,
+          271,
+          4
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1437,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          46683,
+          0,
+          0,
+          34152,
+          47179
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.8475743993411362,
+          "recall": 0.9989695763689513,
+          "f1-score": 0.9170656640607595,
+          "support": 267851.0,
+          "fpr": 0.37172366378011756,
+          "fnr": 0.0010304236310486054
+        },
+        "brute_force": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 2.5169770099319913e-06,
+          "fnr": 0.0
+        },
+        "c2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1437.0,
+          "fpr": 0.0,
+          "fnr": 1.0
+        },
+        "ddos": {
+          "precision": 0.992127356709177,
+          "recall": 0.2667833205743122,
+          "f1-score": 0.42049533049736204,
+          "support": 128014.0,
+          "fpr": 0.0010063575057187844,
+          "fnr": 0.7332166794256878
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.11875852625962115,
+          "fnr": 0.0
+        }
+      },
+      "class_names": [
+        "benign",
+        "brute_force",
+        "c2",
+        "ddos",
+        "reconnaissance"
+      ],
+      "roc_auc_ovr": null,
+      "pr_auc_macro": null
+    },
+    "one_way": {
+      "accuracy": 0.6732837992257779,
+      "precision_macro": 0.18717114208457758,
+      "recall_macro": 0.24969508133920407,
+      "f1_macro": 0.2034526368814348,
+      "precision_weighted": 0.4827463687924671,
+      "recall_weighted": 0.6732837992257779,
+      "f1_weighted": 0.548513526842423,
+      "confusion_matrix": [
+        [
+          267472,
+          0,
+          375,
+          4
+        ],
+        [
+          1437,
+          0,
+          0,
+          0
+        ],
+        [
+          120887,
+          0,
+          25,
+          7102
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "per_class": {
+        "benign": {
+          "precision": 0.6861845683383103,
+          "recall": 0.9985850342167847,
+          "f1-score": 0.8134211818802488,
+          "support": 267851.0,
+          "fpr": 0.9449444191238383,
+          "fnr": 0.0014149657832152952
+        },
+        "c2": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 1437.0,
+          "fpr": 0.0,
+          "fnr": 1.0
+        },
+        "ddos": {
+          "precision": 0.0625,
+          "recall": 0.00019529114003155905,
+          "f1-score": 0.00038936564549036707,
+          "support": 128014.0,
+          "fpr": 0.0013925611241496093,
+          "fnr": 0.9998047088599684
+        },
+        "reconnaissance": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 0.0,
+          "fpr": 0.01788563863257673,
+          "fnr": 0.0
+        }
+      },
+      "class_names": [
+        "benign",
+        "c2",
+        "ddos",
+        "reconnaissance"
+      ],
+      "roc_auc_ovr": null,
+      "pr_auc_macro": null
+    },
+    "macro_f1_delta": -0.0640595620301895,
+    "accuracy_delta": -0.08615612304997211,
+    "prediction_change_rate": 0.18760036445827105
+  },
+  "perturbations": {
+    "scope": "first 10000 TEST rows in adapter order; limited prefix, not representative full-test robustness",
+    "support": {
+      "benign": 10000
+    },
+    "seed": 42,
+    "NaNs_preserved": true,
+    "experiments": {
+      "timing_jitter": {
+        "perturbation_type": "timing_jitter",
+        "n_samples": 10000,
+        "classification_changed_count": 57,
+        "classification_changed_pct": 0.5700000000000001,
+        "mean_score_change": 0.004286566283553839,
+        "max_score_change": 0.5275459289550781,
+        "n_details_recorded": 50
+      },
+      "packet_size_noise": {
+        "perturbation_type": "packet_size_noise",
+        "n_samples": 10000,
+        "classification_changed_count": 0,
+        "classification_changed_pct": 0.0,
+        "mean_score_change": 0.0002990911016240716,
+        "max_score_change": 0.05886101722717285,
+        "n_details_recorded": 0
+      },
+      "duration_perturbation": {
+        "perturbation_type": "duration_perturbation",
+        "n_samples": 10000,
+        "classification_changed_count": 0,
+        "classification_changed_pct": 0.0,
+        "mean_score_change": 3.335523069836199e-05,
+        "max_score_change": 0.06218743324279785,
+        "n_details_recorded": 0
+      },
+      "directional_imbalance": {
+        "perturbation_type": "directional_imbalance",
+        "n_samples": 10000,
+        "classification_changed_count": 0,
+        "classification_changed_pct": 0.0,
+        "mean_score_change": 0.0020769555121660233,
+        "max_score_change": 0.44310641288757324,
+        "n_details_recorded": 0
+      },
+      "metadata_dropout": {
+        "perturbation_type": "metadata_dropout",
+        "n_samples": 10000,
+        "classification_changed_count": 54,
+        "classification_changed_pct": 0.54,
+        "mean_score_change": 0.005680579226464033,
+        "max_score_change": 0.4987282156944275,
+        "n_details_recorded": 50
+      }
+    }
+  },
+  "limitations": "Available feature perturbations preserve original NaNs; one-way zeroing is not physical flow reconstruction; prefix robustness is limited and not representative population accuracy."
 }

@@ -1,0 +1,15 @@
+{
+  "path": "experiments/final_science_restart_2/candidate",
+  "manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+  "split_manifest_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5",
+  "training_config_sha256": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+  "status": "CANDIDATE NOT APPROVED NOT PUBLISHED",
+  "component_sha256": {
+    "anomaly.joblib": "838fba977336414b1048711e26722ed9b53708408d57a49deea6eccd1275805c",
+    "preprocessor.joblib": "cb95ef38bdeaeb78c63eb3714d7a2ef1cc2346f9bede785715ab72deeb52a166",
+    "thresholds.json": "116fca21066d7512b1015e85327550d5cd9f4c40a7a429a86a5dd72ed32299c8",
+    "classifier.joblib": "9afa1542c0ad6b8287d8f93064677f6b13207dc1115abd3f1171f5a922ae58f6",
+    "manifest.json": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+    "checksums.json": "57bf71d4da2d865d5d0627c7cf2abc7bdc5033277520d617fd1f0faedf07dcc7"
+  }
+}

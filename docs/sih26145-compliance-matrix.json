@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0.0",
+  "requirement_source": "User-provided OFFICIAL SIH26145 REQUIREMENTS TO ALIGN AGAINST, initial hardening brief; F6 adds analyst-operations deliverables. No independent certification implied.",
+  "status_semantics": "COMPLETE describes implemented/tested software scope, not detection accuracy or production readiness. PARTIAL and NOT VERIFIED retain explicit gaps.",
+  "requirements": [
+    {
+      "id": "D1",
+      "requirement": "Volumetric / protocol DDoS \u2014 SYN floods",
+      "implementation": "SYN_RATE context",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py::test_live_replay_behavioral_evidence_matches[syn-SYN_RATE]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Rate evidence is not proof of attack."
+    },
+    {
+      "id": "D2",
+      "requirement": "UDP reflection/amplification",
+      "implementation": "UDP_RATE context",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py::test_live_replay_behavioral_evidence_matches[udp-UDP_RATE]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Reflection and amplification attribution not established."
+    },
+    {
+      "id": "D3",
+      "requirement": "Spoofed-source floods",
+      "implementation": "Source distribution observations",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence.py::test_exact_packet_weighted_entropy_diversity_and_no_spoofing_claim",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "No spoofing ground truth or attribution."
+    },
+    {
+      "id": "D4",
+      "requirement": "Rate anomalies",
+      "implementation": "Bounded streaming rate thresholds",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Operational thresholds; population precision/recall unavailable."
+    },
+    {
+      "id": "D5",
+      "requirement": "Source-IP entropy",
+      "implementation": "Packet-weighted source entropy",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py [entropy]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Membership loss suppresses entropy; no attacker attribution."
+    },
+    {
+      "id": "C1",
+      "requirement": "C2 periodic communication",
+      "implementation": "Inter-session periodicity",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py [periodic]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Legitimate scheduled traffic can be periodic; XGBoost C2 recall is zero."
+    },
+    {
+      "id": "C2",
+      "requirement": "Inter-arrival regularity",
+      "implementation": "Bounded timing statistics",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence.py::test_periodicity_controls",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "No population accuracy estimate."
+    },
+    {
+      "id": "C3",
+      "requirement": "Repeated communication to small destination set",
+      "implementation": "Destination concentration",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence.py::test_concentration_has_distribution_and_session_counts",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Concentration alone does not prove C2."
+    },
+    {
+      "id": "N1",
+      "requirement": "DNS query entropy",
+      "implementation": "Lexical entropy",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_dns_parity.py [dga]",
+      "demo_path": "Detection Detail \u2192 DNS observation",
+      "status": "PARTIAL",
+      "limitation": "Heuristic only; encrypted DNS unavailable."
+    },
+    {
+      "id": "N2",
+      "requirement": "DNS query length",
+      "implementation": "Name and label length",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_dns_parity.py [dga]",
+      "demo_path": "Detection Detail \u2192 DNS observation",
+      "status": "PARTIAL",
+      "limitation": "Long legitimate names occur."
+    },
+    {
+      "id": "N3",
+      "requirement": "n-gram characteristics where justified",
+      "implementation": "Not implemented; no supported n-gram model",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "Source review",
+      "demo_path": "Detection Detail \u2192 DNS observation",
+      "status": "NOT VERIFIED",
+      "limitation": "No n-gram accuracy or support claim."
+    },
+    {
+      "id": "N4",
+      "requirement": "Unusual DNS record types / distributions",
+      "implementation": "QTYPE / TXT ratios",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_dns_parity.py [txt]",
+      "demo_path": "Detection Detail \u2192 DNS observation",
+      "status": "PARTIAL",
+      "limitation": "Record-type context only; no raw RDATA export."
+    },
+    {
+      "id": "N5",
+      "requirement": "DNS tunnelling",
+      "implementation": "Combined bounded lexical/rate context",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_dns_parity.py [tunnel]",
+      "demo_path": "Detection Detail \u2192 DNS observation",
+      "status": "PARTIAL",
+      "limitation": "Tunnelling-like evidence; no confirmation or encrypted DNS visibility."
+    },
+    {
+      "id": "T1",
+      "requirement": "Malware indicators in encrypted sessions: TLS/QUIC metadata only",
+      "implementation": "Passive TLS hello / QUIC header metadata",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_encrypted_parity.py",
+      "demo_path": "Detection Detail \u2192 Encrypted session",
+      "status": "PARTIAL",
+      "limitation": "Metadata does not establish malware; no QUIC Initial decryption."
+    },
+    {
+      "id": "T2",
+      "requirement": "JA3 / JA3S fingerprints",
+      "implementation": "Deterministic metadata identifiers",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_encrypted_parity.py [both]",
+      "demo_path": "Detection Detail \u2192 Encrypted session",
+      "status": "PARTIAL",
+      "limitation": "No reputation lookup or malware verdict."
+    },
+    {
+      "id": "T3",
+      "requirement": "JA4-style fingerprinting where appropriate",
+      "implementation": "NOT IMPLEMENTED",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "docs/sih-f5-report.md",
+      "demo_path": "Detection Detail \u2192 Encrypted session",
+      "status": "NOT VERIFIED",
+      "limitation": "No verified local exact specification and vectors established."
+    },
+    {
+      "id": "T4",
+      "requirement": "Encrypted-session packet-size / timing behavior",
+      "implementation": "Bounded transport sample statistics",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_encrypted_parity.py",
+      "demo_path": "Detection Detail \u2192 Encrypted session",
+      "status": "PARTIAL",
+      "limitation": "No application plaintext or authenticated session reconstruction."
+    },
+    {
+      "id": "R1",
+      "requirement": "Destination-port fan-out",
+      "implementation": "PORT_FANOUT evidence",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py [ports]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Bounded window; low-rate scans may be missed."
+    },
+    {
+      "id": "R2",
+      "requirement": "Destination-host fan-out",
+      "implementation": "HOST_FANOUT evidence",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py [hosts]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "No primary-test reconnaissance support."
+    },
+    {
+      "id": "R3",
+      "requirement": "Scanning behavior",
+      "implementation": "Fan-out context",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Not a confirmed scan; discovery/monitoring are alternatives."
+    },
+    {
+      "id": "E1",
+      "requirement": "Asymmetric traffic volumes",
+      "implementation": "Directional asymmetry",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py [asymmetry]",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Large legitimate transfers can match."
+    },
+    {
+      "id": "E2",
+      "requirement": "Abnormal outbound/inbound ratios",
+      "implementation": "Observed directional ratios",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence.py::test_directional_asymmetry_and_legitimate_large_transfer",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "No verified business-network outbound direction or exfiltration attribution."
+    },
+    {
+      "id": "E3",
+      "requirement": "Unusual transfer behavior",
+      "implementation": "Volume/asymmetry context",
+      "component": "src/sentinel_net/intelligence; src/sentinel_net/dns; src/sentinel_net/encrypted",
+      "verification": "tests/unit/test_stream_intelligence_parity.py",
+      "demo_path": "Detection Detail \u2192 Behavioral evidence",
+      "status": "PARTIAL",
+      "limitation": "Only 36 training exfiltration rows; zero primary-test support."
+    },
+    {
+      "id": "A1",
+      "requirement": "Strictly passive/read-only ingest",
+      "implementation": "Passive source abstraction",
+      "component": "src/sentinel_net/sensor/sources.py",
+      "verification": "tests/unit/test_passive_sources.py",
+      "demo_path": "Sensor",
+      "status": "COMPLETE",
+      "limitation": "Verified software property; native real-interface deployment validation remains NOT VERIFIED."
+    },
+    {
+      "id": "A2",
+      "requirement": "No return path / unidirectional operation",
+      "implementation": "Software passive receive and simulated telemetry loss",
+      "component": "src/sentinel_net/evaluation/unidirectional.py",
+      "verification": "docs/final-science-robustness.json",
+      "demo_path": "Sensor \u2192 Assurance",
+      "status": "PARTIAL",
+      "limitation": "Physical diode / physical no-return-path validation NOT VERIFIED."
+    },
+    {
+      "id": "A3",
+      "requirement": "No active probing",
+      "implementation": "No active probing operations",
+      "component": "src/sentinel_net/sensor/sources.py",
+      "verification": "Passive-source review and tests",
+      "demo_path": "Sensor \u2192 Assurance",
+      "status": "COMPLETE",
+      "limitation": "Scope is application software, not external host/network behavior."
+    },
+    {
+      "id": "A4",
+      "requirement": "No inline blocking",
+      "implementation": "Observation-only pipeline",
+      "component": "src/sentinel_net/sensor",
+      "verification": "Runtime regressions",
+      "demo_path": "Sensor \u2192 Assurance",
+      "status": "COMPLETE",
+      "limitation": "No remediation or firewall control is provided."
+    },
+    {
+      "id": "A5",
+      "requirement": "No payload decryption",
+      "implementation": "Metadata parsers only",
+      "component": "src/sentinel_net/intelligence",
+      "verification": "F4/F5 parser tests",
+      "demo_path": "Encrypted session",
+      "status": "COMPLETE",
+      "limitation": "TLS application data, QUIC Initial and encrypted DNS are unavailable."
+    },
+    {
+      "id": "A6",
+      "requirement": "Incremental / streaming processing",
+      "implementation": "Streaming context with bounded F3/F4/F5 state",
+      "component": "src/sentinel_net/sensor",
+      "verification": "F3/F4/F5 state-pressure tests",
+      "demo_path": "Sensor",
+      "status": "PARTIAL",
+      "limitation": "Canonical per-flow packet histories are not strictly bounded; scientific semantics preserved."
+    },
+    {
+      "id": "A7",
+      "requirement": "Bounded alert latency",
+      "implementation": "Measured operational timing and lifecycle observability",
+      "component": "src/sentinel_net/sensor/metrics.py",
+      "verification": "docs/sih-f5-performance-report.md",
+      "demo_path": "Sensor",
+      "status": "PARTIAL",
+      "limitation": "No hard end-to-end latency guarantee; canonical flow finalization can delay detections."
+    },
+    {
+      "id": "A8",
+      "requirement": "Defined / measured throughput",
+      "implementation": "Existing benchmark evidence",
+      "component": "tests/benchmark/test_performance.py",
+      "verification": "docs/sih-f5-benchmark-comparison.json",
+      "demo_path": "Sensor; benchmark report",
+      "status": "PARTIAL",
+      "limitation": "Hardware/workload-specific; no arbitrary Gbps claim or new F6 capture benchmark."
+    },
+    {
+      "id": "A9",
+      "requirement": "Standardized structured alerts",
+      "implementation": "Versioned event records over SQLite/REST/WebSocket",
+      "component": "src/sentinel_net/models/event_record.py",
+      "verification": "tests/integration/test_encrypted_delivery.py",
+      "demo_path": "Detections \u2192 Detection Detail",
+      "status": "COMPLETE",
+      "limitation": "Project schema; no claim of external SIEM format certification."
+    },
+    {
+      "id": "A10",
+      "requirement": "Live or replay visualization dashboard",
+      "implementation": "Distinct traffic-source labels",
+      "component": "frontend/src/pages",
+      "verification": "Frontend and replay regression suites",
+      "demo_path": "Overview / Detections / Sensor",
+      "status": "COMPLETE",
+      "limitation": "Replay labels do not establish physical live capture validation."
+    },
+    {
+      "id": "M1",
+      "requirement": "Confidence",
+      "implementation": "Uncalibrated classifier MODEL CONFIDENCE SCORE",
+      "component": "src/sentinel_net/models/event_record.py",
+      "verification": "Score/event regression tests",
+      "demo_path": "Detection Detail \u2192 Threat assessment",
+      "status": "COMPLETE",
+      "limitation": "Not true attack probability; separate anomaly and heuristic semantics."
+    },
+    {
+      "id": "M2",
+      "requirement": "Evidence",
+      "implementation": "Existing explanation/F3/F4/F5; additive correlation",
+      "component": "src/sentinel_net/operations/investigation.py",
+      "verification": "tests/unit/test_investigation.py",
+      "demo_path": "Detection Detail \u2192 Correlated evidence",
+      "status": "COMPLETE",
+      "limitation": "Multiple sources do not imply statistical independence or attribution."
+    },
+    {
+      "id": "M3",
+      "requirement": "Model documentation",
+      "implementation": "Frozen runtime and final scientific candidate identities",
+      "component": "docs/final-science-report.md",
+      "verification": "23-file integrity and candidate digests",
+      "demo_path": "Sensor \u2192 Scientific evaluation",
+      "status": "COMPLETE",
+      "limitation": "Scientific candidate remains unapproved and unpublished; runtime identity is separate."
+    },
+    {
+      "id": "M4",
+      "requirement": "Training/validation documentation",
+      "implementation": "Explicit fixed partition, seed42, TRAIN-only fits",
+      "component": "experiments/final_science_restart_2",
+      "verification": "docs/final-science-environment.json",
+      "demo_path": "Sensor \u2192 Scientific evaluation; scientific report",
+      "status": "COMPLETE",
+      "limitation": "Single seed; narrow validation; anomaly operating points exploratory."
+    },
+    {
+      "id": "O1",
+      "requirement": "Investigation timeline and correlation",
+      "implementation": "On-demand persisted snapshot",
+      "component": "src/sentinel_net/operations/investigation.py",
+      "verification": "tests/unit/test_investigation.py",
+      "demo_path": "Detection Detail \u2192 Investigation timeline",
+      "status": "COMPLETE",
+      "limitation": "Same exact flow/source only, \u00b1300s event timestamps; no synthesized missing observations."
+    },
+    {
+      "id": "O2",
+      "requirement": "Forensic export",
+      "implementation": "Bounded allowlisted canonical JSON",
+      "component": "src/sentinel_net/api/routes/operations.py",
+      "verification": "tests/integration/test_analyst_operations.py",
+      "demo_path": "Detection Detail \u2192 Download evidence JSON",
+      "status": "COMPLETE",
+      "limitation": "SHA-256 is not signature or legal chain of custody; authorized sensitive metadata remains visible."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "100 in-process projections + canonical serialization + SHA-256 of one existing F5 persisted fixture; first iteration includes lazy schema import, subsequent iterations reuse it; not network throughput/capture benchmark",
+  "platform": "macOS-26.7-x86_64-i386-64bit",
+  "iterations": 100,
+  "mean_ms": 2.668781580068753,
+  "p95_ms": 1.1465190000308212,
+  "export_bytes": 25879,
+  "sha256": "5c262a965222c0f01d04aedc9bd4db3d028bca568f2d2f1f4d873f2f7994b65a"
+}

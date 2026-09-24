@@ -17,7 +17,7 @@ function show(state: string, mode: string, reasons: string[] = []) {
 it('shows degraded live operation and safe reasons without calling it replay', async () => {
   show('degraded', 'live_passive_sensor', ['persistence_errors']);
   expect(await screen.findByText('LIVE PASSIVE SENSOR')).toBeInTheDocument();
-  expect(screen.getByRole('status')).toHaveTextContent('Processing continues');
+  expect(screen.getByRole('status', { name: 'Sensor operational status' })).toHaveTextContent('Processing continues');
   expect(screen.getByText('Operational reasons: persistence_errors')).toBeInTheDocument();
   expect(screen.queryByText('PCAP REPLAY — RECORDED TRAFFIC')).not.toBeInTheDocument();
 });

@@ -1,0 +1,12 @@
+{
+  "final-science-robustness.json": "4828ff759f1226b7789b4124236b58bd76863c44248974c5b2f039d93bc7795e",
+  "final-science-confusion-matrix.csv": "9fefdedd98d4faea74bd9bb0b43e5520d1b7a605b00bf135251101c4942a242c",
+  "final-science-claims.md": "ca5579beb6936b8ad78896d8c11b23a79b429bd2cc36a0c2692c86c6d76712b5",
+  "final-science-environment.json": "eddf98ee21d9748784869361961824f04544c51ab49b585197992cf2f5cf1143",
+  "final-science-report.md": "e3c07578f79a8f18a05911e164de7730da4c13588fe1cbc8230378ad4224d517",
+  "final-science-class-metrics.csv": "2a3790f20d9d43ecb8b529a2e3661c7c22739da1988dcc4a3e5329586421dfe8",
+  "final-science-metrics.json": "db63f0364bf7e4b3544e3ab2bfd5d9db2fc336a153ea9348dfa127bd7e7fdb15",
+  "final-science-novelty.json": "4828ff759f1226b7789b4124236b58bd76863c44248974c5b2f039d93bc7795e",
+  "final-science-historical-comparison.json": "0ba7c98ec24b2684f02830e481076c5a7ea62b701191a7939c483f22b9447fa0",
+  "final-science-split-manifest-used.json": "bcb35de4f6595bdf9d3543d7c69adde7a7230c6c2c284d51fe48ffd285348580"
+}

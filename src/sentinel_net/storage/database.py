@@ -484,3 +484,48 @@ class Database:
                 return True
         except Exception:
             return False
+
+    async def investigation_records(self, event_id: str) -> tuple[list[dict], bool]:
+        """One SQLite snapshot; byte-bounded rows before JSON decoding.
+
+        The anchor is first, then at most 31 neighbors. One extra row only
+        detects truncation. Retention remains authoritative; no cached refs.
+        """
+        from sentinel_net.operations.investigation import (
+            MAX_EVENTS, MAX_RECORD_BYTES, HORIZON_SEC, InvalidInvestigation,
+        )
+        if not self._conn:
+            raise RuntimeError('Database not initialized')
+        query = '''SELECT e.id, e.timestamp, e.flow_id, e.severity, e.threat_type,
+            e.anomaly_score, e.model_version, e.feature_schema_version, e.created_at,
+            CASE WHEN length(CAST(e.event_json AS BLOB)) <= ? THEN e.event_json END AS event_json,
+            CASE WHEN length(CAST(e.metadata AS BLOB)) <= ? THEN e.metadata END AS metadata,
+            length(CAST(e.event_json AS BLOB)) AS record_bytes,
+            length(CAST(e.metadata AS BLOB)) AS metadata_bytes,
+            f.src_ip, f.dst_ip, f.src_port, f.dst_port, f.protocol
+            FROM events anchor JOIN events e ON e.id=anchor.id OR
+            (e.flow_id=anchor.flow_id AND e.timestamp BETWEEN anchor.timestamp-? AND anchor.timestamp+?)
+            LEFT JOIN flows f ON f.id=e.flow_id
+            WHERE anchor.id=?
+            ORDER BY (e.id=anchor.id) DESC, e.timestamp, e.id LIMIT ?'''
+        async with self._conn.execute(query, (MAX_RECORD_BYTES, MAX_RECORD_BYTES,
+                                             HORIZON_SEC, HORIZON_SEC, event_id, MAX_EVENTS + 1)) as cursor:
+            columns = [c[0] for c in cursor.description]
+            rows = [dict(zip(columns, r)) for r in await cursor.fetchall()]
+        result = []
+        for row in rows[:MAX_EVENTS]:
+            if max(row.pop('record_bytes') or 0, row.pop('metadata_bytes') or 0) > MAX_RECORD_BYTES:
+                raise InvalidInvestigation('Persisted record exceeds export bound')
+            encoded = row.pop('event_json')
+            try:
+                if encoded:
+                    record = json.loads(encoded)
+                    if not isinstance(record, dict) or record.get('id') != row['id'] or record.get('flow_id') != row['flow_id'] or record.get('timestamp') != row['timestamp']:
+                        raise InvalidInvestigation('Persisted record identity mismatch')
+                else:
+                    row['metadata'] = json.loads(row['metadata'] or '{}')
+                    record = row
+            except (ValueError, RecursionError, TypeError) as exc:
+                raise InvalidInvestigation('Malformed persisted record') from exc
+            result.append(record)
+        return result, len(rows) > MAX_EVENTS

@@ -348,3 +348,29 @@ export type WSServerMessage =
   | WSAuthFailedMessage
   | WSEventMessage
   | WSPingMessage;
+
+export interface Investigation {
+  export_schema_version: string;
+  investigation_id: string;
+  anchor_event_id: string;
+  correlation: {
+    label: string; summary: string; source_count: number; evidence_count: number;
+    contributing_event_ids: string[]; contributing_signal_types: string[];
+    first_seen: number; last_seen: number; time_basis: string;
+  };
+  timeline: { timestamp: number; clock: string; signal_type: string; description: string;
+    source: 'LIVE' | 'REPLAY' | null; event_id: string; reference: string }[];
+  limitations: string[];
+  integrity_semantics: string;
+}
+export interface Assurance {
+  rows: { property: string; status: string; detail: string }[];
+  model_identity: { model_name: string; model_version: string; manifest_sha256: string } | null;
+  feature_schema_version: string;
+  science: {
+    status: string; evaluation?: string; test_rows?: number; accuracy?: number; macro_f1?: number;
+    benign_to_malicious_fpr?: number; c2_recall?: number; ddos_recall?: number;
+    iforest_roc_auc?: number; iforest_pr_auc?: number; candidate_status?: string;
+    limitations?: string[]; candidate_manifest_sha256?: string;
+  };
+}

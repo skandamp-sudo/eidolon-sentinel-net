@@ -1,0 +1,18 @@
+{
+  "backend_passed": 952,
+  "backend_warnings": 43,
+  "frontend_passed": 100,
+  "new_backend_cases": 46,
+  "new_frontend_cases": 10,
+  "typescript": "PASS",
+  "production_build": "PASS",
+  "core_parity": "PASS",
+  "f3_parity": "7/7",
+  "f4_parity": "8/8",
+  "f5_parity": "12/12",
+  "scientific_integrity": "23/23 SCI-CORR-2",
+  "scientific_candidate": "NOT APPROVED NOT PUBLISHED",
+  "candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "conclusion": "GO FOR JUDGE DEMO HARDENING",
+  "no_follow_on_phase_started": true
+}

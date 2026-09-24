@@ -1,3 +1,4 @@
+import { InvestigationOperations } from '@/components/InvestigationOperations';
 import { EncryptedSession } from '@/components/EncryptedSession';
 /**
  * Detection Detail — Single detection investigation view.
@@ -135,11 +136,13 @@ export function DetectionDetail() {
         </div>
       </div>
 
+      <InvestigationOperations eventId={event.id} />
+
       {/* ─── MODEL PROVENANCE ───────────────────────── */}
       <div className="card detail-section">
         <h2 className="detail-section__title">MODEL PROVENANCE</h2>
         <div className="detail-grid">
-          <span className="detail-label">Approved Model</span>
+          <span className="detail-label">Recorded Model</span>
           <span className="detail-value">{event.model_name && event.deployment_model_version ? `${event.model_name} / ${event.deployment_model_version}` : 'Not recorded for this event'}</span>
           <span className="detail-label">Classifier Version</span>
           <span className="detail-value">{event.model_version ?? '—'}</span>

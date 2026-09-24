@@ -1,0 +1,235 @@
+{
+  "$defs": {
+    "Correlation": {
+      "additionalProperties": false,
+      "properties": {
+        "correlation_id": {
+          "title": "Correlation Id",
+          "type": "string"
+        },
+        "label": {
+          "enum": [
+            "CORRELATED OBSERVATION",
+            "RECORDED OBSERVATION"
+          ],
+          "title": "Label",
+          "type": "string"
+        },
+        "contributing_event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 32,
+          "title": "Contributing Event Ids",
+          "type": "array"
+        },
+        "contributing_signal_types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Contributing Signal Types",
+          "type": "array"
+        },
+        "source_count": {
+          "title": "Source Count",
+          "type": "integer"
+        },
+        "evidence_count": {
+          "title": "Evidence Count",
+          "type": "integer"
+        },
+        "first_seen": {
+          "title": "First Seen",
+          "type": "number"
+        },
+        "last_seen": {
+          "title": "Last Seen",
+          "type": "number"
+        },
+        "time_basis": {
+          "title": "Time Basis",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        }
+      },
+      "required": [
+        "correlation_id",
+        "label",
+        "contributing_event_ids",
+        "contributing_signal_types",
+        "source_count",
+        "evidence_count",
+        "first_seen",
+        "last_seen",
+        "time_basis",
+        "summary"
+      ],
+      "title": "Correlation",
+      "type": "object"
+    },
+    "EvidenceReference": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "signal_type": {
+          "title": "Signal Type",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "signal_type",
+        "reference"
+      ],
+      "title": "EvidenceReference",
+      "type": "object"
+    },
+    "TimelineItem": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "signal_type": {
+          "title": "Signal Type",
+          "type": "string"
+        },
+        "reference": {
+          "title": "Reference",
+          "type": "string"
+        },
+        "timestamp": {
+          "title": "Timestamp",
+          "type": "number"
+        },
+        "clock": {
+          "enum": [
+            "capture_event_time",
+            "processing_time",
+            "event_timestamp_unspecified"
+          ],
+          "title": "Clock",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "enum": [
+                "LIVE",
+                "REPLAY"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source"
+        }
+      },
+      "required": [
+        "event_id",
+        "signal_type",
+        "reference",
+        "timestamp",
+        "clock",
+        "description",
+        "source"
+      ],
+      "title": "TimelineItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "export_schema_version": {
+      "const": "1.0.0",
+      "title": "Export Schema Version",
+      "type": "string"
+    },
+    "investigation_id": {
+      "title": "Investigation Id",
+      "type": "string"
+    },
+    "anchor_event_id": {
+      "title": "Anchor Event Id",
+      "type": "string"
+    },
+    "correlation": {
+      "$ref": "#/$defs/Correlation"
+    },
+    "events": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Events",
+      "type": "array"
+    },
+    "evidence_references": {
+      "items": {
+        "$ref": "#/$defs/EvidenceReference"
+      },
+      "maxItems": 256,
+      "title": "Evidence References",
+      "type": "array"
+    },
+    "timeline": {
+      "items": {
+        "$ref": "#/$defs/TimelineItem"
+      },
+      "maxItems": 512,
+      "title": "Timeline",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "bounds": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Bounds",
+      "type": "object"
+    },
+    "integrity_semantics": {
+      "title": "Integrity Semantics",
+      "type": "string"
+    }
+  },
+  "required": [
+    "export_schema_version",
+    "investigation_id",
+    "anchor_event_id",
+    "correlation",
+    "events",
+    "evidence_references",
+    "timeline",
+    "limitations",
+    "bounds",
+    "integrity_semantics"
+  ],
+  "title": "InvestigationExport",
+  "type": "object"
+}

@@ -1,0 +1,7 @@
+{
+  "status": "NOT_PERFORMED_NO_CURRENT_MEASUREMENTS",
+  "reason": "Brief requires comparing only after current measurements exist; evaluation stopped before training.",
+  "comparisons": [],
+  "historical_reports": "unchanged",
+  "prior_stop_comparison": "docs/final-science-restart-audit/previous-stop/final-science-historical-comparison.json"
+}

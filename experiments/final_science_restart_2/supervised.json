@@ -1,0 +1,380 @@
+{
+  "XGBoost": {
+    "accuracy": 0.75943992227575,
+    "precision_macro": 0.36794035121006263,
+    "recall_macro": 0.2531505793886527,
+    "f1_macro": 0.2675121989116243,
+    "precision_weighted": 0.8910849728410409,
+    "recall_weighted": 0.75943992227575,
+    "f1_weighted": 0.7537496524624285,
+    "confusion_matrix": [
+      [
+        267575,
+        1,
+        0,
+        271,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1437,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        46683,
+        0,
+        0,
+        34152,
+        47179
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.8475743993411362,
+        "recall": 0.9989695763689513,
+        "f1-score": 0.9170656640607595,
+        "support": 267851.0,
+        "fpr": 0.37172366378011756,
+        "fnr": 0.0010304236310486054
+      },
+      "brute_force": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 2.5169770099319913e-06,
+        "fnr": 0.0
+      },
+      "c2": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1437.0,
+        "fpr": 0.0,
+        "fnr": 1.0
+      },
+      "ddos": {
+        "precision": 0.992127356709177,
+        "recall": 0.2667833205743122,
+        "f1-score": 0.42049533049736204,
+        "support": 128014.0,
+        "fpr": 0.0010063575057187844,
+        "fnr": 0.7332166794256878
+      },
+      "reconnaissance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 0.11875852625962115,
+        "fnr": 0.0
+      }
+    },
+    "class_names": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "roc_auc_ovr": null,
+    "pr_auc_macro": null,
+    "test_rows": 397302,
+    "benign_to_malicious": {
+      "support": 267851,
+      "predicted_benign": 267575,
+      "predicted_non_benign": 276,
+      "rate": 0.0010304236310486054,
+      "by_predicted_class": {
+        "brute_force": 1,
+        "ddos": 271,
+        "reconnaissance": 4
+      }
+    },
+    "model_confidence_score": {
+      "calibrated": false,
+      "quantiles": [
+        0.46902310848236084,
+        0.9975408315658569,
+        0.9998045563697815,
+        0.9999799728393555,
+        0.9999878406524658,
+        0.9999903440475464
+      ],
+      "benign_fp_quantiles": [
+        0.5016975998878479,
+        0.8354781866073608,
+        0.922627866268158,
+        0.9992368221282959
+      ]
+    }
+  },
+  "RandomForest": {
+    "accuracy": 0.7277612496287459,
+    "precision_macro": 0.36753294106044043,
+    "recall_macro": 0.2334397976520361,
+    "f1_macro": 0.2408754302469084,
+    "precision_weighted": 0.8903921841375405,
+    "recall_weighted": 0.7277612496287459,
+    "f1_weighted": 0.7108474921240995,
+    "confusion_matrix": [
+      [
+        267633,
+        3,
+        0,
+        213,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1437,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        46732,
+        0,
+        0,
+        21508,
+        59774
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.8474708836549484,
+        "recall": 0.9991861146682297,
+        "f1-score": 0.9170962883768267,
+        "support": 267851.0,
+        "fpr": 0.3721021853828862,
+        "fnr": 0.0008138853317702753
+      },
+      "brute_force": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 7.550931029795974e-06,
+        "fnr": 0.0
+      },
+      "c2": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1437.0,
+        "fpr": 0.0,
+        "fnr": 1.0
+      },
+      "ddos": {
+        "precision": 0.9901938216472538,
+        "recall": 0.16801287359195088,
+        "f1-score": 0.2872808628577153,
+        "support": 128014.0,
+        "fpr": 0.0007909747185169781,
+        "fnr": 0.8319871264080492
+      },
+      "reconnaissance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 0.15045481774569472,
+        "fnr": 0.0
+      }
+    },
+    "class_names": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "roc_auc_ovr": null,
+    "pr_auc_macro": null,
+    "test_rows": 397302,
+    "benign_to_malicious": {
+      "support": 267851,
+      "predicted_benign": 267633,
+      "predicted_non_benign": 218,
+      "rate": 0.0008138853317702753,
+      "by_predicted_class": {
+        "brute_force": 3,
+        "ddos": 213,
+        "reconnaissance": 2
+      }
+    },
+    "model_confidence_score": {
+      "calibrated": false,
+      "quantiles": [
+        0.35,
+        0.97,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "benign_fp_quantiles": [
+        0.5050726780734459,
+        0.8792798421447992,
+        0.9847886171285173,
+        1.0
+      ]
+    }
+  },
+  "LogisticRegression": {
+    "accuracy": 0.8773980498462127,
+    "precision_macro": 0.3672030733127246,
+    "recall_macro": 0.327363405266113,
+    "f1_macro": 0.33887073449753924,
+    "precision_weighted": 0.8905496070888078,
+    "recall_weighted": 0.8773980498462127,
+    "f1_weighted": 0.868414496753214,
+    "confusion_matrix": [
+      [
+        266356,
+        324,
+        0,
+        1118,
+        53
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1437,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        45778,
+        0,
+        0,
+        82236,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "per_class": {
+      "benign": {
+        "precision": 0.8494280402205561,
+        "recall": 0.9944185386651534,
+        "f1-score": 0.9162226403541661,
+        "support": 267851.0,
+        "fpr": 0.36473260152490133,
+        "fnr": 0.0055814613348466125
+      },
+      "brute_force": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 0.0008155005512179652,
+        "fnr": 0.0
+      },
+      "c2": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 1437.0,
+        "fpr": 0.0,
+        "fnr": 1.0
+      },
+      "ddos": {
+        "precision": 0.9865873263430669,
+        "recall": 0.6423984876654116,
+        "f1-score": 0.7781310321335302,
+        "support": 128014.0,
+        "fpr": 0.0041516888981313685,
+        "fnr": 0.3576015123345884
+      },
+      "reconnaissance": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 0.0,
+        "fpr": 0.00013339978152639555,
+        "fnr": 0.0
+      }
+    },
+    "class_names": [
+      "benign",
+      "brute_force",
+      "c2",
+      "ddos",
+      "reconnaissance"
+    ],
+    "roc_auc_ovr": null,
+    "pr_auc_macro": null,
+    "test_rows": 397302,
+    "benign_to_malicious": {
+      "support": 267851,
+      "predicted_benign": 266356,
+      "predicted_non_benign": 1495,
+      "rate": 0.0055814613348466125,
+      "by_predicted_class": {
+        "brute_force": 324,
+        "ddos": 1118,
+        "reconnaissance": 53
+      }
+    },
+    "model_confidence_score": {
+      "calibrated": false,
+      "quantiles": [
+        0.3674269734046166,
+        0.9829568626768455,
+        0.9996601353411918,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "benign_fp_quantiles": [
+        0.3674269734046166,
+        0.6824451569255159,
+        0.9219949878090937,
+        1.0
+      ]
+    }
+  }
+}

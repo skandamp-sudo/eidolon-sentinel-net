@@ -1,26 +1,20 @@
-# FINAL-SCIENCE-RESTART claim matrix — SC-3 stop
+# Current scientific claims
 
-## WHAT SENTINEL-NET CAN CLAIM
+## WHAT WE CAN CLAIM
 
-| Category | Claim | Evidence |
-|---|---|---|
-| MEASURED | Binary per-class FPR/FNR has an orientation error on the documented eight-row synthetic fixture. | final-science-restart-audit/reproduction.json |
-| MEASURED | Eight dataset files match archived hashes; parquet metadata totals 2,313,810 rows and the fixed partition counts. | final-science-environment.json |
-| VERIFIED ENGINEERING PROPERTY | All 23 protected files match the authorized SCI-CORR-1 baseline. | final-science-environment.json |
-| VERIFIED ENGINEERING PROPERTY | Archived split identity verified; no fallback or generated split applied. | final-science-split-manifest-used.json |
-| VERIFIED ENGINEERING PROPERTY | Prior SCI-CORR-1 recorded 896 backend and 90 frontend passes, with parity/runtime gates; not rerun here. | sci-corr-1-report.md |
-| LIMITED / EXPERIMENTAL | Historical science remains bound to its recorded partition and implementation; no numerical invalidation inferred from SC-3. | final-science-report.md |
+- **MEASURED:** On the fixed 397,302-row CICIDS2017 test partition, XGBoost accuracy is 0.759440 and macro-F1 0.267512; single seed, explicit macro label policy and candidate identity.
+- **MEASURED:** Benign-to-malicious false-positive rate is 0.00103042 (276/267851).
+- **MEASURED:** Primary Isolation Forest ROC-AUC is 0.818401, trapezoidal PR-AUC 0.541924; anomaly score is not probability.
+- **LIMITED / EXPERIMENTAL:** Held-out-family anomaly ranking and validation-derived operating points apply only to the stated fixed cohorts; narrow validation does not establish a global operating threshold.
+- **SIMULATED:** One-way telemetry removal and prefix perturbation experiments measure controlled sensitivity, not hardware performance or adversarial robustness.
+- **VERIFIED ENGINEERING PROPERTY:** Protected-source integrity, frozen candidate reload parity and full engineering regression pass; F3/F4/F5 fixture/parity coverage is not population accuracy.
 
-## WHAT SENTINEL-NET CANNOT CLAIM
+## WHAT WE CANNOT CLAIM
 
-- **NOT VERIFIED:** current model accuracy, per-class recall/FPR, anomaly ranking, calibration or an evaluated candidate.
-- **SIMULATED:** no new one-way experiment ran; any future telemetry-removal result must remain explicitly simulated.
-- **NOT VERIFIED:** physical data-diode operation or native real-interface BPF capture.
-- **NOT VERIFIED:** universal zero-day detection, perfect accuracy, production readiness or capacity guarantees.
-- **NOT VERIFIED:** population precision/recall for F3/F4/F5 contextual heuristics.
-- **NOT VERIFIED / NOT IMPLEMENTED:** JA4, encrypted DNS analysis or TLS/QUIC payload inspection.
-- **NOT VERIFIED:** meaningful CICIDS-to-UNSW direct transfer without representation compatibility.
+- **NOT VERIFIED:** Universal zero-day detection, perfect detection, production readiness, arbitrary Gbps, physical data diode, native real BPF capture.
+- **NOT VERIFIED:** Meaningful primary-test reconnaissance/exfiltration recall with zero support; C2 supervised learning with no C2 training examples.
+- **NOT VERIFIED:** Calibrated attack probabilities or population-level precision/recall for F3/F4/F5 contextual heuristics.
+- **NOT IMPLEMENTED / UNAVAILABLE:** JA4, encrypted DNS content, TLS/QUIC payload decryption.
+- **NOT VERIFIED:** Cross-dataset transfer accuracy to incompatible UNSW representation.
 
-No candidate exists for operator review or publication. Model confidence is not automatically calibrated attack probability; anomaly score and contextual evidence are separate. This restart stopped before scientific training and evaluation.
-
-NO-GO FOR FINAL SIH HARDENING
+Candidate is suitable for operator scientific review only. No approval/publication or follow-on phase performed.

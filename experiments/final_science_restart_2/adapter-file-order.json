@@ -1,0 +1,13 @@
+{
+  "scope": "Observed local glob order during the run; current adapter consumes this order. No dataset files modified. Preserve this order when reconstructing the run; split membership is independently locked by manifest.",
+  "files": [
+    "DDoS-Friday-no-metadata.parquet",
+    "Bruteforce-Tuesday-no-metadata.parquet",
+    "Botnet-Friday-no-metadata.parquet",
+    "DoS-Wednesday-no-metadata.parquet",
+    "Benign-Monday-no-metadata.parquet",
+    "Infiltration-Thursday-no-metadata.parquet",
+    "Portscan-Friday-no-metadata.parquet",
+    "WebAttacks-Thursday-no-metadata.parquet"
+  ]
+}

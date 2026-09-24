@@ -1,0 +1,5 @@
+{
+  "status": "NOT_RUN_SCIENTIFIC_STOP",
+  "reason": "SC-3: ClassificationReport binary per-class FPR/FNR repeats positive-class rates for both classes; mandated scientific stop before training.",
+  "results": null
+}

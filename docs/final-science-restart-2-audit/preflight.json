@@ -1,0 +1,764 @@
+{
+  "split": {
+    "source": "explicit_manifest",
+    "partition_origin": "EXPLICIT_MANIFEST",
+    "split_method_version": "explicit-scenario-manifest-v1",
+    "manifest_sha256": "e612a9990587258185fb15fbe200eca8d73ead94d62ed40791fe5309b6703860",
+    "dataset_identity": {
+      "dataset_id": "CICIDS2017",
+      "files": {
+        "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+        "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+        "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+        "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+        "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+        "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+        "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+        "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+      }
+    },
+    "row_counts": {
+      "train": 1760688,
+      "validation": 155820,
+      "test": 397302
+    },
+    "train_scenarios": [
+      "Benign-Monday",
+      "Bruteforce-Tuesday",
+      "DoS-Wednesday",
+      "Infiltration-Thursday",
+      "Portscan-Friday"
+    ],
+    "val_scenarios": [
+      "WebAttacks-Thursday"
+    ],
+    "test_scenarios": [
+      "Botnet-Friday",
+      "DDoS-Friday"
+    ],
+    "random_state": null
+  },
+  "classes": {
+    "train": {
+      "benign": 1555790,
+      "brute_force": 9150,
+      "ddos": 193756,
+      "exfiltration": 36,
+      "reconnaissance": 1956
+    },
+    "validation": {
+      "benign": 153677,
+      "other": 2143
+    },
+    "test": {
+      "benign": 267851,
+      "c2": 1437,
+      "ddos": 128014
+    }
+  },
+  "scenarios": {
+    "Benign-Monday": 458831,
+    "Botnet-Friday": 176038,
+    "Bruteforce-Tuesday": 389714,
+    "DDoS-Friday": 221264,
+    "DoS-Wednesday": 584991,
+    "Infiltration-Thursday": 207630,
+    "Portscan-Friday": 119522,
+    "WebAttacks-Thursday": 155820
+  },
+  "adapter": [
+    {
+      "feature": "duration_sec",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow Duration"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "total_packets",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Sum of forward and backward packets"
+    },
+    {
+      "feature": "total_bytes",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Fwd Packets Length Total",
+        "Bwd Packets Length Total"
+      ],
+      "unit_conversion": null,
+      "justification": "Sum of forward and backward bytes"
+    },
+    {
+      "feature": "packets_per_sec",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow Packets/s"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "bytes_per_sec",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow Bytes/s"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "forward_packets",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Total Fwd Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "reverse_packets",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "forward_bytes",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Fwd Packets Length Total"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "reverse_bytes",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Bwd Packets Length Total"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "fwd_rev_packet_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "fwd_rev_byte_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Fwd Packets Length Total",
+        "Bwd Packets Length Total"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "pkt_size_mean",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Packet Length Mean"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "pkt_size_std",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Packet Length Std"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "pkt_size_min",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Packet Length Min"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "pkt_size_max",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Packet Length Max"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "pkt_size_median",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "pkt_size_p25",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "pkt_size_p75",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "pkt_size_p90",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "iat_mean",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow IAT Mean"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "iat_std",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow IAT Std"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "iat_min",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow IAT Min"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "iat_max",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Flow IAT Max"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "iat_median",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "fwd_iat_mean",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Fwd IAT Mean"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "fwd_iat_std",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Fwd IAT Std"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "fwd_iat_min",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Fwd IAT Min"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "fwd_iat_max",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Fwd IAT Max"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "rev_iat_mean",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Bwd IAT Mean"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "rev_iat_std",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Bwd IAT Std"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "rev_iat_min",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Bwd IAT Min"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "rev_iat_max",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Bwd IAT Max"
+      ],
+      "unit_conversion": "microseconds to seconds",
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "syn_count",
+      "availability": "DIRECT",
+      "source_columns": [
+        "SYN Flag Count"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "syn_ack_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "ack_count",
+      "availability": "DIRECT",
+      "source_columns": [
+        "ACK Flag Count"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "fin_count",
+      "availability": "DIRECT",
+      "source_columns": [
+        "FIN Flag Count"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "rst_count",
+      "availability": "DIRECT",
+      "source_columns": [
+        "RST Flag Count"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "psh_count",
+      "availability": "DIRECT",
+      "source_columns": [
+        "PSH Flag Count"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "syn_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "SYN Flag Count",
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "ack_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "ACK Flag Count",
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "fin_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "FIN Flag Count",
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "rst_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "RST Flag Count",
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "psh_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "PSH Flag Count",
+        "Total Fwd Packets",
+        "Total Backward Packets"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "feature": "protocol",
+      "availability": "DIRECT",
+      "source_columns": [
+        "Protocol"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "feature": "ip_version",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "is_tcp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Protocol"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "feature": "is_udp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Protocol"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "feature": "is_icmp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "Protocol"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "feature": "payload_bytes_total",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "forward_payload_bytes",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "reverse_payload_bytes",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    },
+    {
+      "feature": "payload_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not in CICFlowMeter"
+    }
+  ],
+  "preprocessing": {
+    "tree": {
+      "input": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "ip_version",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "all_missing": [
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_median",
+        "syn_ack_count",
+        "ip_version",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "output": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "protocol",
+        "is_tcp",
+        "is_udp",
+        "is_icmp"
+      ],
+      "width": 41,
+      "reported_width": 41,
+      "constant_features": [
+        "is_icmp"
+      ]
+    },
+    "linear": {
+      "input": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "iat_median",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "syn_ack_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "all_missing": [
+        "pkt_size_median",
+        "pkt_size_p25",
+        "pkt_size_p75",
+        "pkt_size_p90",
+        "iat_median",
+        "syn_ack_count",
+        "ip_version",
+        "payload_bytes_total",
+        "forward_payload_bytes",
+        "reverse_payload_bytes",
+        "payload_ratio"
+      ],
+      "output": [
+        "duration_sec",
+        "total_packets",
+        "total_bytes",
+        "packets_per_sec",
+        "bytes_per_sec",
+        "forward_packets",
+        "reverse_packets",
+        "forward_bytes",
+        "reverse_bytes",
+        "fwd_rev_packet_ratio",
+        "fwd_rev_byte_ratio",
+        "pkt_size_mean",
+        "pkt_size_std",
+        "pkt_size_min",
+        "pkt_size_max",
+        "iat_mean",
+        "iat_std",
+        "iat_min",
+        "iat_max",
+        "fwd_iat_mean",
+        "fwd_iat_std",
+        "fwd_iat_min",
+        "fwd_iat_max",
+        "rev_iat_mean",
+        "rev_iat_std",
+        "rev_iat_min",
+        "rev_iat_max",
+        "syn_count",
+        "ack_count",
+        "fin_count",
+        "rst_count",
+        "psh_count",
+        "syn_ratio",
+        "ack_ratio",
+        "fin_ratio",
+        "rst_ratio",
+        "psh_ratio",
+        "is_tcp",
+        "is_udp",
+        "is_icmp"
+      ],
+      "width": 40,
+      "reported_width": 40,
+      "constant_features": [
+        "is_icmp"
+      ]
+    }
+  }
+}

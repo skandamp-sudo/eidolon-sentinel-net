@@ -1,0 +1,34 @@
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l1dcachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l2cachesize'. Detail: [errno 1] Operation not permitted
+/Users/runner/work/crossbow/crossbow/arrow/cpp/src/arrow/util/cpu_info.cc:181: IOError: sysctlbyname failed for 'hw.l3cachesize'. Detail: [errno 1] Operation not permitted
+Loading adapter, fixed partition only
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+TRAIN RandomForest
+SAVED RandomForest
+TRAIN IsolationForest benign-only
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+TRAIN LogisticRegression
+Training complete; selecting validation-only thresholds
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+Thresholds and candidate locked; evaluating TEST
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+TEST saved XGBoost
+TEST saved RandomForest
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 46 47 48 49]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+TEST saved LogisticRegression
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/skandamp/Desktop/Eidolon Sentinel-NET/.venv/lib/python3.12/site-packages/sklearn/impute/_base.py:647: UserWarning: Skipping features without any observed values: [15 16 17 18 23 33 44 48 49 50 51]. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+Primary evaluation and candidate parity complete

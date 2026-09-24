@@ -1,0 +1,13 @@
+{
+  "reason": "Prior process absent; XGBoost persisted, RandomForest did not; restarting unfinished stage only",
+  "retained_files": {
+    "run.py": "3a3dad65351ae86be3723fee8b6f72c7abe1935e7eec484964ed7be524d07d9f",
+    "locked-config.json": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+    "XGBoost.joblib": "15b0bfee4dd8889840fa48c30ba0705d9f37a6eda7b644c90be5ffc44e3bd902",
+    "tree-preprocessor.joblib": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+    "training-progress.json": "fb4316ad3db58c40fa93d52aa053382d7c8e46097eef0faf8604504951b3f234"
+  },
+  "resume_harness_sha256": "a691f3b26bbaea76ede4c5804c5d1c7b5c9b67de3c0117aff34794dbcc0bafaa",
+  "hyperparameters_changed": false,
+  "test_predictions_previously_created": false
+}

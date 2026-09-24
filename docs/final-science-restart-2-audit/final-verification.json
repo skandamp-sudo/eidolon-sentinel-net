@@ -1,0 +1,17 @@
+{
+  "protected_match": 23,
+  "dataset_files_rehashed": 8,
+  "candidate_components_verified": 14,
+  "candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "previous_stop_matches_HEAD": true,
+  "protected_and_product_source_modified": false,
+  "all_gate_exit_codes": {
+    "backend": 0,
+    "frontend": 0,
+    "typescript": 0,
+    "build": 0
+  },
+  "candidate_approved": false,
+  "candidate_published": false,
+  "diff_check": "PASS"
+}

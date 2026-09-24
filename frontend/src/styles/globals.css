@@ -1001,3 +1001,16 @@ button:disabled { opacity:.55; cursor:not-allowed; }
 @media(max-width:600px) { .overview-metrics .card__value { overflow-wrap:anywhere; } }
 .overview-metrics .card:not(:last-child) .card__value { font-size:2rem !important; }
 .overview-metrics .card:last-child .card__value { text-transform:uppercase; font-family:var(--font-sans); overflow-wrap:normal; }
+
+/* Analyst operations use the existing SOC hierarchy and plain status text. */
+.analyst-operations, .assurance-panel { min-width: 0; overflow-wrap: anywhere; }
+.analyst-operations h3, .assurance-panel h3 { margin-block: 1.5rem .75rem; }
+.analyst-operations ul, .assurance-panel ul { padding-left: 1.25rem; margin-block: .75rem; }
+.analyst-operations li, .assurance-panel li { margin-block: .5rem; }
+.investigation-timeline { list-style: none; padding: 0; margin-block: 1rem; }
+.investigation-timeline li { border-left: 2px solid var(--border-active); padding: .5rem 1rem; display: grid; gap: .35rem; }
+.investigation-timeline time, .investigation-timeline small { color: var(--text-secondary); }
+.assurance-rows > div { display: grid; grid-template-columns: minmax(140px,1fr) minmax(0,2fr); gap: 1rem; padding-block: .75rem; border-bottom: 1px solid var(--border-primary); }
+.assurance-rows dd { margin: 0; }
+.assurance-panel { margin-top: 1.5rem; }
+@media(max-width:600px) { .assurance-rows > div { grid-template-columns: minmax(0,1fr); gap: .3rem; } }

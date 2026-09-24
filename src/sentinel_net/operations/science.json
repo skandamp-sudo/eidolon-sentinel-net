@@ -1,0 +1,21 @@
+{
+  "status": "MEASURED",
+  "evaluation": "Fixed CICIDS2017 scenario-aware partition; seed 42",
+  "test_rows": 397302,
+  "accuracy": 0.75943992227575,
+  "macro_f1": 0.2675121989116243,
+  "benign_to_malicious_fpr": 0.0010304236310486054,
+  "c2_recall": 0.0,
+  "ddos_recall": 0.2667833205743122,
+  "iforest_roc_auc": 0.8184012477471853,
+  "iforest_pr_auc": 0.5419238963343889,
+  "candidate_status": "CANDIDATE \u2014 SUITABLE FOR OPERATOR REVIEW \u2014 NOT APPROVED \u2014 NOT PUBLISHED",
+  "report_sha256": "4e35b7e679ca84f7e8245281467d4008a32eb062ae55a6a1bd15a272241f3c25",
+  "candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "limitations": [
+    "Behavioral/DNS/TLS evidence is evaluated separately and is not included in these ML accuracy values.",
+    "All threshold-dependent anomaly results remain exploratory.",
+    "Single seed; no primary-test reconnaissance or exfiltration support.",
+    "This evaluation does not describe the currently deployed runtime model unless its identity matches the evaluated candidate."
+  ]
+}

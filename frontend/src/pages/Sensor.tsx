@@ -1,3 +1,4 @@
+import { AssurancePanel } from '@/components/AssurancePanel';
 /**
  * Sensor page — Read-only observability dashboard.
  *
@@ -115,7 +116,7 @@ export function Sensor() {
 
         {(status?.sensor_mode === 'recorded_traffic_replay' || isReplaying || isReplayComplete) && <p className="source-banner">RECORDED TRAFFIC REPLAY</p>}
         {status?.sensor_mode === 'live_passive_sensor' && <p>LIVE PASSIVE SENSOR</p>}
-        {sensorState === 'degraded' && <p role="status">Processing continues with operational errors or drops. Review the counters below.</p>}
+        {sensorState === 'degraded' && <p role="status" aria-label="Sensor operational status">Processing continues with operational errors or drops. Review the counters below.</p>}
         {!!status?.operational_health?.reasons?.length && <p>Operational reasons: {status.operational_health.reasons.join(', ')}</p>}
 
         {isStopped && (
@@ -293,6 +294,7 @@ export function Sensor() {
           <span className="detail-value">{status?.websocket_subscribers ?? 0}</span>
         </div>
       </div>
+      <AssurancePanel />
     </div>
   );
 }

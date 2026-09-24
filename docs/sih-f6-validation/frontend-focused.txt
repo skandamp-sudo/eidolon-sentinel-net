@@ -1,0 +1,14 @@
+
+> sentinel-net-soc@0.6.0 test
+> vitest run --run src/__tests__/analyst-operations.test.tsx
+
+
+ RUN  v3.2.7 /Users/skandamp/Desktop/Eidolon Sentinel-NET/frontend
+
+ ✓ src/__tests__/analyst-operations.test.tsx (8 tests) 250ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  13:40:54
+   Duration  2.17s (transform 109ms, setup 169ms, collect 193ms, tests 250ms, environment 932ms, prepare 159ms)
+

@@ -8,6 +8,7 @@ SECURITY:
 
 from __future__ import annotations
 
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -16,7 +17,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from sentinel_net.api.auth import APIKeyMiddleware
-from sentinel_net.api.routes import events, flows, health, stats, status, websocket
+from sentinel_net.api.routes import events, flows, health, operations, stats, status, websocket
 from sentinel_net.config import get_config, setup_logging
 from sentinel_net.sensor.event_bus import EventBus
 from sentinel_net.sensor.metrics import SensorMetrics
@@ -78,6 +79,7 @@ def create_app(*, sensor_service=None) -> FastAPI:
 
     config = get_config()
     app.state.sensor_service = sensor_service
+    app.state.investigation_gate = asyncio.Semaphore(4)
 
     # CORS — configurable origins
     app.add_middleware(
@@ -86,6 +88,7 @@ def create_app(*, sensor_service=None) -> FastAPI:
         allow_credentials=True,
         allow_methods=["GET", "POST", "OPTIONS"],
         allow_headers=["X-API-Key", "Content-Type"],
+        expose_headers=["X-Content-SHA256", "Content-Disposition"],
     )
 
     # API key authentication
@@ -94,6 +97,7 @@ def create_app(*, sensor_service=None) -> FastAPI:
     # Routes
     app.include_router(health.router)
     app.include_router(events.router)
+    app.include_router(operations.router)
     app.include_router(flows.router)
     app.include_router(status.router)
     app.include_router(stats.router)

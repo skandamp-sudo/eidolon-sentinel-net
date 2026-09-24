@@ -1,11 +1,1275 @@
 {
-  "phase": "FINAL-SCIENCE-RESTART",
-  "status": "STOPPED_SC3",
-  "source_revision": "6311934ea99fc59be9e71e77a8a3fe476dbb03ed",
-  "initial_worktree": "clean",
-  "checked_at": "2026-09-23T12:53:01.589104+00:00",
-  "scientific_baseline_id": "sci-corr-1-29bc756272dbd981a6768a94edfaa69c75de12f0a31c2158498dbd901c4d37f2",
-  "protected_files_unchanged": 23,
+  "phase": "FINAL-SCIENCE-RESTART-2",
+  "completed_at": "2026-09-24T07:55:46.026218+00:00",
+  "python": "3.12.14",
+  "platform": "macOS-26.7-x86_64-i386-64bit",
+  "dependencies": {
+    "python": "3.12.14",
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "xgboost": "3.4.1",
+    "joblib": "1.6.0",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1"
+  },
+  "source": {
+    "source_revision": "dfb6ec14f19a5a8add47ee89dcc66291febb676f",
+    "baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+    "protected_match": 23,
+    "files": [
+      {
+        "name": "Benign-Monday-no-metadata.parquet",
+        "sha256": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+        "rows": 458831,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int32\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295"
+      },
+      {
+        "name": "Botnet-Friday-no-metadata.parquet",
+        "sha256": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+        "rows": 176038,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293"
+      },
+      {
+        "name": "Bruteforce-Tuesday-no-metadata.parquet",
+        "sha256": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+        "rows": 389714,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int64\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int32\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295"
+      },
+      {
+        "name": "DDoS-Friday-no-metadata.parquet",
+        "sha256": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+        "rows": 221264,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int16\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int16\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293"
+      },
+      {
+        "name": "DoS-Wednesday-no-metadata.parquet",
+        "sha256": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+        "rows": 584991,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293"
+      },
+      {
+        "name": "Infiltration-Thursday-no-metadata.parquet",
+        "sha256": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+        "rows": 207630,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int16\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295"
+      },
+      {
+        "name": "Portscan-Friday-no-metadata.parquet",
+        "sha256": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+        "rows": 119522,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int16\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int16\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293"
+      },
+      {
+        "name": "WebAttacks-Thursday-no-metadata.parquet",
+        "sha256": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a",
+        "rows": 155820,
+        "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293"
+      }
+    ],
+    "manifest_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5"
+  },
+  "preflight": {
+    "split": {
+      "source": "explicit_manifest",
+      "partition_origin": "EXPLICIT_MANIFEST",
+      "split_method_version": "explicit-scenario-manifest-v1",
+      "manifest_sha256": "e612a9990587258185fb15fbe200eca8d73ead94d62ed40791fe5309b6703860",
+      "dataset_identity": {
+        "dataset_id": "CICIDS2017",
+        "files": {
+          "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+          "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+          "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+          "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+          "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+          "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+          "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+          "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+        }
+      },
+      "row_counts": {
+        "train": 1760688,
+        "validation": 155820,
+        "test": 397302
+      },
+      "train_scenarios": [
+        "Benign-Monday",
+        "Bruteforce-Tuesday",
+        "DoS-Wednesday",
+        "Infiltration-Thursday",
+        "Portscan-Friday"
+      ],
+      "val_scenarios": [
+        "WebAttacks-Thursday"
+      ],
+      "test_scenarios": [
+        "Botnet-Friday",
+        "DDoS-Friday"
+      ],
+      "random_state": null
+    },
+    "classes": {
+      "train": {
+        "benign": 1555790,
+        "brute_force": 9150,
+        "ddos": 193756,
+        "exfiltration": 36,
+        "reconnaissance": 1956
+      },
+      "validation": {
+        "benign": 153677,
+        "other": 2143
+      },
+      "test": {
+        "benign": 267851,
+        "c2": 1437,
+        "ddos": 128014
+      }
+    },
+    "scenarios": {
+      "Benign-Monday": 458831,
+      "Botnet-Friday": 176038,
+      "Bruteforce-Tuesday": 389714,
+      "DDoS-Friday": 221264,
+      "DoS-Wednesday": 584991,
+      "Infiltration-Thursday": 207630,
+      "Portscan-Friday": 119522,
+      "WebAttacks-Thursday": 155820
+    },
+    "adapter": [
+      {
+        "feature": "duration_sec",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow Duration"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "total_packets",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Sum of forward and backward packets"
+      },
+      {
+        "feature": "total_bytes",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Fwd Packets Length Total",
+          "Bwd Packets Length Total"
+        ],
+        "unit_conversion": null,
+        "justification": "Sum of forward and backward bytes"
+      },
+      {
+        "feature": "packets_per_sec",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow Packets/s"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "bytes_per_sec",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow Bytes/s"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "forward_packets",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Total Fwd Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "reverse_packets",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "forward_bytes",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Fwd Packets Length Total"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "reverse_bytes",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Bwd Packets Length Total"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "fwd_rev_packet_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "fwd_rev_byte_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Fwd Packets Length Total",
+          "Bwd Packets Length Total"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "pkt_size_mean",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Packet Length Mean"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "pkt_size_std",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Packet Length Std"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "pkt_size_min",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Packet Length Min"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "pkt_size_max",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Packet Length Max"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "pkt_size_median",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "pkt_size_p25",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "pkt_size_p75",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "pkt_size_p90",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "iat_mean",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow IAT Mean"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "iat_std",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow IAT Std"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "iat_min",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow IAT Min"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "iat_max",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Flow IAT Max"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "iat_median",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "fwd_iat_mean",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Fwd IAT Mean"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "fwd_iat_std",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Fwd IAT Std"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "fwd_iat_min",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Fwd IAT Min"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "fwd_iat_max",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Fwd IAT Max"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "rev_iat_mean",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Bwd IAT Mean"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "rev_iat_std",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Bwd IAT Std"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "rev_iat_min",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Bwd IAT Min"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "rev_iat_max",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Bwd IAT Max"
+        ],
+        "unit_conversion": "microseconds to seconds",
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "syn_count",
+        "availability": "DIRECT",
+        "source_columns": [
+          "SYN Flag Count"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "syn_ack_count",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "ack_count",
+        "availability": "DIRECT",
+        "source_columns": [
+          "ACK Flag Count"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "fin_count",
+        "availability": "DIRECT",
+        "source_columns": [
+          "FIN Flag Count"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "rst_count",
+        "availability": "DIRECT",
+        "source_columns": [
+          "RST Flag Count"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "psh_count",
+        "availability": "DIRECT",
+        "source_columns": [
+          "PSH Flag Count"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "syn_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "SYN Flag Count",
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "ack_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "ACK Flag Count",
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "fin_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "FIN Flag Count",
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "rst_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "RST Flag Count",
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "psh_ratio",
+        "availability": "DERIVED",
+        "source_columns": [
+          "PSH Flag Count",
+          "Total Fwd Packets",
+          "Total Backward Packets"
+        ],
+        "unit_conversion": null,
+        "justification": "Ratio calculation"
+      },
+      {
+        "feature": "protocol",
+        "availability": "DIRECT",
+        "source_columns": [
+          "Protocol"
+        ],
+        "unit_conversion": null,
+        "justification": "Direct measure"
+      },
+      {
+        "feature": "ip_version",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "is_tcp",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Protocol"
+        ],
+        "unit_conversion": null,
+        "justification": "Derived from protocol"
+      },
+      {
+        "feature": "is_udp",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Protocol"
+        ],
+        "unit_conversion": null,
+        "justification": "Derived from protocol"
+      },
+      {
+        "feature": "is_icmp",
+        "availability": "DERIVED",
+        "source_columns": [
+          "Protocol"
+        ],
+        "unit_conversion": null,
+        "justification": "Derived from protocol"
+      },
+      {
+        "feature": "payload_bytes_total",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "forward_payload_bytes",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "reverse_payload_bytes",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      },
+      {
+        "feature": "payload_ratio",
+        "availability": "MISSING",
+        "source_columns": [],
+        "unit_conversion": null,
+        "justification": "Not in CICFlowMeter"
+      }
+    ],
+    "preprocessing": {
+      "tree": {
+        "input": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "pkt_size_median",
+          "pkt_size_p25",
+          "pkt_size_p75",
+          "pkt_size_p90",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "iat_median",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "syn_ack_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "protocol",
+          "ip_version",
+          "is_tcp",
+          "is_udp",
+          "is_icmp",
+          "payload_bytes_total",
+          "forward_payload_bytes",
+          "reverse_payload_bytes",
+          "payload_ratio"
+        ],
+        "all_missing": [
+          "pkt_size_median",
+          "pkt_size_p25",
+          "pkt_size_p75",
+          "pkt_size_p90",
+          "iat_median",
+          "syn_ack_count",
+          "ip_version",
+          "payload_bytes_total",
+          "forward_payload_bytes",
+          "reverse_payload_bytes",
+          "payload_ratio"
+        ],
+        "output": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "protocol",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ],
+        "width": 41,
+        "reported_width": 41,
+        "constant_features": [
+          "is_icmp"
+        ]
+      },
+      "linear": {
+        "input": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "pkt_size_median",
+          "pkt_size_p25",
+          "pkt_size_p75",
+          "pkt_size_p90",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "iat_median",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "syn_ack_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "is_tcp",
+          "is_udp",
+          "is_icmp",
+          "payload_bytes_total",
+          "forward_payload_bytes",
+          "reverse_payload_bytes",
+          "payload_ratio"
+        ],
+        "all_missing": [
+          "pkt_size_median",
+          "pkt_size_p25",
+          "pkt_size_p75",
+          "pkt_size_p90",
+          "iat_median",
+          "syn_ack_count",
+          "ip_version",
+          "payload_bytes_total",
+          "forward_payload_bytes",
+          "reverse_payload_bytes",
+          "payload_ratio"
+        ],
+        "output": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ],
+        "width": 40,
+        "reported_width": 40,
+        "constant_features": [
+          "is_icmp"
+        ]
+      }
+    }
+  },
+  "adapter_file_order": {
+    "scope": "Observed local glob order during the run; current adapter consumes this order. No dataset files modified. Preserve this order when reconstructing the run; split membership is independently locked by manifest.",
+    "files": [
+      "DDoS-Friday-no-metadata.parquet",
+      "Bruteforce-Tuesday-no-metadata.parquet",
+      "Botnet-Friday-no-metadata.parquet",
+      "DoS-Wednesday-no-metadata.parquet",
+      "Benign-Monday-no-metadata.parquet",
+      "Infiltration-Thursday-no-metadata.parquet",
+      "Portscan-Friday-no-metadata.parquet",
+      "WebAttacks-Thursday-no-metadata.parquet"
+    ]
+  },
+  "actual_training_configuration": {
+    "estimators": {
+      "XGBoost": {
+        "seconds": 36.39375109499815,
+        "parameters": {
+          "objective": "multi:softprob",
+          "base_score": null,
+          "booster": null,
+          "callbacks": null,
+          "colsample_bylevel": null,
+          "colsample_bynode": null,
+          "colsample_bytree": null,
+          "device": null,
+          "early_stopping_rounds": null,
+          "enable_categorical": true,
+          "eval_metric": "mlogloss",
+          "feature_types": null,
+          "feature_weights": null,
+          "gamma": null,
+          "grow_policy": null,
+          "importance_type": null,
+          "interaction_constraints": null,
+          "learning_rate": 0.1,
+          "max_bin": null,
+          "max_cat_threshold": null,
+          "max_cat_to_onehot": null,
+          "max_delta_step": null,
+          "max_depth": 6,
+          "max_leaves": null,
+          "min_child_weight": null,
+          "missing": null,
+          "monotone_constraints": null,
+          "multi_strategy": null,
+          "n_estimators": 100,
+          "n_jobs": null,
+          "num_parallel_tree": null,
+          "random_state": 42,
+          "reg_alpha": null,
+          "reg_lambda": null,
+          "sampling_method": null,
+          "scale_pos_weight": null,
+          "subsample": null,
+          "tree_method": null,
+          "validate_parameters": null,
+          "verbosity": null,
+          "num_class": 5
+        },
+        "classes": [
+          "benign",
+          "brute_force",
+          "ddos",
+          "exfiltration",
+          "reconnaissance"
+        ],
+        "rows": 1760688,
+        "features": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "protocol",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ]
+      },
+      "RandomForest": {
+        "seconds": 804.3658318639973,
+        "parameters": {
+          "bootstrap": true,
+          "ccp_alpha": 0.0,
+          "class_weight": null,
+          "criterion": "gini",
+          "max_depth": null,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 1,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 100,
+          "n_jobs": null,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "classes": [
+          "benign",
+          "brute_force",
+          "ddos",
+          "exfiltration",
+          "reconnaissance"
+        ],
+        "rows": 1760688,
+        "features": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "protocol",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ]
+      },
+      "IsolationForest": {
+        "seconds": 2.857875915000477,
+        "parameters": {
+          "bootstrap": false,
+          "contamination": "auto",
+          "max_features": 1.0,
+          "max_samples": "auto",
+          "n_estimators": 100,
+          "n_jobs": null,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "rows": 1555790,
+        "features": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "protocol",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ]
+      },
+      "LogisticRegression": {
+        "seconds": 340.192942048001,
+        "parameters": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 1000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "classes": [
+          "benign",
+          "brute_force",
+          "ddos",
+          "exfiltration",
+          "reconnaissance"
+        ],
+        "rows": 1760688,
+        "features": [
+          "duration_sec",
+          "total_packets",
+          "total_bytes",
+          "packets_per_sec",
+          "bytes_per_sec",
+          "forward_packets",
+          "reverse_packets",
+          "forward_bytes",
+          "reverse_bytes",
+          "fwd_rev_packet_ratio",
+          "fwd_rev_byte_ratio",
+          "pkt_size_mean",
+          "pkt_size_std",
+          "pkt_size_min",
+          "pkt_size_max",
+          "iat_mean",
+          "iat_std",
+          "iat_min",
+          "iat_max",
+          "fwd_iat_mean",
+          "fwd_iat_std",
+          "fwd_iat_min",
+          "fwd_iat_max",
+          "rev_iat_mean",
+          "rev_iat_std",
+          "rev_iat_min",
+          "rev_iat_max",
+          "syn_count",
+          "ack_count",
+          "fin_count",
+          "rst_count",
+          "psh_count",
+          "syn_ratio",
+          "ack_ratio",
+          "fin_ratio",
+          "rst_ratio",
+          "psh_ratio",
+          "is_tcp",
+          "is_udp",
+          "is_icmp"
+        ],
+        "n_iter": [
+          642
+        ]
+      }
+    },
+    "XGBoost_native": {
+      "learner": {
+        "generic_param": {
+          "device": "cpu",
+          "fail_on_invalid_gpu_id": "0",
+          "n_jobs": "0",
+          "nthread": "0",
+          "random_state": "42",
+          "rng_state": "42 3107752595 1895908407 3900362577 3030691166 4081230161 2732361568 1361238961 3961642104 867618704 2837705690 3281374275 3928479052 3691474744 3088217429 1769265762 3769508895 2731227933 2930436685 486258750 1452990090 3321835500 3520974945 2343938241 928051207 2811458012 3391994544 3688461242 1372039449 3706424981 1717012300 1728812672 1688496645 1203107765 1648758310 440890502 1396092674 626042708 3853121610 669844980 2992565612 310741647 3820958101 3474052697 305511342 2053450195 705225224 3836704087 3293527636 1140926340 2738734251 574359520 1493564308 269614846 427919468 2903547603 2957214125 181522756 4137743374 2557886044 3399018834 1348953650 1575066973 3837612427 705360616 4138204617 1604205300 1605197804 590851525 2371419134 2530821810 4183626679 2872056396 3895467791 1156426758 184917518 2502875602 2730245981 3251099593 2228829441 2591075711 3048691618 3030004338 1726207619 993866654 823585707 936803789 3180156728 1191670842 348221088 988038522 3281236861 1153842962 4152167900 98291801 816305276 575746380 1719541597 2584648622 1791391551 3234806234 413529090 219961136 4180088407 1135264652 3923811338 2304598263 762142228 1980420688 1225347938 3657621885 3762382117 1157119598 2556627260 2276905960 3857700293 1903185298 4258743924 2078637161 4160077183 3569294948 2138906140 1346725611 1473959117 2798330104 3785346335 4103334026 3448442764 1142532843 4278036691 3071994514 3474299731 1121195796 1536841934 2132070705 1064908919 2840327803 992870214 2041326888 2906112696 4182466030 1031463950 703166484 854266995 4157971695 4071962029 2600094776 2770410869 3776335751 2599879593 2451043853 2223709058 2098813464 4008111478 2959232195 3072496064 2498909222 4020139729 785990520 958060279 4183949075 2392404465 533774465 4092066952 3967420027 1726137853 2907699474 3158758391 1460845905 1323598137 2446717890 3004885867 3447263769 1378488047 3172418196 652839901 1695052769 226007057 778836071 1216725078 655651335 1850195064 427367795 800074262 2241880422 1713434925 339981078 1730571881 672610244 1952245009 2729177102 3516932475 4032720152 3177283432 411893652 2440235559 3587427933 43170267 39225133 3904203400 1935961247 3843123487 1625453782 1337993374 2095455879 3402219947 634671126 70868861 3072823841 851862432 1828056818 2794213810 1222863684 2164539406 4249334162 1380362252 1512719097 2773165233 4063118969 3041859837 529421431 563872464 2478730478 3168749051 4132953373 3922807735 1124217574 1970058502 1744120743 1906315107 1074758800 1611130652 2878846041 886823888 1175456250 1669874674 2428820171 1044308794 3841962192 138850094 1239727126 1753711876 2194286827 872797664 4276240980 690338888 4087206238 2279169960 1117436170 3344885072 3127829945 315537090 3802787206 4157203318 1637047079 3774106877 3230158646 1855823338 1931415993 667252379 4288528171 1587598285 1096793218 1916566454 101891899 2354644560 3351208292 1467125166 2177732119 4122299478 3904084887 2653591155 4201043109 2867379343 2660555187 3641744616 4126452939 326579197 2697259239 3365236848 3007834487 4118919490 3306741951 2285455175 1956645973 1879691841 891565150 1843460149 2013381028 819311674 123282948 1436558519 1154343666 206804484 1650349242 2142011886 304163699 2608574600 2500624796 2996744833 2344192475 3152512202 165571606 691170269 1806226529 568535825 1243813863 3068953841 3843784723 1540495237 4246006858 1303595780 3288680241 864868851 819595545 3230857496 3574119395 1545404573 2970139338 4292786727 1803072884 1374565738 1736333177 1978645403 3962597126 1068006206 3458125500 168085922 1597587506 2052497512 1323596727 2421372441 1468386547 3574947527 3363915938 860279252 1309097460 3065417722 1490716202 3476091722 1669402145 895071221 1432690175 3353592973 149850974 2789493615 826939483 666980418 755367270 3988951195 21783894 1924727373 1699517788 1152431122 2593798113 3522529522 2797535609 4018366956 2350035889 3010507270 2832621820 627979167 997422629 365587204 2302500352 1720920631 689999548 3713985947 3267499624 1971264680 1981530399 1662926921 1833821660 1422522022 3141447769 2727954526 4172728772 1787436028 1902276939 3145551277 4207627911 2497093521 4111966589 3929089589 2253454030 1069424637 2165048659 2848813944 2435898022 2546206777 3864777677 3107311565 3776562483 1040285049 3171631943 2404677828 2522848682 2930777301 2831905121 1436989598 602730315 664177960 3959954010 3116042160 2881899726 233404945 4058465099 1781994751 485046222 2776777695 432082123 1989128370 86344507 2510576356 2194076764 1742125237 3715839140 895100548 147445686 705462897 2245325113 1052295404 1956014786 2916055958 1829369612 2541711050 1594343058 3708804266 150438233 323857098 294681952 783931535 606075163 2427042904 121207604 3943199031 1196785464 1818211378 1788241109 3138862427 2037307093 2306750301 1644605749 165986111 542190743 486828112 1757411662 894543082 4108143634 1232805238 3801632949 3863166865 713767006 2091486427 3174776264 1157004409 623072544 1667151721 3361539538 696723008 3247069452 682044344 1382136166 1385645682 4219951151 2747881261 2489355869 786564174 2040230554 2967874556 1414286092 2677969656 1393412218 2216095072 935533444 3662643439 3285199608 3103672804 522796956 3952383595 1928659176 3397717710 4278554051 1984736931 3559102926 1878353094 875578217 2398931796 2313634006 1606027661 2790634022 2334166559 1857067101 666458681 1626872683 2155121857 715449823 1865157100 2938814835 4084911240 45488075 3474982924 1750873825 2246019159 125388929 1110287838 652200437 4212247716 2702974687 2963764270 208692058 3170393729 1378248367 752591527 591629541 2253399388 2402291226 3089656189 3202324513 3818308310 2828131601 2690672008 3676629884 1007739430 4072247562 3574795162 518485611 1889402182 3687902739 3410263649 2790674620 779455241 3573984673 3053204735 4089925351 789980683 476440431 3843536868 2400661309 3139919094 1643266656 113318754 428163528 2386492935 3807242009 574560611 3174039857 3774465602 1164640969 455942925 1374407495 2562304709 1024844203 521375136 417432138 1203241821 2900988280 2841030991 2301700751 369508560 2396447808 1891459643 4225682708 3930667846 1518293357 2697063889 3113075061 2411136298 2836361984 4105335811 914081338 2675982621 1816939127 1596754123 1464603632 1598478676 1318403529 4016663081 2106416852 2757323084 2042842122 1175184796 2212339255 1334626864 3994484893 3938045599 2166620630 3036360431 397499085 975931950 1868702836 3530424696 3532548823 2770836469 3537418693 3344319345 3208552526 1771170897 4097379814 3761572528 2794194423 706836738 2953105956 3446096217 220984542 309619699 223913021 3985142640 1757616575 2582763607 4018329835 1393278443 4121569718 2087146446 4282833425 807775617 1396604749 3571181413 90301352 2618014643 2783561793 1329389532 836540831 26719530",
+          "seed": "42",
+          "seed_per_iteration": "0",
+          "validate_parameters": "1"
+        },
+        "gradient_booster": {
+          "dart_train_param": {
+            "normalize_type": "tree",
+            "one_drop": "0",
+            "rate_drop": "0",
+            "sample_type": "uniform",
+            "skip_drop": "0"
+          },
+          "gbtree_model_param": {
+            "num_parallel_tree": "1",
+            "num_trees": "500"
+          },
+          "gbtree_train_param": {
+            "process_type": "default",
+            "tree_method": "auto",
+            "updater": "grow_quantile_histmaker",
+            "updater_seq": "grow_quantile_histmaker"
+          },
+          "name": "gbtree",
+          "specified_updater": false,
+          "tree_train_param": {
+            "alpha": "0",
+            "colsample_bylevel": "1",
+            "colsample_bynode": "1",
+            "colsample_bytree": "1",
+            "eta": "0.100000001",
+            "gamma": "0",
+            "grow_policy": "depthwise",
+            "interaction_constraints": "",
+            "lambda": "1",
+            "learning_rate": "0.100000001",
+            "max_bin": "256",
+            "max_cat_threshold": "64",
+            "max_cat_to_onehot": "4",
+            "max_delta_step": "0",
+            "max_depth": "6",
+            "max_leaves": "0",
+            "min_child_weight": "1",
+            "min_split_loss": "0",
+            "monotone_constraints": "()",
+            "refresh_leaf": "1",
+            "reg_alpha": "0",
+            "reg_lambda": "1",
+            "sampling_method": "uniform",
+            "sparse_threshold": "0.20000000000000001",
+            "subsample": "1"
+          },
+          "updater": [
+            {
+              "hist_train_param": {
+                "debug_synchronize": "0",
+                "max_cached_hist_node": "18446744073709551615"
+              },
+              "name": "grow_quantile_histmaker"
+            }
+          ]
+        },
+        "learner_model_param": {
+          "base_score": "[4.9046183E0,-2.3117542E-1,2.8214872E0,-5.721608E0,-1.7733202E0]",
+          "boost_from_average": "1",
+          "num_class": "5",
+          "num_feature": "41",
+          "num_target": "1"
+        },
+        "learner_train_param": {
+          "booster": "gbtree",
+          "disable_default_eval_metric": "0",
+          "multi_strategy": "one_output_per_tree",
+          "objective": "multi:softprob"
+        },
+        "metrics": [
+          {
+            "name": "mlogloss"
+          }
+        ],
+        "objective": {
+          "name": "multi:softprob",
+          "softmax_multiclass_param": {
+            "num_class": "5"
+          }
+        }
+      },
+      "version": [
+        3,
+        4,
+        1
+      ]
+    },
+    "locked_recipe_sha256": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+    "NaN_parameter_encoding": "XGBoost missing=null in Python get_params export represents numpy.nan; native configuration records its own resolved representation",
+    "scope": "Actual parameters; training durations/n_iter are recorded measurements, not tuned settings"
+  },
+  "resume_provenance": {
+    "reason": "Prior process absent; XGBoost persisted, RandomForest did not; restarting unfinished stage only",
+    "retained_files": {
+      "run.py": "3a3dad65351ae86be3723fee8b6f72c7abe1935e7eec484964ed7be524d07d9f",
+      "locked-config.json": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+      "XGBoost.joblib": "15b0bfee4dd8889840fa48c30ba0705d9f37a6eda7b644c90be5ffc44e3bd902",
+      "tree-preprocessor.joblib": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+      "training-progress.json": "fb4316ad3db58c40fa93d52aa053382d7c8e46097eef0faf8604504951b3f234"
+    },
+    "resume_harness_sha256": "a691f3b26bbaea76ede4c5804c5d1c7b5c9b67de3c0117aff34794dbcc0bafaa",
+    "hyperparameters_changed": false,
+    "test_predictions_previously_created": false
+  },
+  "protected_files_match": 23,
   "protected_sha256": {
     "src/sentinel_net/features/__init__.py": "0a29a6a4321334acd020490e8b6204e854bef20847ec3e8e8cc9ce63c6bebd76",
     "src/sentinel_net/features/extractor.py": "792c0a511b1cf9b12916e897a6be04b47735258f2febd57d09ce55195cb0a863",
@@ -15,7 +1279,7 @@
     "src/sentinel_net/detection/threshold_optimizer.py": "a6308dcb6d60054ddee1cefe47809b0316cc57165e2be10017e92218eaf2a7f8",
     "src/sentinel_net/detection/thresholds.py": "b81e2211f28436c003f3ecab34fb50424b2da88cb2fe65c7ff735a1c818c5196",
     "src/sentinel_net/detection/registry.py": "a8f9736f71c4d4fed260bb490f94c17bc4ea60f1fbabd71343e00827b1b58209",
-    "src/sentinel_net/detection/evaluation.py": "f91be2692b3807d6d7c26ec7ddee1efc0862e950d28142e0c5a3ce800f8e9d6b",
+    "src/sentinel_net/detection/evaluation.py": "8143cc6a3098f2eb086ffdc360e6e35bb307b643a5732ee6142acd39c541a868",
     "src/sentinel_net/detection/__init__.py": "998aaef9b7b401efde2a41745994b927e063160d7ec98e713b4b21f434dae0f8",
     "src/sentinel_net/detection/dataset.py": "267ae91eef7e7021a2180b06feede621cc8c4f6a86bcf4a533122041702ec7cf",
     "src/sentinel_net/detection/preprocessing.py": "72809d177be97dec0d0e010c3c06b2d29db24f3ffdd0e44e62d47fee5fc209d6",
@@ -31,93 +1295,72 @@
     "src/sentinel_net/explainability/evidence.py": "ac42f8380836c35198ea75b78fce861c80a87c950c995822de8ed6a198655543",
     "src/sentinel_net/flow/aggregator.py": "3e54818ba6cbe6fceae7e44fddf8c5fa62e3c850c492e4a15bbf60e9a1ce29c8"
   },
-  "split_manifest_file_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5",
-  "dataset_inventory": [
-    {
-      "name": "Benign-Monday-no-metadata.parquet",
-      "sha256": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
-      "bytes": 56765918,
-      "rows": 458831,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int32\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295",
-      "scenario": "Benign-Monday"
+  "candidate": {
+    "scientific_manifest_path": "experiments/final_science_restart_2/scientific-candidate-manifest.json",
+    "scientific_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+    "name": "final-science-fixed-split-seed42",
+    "version": "2026.09.23-seed42",
+    "status": "CANDIDATE",
+    "approved": false,
+    "published": false,
+    "source_revision": "dfb6ec14f19a5a8add47ee89dcc66291febb676f",
+    "scientific_baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+    "dataset": {
+      "dataset_id": "CICIDS2017",
+      "files": {
+        "Benign-Monday-no-metadata.parquet": "8190cf2ff746a50d25fa4c0452d258e00e06fb249fbde8ce386b4c297e4700a7",
+        "Botnet-Friday-no-metadata.parquet": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
+        "Bruteforce-Tuesday-no-metadata.parquet": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
+        "DDoS-Friday-no-metadata.parquet": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
+        "DoS-Wednesday-no-metadata.parquet": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
+        "Infiltration-Thursday-no-metadata.parquet": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
+        "Portscan-Friday-no-metadata.parquet": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
+        "WebAttacks-Thursday-no-metadata.parquet": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a"
+      }
     },
-    {
-      "name": "Botnet-Friday-no-metadata.parquet",
-      "sha256": "3477bd870829761079c252331f596859f0fc4ab35c4c195ed0cf3837c5f75d89",
-      "bytes": 19855151,
-      "rows": 176038,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
-      "scenario": "Botnet-Friday"
+    "split_manifest_sha256": "488af9eab1cd0d6a4e70d5242d55e909c6dd41de90b88aca6195e21d9ac275d5",
+    "training_configuration_sha256": "fdc9f8bbf6cc6991bbac0fa40e59801ed1486df2e1f642927a832b21157fcd92",
+    "locked_recipe_sha256": "ef72aaeff096c15aa8c4b2e63be344c913f387085cf8126d402b9163fffbad5a",
+    "adapter_file_order": {
+      "scope": "Observed local glob order during the run; current adapter consumes this order. No dataset files modified. Preserve this order when reconstructing the run; split membership is independently locked by manifest.",
+      "files": [
+        "DDoS-Friday-no-metadata.parquet",
+        "Bruteforce-Tuesday-no-metadata.parquet",
+        "Botnet-Friday-no-metadata.parquet",
+        "DoS-Wednesday-no-metadata.parquet",
+        "Benign-Monday-no-metadata.parquet",
+        "Infiltration-Thursday-no-metadata.parquet",
+        "Portscan-Friday-no-metadata.parquet",
+        "WebAttacks-Thursday-no-metadata.parquet"
+      ]
     },
-    {
-      "name": "Bruteforce-Tuesday-no-metadata.parquet",
-      "sha256": "14a14762c7960975b70a52632c2ee9205e333402effd5f3b8473ffbb4827e833",
-      "bytes": 46140640,
-      "rows": 389714,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int64\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int32\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295",
-      "scenario": "Bruteforce-Tuesday"
+    "preprocessing_sha256": {
+      "tree": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+      "linear": "c4be777fbaeeeca1e1a70c9957617dcba5ea396a93d6cd60d9549763574cedeb"
     },
-    {
-      "name": "DDoS-Friday-no-metadata.parquet",
-      "sha256": "835176e715b4bc2dba7000c78be052275fcbb9f28b1d7670eec0448db91eb132",
-      "bytes": 25302305,
-      "rows": 221264,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int16\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int16\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
-      "scenario": "DDoS-Friday"
+    "schema_version": "2.0.0",
+    "schema_file_sha256": "cac2363f78d008f3c0106fafe23d017314b5dc18d226fe639705f03291e2c6d1",
+    "component_sha256": {
+      "RandomForest.joblib": "173f4c9477de7beeea850a1d010cb3b0057093f7766917981c87b111df73e9ee",
+      "novelty-ddos-iforest.joblib": "5ae1a4534a603ffea1f1cdc3d893e0fd46a9a18140c5e503d01d18d800be085e",
+      "LogisticRegression.joblib": "1c5c10344aa8057b50061a8e53a1e89977688b448f343179ab28a52b23d690e6",
+      "IsolationForest.joblib": "838fba977336414b1048711e26722ed9b53708408d57a49deea6eccd1275805c",
+      "XGBoost.joblib": "15b0bfee4dd8889840fa48c30ba0705d9f37a6eda7b644c90be5ffc44e3bd902",
+      "tree-preprocessor.joblib": "61076f0e8b5ffade0bac62008540be0c331dc3ad01e87cebf45b431f1409095f",
+      "novelty-ddos-preprocessor.joblib": "7e61b3b5f57427cd24659cb6e8e598f3b839f2eebd89cff8eb64356c5ab2b1b3",
+      "linear-preprocessor.joblib": "c4be777fbaeeeca1e1a70c9957617dcba5ea396a93d6cd60d9549763574cedeb",
+      "candidate/anomaly.joblib": "838fba977336414b1048711e26722ed9b53708408d57a49deea6eccd1275805c",
+      "candidate/preprocessor.joblib": "cb95ef38bdeaeb78c63eb3714d7a2ef1cc2346f9bede785715ab72deeb52a166",
+      "candidate/thresholds.json": "116fca21066d7512b1015e85327550d5cd9f4c40a7a429a86a5dd72ed32299c8",
+      "candidate/classifier.joblib": "9afa1542c0ad6b8287d8f93064677f6b13207dc1115abd3f1171f5a922ae58f6",
+      "candidate/manifest.json": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+      "candidate/checksums.json": "57bf71d4da2d865d5d0627c7cf2abc7bdc5033277520d617fd1f0faedf07dcc7"
     },
-    {
-      "name": "DoS-Wednesday-no-metadata.parquet",
-      "sha256": "660577146c53fc467ccfa3124d5061e037238f03e936eb1fff914dba08d4104b",
-      "bytes": 68198756,
-      "rows": 584991,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
-      "scenario": "DoS-Wednesday"
-    },
-    {
-      "name": "Infiltration-Thursday-no-metadata.parquet",
-      "sha256": "f933f2c6b1769a6194f8a2c86df582a67e5e551ac8fd035789f9b312c75336e9",
-      "bytes": 23145829,
-      "rows": 207630,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int16\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10295",
-      "scenario": "Infiltration-Thursday"
-    },
-    {
-      "name": "Portscan-Friday-no-metadata.parquet",
-      "sha256": "9ce2d3982369bd9c9e9cabb296ccffaa493cc6233a750ba9e28c5b5403bdd4b0",
-      "bytes": 13594122,
-      "rows": 119522,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int16\nTotal Backward Packets: int16\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int16\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int16\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int16\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
-      "scenario": "Portscan-Friday"
-    },
-    {
-      "name": "WebAttacks-Thursday-no-metadata.parquet",
-      "sha256": "7db47b2bf97ad58c3556ee25e8e1eb1e697cd391670733833865d0e84d8ed82a",
-      "bytes": 17652834,
-      "rows": 155820,
-      "schema": "Protocol: int8\nFlow Duration: int32\nTotal Fwd Packets: int32\nTotal Backward Packets: int32\nFwd Packets Length Total: int32\nBwd Packets Length Total: int32\nFwd Packet Length Max: int16\nFwd Packet Length Min: int16\nFwd Packet Length Mean: float\nFwd Packet Length Std: float\nBwd Packet Length Max: int16\nBwd Packet Length Min: int16\nBwd Packet Length Mean: float\nBwd Packet Length Std: float\nFlow Bytes/s: double\nFlow Packets/s: double\nFlow IAT Mean: float\nFlow IAT Std: float\nFlow IAT Max: int32\nFlow IAT Min: int32\nFwd IAT Total: int32\nFwd IAT Mean: float\nFwd IAT Std: float\nFwd IAT Max: int32\nFwd IAT Min: int32\nBwd IAT Total: int32\nBwd IAT Mean: float\nBwd IAT Std: float\nBwd IAT Max: int32\nBwd IAT Min: int32\nFwd PSH Flags: int8\nBwd PSH Flags: int8\nFwd URG Flags: int8\nBwd URG Flags: int8\nFwd Header Length: int32\nBwd Header Length: int32\nFwd Packets/s: float\nBwd Packets/s: float\nPacket Length Min: int16\nPacket Length Max: int16\nPacket Length Mean: float\nPacket Length Std: float\nPacket Length Variance: float\nFIN Flag Count: int8\nSYN Flag Count: int8\nRST Flag Count: int8\nPSH Flag Count: int8\nACK Flag Count: int8\nURG Flag Count: int8\nCWE Flag Count: int8\nECE Flag Count: int8\nDown/Up Ratio: int8\nAvg Packet Size: float\nAvg Fwd Segment Size: float\nAvg Bwd Segment Size: float\nFwd Avg Bytes/Bulk: int8\nFwd Avg Packets/Bulk: int8\nFwd Avg Bulk Rate: int8\nBwd Avg Bytes/Bulk: int8\nBwd Avg Packets/Bulk: int8\nBwd Avg Bulk Rate: int8\nSubflow Fwd Packets: int32\nSubflow Fwd Bytes: int32\nSubflow Bwd Packets: int32\nSubflow Bwd Bytes: int32\nInit Fwd Win Bytes: int32\nInit Bwd Win Bytes: int32\nFwd Act Data Packets: int32\nFwd Seg Size Min: int8\nActive Mean: float\nActive Std: float\nActive Max: int32\nActive Min: int32\nIdle Mean: float\nIdle Std: float\nIdle Max: int32\nIdle Min: int32\nLabel: dictionary<values=string, indices=int8, ordered=0>\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 10293",
-      "scenario": "WebAttacks-Thursday"
-    }
-  ],
-  "dataset_rows": 2313810,
-  "partition_rows_metadata": {
-    "train": 1760688,
-    "validation": 155820,
-    "test": 397302
+    "deployment_component_manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+    "primary_harness_sha256": "3a3dad65351ae86be3723fee8b6f72c7abe1935e7eec484964ed7be524d07d9f",
+    "resume_harness_sha256": "a691f3b26bbaea76ede4c5804c5d1c7b5c9b67de3c0117aff34794dbcc0bafaa",
+    "supplementary_protocol_sha256": "e98b7cdc7bfd3ee0b2081fe340d0a569441ba35e73e8d4401dada45f8c634ecd",
+    "supplementary_harness_sha256": "bf77720c94e9906a9a0750416a11e2c2551dd77c4accaa9d0100597529d10c05"
   },
-  "partition_overlap": false,
-  "coverage_complete": true,
-  "row_level_labels_and_adapter_precheck": "NOT_RUN: scientific stop",
-  "python": "3.12.14",
-  "platform": "macOS-26.7-x86_64-i386-64bit",
-  "dependencies": {
-    "numpy": "2.5.2",
-    "pandas": "3.0.5",
-    "pyarrow": "25.0.1",
-    "scikit-learn": "1.9.0",
-    "xgboost": "3.4.1",
-    "joblib": "1.6.0"
-  },
-  "training_executed": false,
-  "candidate_created": false,
-  "published": false
+  "scope": "Dataset already flow-aggregated; this evaluates the adapter representation, not current packet segmentation accuracy"
 }

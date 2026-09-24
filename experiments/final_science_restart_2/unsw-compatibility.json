@@ -1,0 +1,417 @@
+{
+  "conclusion": "EXTERNAL-DATASET DIRECT EVALUATION NOT METHODOLOGICALLY VALID",
+  "counts": {
+    "DIRECT": 6,
+    "DERIVED": 8,
+    "PROXY": 3,
+    "MISSING": 35,
+    "STRUCTURAL_ZERO": 0
+  },
+  "features": [
+    {
+      "name": "duration_sec",
+      "availability": "DIRECT",
+      "source_columns": [
+        "dur"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "name": "total_packets",
+      "availability": "DERIVED",
+      "source_columns": [
+        "spkts",
+        "dpkts"
+      ],
+      "unit_conversion": null,
+      "justification": "Sum of forward and backward"
+    },
+    {
+      "name": "total_bytes",
+      "availability": "DERIVED",
+      "source_columns": [
+        "sbytes",
+        "dbytes"
+      ],
+      "unit_conversion": null,
+      "justification": "Sum of forward and backward"
+    },
+    {
+      "name": "packets_per_sec",
+      "availability": "DERIVED",
+      "source_columns": [
+        "spkts",
+        "dpkts",
+        "dur"
+      ],
+      "unit_conversion": null,
+      "justification": "Calculated from packets and duration"
+    },
+    {
+      "name": "bytes_per_sec",
+      "availability": "PROXY",
+      "source_columns": [
+        "rate"
+      ],
+      "unit_conversion": null,
+      "justification": "Rate is a close proxy to bytes/sec"
+    },
+    {
+      "name": "forward_packets",
+      "availability": "DIRECT",
+      "source_columns": [
+        "spkts"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "name": "reverse_packets",
+      "availability": "DIRECT",
+      "source_columns": [
+        "dpkts"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "name": "forward_bytes",
+      "availability": "DIRECT",
+      "source_columns": [
+        "sbytes"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "name": "reverse_bytes",
+      "availability": "DIRECT",
+      "source_columns": [
+        "dbytes"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct measure"
+    },
+    {
+      "name": "fwd_rev_packet_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "spkts",
+        "dpkts"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "name": "fwd_rev_byte_ratio",
+      "availability": "DERIVED",
+      "source_columns": [
+        "sbytes",
+        "dbytes"
+      ],
+      "unit_conversion": null,
+      "justification": "Ratio calculation"
+    },
+    {
+      "name": "pkt_size_mean",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available in combined direction"
+    },
+    {
+      "name": "pkt_size_std",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_min",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_max",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_median",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_p25",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_p75",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "pkt_size_p90",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "iat_mean",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available in combined direction"
+    },
+    {
+      "name": "iat_std",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "iat_min",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "iat_max",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "iat_median",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "fwd_iat_mean",
+      "availability": "PROXY",
+      "source_columns": [
+        "sinpkt"
+      ],
+      "unit_conversion": null,
+      "justification": "Close to fwd iat mean"
+    },
+    {
+      "name": "fwd_iat_std",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "fwd_iat_min",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "fwd_iat_max",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "rev_iat_mean",
+      "availability": "PROXY",
+      "source_columns": [
+        "dinpkt"
+      ],
+      "unit_conversion": null,
+      "justification": "Close to rev iat mean"
+    },
+    {
+      "name": "rev_iat_std",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "rev_iat_min",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "rev_iat_max",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "syn_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "syn_ack_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "ack_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "fin_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "rst_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "psh_count",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "syn_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "ack_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "fin_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "rst_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "psh_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "protocol",
+      "availability": "DIRECT",
+      "source_columns": [
+        "proto"
+      ],
+      "unit_conversion": null,
+      "justification": "Direct with encoding"
+    },
+    {
+      "name": "ip_version",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "is_tcp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "proto"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "name": "is_udp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "proto"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "name": "is_icmp",
+      "availability": "DERIVED",
+      "source_columns": [
+        "proto"
+      ],
+      "unit_conversion": null,
+      "justification": "Derived from protocol"
+    },
+    {
+      "name": "payload_bytes_total",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "forward_payload_bytes",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "reverse_payload_bytes",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    },
+    {
+      "name": "payload_ratio",
+      "availability": "MISSING",
+      "source_columns": [],
+      "unit_conversion": null,
+      "justification": "Not available"
+    }
+  ],
+  "direct_transfer_evaluated": false
+}
