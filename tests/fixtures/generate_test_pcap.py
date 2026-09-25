@@ -6,26 +6,33 @@ from pathlib import Path
 
 from scapy.all import Ether, IP, TCP, UDP, ICMP, ARP, wrpcap
 
+# Synthetic locally administered unicast identities; independent of host interfaces.
+# 192.168.1.100 = client, 10.0.0.1 = TCP peer, 8.8.8.8 = legacy UDP/ICMP peer.
+CLIENT_MAC = "02:00:00:00:00:01"
+TCP_PEER_MAC = "02:00:00:00:00:02"
+UDP_ICMP_PEER_MAC = "02:00:00:00:00:03"
+
+
 def generate_test_pcap(output_path: Path):
     packets = []
     base_time = time.time()
     
     # 5 TCP SYN packets (192.168.1.100:12345 -> 10.0.0.1:80)
     for i in range(5):
-        pkt = Ether() / IP(src="192.168.1.100", dst="10.0.0.1") / TCP(sport=12345, dport=80, flags="S")
+        pkt = Ether(src=CLIENT_MAC, dst=TCP_PEER_MAC) / IP(src="192.168.1.100", dst="10.0.0.1") / TCP(sport=12345, dport=80, flags="S")
         pkt.time = base_time + i * 0.1
         packets.append(pkt)
         
     # 3 TCP SYN-ACK packets (10.0.0.1:80 -> 192.168.1.100:12345)
     for i in range(3):
-        pkt = Ether() / IP(src="10.0.0.1", dst="192.168.1.100") / TCP(sport=80, dport=12345, flags="SA")
+        pkt = Ether(src=TCP_PEER_MAC, dst=CLIENT_MAC) / IP(src="10.0.0.1", dst="192.168.1.100") / TCP(sport=80, dport=12345, flags="SA")
         pkt.time = base_time + 0.5 + i * 0.1
         packets.append(pkt)
         
     # 10 TCP data packets with known payload sizes
     for i in range(10):
         payload = b"A" * (10 + i * 10)  # Payload sizes: 10, 20, 30...
-        pkt = Ether() / IP(src="192.168.1.100", dst="10.0.0.1") / TCP(sport=12345, dport=80, flags="PA") / payload
+        pkt = Ether(src=CLIENT_MAC, dst=TCP_PEER_MAC) / IP(src="192.168.1.100", dst="10.0.0.1") / TCP(sport=12345, dport=80, flags="PA") / payload
         pkt.time = base_time + 1.0 + i * 0.1
         packets.append(pkt)
         
@@ -33,17 +40,22 @@ def generate_test_pcap(output_path: Path):
     for i in range(2):
         # Fake DNS query payload
         payload = b"\\x00\\x00\\x01\\x00\\x00\\x01\\x00\\x00\\x00\\x00\\x00\\x00\\x07example\\x03com\\x00\\x00\\x01\\x00\\x01"
-        pkt = Ether() / IP(src="192.168.1.100", dst="8.8.8.8") / UDP(sport=54321, dport=53) / payload
+        pkt = Ether(src=CLIENT_MAC, dst=UDP_ICMP_PEER_MAC) / IP(src="192.168.1.100", dst="8.8.8.8") / UDP(sport=54321, dport=53) / payload
         pkt.time = base_time + 2.0 + i * 0.1
         packets.append(pkt)
         
     # 1 ICMP echo request
-    pkt = Ether() / IP(src="192.168.1.100", dst="8.8.8.8") / ICMP(type=8) / b"PingPayload"
+    pkt = Ether(src=CLIENT_MAC, dst=UDP_ICMP_PEER_MAC) / IP(src="192.168.1.100", dst="8.8.8.8") / ICMP(type=8) / b"PingPayload"
     pkt.time = base_time + 2.5
     packets.append(pkt)
     
     # 1 ARP packet (should be skipped by parser)
-    pkt = Ether(dst="ff:ff:ff:ff:ff:ff") / ARP(pdst="192.168.1.1")
+    # Broadcast request; unknown target hardware is zero, never resolved.
+    # psrc must also be explicit: Scapy's default consults the host route.
+    pkt = Ether(src=CLIENT_MAC, dst="ff:ff:ff:ff:ff:ff") / ARP(
+        op=1, hwsrc=CLIENT_MAC, hwdst="00:00:00:00:00:00",
+        psrc="192.168.1.100", pdst="192.168.1.1",
+    )
     pkt.time = base_time + 2.6
     packets.append(pkt)
     
