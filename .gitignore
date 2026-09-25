@@ -62,3 +62,19 @@ models/*.joblib
 .mypy_cache/
 .coverage
 htmlcov/
+
+# Deterministic offline judge fixture (191 packets)
+!data/judge-demo/judge-demo.pcap
+
+# SQLite runtime sidecars
+*.db-shm
+*.db-wal
+
+# TypeScript generated build metadata
+*.tsbuildinfo
+
+# Microsoft Office temporary lock files
+~$*
+
+# Presentation files kept outside the source repository
+/*.pptx
