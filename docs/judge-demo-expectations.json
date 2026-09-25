@@ -1,0 +1,137 @@
+{
+  "status": "OBSERVED_AND_VERIFIED",
+  "runtime": {
+    "identity": "runtime/1.0.0",
+    "sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+    "evaluation": "synthetic-contract-test-only",
+    "appropriate_for": "Pipeline mechanics only; no accuracy claim",
+    "same_as_final_science_candidate": false
+  },
+  "pcaps": [
+    {
+      "filename": "data/judge-demo/judge-demo.pcap",
+      "sha256": "ef1e195076dd9610ccd160eed288b1e30c83142df34e58463c32bbc9aea7deb7",
+      "bytes": 16833,
+      "packet_count": 191,
+      "expected_flows": 72,
+      "intended_behaviors": [
+        "ordinary bidirectional UDP",
+        "60 destination ports",
+        "8 periodic sessions",
+        "24 TXT/NXDOMAIN exchanges with diverse long labels",
+        "split ClientHello and ServerHello",
+        "one visible QUIC Initial header with placeholder ciphertext"
+      ],
+      "observed": {
+        "summary": {
+          "total_packets": 191,
+          "parsed_packets": 191,
+          "skipped_packets": 0,
+          "total_flows": 72,
+          "total_detections": 72,
+          "events_persisted": 72,
+          "elapsed_sec": 0.83,
+          "mode": "REPLAY",
+          "completion": "eof"
+        },
+        "lifecycle": "replay_complete",
+        "rest_ws_export_verified": 72,
+        "wall_seconds": 2.076,
+        "classifications": {
+          "ddos": 72
+        },
+        "evidence": {
+          "behavioral": {
+            "DESTINATION_CONCENTRATION": 58,
+            "C2_PERIODICITY_EVIDENCE": 3,
+            "PORT_FANOUT": 1
+          },
+          "dns": {
+            "DNS_LEXICAL_ANOMALY": 1,
+            "DNS_HIGH_ENTROPY_LABEL": 1,
+            "DNS_UNIQUE_DOMAIN_RATE": 1,
+            "DNS_NXDOMAIN_PATTERN": 1,
+            "DNS_QTYPE_PATTERN": 1,
+            "DNS_TUNNELLING_LIKE_BEHAVIOR": 1
+          },
+          "tls": {
+            "TLS_CLIENT_HELLO_OBSERVED": 1,
+            "TLS_VERSION_CONTEXT": 2,
+            "TLS_CIPHER_PROFILE": 2,
+            "TLS_EXTENSION_PROFILE": 2,
+            "TLS_FINGERPRINT": 2,
+            "TLS_SNI_CONTEXT": 1,
+            "TLS_ALPN_CONTEXT": 1,
+            "TLS_SERVER_HELLO_OBSERVED": 1,
+            "ENCRYPTED_SESSION_PACKET_TIMING": 1
+          },
+          "quic": {
+            "QUIC_LONG_HEADER_OBSERVED": 1,
+            "QUIC_VERSION_CONTEXT": 1,
+            "QUIC_CONNECTION_ID_CONTEXT": 1,
+            "QUIC_PACKET_SIZE_PATTERN": 1
+          }
+        },
+        "stable_event_sha256": "b1c14daf190f39d26ecd1213ba4526bc5bcb24f695ec1352b65b0b05638f5c4f",
+        "stable_export_sha256": "87d6bbedaa30171da6d691233cbc0716026e597ea9ff2a1a2f4a947b0f17ec0c",
+        "correlation_membership_counts": {
+          "1": 72
+        },
+        "timeline_item_counts": {
+          "7": 1,
+          "9": 1,
+          "2": 11,
+          "17": 1,
+          "4": 4,
+          "3": 54
+        },
+        "anomaly_scores": [
+          0.40408720138724674,
+          0.44829242100595385,
+          0.5228440487003442,
+          0.5518023616138411
+        ],
+        "classifier_scores": [
+          0.5806687474250793,
+          0.6103552579879761,
+          0.6617411375045776
+        ]
+      },
+      "screens": [
+        "Sensor assurance/science",
+        "Detections: 192.0.2.20 port 1059 fan-out",
+        "Detections: 192.0.2.30 port 43007 periodicity",
+        "Detections: 192.0.2.40 DNS",
+        "Detections: 192.0.2.50 TLS",
+        "Detections: 192.0.2.60 QUIC",
+        "Investigation timeline/export"
+      ],
+      "correlation": "72 single-event investigations; multiple evidence sources within each event, no cross-flow linkage invented",
+      "export_available": true,
+      "investigation_ids": "Random anchors yield variable derived identifiers; select by endpoint tuple",
+      "limitations": [
+        "All 72 QA-model classifications are ddos, including ordinary traffic. Not accuracy validation.",
+        "No SYN/UDP rate threshold crossing claimed.",
+        "No JA4; no decryption; no network interaction.",
+        "Native capture and physical diode NOT VERIFIED."
+      ],
+      "may_say": [
+        "This is recorded synthetic traffic replay through the actual pipeline.",
+        "Behavioral evidence is context, not proof of attack.",
+        "The evaluated scientific candidate is not the deployed QA model.",
+        "The export digest verifies bytes, not authorship."
+      ],
+      "must_not_say": [
+        "72 real attacks were detected.",
+        "The replay proves 75.94% accuracy.",
+        "Entropy proves DGA.",
+        "JA4 is implemented.",
+        "We decrypted TLS or QUIC.",
+        "Hardware diode or native capture was validated."
+      ]
+    }
+  ],
+  "normalization": "Event/flow UUIDs map to unique ordered endpoint/protocol tuples. Single replay-session UUID maps to verified PCAP identity. Explanation/investigation/correlation IDs and runtime event/creation/explanation/correlation timestamps are normalized. Capture clocks, scores, evidence and correlation membership remain exact.",
+  "selected_event_evidence": "judge-demo-validation/selected-events.json",
+  "offline_guard": "Python socket.connect and getaddrinfo fail on use during all five real replay/API/export runs; ASGI transport remains in-process."
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-25",
+  "frontend": "production build served on loopback",
+  "cold_start": "Fresh API, fresh isolated SQLite, new origin/tab initially unconfigured; configured through password input; replay, REST events, investigation and browser export verified",
+  "viewports": [
+    {"width":1920,"height":1080,"inspection":"Sensor assurance and replay counts; no clipping observed"},
+    {"width":1440,"height":900,"page_width":1440,"visual_viewport_scale":1,"inspection":"Timeline, export digest, provenance"},
+    {"width":1366,"height":768,"page_width":1366,"visual_viewport_scale":1,"inspection":"Timeline/export, DNS/TLS/QUIC/behavior evidence and Sensor"},
+    {"width":390,"height":844,"page_width":390,"visual_viewport_scale":1,"inspection":"Timeline wraps within viewport; mobile navigation retained"}
+  ],
+  "export_sha256_verified_in_browser": "f0c2fd3441792fb007d410ce3ffc24348bc1e82cd7ff9d01bb78cfdc95f62afc",
+  "export_focus": "Download evidence JSON button retained focus",
+  "browser_refresh": "Initially loading/unconfigured transient, then API REACHABLE and WS CONNECTED with retained event; no credential re-entry",
+  "technical_walkthrough_seconds": 211,
+  "timing_scope": "Browser route through DNS, QUIC, periodicity, fanout, TLS, verified export and Sensor science. Existing replay complete before timed route. Includes tool round trips; not a spoken presenter rehearsal.",
+  "dom_assets": ["inline data SVG favicon", "/assets/index-Cp5vW1DK.js", "/assets/index-Csya1N7C.css"],
+  "limitations": ["Physical projector not tested", "Host Internet adapter was not disabled", "No real native capture or physical diode validation", "No production browser network interception used"],
+  "ui_changes": "None needed"
+}
