@@ -1,267 +1,103 @@
 # EIDOLON // SENTINEL-NET
 
-**AI-Powered Passive Cyber Threat Detection System**
+**Passive AI threat detection for unidirectional IP traffic.**
 
-A cybersecurity research prototype for AI-based detection of cyber threats in unidirectional IP traffic. The system processes network packet captures (PCAPs) or live traffic through a structured pipeline: passive ingestion → packet parsing → flow aggregation → feature extraction → anomaly detection → threat classification → explainable detection → event storage → REST API / WebSocket stream.
+Sentinel-NET is a research prototype that turns observed packet metadata into model results and separate contextual evidence for analyst investigation. It records only observed directions; missing reverse traffic is not synthesized.
 
-> **Security Principle**: The system is structurally passive — it has NO code path capable of sending packets, probing hosts, or initiating network connections. Live capture uses a receive-only L2 socket and Scapy `AsyncSniffer`. PCAP processing is entirely offline.
+> **Judge demo:** the deterministic recorded replay currently uses a **synthetic QA / contract-test runtime model**. Its 72 DDoS labels demonstrate pipeline execution, **not 72 validated attacks or scientific accuracy**. The evaluated scientific candidate is different, not approved and not operationally published. Eleven candidate binaries are excluded from the intended release tree while local copies remain hash-bound; historical Git copies are still reachable. Git availability is distribution even without runtime approval.
 
-## Continuous passive sensor (RW-2)
+## Release freeze verification
 
-Run `sentinel-net sensor --interface <interface> --model <model-name/version>` with an approved frozen bundle in `SENTINEL_MODEL_REGISTRY` and private API-key configuration. Replay also requires `--model` and never trains. See [RW-4 operator workflow](docs/rw4-frozen-models.md). The CLI owns capture, processing, storage and graceful SIGINT/SIGTERM shutdown; it does not train models. Live health distinguishes RUNNING, DEGRADED and FAILED from recorded replay.
+**GO FOR CODE FREEZE — operator commit pending.** RF-1 was discovered during the initial freeze, corrected separately in `9c186a0`, and verified by no-network regression. Final worktree and clean-archive suites pass with zero failures/skips. See the [freeze report](docs/release-freeze-report.md) for evidence, historical blocker details and limitations. This is a software freeze decision, not production or scientific candidate approval.
 
-See the [RW-2 operator guide](docs/rw2-continuous-sensor.md) for artifact prerequisites, metrics, shutdown guarantees, remaining resource risks and manual interface validation. No deployed model artifact is included. Historical evaluation results have not been reproduced for the RW-1 segmentation corrections.
+## Pipeline
 
-## Earlier implementation phases
-
-### Phase 1 ✅
-✅ Project foundation and configuration  
-✅ Typed data model hierarchy (8 dataclasses, 4 enums)  
-✅ Passive PCAP ingestion and parsing  
-✅ SQLite event storage  
-✅ FastAPI health endpoint  
-✅ Structured logging  
-
-### Phase 2 ✅
-✅ Flow aggregation engine (FlowAggregator)  
-✅ Feature extraction (52-feature schema)  
-✅ End-to-end pipeline: PCAP → ParsedPacket → ObservedFlow → FeatureVector  
-✅ Bidirectional flow tracking with directional counters  
-✅ TCP flag counting from bitmask  
-✅ Packet size and inter-arrival time statistics  
-✅ Configurable idle timeout and bounded memory  
-✅ Deterministic feature ordering for ML consumption  
-
-### Phase 3 ✅
-✅ Feature audit (52 features verified safe — metadata only, no payload inspection)  
-✅ Dataset pipeline with scenario-aware splitting (anti-leakage)  
-✅ Preprocessing (sklearn Pipeline — NaN/inf imputer + StandardScaler)  
-✅ Anomaly detection (Isolation Forest, normalized [0,1] scores)  
-✅ Threat classification (XGBoost, Random Forest, Logistic Regression)  
-✅ Detection pipeline: FeatureVector → DetectionEvent  
-✅ Model registry with SHA-256 checksum verification  
-✅ Evaluation framework (precision, recall, F1, confusion matrix, ROC-AUC)  
-
-### Phase 4 ✅
-✅ Retrospective audit of Phases 1–3 (5 defects found and fixed)  
-✅ SHAP explainability (optional dependency, lazy import, graceful degradation)  
-✅ Anomaly explanation (statistical deviation, evidence_type="statistical")  
-✅ Structured Evidence model with type validation  
-✅ Human-readable rationale generation  
-✅ MITRE ATT&CK mapping with qualification levels  
-✅ ExplainableDetection composite type  
-✅ AST-based security test suite  
-✅ Performance benchmarks  
-
-### Phase 5 ✅
-✅ Critical auth bypass fix (hmac.compare_digest)  
-✅ Passive live capture source (scapy.sniff, receive-only)  
-✅ BPF filter validation (shell injection prevention)  
-✅ Sensor lifecycle state machine (STOPPED→STARTING→RUNNING→STOPPING)  
-✅ Thread-safe operational metrics (15 counters)  
-✅ In-process EventBus (bounded pub/sub, no Redis/Kafka)  
-✅ Live sensor pipeline (reuses PCAP processing components)  
-✅ PCAP ↔ live capture processing parity  
-✅ Extended database schema (threat_type, anomaly_score, model_version indexes)  
-✅ REST API: events, flows, stats, status (paginated, filtered, authenticated)  
-✅ WebSocket event stream (auth-message-first, heartbeat, bounded queues)  
-✅ Event retention (max count, max age, configurable cleanup)  
-✅ Configurable CORS origins  
-✅ No stack traces or secrets in error responses  
-✅ AST-based sensor security tests  
-
-### Phase 6 ✅
-✅ Retrospective audit (9 backend defects found and fixed)  
-✅ Pydantic response schemas for all API endpoints  
-✅ Event storage enriched with explanation data (evidence, ATT&CK mappings)  
-✅ LEFT JOIN flows in events queries (IP/port context)  
-✅ Database indexes (events.flow_id, flows.start_time)  
-✅ Pipeline predict() method fixed → detect_batch()  
-✅ Version consistency (health → 0.6.0)  
-✅ React + TypeScript + Vite SOC dashboard  
-✅ 8 pages: Overview, Detections, Detection Detail, Flows, Flow Detail, Sensor, Intelligence, Settings  
-✅ Typed API client with centralized fetch  
-✅ WebSocket manager (auth-message-first, exponential backoff, bounded buffer)  
-✅ Dark operator interface (WCAG 2.1 AA contrast, keyboard accessible)  
-✅ Evidence visualization with contribution bars  
-✅ ATT&CK mapping display (backend-sourced only)  
-✅ Pagination, filtering, empty/error states  
-✅ No credential leakage, no eval(), no dangerouslySetInnerHTML  
-✅ No Redux, no second HTTP client, no unnecessary dependencies  
-
-### Phase 7 ✅
-✅ Locked evaluation protocol (OPEN → THRESHOLD_LOCKED → FINAL_EVALUATED)  
-✅ Experiment manifests for full reproducibility  
-✅ Validation-based threshold optimizer (VALIDATION data only)  
-✅ Enhanced metrics (multi-class OVR ROC-AUC, PR-AUC, class imbalance)  
-✅ Scenario-ID disjointness verification in dataset splits  
-✅ Model comparison (all 4 models on identical partitions)  
-✅ Class imbalance analysis  
-✅ False positive / false negative collection and categorization  
-✅ Simulated unidirectional feature ablation (correctly labeled, not real unidirectional)  
-✅ Feature group ablation (7 groups, model dependence measurement)  
-✅ Controlled robustness experiments (timing jitter, packet size, flow duration, directional, missing metadata)  
-✅ Calibration analysis (Brier, ECE, reliability diagrams — NOT for IForest anomaly scores)  
-✅ Cross-scenario holdout evaluation  
-✅ Model stability (multi-seed variance)  
-✅ OOD analysis (synthetic inputs, novelty vs malice distinction)  
-✅ Failure taxonomy (F1–F10, evidence-based classification)  
-✅ Score type discipline (anomaly score ≠ classification score ≠ probability)  
-✅ Synthetic validation pipeline  
-✅ Research report generator  
-✅ Experiment artifacts directory structure  
-✅ CICIDS2017 dataset adapter (29 DIRECT + 12 DERIVED + 11 MISSING = 52 features)  
-✅ UNSW-NB15 dataset adapter (6 DIRECT + 8 DERIVED + 3 PROXY + 35 MISSING = 52 features)  
-✅ Feature availability matrices for both datasets  
-✅ Label mapping with encoding-variant handling (mojibake, en-dash)  
-✅ Preprocessing compatibility audit  
-✅ 432 backend tests + 48 frontend tests (zero failures)  
-✅ Documentation: evaluation methodology, dataset adapters, feature availability, limitations  
-
-## Quick Start
-
-### Prerequisites
-
-- macOS (tested on 26.x)
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/) package manager
-
-### Setup
-
-```bash
-# Clone the repository
-cd "Eidolon Sentinel-NET"
-
-# Install dependencies and create virtualenv
-uv sync
-
-# Install optional explainability dependencies (SHAP)
-uv pip install -e ".[explainability]"
-
-# Run tests
-uv run pytest tests/ -v
-
-# Start the API server
-uv run sentinel-net
-# or: uv run uvicorn sentinel_net.api.main:app --host 127.0.0.1 --port 8000
+```text
+Traffic / PCAP → passive parsing → flow aggregation
+→ 52 canonical features (schema 2.0.0) → frozen ML / anomaly detection
+→ F3 behavioral evidence → F4 passive DNS → F5 TLS/QUIC metadata
+→ SQLite / REST / WebSocket → F6 analyst investigation → SOC / verified export
 ```
 
-### Configuration
+The live source architecture uses a receive-only capture backend; the judge demonstration is **RECORDED TRAFFIC REPLAY**. Native real-interface capture on the presentation host and a physical data diode are **NOT VERIFIED**. The analysis path does not probe monitored hosts, inject traffic, perform reputation lookups, decrypt payloads or train models at runtime. The SOC/API intentionally use network connections for local operator access; structural passivity refers to the monitored network, not absence of all network I/O.
 
-Copy `.env.example` to `.env` and configure:
+The SOC provides distinct model/anomaly results, bounded F3/F4/F5 context, source/model provenance, labelled timelines and SHA-256-verified JSON exports. Heuristics and fingerprints are context, not malware verdicts or a combined attack probability. Export digests verify bytes, not authorship or legal chain of custody.
 
-```bash
-cp .env.example .env
+## Start reviewing
+
+- [Judge repository guide](docs/judge-repository-guide.md): source, tests and evidence map.
+- [Judge demo runbook](docs/judge-demo-runbook.md): local commands, mandatory disclaimer and presenter routes.
+- [Demo expectations](docs/judge-demo-expectations.json): observed results, hashes and claims boundaries.
+- [39-row SIH26145 matrix](docs/sih26145-compliance-matrix.md): implemented software scope and remaining gaps; not certification.
+- [Architecture](ARCHITECTURE.md), [security](SECURITY.md), [datasets](DATASETS.md).
+- [Release checklist](docs/release-checklist.md) and [freeze manifest](docs/release-freeze-manifest.json).
+
+## Scientific results — separate from the QA runtime
+
+The final scientific evaluation uses the fixed CICIDS2017 scenario-aware partition, seed 42, 397,302 test rows. These are candidate results, not the runtime judge replay's results.
+
+| Metric | Measured result |
+|---|---:|
+| XGBoost accuracy | 0.759440 |
+| XGBoost macro-F1 | 0.267512 |
+| Benign → malicious false-positive rate | 0.103% |
+| C2 supervised recall | **0%** |
+| DDoS supervised recall | **26.68%** |
+| Isolation Forest ROC-AUC | 0.818401 |
+
+ROC-AUC is not accuracy. No primary-test reconnaissance/exfiltration support exists. Threshold-dependent anomaly results remain exploratory. F3/F4/F5 do not have population-level accuracy estimates. See [final science report](docs/final-science-report.md), [metrics](docs/final-science-metrics.json) and [claims](docs/final-science-claims.md).
+
+Runtime `runtime/1.0.0` manifest: `23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f` — **SYNTHETIC QA MODEL; PIPELINE DEMONSTRATION ONLY**.
+
+Scientific candidate manifest: `29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573`; deployment candidate manifest: `7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6`. **SUITABLE FOR OPERATOR REVIEW; NOT APPROVED; NOT PUBLISHED to the runtime registry.** Git history previously distributed the candidate binaries; no confidentiality or retroactive withdrawal is implied. See [artifact policy](docs/release-artifact-policy.md).
+
+## Local verification
+
+Python 3.12+, the existing local `.venv`, Node/npm, and installed frontend dependencies are required. `uv.lock` and `frontend/package-lock.json` record dependency resolution. Provision dependencies before offline presentation; these commands do not install or download anything.
+
+From the repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python tests/fixtures/generate_test_pcap.py
+PYTHONPATH=src:. .venv/bin/python -m pytest -q
 ```
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `SENTINEL_ENV` | `development` | Environment name |
-| `SENTINEL_DATABASE_PATH` | `data/sentinel_net.db` | SQLite database file path |
-| `SENTINEL_API_HOST` | `127.0.0.1` | API bind address |
-| `SENTINEL_API_PORT` | `8000` | API bind port |
-| `SENTINEL_API_KEY` | `changeme-dev` | API authentication key |
-| `SENTINEL_LOG_LEVEL` | `INFO` | Logging level |
-| `SENTINEL_PCAP_DIR` | `data/pcaps` | Directory for PCAP files |
+From `frontend/`:
 
-### PCAP Replay
-
-```python
-from pathlib import Path
-from sentinel_net.ingestion.replay import PcapReplay, PcapReplayConfig
-
-config = PcapReplayConfig(pcap_path=Path("capture.pcap"))
-replay = PcapReplay(config)
-
-# Synchronous
-packets = replay.replay_sync()
-print(f"Parsed {replay.parsed_count}/{replay.packet_count} packets")
-
-# Asynchronous
-async for packet in replay.replay():
-    print(f"{packet.src_ip}:{packet.src_port} -> {packet.dst_ip}:{packet.dst_port}")
+```sh
+npm test
+npm run typecheck
+npm run build
 ```
 
-## Data Model Hierarchy
+Generate the ignored legacy fixture before the full suite so its fixture-dependent test runs. RF-1 regression blocks the inspected resolver/send/routing/interface/socket paths. Frame bytes are deterministic; existing wall-clock record timestamps remain variable.
 
-```
-RawPacket          → Raw bytes + capture metadata
-  ↓
-ParsedPacket       → Structured fields (IP, TCP/UDP, entropy)
-  ↓
-ObservedFlow       → Aggregated bidirectional flow record (observed traffic only)
-  ↓
-FeatureVector      → 47 statistical features (deterministic schema)
-  ↓
-AnomalyResult      → Anomaly detection output (Phase 3)
-  ↓
-ThreatClassification → Threat label + confidence (Phase 3)
-  ↓
-DetectionEvent     → Complete event for storage/API
+Final freeze verification: **962 backend passed, zero failures/skips, 43 warnings** in both worktree and clean archive; **100 frontend tests across seven files**, strict TypeScript and production build pass in both trees. The unchanged loopback test passes on the normal host; sandbox binding restrictions are not a product failure or a passing substitute. See the freeze report for exact results.
+
+For the judge fixture, from the repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python scripts/generate_judge_demo.py
+PYTHONPATH=src:. .venv/bin/python scripts/verify_judge_demo.py --registry "$DEMO_REGISTRY"
 ```
 
-> **Observation Rule**: If only one direction is observed, the other direction's counters remain at zero. The system does NOT fabricate or infer unseen reverse traffic.
+`DEMO_REGISTRY` must name the existing trusted QA registry, not the unapproved candidate directory. The reviewed local machine's path is documented in the runbook. The verifier blocks socket connections/DNS use, runs three fresh replays, an interruption and clean recovery, and checks real REST/WS/export handlers. It does not generate or approve models.
 
-### Pipeline Usage (Phase 2)
+The [preflight](docs/judge-demo-preflight.md) requires a privately configured API key and free loopback ports. The [launcher](scripts/judge_demo.py) creates a fresh isolated database and invokes the actual `sentinel-net replay --pcap ... --model runtime/1.0.0` command. No arbitrary database deletion. The PCAP is 16,833 bytes / 191 packets and produces 72 flows/events under the pinned QA runtime.
 
-```python
-from pathlib import Path
-from sentinel_net.pipeline import PcapPipeline
+## Limits to preserve
 
-pipeline = PcapPipeline()
-result = pipeline.process(Path("capture.pcap"))
+- QA runtime predictions are not scientific accuracy evidence; the candidate stays separate and unapproved.
+- Zero C2 supervised recall, limited DDoS recall, missing primary-test recon/exfiltration support, exploratory anomaly thresholds.
+- No population-level accuracy estimates for behavioral/DNS/encrypted-session heuristics.
+- JA4 **NOT IMPLEMENTED**; encrypted DNS unavailable; TLS application data and QUIC Initial payloads are not decrypted.
+- Native capture and physical diode **NOT VERIFIED**. Replay/source-adapter parity is software validation only.
+- Exact per-flow timestamp/packet-size histories retain a prototype resource limitation: active-flow caps do not strictly bound every flow's memory.
+- Performance measurements are host/workload-specific; no capacity or latency guarantee.
+- Physical projector and spoken rehearsal remain operator tasks. A technical browser route was measured separately.
 
-print(f"{result.total_packets} packets → {result.total_flows} flows")
-for fv in result.feature_vectors:
-    arr = fv.to_numpy_array()  # Ready for future ML models
-    print(f"  Flow: {fv.flow_key.unidirectional_key} → {len(arr)} features")
-```
+## Repository
 
-## Project Structure
+`src/` backend; `frontend/` SOC; `tests/` behavioral/security/integration checks; `scripts/` maintained engineering tools; `experiments/` manifests/results and local trusted scientific artifacts; `docs/` evidence and operations; `data/judge-demo/` the narrowly authorized synthetic PCAP. Historical phase records remain for provenance and may describe superseded results. `scratch.py` is retained because SCI-CORR-2 records reference its cleanup state.
 
-```
-src/sentinel_net/
-├── __init__.py           # Package version
-├── config.py             # Pydantic Settings configuration
-├── cli.py                # CLI entry point
-├── pipeline.py           # End-to-end PCAP → FeatureVector pipeline
-├── models/
-│   ├── types.py          # 8 typed dataclasses + TCP flag constants
-│   └── enums.py          # Severity, ThreatType, Direction, Protocol
-├── ingestion/
-│   ├── parser.py         # Passive packet parsing (READ-ONLY)
-│   └── replay.py         # Offline PCAP file replay
-├── flow/
-│   └── aggregator.py     # Flow aggregation engine
-├── features/
-│   ├── schema.py         # Canonical 47-feature schema
-│   └── extractor.py      # ObservedFlow → FeatureVector extraction
-├── storage/
-│   └── database.py       # SQLite async storage (aiosqlite)
-└── api/
-    ├── main.py           # FastAPI application factory
-    ├── auth.py           # API key middleware
-    └── routes/
-        └── health.py     # Health/readiness endpoints
-```
-
-## Testing
-
-```bash
-# Run all tests
-uv run pytest tests/ -v
-
-# With coverage
-uv run pytest tests/ --cov=sentinel_net --cov-report=term-missing
-
-# Generate test PCAP fixture
-uv run python tests/fixtures/generate_test_pcap.py
-```
-
-## License
-
-MIT — See [LICENSE](LICENSE) for details.
-
-## Security
-
-See [SECURITY.md](SECURITY.md) for the passive ingestion security model and threat analysis.
+MIT license — see [LICENSE](LICENSE).

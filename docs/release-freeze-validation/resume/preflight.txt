@@ -1,0 +1,9 @@
+PASS Python >=3.12
+PASS Dependencies installed
+PASS Frontend production build
+PASS Private API key configured
+PASS Dedicated fresh database location available
+PASS Pinned PCAP, approved model, checksums and schema; 23 protected files
+PASS Loopback API port available
+PASS Loopback frontend port 5174 available
+DEMO READY

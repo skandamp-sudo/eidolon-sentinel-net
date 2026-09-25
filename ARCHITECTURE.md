@@ -1,5 +1,8 @@
 # EIDOLON // SENTINEL-NET — Architecture
 
+
+> Release scope: the diagram below records earlier implementation layers. The current path adds F3 behavioral, F4 DNS, F5 TLS/QUIC and F6 investigation/export; see [current README](README.md), [F6 architecture](docs/sih-f6-architecture.md) and [release artifact policy](docs/release-artifact-policy.md). Runtime QA and evaluated candidate are distinct. Native capture and physical diode remain NOT VERIFIED.
+
 ## System Overview
 
 SENTINEL-NET is a passive cyber threat detection prototype that processes unidirectional IP traffic through a structured, typed pipeline. The system supports both offline PCAP analysis and real-time passive traffic observation via a REST API and WebSocket event stream.
@@ -12,11 +15,11 @@ SENTINEL-NET is a passive cyber threat detection prototype that processes unidir
 │ (Offline Input)   │    │ sensor/capture.py            │
 └─────────┬─────────┘    └──────────────┬──────────────┘
           │                             │
-          │  replay.py → RawPacket      │  scapy.sniff → RawPacket
+          │  replay.py → RawPacket      │  AsyncSniffer → RawPacket
           └──────────┬──────────────────┘
                      ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  INGESTION LAYER (Structurally Passive — No Network I/O)        │
+│  INGESTION LAYER (Passive observation; operator API separate)        │
 │                                                                  │
 │  parser.py: extract_raw_packet() → parse_packet()                │
 │             RawPacket           → ParsedPacket                   │
@@ -29,7 +32,7 @@ SENTINEL-NET is a passive cyber threat detection prototype that processes unidir
 │  FlowAggregator: ParsedPacket → ObservedFlow                    │
 │  Canonical FlowKey (sorted endpoints + protocol)                 │
 │  Tracks forward/reverse directions from initiator                │
-│  Configurable idle timeout, bounded memory                       │
+│  Idle timeout, active-flow cap; exact histories grow                       │
 │  TCP flag counting, IAT tracking, packet sizes                   │
 │  Does NOT infer unseen reverse traffic                           │
 └────────────────────────────┬────────────────────────────────────┘
@@ -151,16 +154,16 @@ Every stage of the pipeline has a distinct typed data structure:
 ## Design Principles
 
 ### 1. Structural Passivity
-The ingestion layer cannot send packets by design — it imports only read functions from scapy, never `send`, `sendp`, `sr`, `sr1`, or `AsyncSniffer`.
+The ingestion layer cannot send packets by design — it imports only read functions from scapy, never active send/probe operations. Live capture uses `AsyncSniffer` over a receive-only L2 listen socket.
 
 ### 2. Unidirectional Fidelity
 If only one direction of a flow is observed, the system represents exactly that. There is no inference of reverse traffic.
 
 ### 3. Typed Pipeline
-Each processing stage has a dedicated dataclass. No dynamic dictionaries flowing through the pipeline.
+Core processing stages have typed records; event metadata and analyst projections also use validated dictionaries.
 
 ### 4. Offline-First
-All processing works from PCAP files. Live capture is a future extension (Phase 4+), isolated behind a strict read-only interface.
+Recorded processing works from PCAP files. Live capture architecture exists behind the shared passive-source interface; native-interface validation remains deployment-specific and NOT VERIFIED.
 
 ## Flow Lifecycle
 

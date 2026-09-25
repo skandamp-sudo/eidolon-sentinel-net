@@ -1,0 +1,118 @@
+{
+  "phase": "RELEASE-FREEZE-RESUME",
+  "freeze_date": "2026-09-25",
+  "decision": "GO FOR CODE FREEZE — BEGIN SIH PRESENTATION",
+  "reason": "Remaining software gates pass; operator commit pending; limitations retained",
+  "git": {
+    "branch": "main",
+    "pre_commit_base": "9c186a0d977463261a0b0664ac420887b188bc23",
+    "origin_main_local_ref": "9c186a0d977463261a0b0664ac420887b188bc23",
+    "ahead": 0,
+    "behind": 0,
+    "remote": "https://github.com/skandamp-sudo/eidolon-sentinel-net.git",
+    "remote_server_freshness": "NOT VERIFIED; no fetch",
+    "initial_worktree": "Prior reviewed freeze documentation/hygiene edits present; RF-1 committed separately",
+    "FINAL_FREEZE_COMMIT": "PENDING_OPERATOR_COMMIT"
+  },
+  "scientific_baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+  "feature_schema": "2.0.0",
+  "feature_count": 52,
+  "protected_sources_matched": 23,
+  "candidate_components_matched": 14,
+  "demo_pcap": {
+    "filename": "judge-demo.pcap",
+    "sha256": "ef1e195076dd9610ccd160eed288b1e30c83142df34e58463c32bbc9aea7deb7",
+    "packet_count": 191,
+    "bytes": 16833,
+    "independent_regeneration_equal": true
+  },
+  "qa_runtime_manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+  "qa_runtime_scope": "SYNTHETIC QA MODEL; PIPELINE DEMONSTRATION ONLY",
+  "scientific_candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "deployment_candidate_manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+  "candidate_status": {
+    "approved": false,
+    "runtime_published": false,
+    "git_binaries_currently_tracked": false,
+    "git_binaries_historically_available": true
+  },
+  "gates": {
+    "loopback": "PASS: 1 passed in 4.93s, normal host",
+    "backend_worktree": {
+      "passed": 962,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 43,
+      "seconds": 97.12
+    },
+    "backend_clean_archive": {
+      "passed": 962,
+      "failed": 0,
+      "skipped": 0,
+      "warnings": 43,
+      "seconds": 103.38
+    },
+    "frontend_worktree": {
+      "passed": 100,
+      "files": 7,
+      "seconds": 3.55
+    },
+    "frontend_clean_archive": {
+      "passed": 100,
+      "files": 7,
+      "seconds": 3.6
+    },
+    "typescript": "PASS both trees; strict true",
+    "build": "PASS both trees; 2.04s worktree / 1.83s clean archive",
+    "final_golden_replay": "PASS: three fresh 191-packet/72-event runs match prior golden hashes",
+    "offline_verification": "no required Internet dependency demonstrated under blocked socket/DNS use",
+    "interruption_recovery": "PASS: cancelled after 7 packets / 4 persisted events; fresh recovery equals golden",
+    "actual_clean_launcher": "PASS: 72 events through authenticated loopback REST; stopped validation process afterward",
+    "core_parity": "PASS",
+    "F3_parity": "PASS",
+    "F4_parity": "PASS",
+    "F5_parity": "PASS",
+    "F6": "PASS",
+    "auth_REST_WebSocket_retention_lifecycle_replay_frozen_loader_SCI_CORR_judge_RF1": "PASS in both complete backend suites"
+  },
+  "repository_audit": {
+    "root_artifacts_removed": 26,
+    "local_backups_preserved": true,
+    "models_untracked": 11,
+    "model_untracking": "DONE: index-only deletion, all eleven local bytes preserved",
+    "real_secrets_discovered": false,
+    "secret_scan_scope": "Original 13-commit/687-blob audit retained; RF-1 commit delta and resumed documentation/evidence reviewed; no new credential discovered",
+    "matrix_status_counts": {
+      "PARTIAL": 25,
+      "NOT VERIFIED": 2,
+      "COMPLETE": 12
+    },
+    "behavioral_source_changes": false,
+    "committed": false,
+    "pushed": false,
+    "tagged": false
+  },
+  "known_limitations": [
+    "QA predictions are not scientific accuracy evidence",
+    "Candidate unapproved and not runtime-published; binaries remain historically Git-obtainable",
+    "C2 recall zero; DDoS recall limited",
+    "No primary recon/exfil test support",
+    "Anomaly thresholds exploratory",
+    "No F3/F4/F5 population accuracy",
+    "Native capture/physical diode NOT VERIFIED",
+    "JA4 not implemented; encrypted DNS unavailable; no TLS/QUIC decryption",
+    "Host/workload-specific performance; per-flow history memory limitation",
+    "Physical projector/spoken rehearsal pending",
+    "Current vulnerability-advisory audit and remote-ref freshness NOT VERIFIED"
+  ],
+  "artifact_policy": "release-artifact-policy.md",
+  "report": "release-freeze-report.md",
+  "rf1": {
+    "status": "RESOLVED",
+    "correction_commit": "9c186a0d977463261a0b0664ac420887b188bc23",
+    "history": "Discovered during freeze, corrected separately, verified by three no-network regression tests; 962-test final worktree and clean-archive suites pass",
+    "initial_stop_evidence": "release-freeze-validation/initial-stop-release-freeze-report.md",
+    "sandbox_only_failure": "Prior port-collision bind denied; unchanged test passes in normal host environment"
+  },
+  "evidence": "release-freeze-validation/resume/"
+}

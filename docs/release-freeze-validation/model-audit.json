@@ -1,0 +1,90 @@
+[
+  {
+    "path": "experiments/final_science_restart_2/IsolationForest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/LogisticRegression.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/RandomForest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/XGBoost.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/anomaly.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "candidate deployment format",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/classifier.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "candidate deployment format",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "candidate deployment format",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/linear-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-iforest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  },
+  {
+    "path": "experiments/final_science_restart_2/tree-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "No reference found in demo helper; final clean demo not reached",
+    "tests_depend_on_copy": "Clean archive: 958 passed, one generated-PCAP skip",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "PENDING: retain tracked/local on mandatory STOP; proposed untracking not performed"
+  }
+]

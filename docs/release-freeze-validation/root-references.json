@@ -1,0 +1,57 @@
+{
+  "add_visuals.py": [],
+  "arch_diagram.png": [
+    "add_visuals.py"
+  ],
+  "build_presentation.py": [],
+  "chart_arch.png": [
+    "build_presentation.py"
+  ],
+  "chart_results.png": [
+    "build_presentation.py"
+  ],
+  "fill_pptx.py": [],
+  "find_sih_template.py": [],
+  "fix_slide2.py": [],
+  "format_sih.py": [],
+  "generate_assets.py": [],
+  "inspect_base.py": [],
+  "inspect_pptx.py": [],
+  "inspect_sih_final.py": [],
+  "inspect_template_text.py": [],
+  "mock_soc.png": [
+    "build_presentation.py"
+  ],
+  "mutate_sih.py": [],
+  "real_soc.png": [
+    "mutate_sih.py",
+    "take_screenshot.js"
+  ],
+  "results_chart.png": [
+    "add_visuals.py"
+  ],
+  "scratch.py": [
+    "docs/sci-corr-2-report.md",
+    "docs/sci-corr-2-restart-contract.md"
+  ],
+  "take_screenshot.js": [],
+  "test_inference.py": [],
+  "visual_novelty.png": [
+    "format_sih.py",
+    "generate_assets.py"
+  ],
+  "visual_pipeline.png": [
+    "format_sih.py",
+    "generate_assets.py"
+  ],
+  "visual_problem.png": [
+    "format_sih.py",
+    "generate_assets.py"
+  ],
+  "visual_results.png": [
+    "format_sih.py",
+    "generate_assets.py"
+  ],
+  "package.json": [],
+  "package-lock.json": []
+}

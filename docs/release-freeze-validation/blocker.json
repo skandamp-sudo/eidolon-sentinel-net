@@ -1,0 +1,18 @@
+{
+  "id": "RF-1",
+  "status": "CONFIRMED_SOURCE_BEHAVIOR_REQUIRES_SEPARATE_AUTHORIZATION",
+  "file": "tests/fixtures/generate_test_pcap.py",
+  "lines": [16,22,29,37,42],
+  "trigger": "Serializing Ether() frames without explicit destination MAC through wrpcap",
+  "observation": "Generator emitted getmacbyip failed on No /dev/bpf handle is available and MAC address to reach destination not found warnings in the clean archive",
+  "installed_dependency_trace": [
+    "scapy.layers.l2.DestMACField.i2m: absent MAC invokes conf.neighbor.resolve",
+    "scapy.layers.l2.getmacbyip: follows routing table; absent cached MAC invokes srp1(Ether broadcast / ARP who-has)"
+  ],
+  "impact": "Fixture generation is not reliably offline and may issue ARP on a host with capture permissions",
+  "transmission_status": "NOT ESTABLISHED; this run reported denied/unavailable BPF handle. No zero-traffic guarantee inferred.",
+  "additional_context": "Legacy fixture uses wall-clock timestamps and non-documentation destinations. The judge fixture generator separately has explicit documentation IPs and MACs and is unchanged.",
+  "action": "STOP; no fixture source patch, permission elevation, repeated generator execution, remaining golden replay or model untracking",
+  "proposed_separate_correction": "Set explicit synthetic Ethernet source/destination addresses for every frame; prohibit resolver/send use in a regression test; review ARP hardware fields and fixture addresses. Preserve expected test semantics and judge PCAP bytes.",
+  "decision": "NO-GO FOR CODE FREEZE"
+}

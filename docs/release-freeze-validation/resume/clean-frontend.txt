@@ -1,0 +1,21 @@
+
+> sentinel-net-soc@0.6.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /private/var/folders/wy/xlk1hzhx13x1pqsg2nd0l0gc0000gn/T/sentinel-freeze-resume-ean8m4e6/frontend
+
+ ✓ src/__tests__/api.test.ts (11 tests) 20ms
+ ✓ src/__tests__/websocket.test.ts (11 tests) 34ms
+ ✓ src/__tests__/format.test.ts (29 tests) 48ms
+ ✓ src/__tests__/encrypted-session.test.tsx (14 tests) 320ms
+ ✓ src/__tests__/analyst-operations.test.tsx (10 tests) 382ms
+ ✓ src/__tests__/sensor-health.test.tsx (5 tests) 443ms
+ ✓ src/__tests__/detection-detail.test.tsx (20 tests) 1174ms
+   ✓ Detection investigation contract > renders the real backend event, flow link, scores, provenance and evidence  303ms
+
+ Test Files  7 passed (7)
+      Tests  100 passed (100)
+   Start at  15:05:21
+   Duration  3.60s (transform 634ms, setup 1.33s, collect 1.83s, tests 2.42s, environment 7.77s, prepare 1.34s)
+

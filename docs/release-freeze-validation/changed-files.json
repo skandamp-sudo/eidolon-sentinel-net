@@ -1,0 +1,326 @@
+[
+  {
+    "path": ".gitignore",
+    "classification": "Exact candidate binary exclusions and generated/runtime artifact hygiene"
+  },
+  {
+    "path": "ARCHITECTURE.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "README.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "ROADMAP.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "SECURITY.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "add_visuals.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "arch_diagram.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "build_presentation.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "chart_arch.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "chart_results.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "docs/judge-repository-guide.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "docs/release-artifact-policy.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "docs/release-checklist.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "docs/release-freeze-manifest.json",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "docs/release-freeze-report.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "docs/release-freeze-validation/backend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/blocker.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/build.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/changed-files.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/clean-tree.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/dependencies.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/fixture-generation.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/frontend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/initial-stop-release-checklist.md",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/initial-stop-release-freeze-manifest.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/initial-stop-release-freeze-report.md",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/integrity.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/model-audit.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/backend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/build.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/clean-backend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/clean-build.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/clean-frontend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/clean-tree.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/clean-typecheck.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/delta-audit.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/frontend.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/golden-comparison.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/integrity.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/model-audit.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/preflight.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/replay.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/resume/typecheck.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/root-audit.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/root-references.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/secret-privacy-audit.json",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/staging-paths.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/release-freeze-validation/typecheck.txt",
+    "classification": "Release evidence; original stop records retained; resume subdirectory contains current gates"
+  },
+  {
+    "path": "docs/sih-f6-demo-traceability.md",
+    "classification": "Documentation accuracy, final release status or historical-scope clarification"
+  },
+  {
+    "path": "experiments/final_science_restart_2/IsolationForest.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/LogisticRegression.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/RandomForest.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/XGBoost.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/anomaly.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/classifier.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/preprocessor.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/linear-preprocessor.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-iforest.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-preprocessor.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "experiments/final_science_restart_2/tree-preprocessor.joblib",
+    "classification": "Authorized model index-only deletion; local hash-valid copy retained; history reachable"
+  },
+  {
+    "path": "fill_pptx.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "find_sih_template.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "fix_slide2.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "format_sih.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "generate_assets.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "inspect_base.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "inspect_pptx.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "inspect_sih_final.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "inspect_template_text.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "mock_soc.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "mutate_sih.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "package-lock.json",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "package.json",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "real_soc.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "results_chart.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "take_screenshot.js",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "test_inference.py",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "visual_novelty.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "visual_pipeline.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "visual_problem.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  },
+  {
+    "path": "visual_results.png",
+    "classification": "Previously audited obsolete root artifact removal; historical/local backup retained"
+  }
+]

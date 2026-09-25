@@ -1,5 +1,7 @@
 # F6 demo traceability
 
+> Historical F6 handoff: “NOT YET PREPARED” below described that phase. The subsequently verified judge fixture and current route are documented in [judge demo runbook](judge-demo-runbook.md) and [observed expectations](judge-demo-expectations.json). QA predictions remain separate from scientific results.
+
 No new PCAP or synthetic detection was created for this phase. Listed existing deterministic test sequences are engineering inputs, not a prepared judge PCAP. Persisted frontend fixtures are historical test outputs, not fresh sensor results. All judge-demo PCAP preparation remains next-phase work.
 
 | Capability / UI | Exact existing input | Factual observation / mode | Presenter may say | Must not claim | Readiness |

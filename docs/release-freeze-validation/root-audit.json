@@ -1,0 +1,252 @@
+[
+  {
+    "path": ".env.example",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": ".gitignore",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "ARCHITECTURE.md",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "DATASETS.md",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "LICENSE",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "README.md",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "ROADMAP.md",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "SECURITY.md",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "add_visuals.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "arch_diagram.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "add_visuals.py"
+    ]
+  },
+  {
+    "path": "build_presentation.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "chart_arch.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "build_presentation.py"
+    ]
+  },
+  {
+    "path": "chart_results.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "build_presentation.py"
+    ]
+  },
+  {
+    "path": "fill_pptx.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "find_sih_template.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "fix_slide2.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "format_sih.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "generate_assets.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "inspect_base.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "inspect_pptx.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "inspect_sih_final.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "inspect_template_text.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "mock_soc.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "build_presentation.py"
+    ]
+  },
+  {
+    "path": "mutate_sih.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "package-lock.json",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Root Playwright dependency used solely by removed take_screenshot.js; frontend has separate retained lockfile",
+    "references": []
+  },
+  {
+    "path": "package.json",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Root Playwright dependency used solely by removed take_screenshot.js; frontend has separate retained lockfile",
+    "references": []
+  },
+  {
+    "path": "pyproject.toml",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "real_soc.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "mutate_sih.py",
+      "take_screenshot.js"
+    ]
+  },
+  {
+    "path": "results_chart.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "add_visuals.py"
+    ]
+  },
+  {
+    "path": "scratch.py",
+    "action": "KEEP",
+    "reason": "SCI-CORR-2 historical provenance references; preserve instead of speculative cleanup",
+    "references": [
+      "docs/sci-corr-2-report.md",
+      "docs/sci-corr-2-restart-contract.md"
+    ]
+  },
+  {
+    "path": "take_screenshot.js",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": []
+  },
+  {
+    "path": "test_inference.py",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Unreferenced ad hoc training/demo scratch script; not part of pytest testpaths or scientific candidate provenance",
+    "references": []
+  },
+  {
+    "path": "uv.lock",
+    "action": "KEEP",
+    "reason": "Maintained top-level project configuration/documentation",
+    "references": []
+  },
+  {
+    "path": "visual_novelty.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "format_sih.py",
+      "generate_assets.py"
+    ]
+  },
+  {
+    "path": "visual_pipeline.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "format_sih.py",
+      "generate_assets.py"
+    ]
+  },
+  {
+    "path": "visual_problem.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "format_sih.py",
+      "generate_assets.py"
+    ]
+  },
+  {
+    "path": "visual_results.png",
+    "action": "REMOVE from release tree; local backup preserved",
+    "reason": "Obsolete presentation script/asset, unreferenced by application/tests/scientific manifests/judge pipeline",
+    "references": [
+      "format_sih.py",
+      "generate_assets.py"
+    ]
+  }
+]

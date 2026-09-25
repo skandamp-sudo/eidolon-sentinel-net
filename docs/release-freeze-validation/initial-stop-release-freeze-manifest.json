@@ -1,0 +1,95 @@
+{
+  "phase": "RELEASE-FREEZE",
+  "freeze_date": "2026-09-25",
+  "decision": "NO-GO FOR CODE FREEZE",
+  "reason": "RF-1: legacy fixture generation can invoke active ARP resolution; behavior change is outside freeze authorization",
+  "git": {
+    "branch": "main",
+    "pre_commit_base": "b26004c986b13cdb2db19f024295193245095f47",
+    "origin_main_local_ref": "b26004c986b13cdb2db19f024295193245095f47",
+    "ahead": 0,
+    "behind": 0,
+    "remote": "https://github.com/skandamp-sudo/eidolon-sentinel-net.git",
+    "remote_server_freshness": "NOT VERIFIED; no fetch",
+    "initial_worktree": "CLEAN",
+    "FINAL_FREEZE_COMMIT": "PENDING_OPERATOR_COMMIT"
+  },
+  "scientific_baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+  "feature_schema": "2.0.0",
+  "feature_count": 52,
+  "protected_sources_matched": 23,
+  "candidate_components_matched": 14,
+  "demo_pcap": {
+    "filename": "judge-demo.pcap",
+    "sha256": "ef1e195076dd9610ccd160eed288b1e30c83142df34e58463c32bbc9aea7deb7",
+    "packet_count": 191,
+    "bytes": 16833,
+    "independent_regeneration_equal": true
+  },
+  "qa_runtime_manifest_sha256": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+  "qa_runtime_scope": "SYNTHETIC QA MODEL; PIPELINE DEMONSTRATION ONLY",
+  "scientific_candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "deployment_candidate_manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+  "candidate_status": {
+    "approved": false,
+    "runtime_published": false,
+    "git_binaries_currently_tracked": true,
+    "git_binaries_historically_available": true
+  },
+  "gates": {
+    "backend_clean_archive": {
+      "passed": 958,
+      "skipped": 1,
+      "warnings": 43,
+      "seconds": 111.16
+    },
+    "frontend_clean_archive": {
+      "passed": 100,
+      "files": 7,
+      "seconds": 6.11
+    },
+    "typescript": "PASS",
+    "build": "PASS",
+    "final_golden_replay": "NOT RUN: mandatory STOP",
+    "offline_verification": "NOT RUN: mandatory STOP",
+    "interruption_recovery": "NOT RUN: mandatory STOP",
+    "core_parity": "PASS in initial clean suite",
+    "F3_parity": "7/7 PASS in initial clean suite",
+    "F4_parity": "8/8 PASS in initial clean suite",
+    "F5_parity": "12/12 PASS in initial clean suite",
+    "F6": "PASS in initial clean suite"
+  },
+  "repository_audit": {
+    "root_artifacts_removed": 26,
+    "local_backups_preserved": true,
+    "models_untracked": 0,
+    "model_untracking": "PENDING on STOP",
+    "real_secrets_discovered": false,
+    "secret_scan_scope": "13 locally reachable commits, 687 unique blobs; conservative signatures/literal review",
+    "matrix_status_counts": {
+      "PARTIAL": 25,
+      "NOT VERIFIED": 2,
+      "COMPLETE": 12
+    },
+    "behavioral_source_changes": false,
+    "committed": false,
+    "pushed": false,
+    "tagged": false
+  },
+  "known_limitations": [
+    "RF-1 offline fixture generation defect",
+    "QA predictions are not scientific accuracy evidence",
+    "Candidate unapproved and not runtime-published; binaries remain Git-obtainable",
+    "C2 recall zero; DDoS recall limited",
+    "No primary recon/exfil test support",
+    "Anomaly thresholds exploratory",
+    "No F3/F4/F5 population accuracy",
+    "Native capture/physical diode NOT VERIFIED",
+    "JA4 not implemented; encrypted DNS unavailable; no TLS/QUIC decryption",
+    "Host/workload-specific performance; per-flow history memory limitation",
+    "Physical projector/spoken rehearsal pending",
+    "Current vulnerability-advisory audit and remote-ref freshness NOT VERIFIED"
+  ],
+  "artifact_policy": "release-artifact-policy.md",
+  "report": "release-freeze-report.md"
+}

@@ -1,5 +1,7 @@
 # EIDOLON // SENTINEL-NET — Roadmap
 
+> Historical phase checklist. Current freeze status, verified counts and limitations are in [README](README.md) and [release report](docs/release-freeze-report.md). Completed software work does not imply scientific accuracy, native capture or physical-diode validation.
+
 ## Phase 1: Foundation ✅ (Current)
 
 - [x] Project structure with `uv` and Python 3.12
@@ -23,7 +25,7 @@
   - TCP flag tracking from bitmask (SYN, SYN/ACK, ACK, FIN, RST, PSH)
   - Bidirectional tracking with explicit forward/reverse counters
   - Does NOT fabricate unseen reverse traffic
-- [x] Feature extraction pipeline (47 canonical features)
+- [x] Feature extraction pipeline (current canonical schema: 52 features, v2.0.0)
   - Packet size statistics (mean, std, min, max, median, p25, p75, p90)
   - Inter-arrival time statistics (all, forward, reverse)
   - TCP flag counts and ratios
@@ -102,7 +104,7 @@
   - Empty/missing/malformed key → 401
   - Never log credential values
 - [x] Passive live capture source (`sensor/capture.py`)
-  - `scapy.sniff()` in receive-only mode
+  - Receive-only L2 listen socket with `AsyncSniffer` (current implementation)
   - BPF filter validation (reject shell injection patterns)
   - Bounded packet queue (overflow → drop + metric)
   - `MockCaptureSource` for testing without root

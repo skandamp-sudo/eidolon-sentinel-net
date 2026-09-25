@@ -78,3 +78,21 @@ htmlcov/
 
 # Presentation files kept outside the source repository
 /*.pptx
+
+# Release freeze: candidate binaries remain local trusted research artifacts.
+/experiments/final_science_restart_2/IsolationForest.joblib
+/experiments/final_science_restart_2/LogisticRegression.joblib
+/experiments/final_science_restart_2/RandomForest.joblib
+/experiments/final_science_restart_2/XGBoost.joblib
+/experiments/final_science_restart_2/candidate/anomaly.joblib
+/experiments/final_science_restart_2/candidate/classifier.joblib
+/experiments/final_science_restart_2/candidate/preprocessor.joblib
+/experiments/final_science_restart_2/linear-preprocessor.joblib
+/experiments/final_science_restart_2/novelty-ddos-iforest.joblib
+/experiments/final_science_restart_2/novelty-ddos-preprocessor.joblib
+/experiments/final_science_restart_2/tree-preprocessor.joblib
+*.sqlite-shm
+*.sqlite-wal
+*.log
+.env.*
+!.env.example

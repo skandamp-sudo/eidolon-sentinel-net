@@ -1,0 +1,11 @@
+{
+  "scope": "Incremental RF-1 commit plus final worktree docs/evidence/ignore edits; prior historical audit retained separately",
+  "files_scanned": 57,
+  "specific_signature_findings": [],
+  "manual_review": "RF-1 implementation and final documentation/evidence inspected; no new real credentials discovered; runtime key not persisted",
+  "limits": "Conservative scan; not exhaustive absence assurance; no current remote/advisory scan",
+  "production_scientific_frontend_test_script_delta_from_RF1_base": [],
+  "protected_sources": 23,
+  "candidate_components": 14,
+  "model_index_deletions": 11
+}

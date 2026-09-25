@@ -1,0 +1,7 @@
+Generated 22 packets in /private/var/folders/wy/xlk1hzhx13x1pqsg2nd0l0gc0000gn/T/sentinel-release-clean-pu8fucpd/tests/fixtures/test_traffic.pcap
+ - TCP SYN: 5
+ - TCP SYN-ACK: 3
+ - TCP Data: 10
+ - UDP DNS: 2
+ - ICMP: 1
+ - ARP: 1

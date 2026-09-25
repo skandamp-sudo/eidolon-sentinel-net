@@ -1,0 +1,348 @@
+{
+  "three_fresh_runs": [
+    {
+      "summary": {
+        "total_packets": 191,
+        "parsed_packets": 191,
+        "skipped_packets": 0,
+        "total_flows": 72,
+        "total_detections": 72,
+        "events_persisted": 72,
+        "elapsed_sec": 0.94,
+        "mode": "REPLAY",
+        "completion": "eof"
+      },
+      "lifecycle": "replay_complete",
+      "rest_ws_export_verified": 72,
+      "wall_seconds": 2.008,
+      "classifications": {
+        "ddos": 72
+      },
+      "evidence": {
+        "behavioral": {
+          "DESTINATION_CONCENTRATION": 58,
+          "C2_PERIODICITY_EVIDENCE": 3,
+          "PORT_FANOUT": 1
+        },
+        "dns": {
+          "DNS_LEXICAL_ANOMALY": 1,
+          "DNS_HIGH_ENTROPY_LABEL": 1,
+          "DNS_UNIQUE_DOMAIN_RATE": 1,
+          "DNS_NXDOMAIN_PATTERN": 1,
+          "DNS_QTYPE_PATTERN": 1,
+          "DNS_TUNNELLING_LIKE_BEHAVIOR": 1
+        },
+        "tls": {
+          "TLS_CLIENT_HELLO_OBSERVED": 1,
+          "TLS_VERSION_CONTEXT": 2,
+          "TLS_CIPHER_PROFILE": 2,
+          "TLS_EXTENSION_PROFILE": 2,
+          "TLS_FINGERPRINT": 2,
+          "TLS_SNI_CONTEXT": 1,
+          "TLS_ALPN_CONTEXT": 1,
+          "TLS_SERVER_HELLO_OBSERVED": 1,
+          "ENCRYPTED_SESSION_PACKET_TIMING": 1
+        },
+        "quic": {
+          "QUIC_LONG_HEADER_OBSERVED": 1,
+          "QUIC_VERSION_CONTEXT": 1,
+          "QUIC_CONNECTION_ID_CONTEXT": 1,
+          "QUIC_PACKET_SIZE_PATTERN": 1
+        }
+      },
+      "stable_event_sha256": "b1c14daf190f39d26ecd1213ba4526bc5bcb24f695ec1352b65b0b05638f5c4f",
+      "stable_export_sha256": "87d6bbedaa30171da6d691233cbc0716026e597ea9ff2a1a2f4a947b0f17ec0c",
+      "correlation_membership_counts": {
+        "1": 72
+      },
+      "timeline_item_counts": {
+        "7": 1,
+        "9": 1,
+        "2": 11,
+        "17": 1,
+        "4": 4,
+        "3": 54
+      },
+      "anomaly_scores": [
+        0.40408720138724674,
+        0.44829242100595385,
+        0.5228440487003442,
+        0.5518023616138411
+      ],
+      "classifier_scores": [
+        0.5806687474250793,
+        0.6103552579879761,
+        0.6617411375045776
+      ]
+    },
+    {
+      "summary": {
+        "total_packets": 191,
+        "parsed_packets": 191,
+        "skipped_packets": 0,
+        "total_flows": 72,
+        "total_detections": 72,
+        "events_persisted": 72,
+        "elapsed_sec": 0.93,
+        "mode": "REPLAY",
+        "completion": "eof"
+      },
+      "lifecycle": "replay_complete",
+      "rest_ws_export_verified": 72,
+      "wall_seconds": 2.252,
+      "classifications": {
+        "ddos": 72
+      },
+      "evidence": {
+        "behavioral": {
+          "DESTINATION_CONCENTRATION": 58,
+          "C2_PERIODICITY_EVIDENCE": 3,
+          "PORT_FANOUT": 1
+        },
+        "dns": {
+          "DNS_LEXICAL_ANOMALY": 1,
+          "DNS_HIGH_ENTROPY_LABEL": 1,
+          "DNS_UNIQUE_DOMAIN_RATE": 1,
+          "DNS_NXDOMAIN_PATTERN": 1,
+          "DNS_QTYPE_PATTERN": 1,
+          "DNS_TUNNELLING_LIKE_BEHAVIOR": 1
+        },
+        "tls": {
+          "TLS_CLIENT_HELLO_OBSERVED": 1,
+          "TLS_VERSION_CONTEXT": 2,
+          "TLS_CIPHER_PROFILE": 2,
+          "TLS_EXTENSION_PROFILE": 2,
+          "TLS_FINGERPRINT": 2,
+          "TLS_SNI_CONTEXT": 1,
+          "TLS_ALPN_CONTEXT": 1,
+          "TLS_SERVER_HELLO_OBSERVED": 1,
+          "ENCRYPTED_SESSION_PACKET_TIMING": 1
+        },
+        "quic": {
+          "QUIC_LONG_HEADER_OBSERVED": 1,
+          "QUIC_VERSION_CONTEXT": 1,
+          "QUIC_CONNECTION_ID_CONTEXT": 1,
+          "QUIC_PACKET_SIZE_PATTERN": 1
+        }
+      },
+      "stable_event_sha256": "b1c14daf190f39d26ecd1213ba4526bc5bcb24f695ec1352b65b0b05638f5c4f",
+      "stable_export_sha256": "87d6bbedaa30171da6d691233cbc0716026e597ea9ff2a1a2f4a947b0f17ec0c",
+      "correlation_membership_counts": {
+        "1": 72
+      },
+      "timeline_item_counts": {
+        "7": 1,
+        "9": 1,
+        "2": 11,
+        "17": 1,
+        "4": 4,
+        "3": 54
+      },
+      "anomaly_scores": [
+        0.40408720138724674,
+        0.44829242100595385,
+        0.5228440487003442,
+        0.5518023616138411
+      ],
+      "classifier_scores": [
+        0.5806687474250793,
+        0.6103552579879761,
+        0.6617411375045776
+      ]
+    },
+    {
+      "summary": {
+        "total_packets": 191,
+        "parsed_packets": 191,
+        "skipped_packets": 0,
+        "total_flows": 72,
+        "total_detections": 72,
+        "events_persisted": 72,
+        "elapsed_sec": 0.96,
+        "mode": "REPLAY",
+        "completion": "eof"
+      },
+      "lifecycle": "replay_complete",
+      "rest_ws_export_verified": 72,
+      "wall_seconds": 2.168,
+      "classifications": {
+        "ddos": 72
+      },
+      "evidence": {
+        "behavioral": {
+          "DESTINATION_CONCENTRATION": 58,
+          "C2_PERIODICITY_EVIDENCE": 3,
+          "PORT_FANOUT": 1
+        },
+        "dns": {
+          "DNS_LEXICAL_ANOMALY": 1,
+          "DNS_HIGH_ENTROPY_LABEL": 1,
+          "DNS_UNIQUE_DOMAIN_RATE": 1,
+          "DNS_NXDOMAIN_PATTERN": 1,
+          "DNS_QTYPE_PATTERN": 1,
+          "DNS_TUNNELLING_LIKE_BEHAVIOR": 1
+        },
+        "tls": {
+          "TLS_CLIENT_HELLO_OBSERVED": 1,
+          "TLS_VERSION_CONTEXT": 2,
+          "TLS_CIPHER_PROFILE": 2,
+          "TLS_EXTENSION_PROFILE": 2,
+          "TLS_FINGERPRINT": 2,
+          "TLS_SNI_CONTEXT": 1,
+          "TLS_ALPN_CONTEXT": 1,
+          "TLS_SERVER_HELLO_OBSERVED": 1,
+          "ENCRYPTED_SESSION_PACKET_TIMING": 1
+        },
+        "quic": {
+          "QUIC_LONG_HEADER_OBSERVED": 1,
+          "QUIC_VERSION_CONTEXT": 1,
+          "QUIC_CONNECTION_ID_CONTEXT": 1,
+          "QUIC_PACKET_SIZE_PATTERN": 1
+        }
+      },
+      "stable_event_sha256": "b1c14daf190f39d26ecd1213ba4526bc5bcb24f695ec1352b65b0b05638f5c4f",
+      "stable_export_sha256": "87d6bbedaa30171da6d691233cbc0716026e597ea9ff2a1a2f4a947b0f17ec0c",
+      "correlation_membership_counts": {
+        "1": 72
+      },
+      "timeline_item_counts": {
+        "7": 1,
+        "9": 1,
+        "2": 11,
+        "17": 1,
+        "4": 4,
+        "3": 54
+      },
+      "anomaly_scores": [
+        0.40408720138724674,
+        0.44829242100595385,
+        0.5228440487003442,
+        0.5518023616138411
+      ],
+      "classifier_scores": [
+        0.5806687474250793,
+        0.6103552579879761,
+        0.6617411375045776
+      ]
+    }
+  ],
+  "interruption": {
+    "summary": {
+      "total_packets": 7,
+      "parsed_packets": 7,
+      "skipped_packets": 0,
+      "total_flows": 4,
+      "total_detections": 4,
+      "events_persisted": 4,
+      "elapsed_sec": 1.08,
+      "mode": "REPLAY",
+      "completion": "cancelled"
+    },
+    "lifecycle": "stopped",
+    "rest_ws_export_verified": 4,
+    "wall_seconds": 2.081,
+    "classifications": {
+      "ddos": 4
+    },
+    "evidence": {
+      "behavioral": {},
+      "dns": {},
+      "tls": {},
+      "quic": {}
+    },
+    "stable_event_sha256": "35e8ecc2eb8ee3c0eb68df44b94d2310d85396fb79bac746998454c8b1677186",
+    "stable_export_sha256": "eebb87313343466d56c9c6767b751734247f737387c67b94f7bc5a9655411f68",
+    "correlation_membership_counts": {
+      "1": 4
+    },
+    "timeline_item_counts": {
+      "2": 4
+    },
+    "anomaly_scores": [
+      0.40408720138724674,
+      0.44829242100595385,
+      0.5518023616138411
+    ],
+    "classifier_scores": [
+      0.6103552579879761,
+      0.6617411375045776
+    ]
+  },
+  "clean_recovery": {
+    "summary": {
+      "total_packets": 191,
+      "parsed_packets": 191,
+      "skipped_packets": 0,
+      "total_flows": 72,
+      "total_detections": 72,
+      "events_persisted": 72,
+      "elapsed_sec": 0.85,
+      "mode": "REPLAY",
+      "completion": "eof"
+    },
+    "lifecycle": "replay_complete",
+    "rest_ws_export_verified": 72,
+    "wall_seconds": 1.885,
+    "classifications": {
+      "ddos": 72
+    },
+    "evidence": {
+      "behavioral": {
+        "DESTINATION_CONCENTRATION": 58,
+        "C2_PERIODICITY_EVIDENCE": 3,
+        "PORT_FANOUT": 1
+      },
+      "dns": {
+        "DNS_LEXICAL_ANOMALY": 1,
+        "DNS_HIGH_ENTROPY_LABEL": 1,
+        "DNS_UNIQUE_DOMAIN_RATE": 1,
+        "DNS_NXDOMAIN_PATTERN": 1,
+        "DNS_QTYPE_PATTERN": 1,
+        "DNS_TUNNELLING_LIKE_BEHAVIOR": 1
+      },
+      "tls": {
+        "TLS_CLIENT_HELLO_OBSERVED": 1,
+        "TLS_VERSION_CONTEXT": 2,
+        "TLS_CIPHER_PROFILE": 2,
+        "TLS_EXTENSION_PROFILE": 2,
+        "TLS_FINGERPRINT": 2,
+        "TLS_SNI_CONTEXT": 1,
+        "TLS_ALPN_CONTEXT": 1,
+        "TLS_SERVER_HELLO_OBSERVED": 1,
+        "ENCRYPTED_SESSION_PACKET_TIMING": 1
+      },
+      "quic": {
+        "QUIC_LONG_HEADER_OBSERVED": 1,
+        "QUIC_VERSION_CONTEXT": 1,
+        "QUIC_CONNECTION_ID_CONTEXT": 1,
+        "QUIC_PACKET_SIZE_PATTERN": 1
+      }
+    },
+    "stable_event_sha256": "b1c14daf190f39d26ecd1213ba4526bc5bcb24f695ec1352b65b0b05638f5c4f",
+    "stable_export_sha256": "87d6bbedaa30171da6d691233cbc0716026e597ea9ff2a1a2f4a947b0f17ec0c",
+    "correlation_membership_counts": {
+      "1": 72
+    },
+    "timeline_item_counts": {
+      "7": 1,
+      "9": 1,
+      "2": 11,
+      "17": 1,
+      "4": 4,
+      "3": 54
+    },
+    "anomaly_scores": [
+      0.40408720138724674,
+      0.44829242100595385,
+      0.5228440487003442,
+      0.5518023616138411
+    ],
+    "classifier_scores": [
+      0.5806687474250793,
+      0.6103552579879761,
+      0.6617411375045776
+    ]
+  },
+  "offline_guard": "Python socket.connect and getaddrinfo fail on use during all five real replay/API/export runs; ASGI transport remains in-process.",
+  "normalization": "Event/flow UUIDs map to unique ordered endpoint/protocol tuples. Single replay-session UUID maps to verified PCAP identity. Explanation/investigation/correlation IDs and runtime event/creation/explanation/correlation timestamps are normalized. Capture clocks, scores, evidence and correlation membership remain exact."
+}

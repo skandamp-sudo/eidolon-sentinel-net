@@ -1,0 +1,31 @@
+{
+  "protected_files_matched": 23,
+  "candidate_components_matched": 14,
+  "runtime_all_artifacts_verified_before_deserialization": {
+    "anomaly.joblib": "153cf24fde1ff649d6a8e8a0dcc450b45253952c346116c1f1e3aa34f69a6e33",
+    "anomaly_explainer.joblib": "e5aa35cc8b36aa92161ff9db70fff17c1e1b3f0817ffceb0afd9e2fac1c30433",
+    "preprocessor.joblib": "d2312c5f9b08abd9274fc5a872aed394215abaf0185ecd76bcbf8c4effb12eae",
+    "thresholds.json": "e3ee08d050b20ba04716c47adb8205dcf7b5ce4a487cc27c11e0f98bc21a9b14",
+    "classifier.joblib": "42b1095b6a0ff3b45cd7fc5ace63a83e33a070b2a350d0ecb8298b242c733f22",
+    "manifest.json": "23457a635f7c6acb1b5e017ef1b59ecf9aae6db654102a7a36f6118bed0fd06f",
+    "checksums.json": "1c2d606d9ac707e0bc2c2570bf520a8a39fb2ac217a9c48fc6ce59e296b52ce0"
+  },
+  "scientific_baseline": "sci-corr-2-a5d927bf3a52f5634bd95013eed3cbbde03203343f565c6a6050f7212e9b75be",
+  "pcap": {
+    "filename": "judge-demo.pcap",
+    "sha256": "ef1e195076dd9610ccd160eed288b1e30c83142df34e58463c32bbc9aea7deb7",
+    "packet_count": 191,
+    "bytes": 16833,
+    "independent_regeneration_equal": true
+  },
+  "candidate_manifest_sha256": "29898386acd94ec2e8641947cafeeedbde2363f82195eddcad9baf95d55e9573",
+  "deployment_candidate_manifest_sha256": "7d503614ac076f8e0014d0f060e8052e8bb29e6f52fd827357e3f6416965caa6",
+  "candidate_approval": false,
+  "candidate_publication": false,
+  "matrix_rows": 39,
+  "matrix_status_counts": {
+    "PARTIAL": 25,
+    "NOT VERIFIED": 2,
+    "COMPLETE": 12
+  }
+}

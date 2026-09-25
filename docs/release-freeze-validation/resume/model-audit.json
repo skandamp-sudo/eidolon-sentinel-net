@@ -1,0 +1,90 @@
+[
+  {
+    "path": "experiments/final_science_restart_2/IsolationForest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/LogisticRegression.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/RandomForest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/XGBoost.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/anomaly.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "candidate deployment format",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/classifier.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "candidate deployment format",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/candidate/preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "candidate deployment format",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/linear-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-iforest.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/novelty-ddos-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  },
+  {
+    "path": "experiments/final_science_restart_2/tree-preprocessor.joblib",
+    "manifest_bound": true,
+    "runtime_dependency": "Clean archive golden replay, recovery and actual launcher PASS with all eleven binaries absent",
+    "tests_depend_on_copy": "Clean archive 962 passed, zero skipped",
+    "purpose": "fixed-partition scientific research artifact",
+    "decision": "Untracked with git rm --cached; local bytes preserved and hash-valid; exact ignore rule; history retained"
+  }
+]
