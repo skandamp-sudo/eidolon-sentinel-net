@@ -9,6 +9,7 @@ class SensorMetrics:
     """Thread-safe operational counters."""
     packets_observed: int = 0
     packets_parsed: int = 0
+    packets_non_ip_skipped: int = 0  # live Ethernet frames outside the IP parser contract
     packets_malformed: int = 0
     packets_dropped: int = 0
     packets_processed: int = 0

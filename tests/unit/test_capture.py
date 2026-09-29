@@ -183,3 +183,36 @@ class TestMockCapture:
         mock.stop()
         assert pkt_queue.qsize() == 3
         assert m.snapshot()["packets_dropped"] >= 7
+
+
+@pytest.mark.parametrize('ether_type', [0x0806, 0x88ca])
+def test_non_ip_live_frames_are_skipped_not_malformed(ether_type):
+    from scapy.all import Ether, Raw
+    from sentinel_net.sensor.capture import CaptureConfig, PassiveCaptureSource
+    from sentinel_net.sensor.operational_health import resource_reasons
+    q = queue.Queue(); metrics = SensorMetrics()
+    capture = PassiveCaptureSource(CaptureConfig(interface='test0'), q, metrics)
+    capture._running.set()
+    capture._on_packet(Ether(type=ether_type) / Raw(b'local-fixture'))
+    assert metrics.packets_observed == metrics.packets_non_ip_skipped == 1
+    assert metrics.packets_malformed == 0 and q.empty()
+    assert resource_reasons(metrics) == []
+
+
+def test_live_ip_families_and_malformed_ip_are_not_skipped():
+    from scapy.all import Ether, IP, IPv6, TCP, Raw, Dot1Q
+    from sentinel_net.sensor.capture import CaptureConfig, PassiveCaptureSource, is_non_ip_ethernet
+    q = queue.Queue(); metrics = SensorMetrics()
+    capture = PassiveCaptureSource(CaptureConfig(interface='test0'), q, metrics)
+    capture._running.set()
+    packets = [Ether()/IP()/TCP(), Ether()/IPv6()/TCP(),
+               Ether(type=0x0800)/Raw(b'x'), Ether(type=0x86dd)/Raw(b'x'),
+               Ether()/Dot1Q()/IPv6()/TCP()]
+    for packet in packets:
+        capture._on_packet(packet)
+    assert q.qsize() == len(packets) and metrics.packets_non_ip_skipped == 0
+    assert not is_non_ip_ethernet(Ether(), b'')
+    assert not is_non_ip_ethernet(Ether(), bytes(12) + bytes.fromhex('8100'))
+    assert not is_non_ip_ethernet(Ether(), bytes(12) + bytes.fromhex('81000000810000008100'))
+    vlan_nonip = Ether()/Dot1Q(type=0x88ca)/Raw(b'x')
+    assert is_non_ip_ethernet(vlan_nonip, bytes(vlan_nonip))

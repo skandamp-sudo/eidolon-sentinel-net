@@ -13,12 +13,34 @@ from typing import Any
 
 from scapy.all import AsyncSniffer
 from scapy.interfaces import resolve_iface
+from scapy.layers.l2 import Ether
 
 from sentinel_net.ingestion.parser import extract_raw_packet
 from sentinel_net.models.types import ParsedPacket
 from sentinel_net.sensor.metrics import SensorMetrics
 
 logger = logging.getLogger(__name__)
+
+
+def is_non_ip_ethernet(packet: Any, data: bytes) -> bool:
+    """Recognize unsupported Ethernet payloads, not malformed IP packets.
+
+    Inspect at most two VLAN tags. Truncated headers, excessive tag nesting,
+    and declared IPv4/IPv6 always continue to the canonical parser so actual
+    malformed input is not hidden. Non-Ethernet link types retain prior handling.
+    """
+    if not isinstance(packet, Ether) or len(data) < 14:
+        return False
+    offset = 12
+    ether_type = int.from_bytes(data[offset:offset + 2], 'big')
+    for _ in range(2):
+        if ether_type not in (0x8100, 0x88a8):
+            break
+        offset += 4
+        if len(data) < offset + 2:
+            return False
+        ether_type = int.from_bytes(data[offset:offset + 2], 'big')
+    return ether_type not in (0x0800, 0x86dd, 0x8100, 0x88a8)
 
 
 @dataclass
@@ -129,6 +151,9 @@ class PassiveCaptureSource:
         try:
             rp = extract_raw_packet(raw_pkt)
             rp.interface = self._config.interface
+            if is_non_ip_ethernet(raw_pkt, rp.raw_bytes):
+                self._metrics.increment("packets_non_ip_skipped")
+                return
         except Exception:
             self._metrics.increment("packets_malformed")
             return

@@ -271,6 +271,7 @@ export interface SensorMetrics {
   sensor_uptime?: number;
   packets_observed: number;
   packets_parsed: number;
+  packets_non_ip_skipped?: number;
   packets_malformed: number;
   packets_dropped: number;
   flows_active: number;
