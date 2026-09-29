@@ -180,6 +180,7 @@ export function Sensor() {
       <div className="card-grid">
         <MetricCard title="Packets Observed" value={m?.packets_observed} />
         <MetricCard title="Packets Parsed" value={m?.packets_parsed} />
+        {status?.sensor_mode === 'live_passive_sensor' && <MetricCard title="Non-IP Frames Skipped" value={m?.packets_non_ip_skipped} />}
         <MetricCard title="Packets Processed" value={m?.packets_processed} />
         <MetricCard title="Packet Errors" value={m?.packet_errors} warn />
         <MetricCard title="Packets Malformed" value={m?.packets_malformed} warn />

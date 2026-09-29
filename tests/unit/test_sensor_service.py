@@ -396,3 +396,25 @@ def test_cli_server_quiesces_before_api_shutdown(monkeypatch):
     server = SensorServer(uvicorn.Config('sentinel_net.api.main:app'),SimpleNamespace(quiesce=quiesce))
     asyncio.run(server.shutdown())
     assert order == ['sensor drained', 'api stopped']
+
+
+async def test_non_ip_live_skip_preserves_running_ipv4_ipv6_inference(tmp_path, detector):
+    from scapy.all import Ether, IP, IPv6, TCP, Raw
+    s = service(tmp_path, detector)
+    await s.start()
+    receiver = PassiveCaptureSource(CaptureConfig(interface='test0'), s.capture.packets, s.metrics)
+    receiver._running.set()
+    try:
+        receiver._on_packet(Ether(type=0x88ca)/Raw(b'non-ip-fixture'))
+        receiver._on_packet(Ether()/IP(src='192.0.2.1', dst='192.0.2.2')/TCP(sport=45000,dport=443,flags='R'))
+        receiver._on_packet(Ether()/IPv6(src='2001:db8::1', dst='2001:db8::2')/TCP(sport=45001,dport=443,flags='R'))
+        await until(lambda: s.metrics.events_persisted == 2)
+        assert s.metrics.packets_observed == 3
+        assert s.metrics.packets_non_ip_skipped == 1
+        assert s.metrics.packets_parsed == s.metrics.packets_processed == 2
+        assert s.metrics.flows_created == s.metrics.features_generated == 2
+        assert s.metrics.packets_malformed == 0
+        assert s.health()['state'] == 'running'
+    finally:
+        receiver._running.clear()
+        await s.stop()
