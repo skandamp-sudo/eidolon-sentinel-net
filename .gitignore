@@ -96,3 +96,10 @@ htmlcov/
 *.log
 .env.*
 !.env.example
+
+# Local SIH operator credential; never include in the release tree
+/.sentinel-demo.local
+
+# Exact QA recovery workspace and local runtime
+/.local/qa-recovery-work/
+/.local/sentinel-qa-registry/
